@@ -1,0 +1,20 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # Specify the version you desire here
+      - image: circleci/php:7.1-node-browsers
+    steps:
+      - add_ssh_keys: # add private SSH key from CircleCI account based on fingerprint.
+          fingerprints:
+            - "ca:f7:75:91:8b:f8:e8:87:32:f7:07:1d:6e:7f:8b:81"
+      - run:
+          name: fix host authenticity for production server
+          command: ssh-keyscan 13.76.35.222 >> ~/.ssh/known_hosts
+      - run:
+          name: Deploy to product-server from Github
+          command: ssh -tt phoenix@13.76.35.222 'cd /home/api.vnjobs.tk/public_html/VNJobs/ && sudo git pull && sudo composer install'
