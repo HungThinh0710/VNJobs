@@ -1,0 +1,26 @@
+version: 2.1
+jobs:
+  deploy:
+    docker:
+      - image: circleci/node:10.16.1
+    steps:
+      - add_ssh_keys: # add private SSH key from CircleCI account based on fingerprint.
+          fingerprints:
+            - "ca:f7:75:91:8b:f8:e8:87:32:f7:07:1d:6e:7f:8b:81"
+      - run:
+          name: fix host authenticity for production server
+          command: ssh-keyscan 13.76.35.222 >> ~/.ssh/known_hosts
+      - run:
+          name: Deploy to product-server from Github
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              ssh -tt phoenix@13.76.35.222 ' sudo su && cd /home/api.vnjobstk/public_html/VNJobs/ && git reset --hard HEAD && git pull && composer install'
+            fi
+workflows:
+  version: 2
+  build:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
