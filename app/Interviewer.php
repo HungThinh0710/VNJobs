@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Interviewer extends Model
 {
-    use HasFactory;
-
     protected $table = 'interviewers';
 
     protected $fillable = [
@@ -22,5 +19,4 @@ class Interviewer extends Model
     ];
 
     // public $timestampts = true; //already exist with default laravel
-
 }
