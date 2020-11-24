@@ -17,4 +17,4 @@ jobs:
           command: ssh-keyscan 13.76.35.222 >> ~/.ssh/known_hosts
       - run:
           name: Deploy to product-server from Github
-          command: ssh -tt phoenix@13.76.35.222 'cd /home/api.vnjobs.tk/public_html/VNJobs/ && sudo git reset --hard HEAD && sudo git pull && sudo composer install'
+          command: ssh -tt phoenix@13.76.35.222 'cd /home/api.vnjobs.tk/public_html/VNJobs/ && git merge --abort && rm .git/.MERGE_MSG.swp && sudo git reset --hard HEAD && sudo git pull && sudo composer install'
