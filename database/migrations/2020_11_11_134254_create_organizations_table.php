@@ -14,13 +14,14 @@ class CreateOrganizationsTable extends Migration
     public function up()
     {
         Schema::create('organizations', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId("owner_id")->constrained("users");
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('owner_id');
+            $table->foreign("owner_id")->references('id')->on("users");
             $table->string("org_name");
-            $table->string("phones");
-            $table->string("description");
-            $table->string("tax_id");
-            $table->string("address");
+            $table->string("phones")->nullable();
+            $table->string("description")->nullable();
+            $table->string("tax_id")->nullable();
+            $table->string("address")->nullable();
             $table->tinyInteger("is_verify");
             $table->timestamps();
         });

@@ -14,9 +14,11 @@ class CreateOrganizationsMajorsTable extends Migration
     public function up()
     {
         Schema::create('organizations_majors', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId("org_id")->constrained("organizations");
-            $table->foreignId("major_id")->constrained("majors");
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('org_id');
+            $table->foreign("org_id")->references('id')->on("organizations");
+            $table->unsignedBigInteger('major_id');
+            $table->foreign("major_id")->references('id')->on("majors");
         });
     }
 

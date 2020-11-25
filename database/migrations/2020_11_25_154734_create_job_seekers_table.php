@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserOrganizationTable extends Migration
+class CreateJobSeekersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,17 @@ class CreateUserOrganizationTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_organization', function (Blueprint $table) {
+        Schema::create('job_seekers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('org_id');
-            $table->foreign("org_id")->references('id')->on("organizations");
+            $table->unsignedBigInteger('rn_id');
+            $table->foreign("rn_id")->references('id')->on("recruitment_news");
             $table->unsignedBigInteger('user_id');
             $table->foreign("user_id")->references('id')->on("users");
+            $table->tinyInteger("is_elect");
+            $table->string("cv_path")->nullable();
+            $table->string("cover_letter_path")->nullable();
+            $table->integer("exp_years");
+            $table->timestamps();
         });
     }
 
@@ -29,6 +34,6 @@ class CreateUserOrganizationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_organization');
+        Schema::dropIfExists('job_seekers');
     }
 }
