@@ -23,11 +23,10 @@ jobs:
             fi
 workflows:
   version: 2
-  workflow:
-    jobs:
-    - build:
-        filters:
-          branches:
-            only:
-              - master
+  jobs:
+  - build:
+      filters:
+        branches:
+          only:
+            - master
 
