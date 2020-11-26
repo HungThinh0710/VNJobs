@@ -21,5 +21,13 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               ssh -tt phoenix@13.76.35.222 'cd /home/api.vnjobs.tk/public_html/VNJobs/ && sudo git pull && sudo composer install'
             fi
-            
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - build:
+        filters:
+          branches:
+            only:
+              - master
 
