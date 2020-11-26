@@ -2,7 +2,7 @@
 #
 # Check https://circleci.com/docs/2.0/language-php/ for more details
 #
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
@@ -18,3 +18,11 @@ jobs:
       - run:
           name: Deploy to product-server from Github
           command: ssh -tt phoenix@13.76.35.222 'cd /home/api.vnjobs.tk/public_html/VNJobs/ && sudo git pull && sudo composer install'
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
