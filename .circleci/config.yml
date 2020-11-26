@@ -18,7 +18,7 @@ jobs:
       - run:
           name: Deploy to product-server from Github
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            if [ "${CIRCLE_BRANCH}" == "main" ]; then
               ssh -tt phoenix@13.76.35.222 'cd /home/api.vnjobs.tk/public_html/VNJobs/ && sudo git pull && sudo composer install'
             fi
 workflows:
@@ -28,4 +28,4 @@ workflows:
       - deploy:
           filters:
             branches:
-              only: master
+              only: main
