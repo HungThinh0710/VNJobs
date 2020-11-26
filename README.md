@@ -6,9 +6,8 @@ At this time (2020), we are just 4th year students, so do not expect this projec
 ------------
 
 <p align="center">
-Version: **Beta 0.1.0**
+Version: ** Beta 0.1.0 **
 </p>
-------------
 
 ## Authors
 
@@ -16,7 +15,7 @@ Version: **Beta 0.1.0**
 - [Tran Khac Tuan](SinJunior)
 
 ------------
-##Requirements & Informations
+## Requirements & Informations
 - Informations:
 -- Laravel Version: 6.20
 -- MariaDB Version: 10.4.14
