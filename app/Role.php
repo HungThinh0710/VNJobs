@@ -10,7 +10,8 @@ class Role extends Model
     
     protected $fillable = ['role_name'];
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo('App\User', 'id');
     }
 }

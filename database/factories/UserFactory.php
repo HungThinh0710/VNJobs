@@ -18,15 +18,21 @@ use Carbon\Carbon;
 |
 */
 
+
 $factory->define(User::class, function (Faker $faker) {
+    $faker = \Faker\Factory::create('vi_VN'); // create a VietNam faker
+
     return [
-        'role_id' => 1,
-        'first_name' => 'Thinh',
-        'last_name' => 'Nguyen Hung',
-        'dob' => Carbon::now(),
+        'role_id' => rand(1,4),
+        'first_name' => $faker->name,
+        'last_name' => $faker->name,
+        'dob' => $faker->dateTime($max = 'now', $timezone = null),
+        'phone' => $faker->phoneNumber,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'address' => $faker->address,
+        'bio' => Str::random(30),
         'remember_token' => Str::random(10),
     ];
 });
