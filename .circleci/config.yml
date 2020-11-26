@@ -4,7 +4,7 @@
 #
 version: 2.1
 jobs:
-  build:
+  deploy:
     docker:
       # Specify the version you desire here
       - image: circleci/php:7.1-node-browsers
@@ -23,10 +23,9 @@ jobs:
             fi
 workflows:
   version: 2
-  jobs:
-  - build:
-      filters:
-        branches:
-          only:
-            - master
-
+  build:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
