@@ -1,13 +1,16 @@
 # VNJOBS API - Specialized Project 1 of VKU 2020
 
+<p align="center">
 Description: This is the RESTful API for Specialized Project 1 of VKU 2020 for Job seeker and personal or company can connect together easier.
+</p>
+<p align="center">
 At this time (2020), we are just 4th year students, so do not expect this project to be perfect. Thanks
+</p>
 
 ------------
+Version: **Beta 0.1.0**
 
-<p align="center">
-Version: ** Beta 0.1.0 **
-</p>
+------------
 
 ## Authors
 
@@ -16,21 +19,21 @@ Version: ** Beta 0.1.0 **
 
 ------------
 ## Requirements & Informations
-- Informations:
--- Laravel Version: 6.20
--- MariaDB Version: 10.4.14
-- Requirements:
--- PHP >= 7.2.5
--- BCMath PHP Extension
--- Ctype PHP Extension
--- Fileinfo PHP Extension
--- JSON PHP Extension
--- Mbstring PHP Extension
--- OpenSSL PHP Extension
--- PDO PHP Extension
--- Tokenizer PHP Extension
--- XML PHP Extension
--- Composer Installed
+#### Informations:
+- Laravel Version: 6.20
+- MariaDB Version: 10.4.14
+#### Requirements:
+- PHP >= 7.2.5
+- BCMath PHP Extension
+- Ctype PHP Extension
+- Fileinfo PHP Extension
+- JSON PHP Extension
+- Mbstring PHP Extension
+- OpenSSL PHP Extension
+- PDO PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
+- Composer Installed
 
 
 ------------
@@ -57,6 +60,10 @@ Version: ** Beta 0.1.0 **
 	`....`
 
 *Continue...*
+
+6. Run API
+	
+	`php artisan serve`
 
 ------------
 ## Other related projects
