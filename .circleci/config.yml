@@ -17,12 +17,9 @@ jobs:
           command: ssh-keyscan 13.76.35.222 >> ~/.ssh/known_hosts
       - run:
           name: Deploy to product-server from Github
-          command: ssh -tt phoenix@13.76.35.222 'cd /home/api.vnjobs.tk/public_html/VNJobs/ && sudo git pull && sudo composer install'
-workflows:
-  version: 2
-  workflow:
-    jobs:
-      - build:
-          filters:
-            branches:
-              only: master
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              ssh -tt phoenix@13.76.35.222 'cd /home/api.vnjobs.tk/public_html/VNJobs/ && sudo git pull && sudo composer install'
+            fi
+            
+
