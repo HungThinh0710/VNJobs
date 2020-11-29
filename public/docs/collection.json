@@ -10,26 +10,26 @@
     ],
     "info": {
         "name": "VNJobs API Documentaion",
-        "_postman_id": "b2331b3e-7970-4a75-a9a0-c7fb42e5f85c",
+        "_postman_id": "54649275-8078-4b26-bc54-d699dd975d5b",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
         {
-            "name": "Endpoints",
+            "name": "Auth endpoints",
             "description": "",
             "item": [
                 {
-                    "name": "api\/user",
+                    "name": "Login.",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "{{baseUrl}}",
-                            "path": "api\/user",
+                            "path": "api\/v1\/auth\/login",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/user"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/auth\/login"
                         },
-                        "method": "GET",
+                        "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -40,36 +40,10 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "\/",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "{{baseUrl}}",
-                            "path": "\/",
-                            "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/\/"
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"earum\",\n    \"password\": \"et\"\n}"
                         },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
                         "description": "",
                         "auth": {
                             "type": "noauth"

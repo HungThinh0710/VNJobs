@@ -56,11 +56,16 @@ Version: **Beta 0.1.0**
 4. Migration database and Seeder data
 
 	`php artisan migrate:fresh --seed`
-5. Generate API Documentations
+	
+5. Create encryption keys for passport
+
+    `php artisan passport:install`
+
+6. Generate API Documentation
 
 	`php artisan scribe:generate`
 
-6. Run API
+7. Run API
 	
 	`php artisan serve`
 

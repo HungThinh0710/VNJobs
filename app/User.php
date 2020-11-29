@@ -5,10 +5,11 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable;
 
     protected $fillable = [
         'role_id',
@@ -32,6 +33,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
+        'role_id',
         'remember_token',
     ];
 
@@ -55,7 +57,7 @@ class User extends Authenticatable
             'App\Organization',  // Intermediary Model Related
             'user_organization', // Intermediary table name
             'user_id',            // FK of 'user_organization' table (Intermediary table)
-            'id'                  // PK of 'organizations' table (primary table) with intermediary table 
+            'id'                  // PK of 'organizations' table (primary table) with intermediary table
         );
     }
 
