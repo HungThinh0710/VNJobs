@@ -57,9 +57,8 @@ Version: **Beta 0.1.0**
 
 	`php artisan migrate:fresh --seed`
 5. Generate API Documentations
-	`....`
 
-*Continue...*
+	`php artisan scribe:generate`
 
 6. Run API
 	
@@ -73,3 +72,8 @@ Version: **Beta 0.1.0**
 ## License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Library Using
+- [Scribe](https://scribe.readthedocs.io/en/latest/guide-getting-started.html) (Generate API documentation)
+- [Passport](https://laravel.com/docs/6.x/passport) (Authentication API)
+

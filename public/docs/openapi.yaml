@@ -1,0 +1,111 @@
+openapi: 3.0.3
+info:
+    title: 'VNJobs API Documentaion'
+    description: ''
+    version: 1.0.0
+servers:
+    -
+        url: 'http://localhost'
+paths:
+    /api/user:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+            security: []
+    /:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    id: 3
+                                    role_id: 4
+                                    first_name: 'Cự Duy Vi'
+                                    last_name: 'Tô Ly Vi'
+                                    dob: '1996-09-03'
+                                    phone: '0218 310 3825'
+                                    email: d.mn@example.net
+                                    email_verified_at: '2020-11-25 19:45:56'
+                                    address: "64 Phố Tống Trang Công, Xã Hán, Huyện Hà Bích Trân\nĐồng Tháp"
+                                    bio: 4N7w4bd55bhUrexu14n1xuJ1z5w2fG
+                                    social_linkedin: null
+                                    social_facebook: null
+                                    created_at: '2020-11-25 19:45:56'
+                                    updated_at: '2020-11-25 19:45:56'
+                                    orgs: [{ id: 1, owner_id: 4, org_name: 'Công ty Khưu-Đan', phones: (84)(55)073-2993, description: null, tax_id: '76928', address: "824 Phố Cung, Thôn Diệp Lam, Huyện Bạch\nYên Bái", is_verify: 1, created_at: '2020-11-25 19:45:56', updated_at: '2020-11-25 19:45:56', pivot: { user_id: 3, id: 1 } }, { id: 4, owner_id: 10, org_name: 'Công ty Danh-Ân', phones: '052 518 1918', description: null, tax_id: '33176', address: "15 Phố Viên, Phường Vỹ, Huyện Bá Đàn\nHải Phòng", is_verify: 0, created_at: '2020-11-25 19:45:56', updated_at: '2020-11-25 19:45:56', pivot: { user_id: 3, id: 4 } }, { id: 10, owner_id: 5, org_name: 'Công ty Ngân, Cái and Giao', phones: (095)826-1894, description: null, tax_id: '181210', address: "1 Phố Hồ Nghi Bạch, Xã Ấu Dung Lâm, Huyện Nhữ Tùng Sinh\nĐà Nẵng", is_verify: 1, created_at: '2020-11-25 19:45:56', updated_at: '2020-11-25 19:45:56', pivot: { user_id: 3, id: 10 } }]
+                                    own_orgs: [{ id: 2, owner_id: 3, org_name: 'Công ty Yên-Phạm', phones: +84-166-559-8898, description: null, tax_id: '902510', address: "541 Phố Mâu Thắng Nghị, Phường Phú Cái, Huyện Liêm Trạch\nHậu Giang", is_verify: 0, created_at: '2020-11-25 19:45:56', updated_at: '2020-11-25 19:45:56' }, { id: 3, owner_id: 3, org_name: 'Công ty Ngô-Đôn', phones: '(094) 177 7666', description: null, tax_id: '58304', address: "6 Phố Văn Ca Tâm, Thôn Phi Hoàn, Quận Phong Ngân\nĐà Nẵng", is_verify: 1, created_at: '2020-11-25 19:45:56', updated_at: '2020-11-25 19:45:56' }]
+                                    role: { id: 4, role_name: User, created_at: null, updated_at: null }
+                                    recruitment_news: []
+                                    applied_jobs: []
+                                properties:
+                                    id: { type: integer, example: 3 }
+                                    role_id: { type: integer, example: 4 }
+                                    first_name: { type: string, example: 'Cự Duy Vi' }
+                                    last_name: { type: string, example: 'Tô Ly Vi' }
+                                    dob: { type: string, example: '1996-09-03' }
+                                    phone: { type: string, example: '0218 310 3825' }
+                                    email: { type: string, example: d.mn@example.net }
+                                    email_verified_at: { type: string, example: '2020-11-25 19:45:56' }
+                                    address: { type: string, example: "64 Phố Tống Trang Công, Xã Hán, Huyện Hà Bích Trân\nĐồng Tháp" }
+                                    bio: { type: string, example: 4N7w4bd55bhUrexu14n1xuJ1z5w2fG }
+                                    social_linkedin: { type: string, example: null }
+                                    social_facebook: { type: string, example: null }
+                                    created_at: { type: string, example: '2020-11-25 19:45:56' }
+                                    updated_at: { type: string, example: '2020-11-25 19:45:56' }
+                                    orgs: { type: array, example: [{ id: 1, owner_id: 4, org_name: 'Công ty Khưu-Đan', phones: (84)(55)073-2993, description: null, tax_id: '76928', address: "824 Phố Cung, Thôn Diệp Lam, Huyện Bạch\nYên Bái", is_verify: 1, created_at: '2020-11-25 19:45:56', updated_at: '2020-11-25 19:45:56', pivot: { user_id: 3, id: 1 } }, { id: 4, owner_id: 10, org_name: 'Công ty Danh-Ân', phones: '052 518 1918', description: null, tax_id: '33176', address: "15 Phố Viên, Phường Vỹ, Huyện Bá Đàn\nHải Phòng", is_verify: 0, created_at: '2020-11-25 19:45:56', updated_at: '2020-11-25 19:45:56', pivot: { user_id: 3, id: 4 } }, { id: 10, owner_id: 5, org_name: 'Công ty Ngân, Cái and Giao', phones: (095)826-1894, description: null, tax_id: '181210', address: "1 Phố Hồ Nghi Bạch, Xã Ấu Dung Lâm, Huyện Nhữ Tùng Sinh\nĐà Nẵng", is_verify: 1, created_at: '2020-11-25 19:45:56', updated_at: '2020-11-25 19:45:56', pivot: { user_id: 3, id: 10 } }], items: { type: object } }
+                                    own_orgs: { type: array, example: [{ id: 2, owner_id: 3, org_name: 'Công ty Yên-Phạm', phones: +84-166-559-8898, description: null, tax_id: '902510', address: "541 Phố Mâu Thắng Nghị, Phường Phú Cái, Huyện Liêm Trạch\nHậu Giang", is_verify: 0, created_at: '2020-11-25 19:45:56', updated_at: '2020-11-25 19:45:56' }, { id: 3, owner_id: 3, org_name: 'Công ty Ngô-Đôn', phones: '(094) 177 7666', description: null, tax_id: '58304', address: "6 Phố Văn Ca Tâm, Thôn Phi Hoàn, Quận Phong Ngân\nĐà Nẵng", is_verify: 1, created_at: '2020-11-25 19:45:56', updated_at: '2020-11-25 19:45:56' }], items: { type: object } }
+                                    role: { type: object, example: { id: 4, role_name: User, created_at: null, updated_at: null } }
+                                    recruitment_news: { type: array, example: [] }
+                                    applied_jobs: { type: array, example: [] }
+            tags:
+                - Endpoints
+            security: []
