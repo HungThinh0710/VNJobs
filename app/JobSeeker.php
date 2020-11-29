@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Interviewer extends Model
+class JobSeeker extends Model
 {
-    protected $table = 'interviewers';
+    protected $table = 'job_seekers';
 
     protected $fillable = [
         'rn_id',
@@ -17,6 +17,11 @@ class Interviewer extends Model
         'cover_letter_path',
         'exp_years',
     ];
+
+    public function user()
+    {
+        return $this->hasOne('\App\User', 'id');
+    }
 
     // public $timestampts = true; //already exist with default laravel
 }

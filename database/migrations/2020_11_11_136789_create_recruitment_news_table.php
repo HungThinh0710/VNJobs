@@ -14,13 +14,17 @@ class CreateRecruitmentNewsTable extends Migration
     public function up()
     {
         Schema::create('recruitment_news', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId("org_id")->constrained("organizations");
-            $table->foreignId("user_id")->constrained("users");
-            $table->foreignId("major_id")->constrained("majors");
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('org_id');
+            $table->foreign("org_id")->references('id')->on("organizations");
+            $table->unsignedBigInteger('author_id');
+            $table->foreign("author_id")->references('id')->on("users");
+            $table->unsignedBigInteger('major_id');
+            $table->foreign("major_id")->references('id')->on("majors");
             $table->string("title");
             $table->longText("content");
             $table->string("address");
+            $table->string("city");
             $table->timestamp("start_time")->useCurrent();
             $table->timestamp("end_time")->useCurrent();
             $table->timestamp("interview_start_time")->useCurrent();

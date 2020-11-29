@@ -5,6 +5,7 @@
 use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +18,21 @@ use Illuminate\Support\Str;
 |
 */
 
+
 $factory->define(User::class, function (Faker $faker) {
+    $faker = \Faker\Factory::create('vi_VN'); // create a VietNam faker
+
     return [
-        'name' => $faker->name,
+        'role_id' => rand(1,4),
+        'first_name' => $faker->name,
+        'last_name' => $faker->name,
+        'dob' => $faker->dateTime($max = 'now', $timezone = null),
+        'phone' => $faker->phoneNumber,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'password' => '$2y$10$pU.BxHJJuSjgP5p.fQykEOuIXa3FLlB9O0/G2M7eypNstIeltkKIq', // password 123123
+        'address' => $faker->address,
+        'bio' => Str::random(30),
         'remember_token' => Str::random(10),
     ];
 });
