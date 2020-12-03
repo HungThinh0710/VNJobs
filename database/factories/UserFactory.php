@@ -6,6 +6,7 @@ use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,7 @@ $factory->define(User::class, function (Faker $faker) {
         'phone' => $faker->phoneNumber,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
-        'password' => '$2y$10$pU.BxHJJuSjgP5p.fQykEOuIXa3FLlB9O0/G2M7eypNstIeltkKIq', // password 123123
+        'password' => Hash::make("123123"), // password 123123
         'address' => $faker->address,
         'bio' => Str::random(30),
         'remember_token' => Str::random(10),

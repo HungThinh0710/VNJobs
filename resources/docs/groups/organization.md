@@ -1,140 +1,23 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>VNJobs API Documentaion</title>
+# Organization
 
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="css/style.css" media="screen" />
-        <link rel="stylesheet" href="css/print.css" media="print" />
-        <script src="js/all.js"></script>
+## List Organization
+Display a listing of the Organization.
 
-        <link rel="stylesheet" href="css/highlight-darcula.css" media="" />
-        <script src="js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
 
-</head>
 
-<body class="" data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
-<a href="#" id="nav-button">
-      <span>
-        NAV
-            <img src="images/navbar.png" alt="-image" class=""/>
-      </span>
-</a>
-<div class="tocify-wrapper">
-                <div class="lang-selector">
-                            <a href="#" data-language-name="bash">bash</a>
-                            <a href="#" data-language-name="javascript">javascript</a>
-                    </div>
-        <div class="search">
-        <input type="text" class="search" id="input-search" placeholder="Search">
-    </div>
-    <ul class="search-results"></ul>
 
-    <ul id="toc">
-    </ul>
+> Example request:
 
-            <ul class="toc-footer" id="toc-footer">
-                            <li><a href="./collection.json">View Postman collection</a></li>
-                            <li><a href="./openapi.yaml">View OpenAPI (Swagger) spec</a></li>
-                            <li><a href='http://github.com/knuckleswtf/scribe'>Documentation powered by Scribe ✍</a></li>
-                    </ul>
-            <ul class="toc-footer" id="last-updated">
-            <li>Last updated: December 1 2020</li>
-        </ul>
-</div>
-<div class="page-wrapper">
-    <div class="dark-box"></div>
-    <div class="content">
-        <h1>Introduction</h1>
-<p>This documentation aims to provide all the information you need to work with our API.</p>
-<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
-You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
-<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
-<script>
-    var baseUrl = "http://localhost";
-</script>
-<script src="js/tryitout-2.3.0.js"></script>
-<blockquote>
-<p>Base URL</p>
-</blockquote>
-<pre><code class="language-yaml">http://localhost</code></pre><h1>Authenticating requests</h1>
-<p>This API is not authenticated.</p><h1>Auth endpoints</h1>
-<h2>Login.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/v1/auth/login" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"email":"earum","password":"et"}'
-</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/auth/login"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "email": "earum",
-    "password": "et"
-}
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-POSTapi-v1-auth-login" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-v1-auth-login"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-auth-login"></code></pre>
-</div>
-<div id="execution-error-POSTapi-v1-auth-login" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-auth-login"></code></pre>
-</div>
-<form id="form-POSTapi-v1-auth-login" data-method="POST" data-path="api/v1/auth/login" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-auth-login', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v1-auth-login" onclick="tryItOut('POSTapi-v1-auth-login');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v1-auth-login" onclick="cancelTryOut('POSTapi-v1-auth-login');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v1-auth-login" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/v1/auth/login</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-<p>
-<b><code>email</code></b>&nbsp;&nbsp;<small>String</small>  &nbsp;
-<input type="text" name="email" data-endpoint="POSTapi-v1-auth-login" data-component="body" required  hidden>
-<br>
-</p>
-<p>
-<b><code>password</code></b>&nbsp;&nbsp;<small>String</small>  &nbsp;
-<input type="text" name="password" data-endpoint="POSTapi-v1-auth-login" data-component="body" required  hidden>
-<br>
-</p>
-
-</form><h1>Organization</h1>
-<h2>List Organization</h2>
-<p>Display a listing of the Organization.</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
+```bash
+curl -X GET \
     -G "http://localhost/api/v1/organization" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
     "http://localhost/api/v1/organization"
 );
 
@@ -143,14 +26,18 @@ let headers = {
     "Accept": "application/json",
 };
 
+
 fetch(url, {
     method: "GET",
     headers,
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (200):</p>
-</blockquote>
-<pre><code class="language-json">{
+}).then(response => response.json());
+```
+
+
+> Example response (200):
+
+```json
+{
     "current_page": 1,
     "data": [
         {
@@ -284,7 +171,8 @@ fetch(url, {
     "prev_page_url": null,
     "to": 10,
     "total": 10
-}</code></pre>
+}
+```
 <div id="execution-results-GETapi-v1-organization" hidden>
     <blockquote>Received response<span id="execution-response-status-GETapi-v1-organization"></span>:</blockquote>
     <pre class="json"><code id="execution-response-content-GETapi-v1-organization"></code></pre>
@@ -305,18 +193,27 @@ fetch(url, {
  <b><code>api/v1/organization</code></b>
 </p>
 </form>
-<h2>Find an Organization</h2>
-<p>Display the specified resource.</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
+
+
+## Find an Organization
+Display the specified resource.
+
+
+
+
+> Example request:
+
+```bash
+curl -X GET \
     -G "http://localhost/api/v1/organization/nihil" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"int":"voluptatibus"}'
-</code></pre>
-<pre><code class="language-javascript">const url = new URL(
+
+```
+
+```javascript
+const url = new URL(
     "http://localhost/api/v1/organization/nihil"
 );
 
@@ -333,11 +230,14 @@ fetch(url, {
     method: "GET",
     headers,
     body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre>
-<blockquote>
-<p>Example response (404):</p>
-</blockquote>
-<pre><code class="language-json">{
+}).then(response => response.json());
+```
+
+
+> Example response (404):
+
+```json
+{
     "message": "No query results for model [App\\Organization] nihil",
     "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
     "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php",
@@ -348,280 +248,280 @@ fetch(url, {
             "line": 198,
             "function": "prepareException",
             "class": "Illuminate\\Foundation\\Exceptions\\Handler",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\app\\Exceptions\\Handler.php",
             "line": 53,
             "function": "render",
             "class": "Illuminate\\Foundation\\Exceptions\\Handler",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\nunomaduro\\collision\\src\\Adapters\\Laravel\\ExceptionHandler.php",
             "line": 68,
             "function": "render",
             "class": "App\\Exceptions\\Handler",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php",
             "line": 51,
             "function": "render",
             "class": "NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
             "line": 132,
             "function": "handleException",
             "class": "Illuminate\\Routing\\Pipeline",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php",
             "line": 41,
             "function": "Illuminate\\Pipeline\\{closure}",
             "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
             "line": 171,
             "function": "handle",
             "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
             "line": 59,
             "function": "Illuminate\\Pipeline\\{closure}",
             "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
             "line": 171,
             "function": "handle",
             "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
             "line": 105,
             "function": "Illuminate\\Pipeline\\{closure}",
             "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
             "line": 683,
             "function": "then",
             "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
             "line": 658,
             "function": "runRouteWithinStack",
             "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
             "line": 624,
             "function": "runRoute",
             "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
             "line": 613,
             "function": "dispatchToRoute",
             "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
             "line": 170,
             "function": "dispatch",
             "class": "Illuminate\\Routing\\Router",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
             "line": 130,
             "function": "Illuminate\\Foundation\\Http\\{closure}",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
             "line": 21,
             "function": "Illuminate\\Pipeline\\{closure}",
             "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
             "line": 171,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
             "line": 21,
             "function": "Illuminate\\Pipeline\\{closure}",
             "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
             "line": 171,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php",
             "line": 27,
             "function": "Illuminate\\Pipeline\\{closure}",
             "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
             "line": 171,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php",
             "line": 63,
             "function": "Illuminate\\Pipeline\\{closure}",
             "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
             "line": 171,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\fideloper\\proxy\\src\\TrustProxies.php",
             "line": 57,
             "function": "Illuminate\\Pipeline\\{closure}",
             "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
             "line": 171,
             "function": "handle",
             "class": "Fideloper\\Proxy\\TrustProxies",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
             "line": 105,
             "function": "Illuminate\\Pipeline\\{closure}",
             "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
             "line": 145,
             "function": "then",
             "class": "Illuminate\\Pipeline\\Pipeline",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
             "line": 110,
             "function": "sendRequestThroughRouter",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
             "line": 324,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
             "line": 305,
             "function": "callLaravelOrLumenRoute",
             "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
             "line": 76,
             "function": "makeApiCall",
             "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
             "line": 51,
             "function": "makeResponseCall",
             "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
             "line": 41,
             "function": "makeResponseCallIfEnabledAndNoSuccessResponses",
             "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
             "line": 236,
             "function": "__invoke",
             "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
             "line": 172,
             "function": "iterateThroughStrategies",
             "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
             "line": 127,
             "function": "fetchResponses",
             "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
             "line": 118,
             "function": "processRoute",
             "class": "Knuckles\\Scribe\\Extracting\\Generator",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
             "line": 73,
             "function": "processRoutes",
             "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
             "line": 36,
             "function": "handle",
             "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php",
@@ -656,66 +556,67 @@ fetch(url, {
             "line": 134,
             "function": "call",
             "class": "Illuminate\\Container\\Container",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\symfony\\console\\Command\\Command.php",
             "line": 255,
             "function": "execute",
             "class": "Illuminate\\Console\\Command",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
             "line": 121,
             "function": "run",
             "class": "Symfony\\Component\\Console\\Command\\Command",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\symfony\\console\\Application.php",
             "line": 1009,
             "function": "run",
             "class": "Illuminate\\Console\\Command",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\symfony\\console\\Application.php",
             "line": 273,
             "function": "doRunCommand",
             "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\symfony\\console\\Application.php",
             "line": 149,
             "function": "doRun",
             "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php",
             "line": 93,
             "function": "run",
             "class": "Symfony\\Component\\Console\\Application",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php",
             "line": 131,
             "function": "run",
             "class": "Illuminate\\Console\\Application",
-            "type": "-&gt;"
+            "type": "->"
         },
         {
             "file": "H:\\My Drive\\VKU_2020-2021\\SEMETER_1\\Major_Project\\code\\api\\VNJobs\\artisan",
             "line": 37,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Console\\Kernel",
-            "type": "-&gt;"
+            "type": "->"
         }
     ]
-}</code></pre>
+}
+```
 <div id="execution-results-GETapi-v1-organization--id-" hidden>
     <blockquote>Received response<span id="execution-response-status-GETapi-v1-organization--id-"></span>:</blockquote>
     <pre class="json"><code id="execution-response-content-GETapi-v1-organization--id-"></code></pre>
@@ -749,19 +650,6 @@ fetch(url, {
 </p>
 
 </form>
-    </div>
-    <div class="dark-box">
-                    <div class="lang-selector">
-                                    <a href="#" data-language-name="bash">bash</a>
-                                    <a href="#" data-language-name="javascript">javascript</a>
-                            </div>
-            </div>
-</div>
-<script>
-    $(function () {
-        var languages = ["bash","javascript"];
-        setupLanguages(languages);
-    });
-</script>
-</body>
-</html>
+
+
+
