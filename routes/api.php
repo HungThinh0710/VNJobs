@@ -17,8 +17,21 @@ Route::group(['prefix' => 'v1'], function(){
     Route::group(['prefix' => 'auth'], function(){
         Route::post('login', 'API\AuthenticateController@login');
     });
+
+    Route::group(['prefix' => 'organization'], function() {
+        Route::get('/', 'API\OrganizationController@index');
+        Route::get('/{id}', 'API\OrganizationController@show');
+        Route::post('/', 'API\OrganizationController@store');
+        Route::put('/{id}', 'API\OrganizationController@update');
+        Route::delete('/{id}', 'API\OrganizationController@destroy');
+    });
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+Route::group(['middleware' => 'auth:api'], function() {
+    
 });
