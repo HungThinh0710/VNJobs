@@ -32,7 +32,6 @@ trait Filterable {
             }
         }
         return $query->paginate(10);
-        // return $q;
     }
 
     /**

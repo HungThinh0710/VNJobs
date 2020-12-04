@@ -39,16 +39,471 @@ paths:
                                 email:
                                     type: String
                                     description: ''
-                                    example: facere
+                                    example: error
                                 password:
                                     type: String
                                     description: ''
-                                    example: occaecati
+                                    example: perspiciatis
                             required:
                                 - email
                                 - password
             security: []
-    /api/v1/organization:
+    /api/v1/job-seekers:
+        get:
+            summary: "List JobSeeker\nDisplay a listing of the job-seeker."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n  \"current_page\": 1,\n  \"data\": [{\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n  }, {\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n  }],\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/job-seekers?page=1\",\n  \"from\": null,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/job-seekers?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/job-seekers\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": null,\n  \"total\": 0\n}"
+            tags:
+                - JobSeeker
+            security: []
+        post:
+            summary: "Create a JobSeeker\nStore a newly created job-seeker in database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n}"
+            tags:
+                - JobSeeker
+            requestBody:
+                required: false
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: exp_years
+                                    description: ''
+                                    example: impedit
+                                string:
+                                    type: cover_letter_path
+                                    description: ''
+                                    example: distinctio
+            security: []
+    '/api/v1/job-seekers/{id}':
+        get:
+            summary: "Find a JobSeeker\nDisplay the specified job-seeker."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n}"
+            tags:
+                - JobSeeker
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: est
+                            required:
+                                - int
+            security: []
+        put:
+            summary: "Update a JobSeeker\nUpdate the specified job-seeker in database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n}"
+            tags:
+                - JobSeeker
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: perspiciatis
+                                string:
+                                    type: cover_letter_path
+                                    description: ''
+                                    example: autem
+                            required:
+                                - int
+            security: []
+        delete:
+            summary: "Remove a JobSeeker\nRemove the specified job-seeker from database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - JobSeeker
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: asperiores
+                            required:
+                                - int
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: qui
+                required: true
+                schema:
+                    type: string
+    /api/v1/majors:
+        get:
+            summary: "List Major\nDisplay a listing of the resource."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n\"current_page\": 1,\ndata: [{\n  \"id\": 1,\n  \"major_name\": \"string\",\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n {\n  \"id\": 1,\n  \"major_name\": \"string\",\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  }\n],\n,\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/majors?page=1\",\n  \"from\": 1,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/majors?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/majors\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": 10,\n  \"total\": 2\n}"
+            tags:
+                - Major
+            security: []
+        post:
+            summary: "Create Major\nStore a newly created major in database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    id: 1
+                                    major_name: string
+                                    created_at: '1990-12-12 12:45:10'
+                                    updated_at: '1990-12-12 12:45:10'
+                                properties:
+                                    id: { type: integer, example: 1 }
+                                    major_name: { type: string, example: string }
+                                    created_at: { type: string, example: '1990-12-12 12:45:10' }
+                                    updated_at: { type: string, example: '1990-12-12 12:45:10' }
+            tags:
+                - Major
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                string:
+                                    type: major_name
+                                    description: ''
+                                    example: dolorem
+                            required:
+                                - string
+            security: []
+    '/api/v1/majors/{id}':
+        get:
+            summary: "Find a Major\nDisplay the specified major."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    id: 1
+                                    major_name: string
+                                    created_at: '1990-12-12 12:45:10'
+                                    updated_at: '1990-12-12 12:45:10'
+                                properties:
+                                    id: { type: integer, example: 1 }
+                                    major_name: { type: string, example: string }
+                                    created_at: { type: string, example: '1990-12-12 12:45:10' }
+                                    updated_at: { type: string, example: '1990-12-12 12:45:10' }
+            tags:
+                - Major
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: et
+                            required:
+                                - int
+            security: []
+        put:
+            summary: "Update  a Major\nUpdate the specified major in database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    id: 1
+                                    major_name: string
+                                    created_at: '1990-12-12 12:45:10'
+                                    updated_at: '1990-12-12 12:45:10'
+                                properties:
+                                    id: { type: integer, example: 1 }
+                                    major_name: { type: string, example: string }
+                                    created_at: { type: string, example: '1990-12-12 12:45:10' }
+                                    updated_at: { type: string, example: '1990-12-12 12:45:10' }
+            tags:
+                - Major
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                string:
+                                    type: major_name
+                                    description: ''
+                                    example: corporis
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: veritatis
+                            required:
+                                - int
+            security: []
+        delete:
+            summary: "Remove a Major\nRemove the specified major from database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    id: 1
+                                    major_name: string
+                                    created_at: '1990-12-12 12:45:10'
+                                    updated_at: '1990-12-12 12:45:10'
+                                properties:
+                                    id: { type: integer, example: 1 }
+                                    major_name: { type: string, example: string }
+                                    created_at: { type: string, example: '1990-12-12 12:45:10' }
+                                    updated_at: { type: string, example: '1990-12-12 12:45:10' }
+            tags:
+                - Major
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: nostrum
+                            required:
+                                - int
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: ut
+                required: true
+                schema:
+                    type: string
+    /api/v1/organizations:
         get:
             summary: "List Organization\nDisplay a listing of the Organization."
             description: ''
@@ -69,41 +524,83 @@ paths:
                         type: string
             responses:
                 200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n\"current_page\": 1,\ndata: [{\n  \"id\": 1,\n  \"owner_id\": 1,\n  \"org_name\": \"Công ty Vi Inc\",\n  \"phones\": \"+84-165-015-8016\",\n  \"description\": \"string\",\n  \"tax_id\": \"41665\",\n  \"address\": \"string\",\n  \"is_verify\": 0,\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n {\n  \"id\": 2,\n  \"owner_id\": 1,\n  \"org_name\": \"Công ty Vi Inc\",\n  \"phones\": \"+84-165-015-8016\",\n  \"description\": \"string\",\n  \"tax_id\": \"41665\",\n  \"address\": \"string\",\n  \"is_verify\": 0,\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n],\n,\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/organizations?page=1\",\n  \"from\": 1,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/organizations?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/organizations\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": 10,\n  \"total\": 2\n}"
+            tags:
+                - Organization
+            security: []
+        post:
+            summary: "Create Organization\nStore a newly created resource in Database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
                     description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
                     content:
                         application/json:
                             schema:
                                 type: object
                                 example:
-                                    current_page: 1
-                                    data: [{ id: 1, owner_id: 3, org_name: 'Công ty Khổng-Trưng', phones: 84-121-405-0404, description: null, tax_id: '35785', address: "5 Phố Văn, Xã 08, Huyện Tào\nĐồng Tháp", is_verify: 1, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 2, owner_id: 7, org_name: 'Công ty Chung Inc', phones: +84-54-451-1569, description: null, tax_id: '10911', address: "1182, Thôn Nghiệp, Phường Sử, Huyện Bửu Cơ\nĐắk Lắk", is_verify: 0, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 3, owner_id: 5, org_name: 'Công ty Vi Inc', phones: +84-165-015-8016, description: null, tax_id: '41665', address: "5509 Phố Lộc, Xã 40, Quận 6\nBắc Kạn", is_verify: 0, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 4, owner_id: 1, org_name: 'Công ty Phan-Mạc', phones: '(073) 305 4679', description: null, tax_id: '34957', address: "593, Ấp 4, Xã 12, Huyện Dân\nTây Ninh", is_verify: 0, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 5, owner_id: 1, org_name: 'Công ty Giang and Sons', phones: '0651 272 8581', description: null, tax_id: '86296', address: "964 Phố Thảo, Xã Quách, Quận Tuyền Võ\nĐà Nẵng", is_verify: 1, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 6, owner_id: 2, org_name: 'Công ty Lại-Khu', phones: (0280)666-4449, description: null, tax_id: '93061', address: "7164 Phố Lê, Ấp Thạch Thạc, Quận Hiếu Loan\nĐà Nẵng", is_verify: 1, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 7, owner_id: 4, org_name: 'Công ty Phí Ltd', phones: (0500)428-4230, description: null, tax_id: '77995', address: "715 Phố Diệu, Thôn Chử Vĩ, Quận Lam Bảo\nThái Bình", is_verify: 0, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 8, owner_id: 9, org_name: 'Công ty Ngô PLC', phones: (84)(77)464-6086, description: null, tax_id: '43945', address: "2438 Phố Đái Nga Mẫn, Xã Hòa, Quận Mạch Mi Vượng\nBà Rịa - Vũng Tàu", is_verify: 1, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 9, owner_id: 9, org_name: 'Công ty Hà, Hàng and An', phones: +84-199-594-3427, description: null, tax_id: '80832', address: "48 Phố Triệu Đài Phương, Xã Nguyên Thủy, Huyện 87\nHồ Chí Minh", is_verify: 1, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 10, owner_id: 1, org_name: 'Công ty Đậu, Hùng and Giáp', phones: '070 838 3215', description: null, tax_id: '77824', address: "903 Phố Đàm Quế Quyên, Xã Chu, Huyện Khoa Khâu\nĐà Nẵng", is_verify: 1, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }]
-                                    first_page_url: 'http://localhost/api/v1/organization?page=1'
-                                    from: 1
-                                    last_page: 1
-                                    last_page_url: 'http://localhost/api/v1/organization?page=1'
-                                    next_page_url: null
-                                    path: 'http://localhost/api/v1/organization'
-                                    per_page: 10
-                                    prev_page_url: null
-                                    to: 10
-                                    total: 10
+                                    id: 1
+                                    owner_id: 1
+                                    org_name: 'Công ty Vi Inc'
+                                    phones: +84-165-015-8016
+                                    description: string
+                                    tax_id: '41665'
+                                    address: string
+                                    is_verify: 0
+                                    created_at: '1990-12-12 12:45:10'
+                                    updated_at: '1990-12-12 12:45:10'
                                 properties:
-                                    current_page: { type: integer, example: 1 }
-                                    data: { type: array, example: [{ id: 1, owner_id: 3, org_name: 'Công ty Khổng-Trưng', phones: 84-121-405-0404, description: null, tax_id: '35785', address: "5 Phố Văn, Xã 08, Huyện Tào\nĐồng Tháp", is_verify: 1, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 2, owner_id: 7, org_name: 'Công ty Chung Inc', phones: +84-54-451-1569, description: null, tax_id: '10911', address: "1182, Thôn Nghiệp, Phường Sử, Huyện Bửu Cơ\nĐắk Lắk", is_verify: 0, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 3, owner_id: 5, org_name: 'Công ty Vi Inc', phones: +84-165-015-8016, description: null, tax_id: '41665', address: "5509 Phố Lộc, Xã 40, Quận 6\nBắc Kạn", is_verify: 0, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 4, owner_id: 1, org_name: 'Công ty Phan-Mạc', phones: '(073) 305 4679', description: null, tax_id: '34957', address: "593, Ấp 4, Xã 12, Huyện Dân\nTây Ninh", is_verify: 0, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 5, owner_id: 1, org_name: 'Công ty Giang and Sons', phones: '0651 272 8581', description: null, tax_id: '86296', address: "964 Phố Thảo, Xã Quách, Quận Tuyền Võ\nĐà Nẵng", is_verify: 1, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 6, owner_id: 2, org_name: 'Công ty Lại-Khu', phones: (0280)666-4449, description: null, tax_id: '93061', address: "7164 Phố Lê, Ấp Thạch Thạc, Quận Hiếu Loan\nĐà Nẵng", is_verify: 1, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 7, owner_id: 4, org_name: 'Công ty Phí Ltd', phones: (0500)428-4230, description: null, tax_id: '77995', address: "715 Phố Diệu, Thôn Chử Vĩ, Quận Lam Bảo\nThái Bình", is_verify: 0, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 8, owner_id: 9, org_name: 'Công ty Ngô PLC', phones: (84)(77)464-6086, description: null, tax_id: '43945', address: "2438 Phố Đái Nga Mẫn, Xã Hòa, Quận Mạch Mi Vượng\nBà Rịa - Vũng Tàu", is_verify: 1, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 9, owner_id: 9, org_name: 'Công ty Hà, Hàng and An', phones: +84-199-594-3427, description: null, tax_id: '80832', address: "48 Phố Triệu Đài Phương, Xã Nguyên Thủy, Huyện 87\nHồ Chí Minh", is_verify: 1, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }, { id: 10, owner_id: 1, org_name: 'Công ty Đậu, Hùng and Giáp', phones: '070 838 3215', description: null, tax_id: '77824', address: "903 Phố Đàm Quế Quyên, Xã Chu, Huyện Khoa Khâu\nĐà Nẵng", is_verify: 1, created_at: '2020-12-02 12:45:10', updated_at: '2020-12-02 12:45:10' }], items: { type: object } }
-                                    first_page_url: { type: string, example: 'http://localhost/api/v1/organization?page=1' }
-                                    from: { type: integer, example: 1 }
-                                    last_page: { type: integer, example: 1 }
-                                    last_page_url: { type: string, example: 'http://localhost/api/v1/organization?page=1' }
-                                    next_page_url: { type: string, example: null }
-                                    path: { type: string, example: 'http://localhost/api/v1/organization' }
-                                    per_page: { type: integer, example: 10 }
-                                    prev_page_url: { type: string, example: null }
-                                    to: { type: integer, example: 10 }
-                                    total: { type: integer, example: 10 }
+                                    id: { type: integer, example: 1 }
+                                    owner_id: { type: integer, example: 1 }
+                                    org_name: { type: string, example: 'Công ty Vi Inc' }
+                                    phones: { type: string, example: +84-165-015-8016 }
+                                    description: { type: string, example: string }
+                                    tax_id: { type: string, example: '41665' }
+                                    address: { type: string, example: string }
+                                    is_verify: { type: integer, example: 0 }
+                                    created_at: { type: string, example: '1990-12-12 12:45:10' }
+                                    updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
                 - Organization
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: is_verify
+                                    description: ''
+                                    example: quae
+                                string:
+                                    type: address
+                                    description: ''
+                                    example: aperiam
+                            required:
+                                - string
             security: []
-    '/api/v1/organization/{id}':
+    '/api/v1/organizations/{id}':
         get:
             summary: "Find an Organization\nDisplay the specified resource."
             description: ''
@@ -123,24 +620,34 @@ paths:
                     schema:
                         type: string
             responses:
-                404:
-                    description: ''
+                200:
+                    description: '200'
                     content:
                         application/json:
                             schema:
                                 type: object
                                 example:
-                                    message: 'No query results for model [App\Organization] nihil'
-                                    exception: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
-                                    file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions\Handler.php'
-                                    line: 222
-                                    trace: [{ file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions\Handler.php', line: 198, function: prepareException, class: Illuminate\Foundation\Exceptions\Handler, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\app\Exceptions\Handler.php', line: 53, function: render, class: Illuminate\Foundation\Exceptions\Handler, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\nunomaduro\collision\src\Adapters\Laravel\ExceptionHandler.php', line: 68, function: render, class: App\Exceptions\Handler, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php', line: 51, function: render, class: NunoMaduro\Collision\Adapters\Laravel\ExceptionHandler, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 132, function: handleException, class: Illuminate\Routing\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php', line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php', line: 59, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 683, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 658, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 624, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 613, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 170, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php', line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php', line: 63, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\fideloper\proxy\src\TrustProxies.php', line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 145, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 324, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 118, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 36, function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Container\Util.php', line: 37, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Container\Container.php', line: 590, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 134, function: call, class: Illuminate\Container\Container, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\symfony\console\Command\Command.php', line: 255, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\symfony\console\Application.php', line: 1009, function: run, class: Illuminate\Console\Command, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\symfony\console\Application.php', line: 273, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\symfony\console\Application.php', line: 149, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Console\Application.php', line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php', line: 131, function: run, class: Illuminate\Console\Application, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\artisan', line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }]
+                                    id: 1
+                                    owner_id: 1
+                                    org_name: 'Công ty Vi Inc'
+                                    phones: +84-165-015-8016
+                                    description: string
+                                    tax_id: '41665'
+                                    address: string
+                                    is_verify: 0
+                                    created_at: '1990-12-12 12:45:10'
+                                    updated_at: '1990-12-12 12:45:10'
                                 properties:
-                                    message: { type: string, example: 'No query results for model [App\Organization] nihil' }
-                                    exception: { type: string, example: Symfony\Component\HttpKernel\Exception\NotFoundHttpException }
-                                    file: { type: string, example: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions\Handler.php' }
-                                    line: { type: integer, example: 222 }
-                                    trace: { type: array, example: [{ file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions\Handler.php', line: 198, function: prepareException, class: Illuminate\Foundation\Exceptions\Handler, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\app\Exceptions\Handler.php', line: 53, function: render, class: Illuminate\Foundation\Exceptions\Handler, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\nunomaduro\collision\src\Adapters\Laravel\ExceptionHandler.php', line: 68, function: render, class: App\Exceptions\Handler, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php', line: 51, function: render, class: NunoMaduro\Collision\Adapters\Laravel\ExceptionHandler, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 132, function: handleException, class: Illuminate\Routing\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php', line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php', line: 59, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 683, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 658, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 624, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 613, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 170, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php', line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php', line: 63, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\fideloper\proxy\src\TrustProxies.php', line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 145, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 324, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 118, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 36, function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Container\Util.php', line: 37, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Container\Container.php', line: 590, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 134, function: call, class: Illuminate\Container\Container, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\symfony\console\Command\Command.php', line: 255, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\symfony\console\Application.php', line: 1009, function: run, class: Illuminate\Console\Command, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\symfony\console\Application.php', line: 273, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\symfony\console\Application.php', line: 149, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Console\Application.php', line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php', line: 131, function: run, class: Illuminate\Console\Application, type: '->' }, { file: 'H:\My Drive\VKU_2020-2021\SEMETER_1\Major_Project\code\api\VNJobs\artisan', line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }], items: { type: object } }
+                                    id: { type: integer, example: 1 }
+                                    owner_id: { type: integer, example: 1 }
+                                    org_name: { type: string, example: 'Công ty Vi Inc' }
+                                    phones: { type: string, example: +84-165-015-8016 }
+                                    description: { type: string, example: string }
+                                    tax_id: { type: string, example: '41665' }
+                                    address: { type: string, example: string }
+                                    is_verify: { type: integer, example: 0 }
+                                    created_at: { type: string, example: '1990-12-12 12:45:10' }
+                                    updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
                 - Organization
             requestBody:
@@ -153,7 +660,137 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: voluptatibus
+                                    example: perspiciatis
+                            required:
+                                - int
+            security: []
+        put:
+            summary: "Update an Organization\nUpdate the specified resource in Database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    id: 1
+                                    owner_id: 1
+                                    org_name: 'Công ty Vi Inc'
+                                    phones: +84-165-015-8016
+                                    description: string
+                                    tax_id: '41665'
+                                    address: string
+                                    is_verify: 0
+                                    created_at: '1990-12-12 12:45:10'
+                                    updated_at: '1990-12-12 12:45:10'
+                                properties:
+                                    id: { type: integer, example: 1 }
+                                    owner_id: { type: integer, example: 1 }
+                                    org_name: { type: string, example: 'Công ty Vi Inc' }
+                                    phones: { type: string, example: +84-165-015-8016 }
+                                    description: { type: string, example: string }
+                                    tax_id: { type: string, example: '41665' }
+                                    address: { type: string, example: string }
+                                    is_verify: { type: integer, example: 0 }
+                                    created_at: { type: string, example: '1990-12-12 12:45:10' }
+                                    updated_at: { type: string, example: '1990-12-12 12:45:10' }
+            tags:
+                - Organization
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: is_verify
+                                    description: ''
+                                    example: minima
+                                string:
+                                    type: address
+                                    description: ''
+                                    example: et
+                            required:
+                                - string
+            security: []
+        delete:
+            summary: "Remove an Organization\nRemove the Organization from Database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    id: 1
+                                    owner_id: 1
+                                    org_name: 'Công ty Vi Inc'
+                                    phones: +84-165-015-8016
+                                    description: string
+                                    tax_id: '41665'
+                                    address: string
+                                    is_verify: 0
+                                    created_at: '1990-12-12 12:45:10'
+                                    updated_at: '1990-12-12 12:45:10'
+                                properties:
+                                    id: { type: integer, example: 1 }
+                                    owner_id: { type: integer, example: 1 }
+                                    org_name: { type: string, example: 'Công ty Vi Inc' }
+                                    phones: { type: string, example: +84-165-015-8016 }
+                                    description: { type: string, example: string }
+                                    tax_id: { type: string, example: '41665' }
+                                    address: { type: string, example: string }
+                                    is_verify: { type: integer, example: 0 }
+                                    created_at: { type: string, example: '1990-12-12 12:45:10' }
+                                    updated_at: { type: string, example: '1990-12-12 12:45:10' }
+            tags:
+                - Organization
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: voluptatem
                             required:
                                 - int
             security: []
@@ -162,7 +799,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: nihil
+                example: voluptas
                 required: true
                 schema:
                     type: string
