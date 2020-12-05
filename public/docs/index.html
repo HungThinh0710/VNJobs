@@ -124,7 +124,7 @@ fetch(url, {
 <br>
 </p>
 
-</form><h1>JobSeeker</h1>
+</form><h1>JobSeeker endpoints</h1>
 <h2>List JobSeeker</h2>
 <p>Display a listing of the job-seeker.</p>
 <blockquote>
@@ -207,13 +207,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/job-seekers/qui" \
+    -G "http://localhost/api/v1/job-seekers/eum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"est"}'
+    -d '{"int":"aliquam"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/job-seekers/qui"
+    "http://localhost/api/v1/job-seekers/eum"
 );
 
 let headers = {
@@ -222,7 +222,7 @@ let headers = {
 };
 
 let body = {
-    "int": "est"
+    "int": "aliquam"
 }
 
 fetch(url, {
@@ -285,7 +285,7 @@ fetch(url, {
     "http://localhost/api/v1/job-seekers" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"impedit","string":"distinctio"}'
+    -d '{"int":"nesciunt","string":"totam"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/job-seekers"
@@ -297,8 +297,8 @@ let headers = {
 };
 
 let body = {
-    "int": "impedit",
-    "string": "distinctio"
+    "int": "nesciunt",
+    "string": "totam"
 }
 
 fetch(url, {
@@ -357,13 +357,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost/api/v1/job-seekers/possimus" \
+    "http://localhost/api/v1/job-seekers/minus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"perspiciatis","string":"autem"}'
+    -d '{"int":"ipsa","string":"exercitationem"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/job-seekers/possimus"
+    "http://localhost/api/v1/job-seekers/minus"
 );
 
 let headers = {
@@ -372,8 +372,8 @@ let headers = {
 };
 
 let body = {
-    "int": "perspiciatis",
-    "string": "autem"
+    "int": "ipsa",
+    "string": "exercitationem"
 }
 
 fetch(url, {
@@ -438,13 +438,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/v1/job-seekers/et" \
+    "http://localhost/api/v1/job-seekers/qui" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"asperiores"}'
+    -d '{"int":"eos"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/job-seekers/et"
+    "http://localhost/api/v1/job-seekers/qui"
 );
 
 let headers = {
@@ -453,7 +453,7 @@ let headers = {
 };
 
 let body = {
-    "int": "asperiores"
+    "int": "eos"
 }
 
 fetch(url, {
@@ -493,7 +493,7 @@ fetch(url, {
 <br>
 </p>
 
-</form><h1>Major</h1>
+</form><h1>Major endpoints</h1>
 <h2>List Major</h2>
 <p>Display a listing of the resource.</p>
 <blockquote>
@@ -573,13 +573,13 @@ data: [{
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/majors/ut" \
+    -G "http://localhost/api/v1/majors/eum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"et"}'
+    -d '{"int":"nesciunt"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/majors/ut"
+    "http://localhost/api/v1/majors/eum"
 );
 
 let headers = {
@@ -588,7 +588,7 @@ let headers = {
 };
 
 let body = {
-    "int": "et"
+    "int": "nesciunt"
 }
 
 fetch(url, {
@@ -647,7 +647,7 @@ fetch(url, {
     "http://localhost/api/v1/majors" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"string":"dolorem"}'
+    -d '{"string":"quod"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/majors"
@@ -659,7 +659,7 @@ let headers = {
 };
 
 let body = {
-    "string": "dolorem"
+    "string": "quod"
 }
 
 fetch(url, {
@@ -703,19 +703,19 @@ fetch(url, {
 </p>
 
 </form>
-<h2>Update  a Major</h2>
+<h2>Update Major&#039;s Information</h2>
 <p>Update the specified major in database.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost/api/v1/majors/numquam" \
+    "http://localhost/api/v1/majors/molestias" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"string":"corporis","int":"veritatis"}'
+    -d '{"string":"eos","int":"quasi"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/majors/numquam"
+    "http://localhost/api/v1/majors/molestias"
 );
 
 let headers = {
@@ -724,8 +724,8 @@ let headers = {
 };
 
 let body = {
-    "string": "corporis",
-    "int": "veritatis"
+    "string": "eos",
+    "int": "quasi"
 }
 
 fetch(url, {
@@ -786,13 +786,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/v1/majors/qui" \
+    "http://localhost/api/v1/majors/expedita" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"nostrum"}'
+    -d '{"int":"ut"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/majors/qui"
+    "http://localhost/api/v1/majors/expedita"
 );
 
 let headers = {
@@ -801,7 +801,7 @@ let headers = {
 };
 
 let body = {
-    "int": "nostrum"
+    "int": "ut"
 }
 
 fetch(url, {
@@ -850,7 +850,7 @@ fetch(url, {
 <br>
 </p>
 
-</form><h1>Organization</h1>
+</form><h1>Organization endpoints</h1>
 <h2>List Organization</h2>
 <p>Display a listing of the Organization.</p>
 <blockquote>
@@ -942,13 +942,13 @@ data: [{
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/organizations/voluptas" \
+    -G "http://localhost/api/v1/organizations/rem" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"perspiciatis"}'
+    -d '{"int":"omnis"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/organizations/voluptas"
+    "http://localhost/api/v1/organizations/rem"
 );
 
 let headers = {
@@ -957,7 +957,7 @@ let headers = {
 };
 
 let body = {
-    "int": "perspiciatis"
+    "int": "omnis"
 }
 
 fetch(url, {
@@ -1022,7 +1022,7 @@ fetch(url, {
     "http://localhost/api/v1/organizations" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"quae","string":"aperiam"}'
+    -d '{"int":"autem","string":"ipsam"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost/api/v1/organizations"
@@ -1034,8 +1034,8 @@ let headers = {
 };
 
 let body = {
-    "int": "quae",
-    "string": "aperiam"
+    "int": "autem",
+    "string": "ipsam"
 }
 
 fetch(url, {
@@ -1096,13 +1096,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost/api/v1/organizations/quia" \
+    "http://localhost/api/v1/organizations/harum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"minima","string":"et"}'
+    -d '{"int":"corporis","string":"est"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/organizations/quia"
+    "http://localhost/api/v1/organizations/harum"
 );
 
 let headers = {
@@ -1111,8 +1111,8 @@ let headers = {
 };
 
 let body = {
-    "int": "minima",
-    "string": "et"
+    "int": "corporis",
+    "string": "est"
 }
 
 fetch(url, {
@@ -1179,13 +1179,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/v1/organizations/ipsa" \
+    "http://localhost/api/v1/organizations/minus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"voluptatem"}'
+    -d '{"int":"veritatis"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/organizations/ipsa"
+    "http://localhost/api/v1/organizations/minus"
 );
 
 let headers = {
@@ -1194,7 +1194,7 @@ let headers = {
 };
 
 let body = {
-    "int": "voluptatem"
+    "int": "veritatis"
 }
 
 fetch(url, {
@@ -1246,6 +1246,1259 @@ fetch(url, {
 <p>
 <b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
 <input type="text" name="int" data-endpoint="DELETEapi-v1-organizations--id-" data-component="body" required  hidden>
+<br>
+</p>
+
+</form><h1>Recruitment News endpoints</h1>
+<h2>List Recruitment News</h2>
+<p>Display a listing of the recruitment news.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/v1/recruitment-news" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/recruitment-news"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+"current_page": 1,
+data: [{
+  'id': 1,
+  'org_id': 1,
+  'author_id': 1,
+  'major_id': 1,
+  'title': 'string',
+  'content': 'string',
+  'address': 'string',
+  'city': 'string',
+  'start_time': '1990-12-12 12:45:10',
+  'end_time': '1990-12-12 12:45:10',
+  'interview_start_time': '1990-12-12 12:45:10',
+  'interview_end_time': '1990-12-12 12:45:10',
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+  },
+ {
+  "id": 2,
+  'org_id': 1,
+  'author_id': 1,
+  'major_id': 1,
+  'title': 'string',
+  'content': 'string',
+  'address': 'string',
+  'city': 'string',
+  'start_time': '1990-12-12 12:45:10',
+  'address': '1990-12-12 12:45:10',
+  'interview_start_time': '1990-12-12 12:45:10',
+  'interview_end_time': '1990-12-12 12:45:10',
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+  }
+],
+,
+  "first_page_url": "http://127.0.0.1:8000/api/v1/recruitment-news?page=1",
+  "from": 1,
+  "last_page": 1,
+  "last_page_url": "http://127.0.0.1:8000/api/v1/recruitment-news?page=1",
+  "next_page_url": null,
+  "path": "http://127.0.0.1:8000/api/v1/recruitment-news",
+  "per_page": 10,
+  "prev_page_url": null,
+  "to": 2,
+  "total": 2
+}</code></pre>
+<div id="execution-results-GETapi-v1-recruitment-news" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v1-recruitment-news"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-recruitment-news"></code></pre>
+</div>
+<div id="execution-error-GETapi-v1-recruitment-news" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-recruitment-news"></code></pre>
+</div>
+<form id="form-GETapi-v1-recruitment-news" data-method="GET" data-path="api/v1/recruitment-news" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-recruitment-news', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-recruitment-news" onclick="tryItOut('GETapi-v1-recruitment-news');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-recruitment-news" onclick="cancelTryOut('GETapi-v1-recruitment-news');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-recruitment-news" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/v1/recruitment-news</code></b>
+</p>
+</form>
+<h2>Find a Recruitment News</h2>
+<p>Display the specified recruitment news.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/v1/recruitment-news/odio" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"int":"occaecati"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/recruitment-news/odio"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "int": "occaecati"
+}
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+  'id': 1,
+  'org_id': 1,
+  'author_id': 1,
+  'major_id': 1,
+  'title': 'string',
+  'content': 'string',
+  'address': 'string',
+  'city': 'string',
+  'start_time': '1990-12-12 12:45:10',
+  'end_time': '1990-12-12 12:45:10',
+  'interview_start_time': '1990-12-12 12:45:10',
+  'interview_end_time': '1990-12-12 12:45:10',
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+}</code></pre>
+<div id="execution-results-GETapi-v1-recruitment-news--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v1-recruitment-news--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-recruitment-news--id-"></code></pre>
+</div>
+<div id="execution-error-GETapi-v1-recruitment-news--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-recruitment-news--id-"></code></pre>
+</div>
+<form id="form-GETapi-v1-recruitment-news--id-" data-method="GET" data-path="api/v1/recruitment-news/{id}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-recruitment-news--id-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-recruitment-news--id-" onclick="tryItOut('GETapi-v1-recruitment-news--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-recruitment-news--id-" onclick="cancelTryOut('GETapi-v1-recruitment-news--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-recruitment-news--id-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/v1/recruitment-news/{id}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="id" data-endpoint="GETapi-v1-recruitment-news--id-" data-component="url" required  hidden>
+<br>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<input type="text" name="int" data-endpoint="GETapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<br>
+</p>
+
+</form>
+<h2>Create a Recruitment News</h2>
+<p>Store a newly created recruitment news in database.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/v1/recruitment-news" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"int":"voluptates","string":"possimus","timestamp":"eaque"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/recruitment-news"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "int": "voluptates",
+    "string": "possimus",
+    "timestamp": "eaque"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+  'id': 1,
+  'org_id': 1,
+  'author_id': 1,
+  'major_id': 1,
+  'title': 'string',
+  'content': 'string',
+  'address': 'string',
+  'city': 'string',
+  'start_time': '1990-12-12 12:45:10',
+  'end_time': '1990-12-12 12:45:10',
+  'interview_start_time': '1990-12-12 12:45:10',
+  'interview_end_time': '1990-12-12 12:45:10',
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+}</code></pre>
+<div id="execution-results-POSTapi-v1-recruitment-news" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-v1-recruitment-news"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-recruitment-news"></code></pre>
+</div>
+<div id="execution-error-POSTapi-v1-recruitment-news" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-recruitment-news"></code></pre>
+</div>
+<form id="form-POSTapi-v1-recruitment-news" data-method="POST" data-path="api/v1/recruitment-news" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-recruitment-news', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v1-recruitment-news" onclick="tryItOut('POSTapi-v1-recruitment-news');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v1-recruitment-news" onclick="cancelTryOut('POSTapi-v1-recruitment-news');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v1-recruitment-news" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/v1/recruitment-news</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>int</code></b>&nbsp;&nbsp;<small>$major_id</small>  &nbsp;
+<input type="text" name="int" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>string</code></b>&nbsp;&nbsp;<small>city</small>  &nbsp;
+<input type="text" name="string" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>timestamp</code></b>&nbsp;&nbsp;<small>interview_end_time</small>  &nbsp;
+<input type="text" name="timestamp" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<br>
+</p>
+
+</form>
+<h2>Update Recruitment News&#039;s Information</h2>
+<p>Update the specified recruitment news in database.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://localhost/api/v1/recruitment-news/voluptatem" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"int":"dolor","string":"perferendis","timestamp":"et"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/recruitment-news/voluptatem"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "int": "dolor",
+    "string": "perferendis",
+    "timestamp": "et"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+  'id': 1,
+  'org_id': 1,
+  'author_id': 1,
+  'major_id': 1,
+  'title': 'string',
+  'content': 'string',
+  'address': 'string',
+  'city': 'string',
+  'start_time': '1990-12-12 12:45:10',
+  'end_time': '1990-12-12 12:45:10',
+  'interview_start_time': '1990-12-12 12:45:10',
+  'interview_end_time': '1990-12-12 12:45:10',
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+}</code></pre>
+<div id="execution-results-PUTapi-v1-recruitment-news--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-PUTapi-v1-recruitment-news--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-recruitment-news--id-"></code></pre>
+</div>
+<div id="execution-error-PUTapi-v1-recruitment-news--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-recruitment-news--id-"></code></pre>
+</div>
+<form id="form-PUTapi-v1-recruitment-news--id-" data-method="PUT" data-path="api/v1/recruitment-news/{id}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-recruitment-news--id-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-v1-recruitment-news--id-" onclick="tryItOut('PUTapi-v1-recruitment-news--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-v1-recruitment-news--id-" onclick="cancelTryOut('PUTapi-v1-recruitment-news--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-v1-recruitment-news--id-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-darkblue">PUT</small>
+ <b><code>api/v1/recruitment-news/{id}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="id" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="url" required  hidden>
+<br>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<input type="text" name="int" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>string</code></b>&nbsp;&nbsp;<small>city</small>  &nbsp;
+<input type="text" name="string" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>timestamp</code></b>&nbsp;&nbsp;<small>interview_end_time</small>  &nbsp;
+<input type="text" name="timestamp" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<br>
+</p>
+
+</form>
+<h2>Remove a Recruitment News</h2>
+<p>Remove the specified recruitment news from database.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://localhost/api/v1/recruitment-news/numquam" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"int":"voluptas"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/recruitment-news/numquam"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "int": "voluptas"
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+  'id': 1,
+  'org_id': 1,
+  'author_id': 1,
+  'major_id': 1,
+  'title': 'string',
+  'content': 'string',
+  'address': 'string',
+  'city': 'string',
+  'start_time': '1990-12-12 12:45:10',
+  'end_time': '1990-12-12 12:45:10',
+  'interview_start_time': '1990-12-12 12:45:10',
+  'interview_end_time': '1990-12-12 12:45:10',
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+}</code></pre>
+<div id="execution-results-DELETEapi-v1-recruitment-news--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-DELETEapi-v1-recruitment-news--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-recruitment-news--id-"></code></pre>
+</div>
+<div id="execution-error-DELETEapi-v1-recruitment-news--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-recruitment-news--id-"></code></pre>
+</div>
+<form id="form-DELETEapi-v1-recruitment-news--id-" data-method="DELETE" data-path="api/v1/recruitment-news/{id}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-recruitment-news--id-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-v1-recruitment-news--id-" onclick="tryItOut('DELETEapi-v1-recruitment-news--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEapi-v1-recruitment-news--id-" onclick="cancelTryOut('DELETEapi-v1-recruitment-news--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEapi-v1-recruitment-news--id-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-red">DELETE</small>
+ <b><code>api/v1/recruitment-news/{id}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="id" data-endpoint="DELETEapi-v1-recruitment-news--id-" data-component="url" required  hidden>
+<br>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<input type="text" name="int" data-endpoint="DELETEapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<br>
+</p>
+
+</form><h1>Role endpoints</h1>
+<h2>List Role</h2>
+<p>Display a listing of the role.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/v1/roles" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/roles"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+"current_page": 1,
+data: [{
+  "id": 1,
+  "role_name": "string",
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+  },
+ {
+  "id": 2,
+  "role_name": "string",
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+  }
+],
+,
+  "first_page_url": "http://127.0.0.1:8000/api/v1/roles?page=1",
+  "from": 1,
+  "last_page": 1,
+  "last_page_url": "http://127.0.0.1:8000/api/v1/roles?page=1",
+  "next_page_url": null,
+  "path": "http://127.0.0.1:8000/api/v1/roles",
+  "per_page": 10,
+  "prev_page_url": null,
+  "to": 2,
+  "total": 2
+}</code></pre>
+<div id="execution-results-GETapi-v1-roles" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v1-roles"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-roles"></code></pre>
+</div>
+<div id="execution-error-GETapi-v1-roles" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-roles"></code></pre>
+</div>
+<form id="form-GETapi-v1-roles" data-method="GET" data-path="api/v1/roles" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-roles', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-roles" onclick="tryItOut('GETapi-v1-roles');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-roles" onclick="cancelTryOut('GETapi-v1-roles');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-roles" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/v1/roles</code></b>
+</p>
+</form>
+<h2>Find a Role</h2>
+<p>Display the specified role.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/v1/roles/reiciendis" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"int":"accusantium"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/roles/reiciendis"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "int": "accusantium"
+}
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 2,
+    "role_name": "string",
+    "created_at": "1990-12-12 12:45:10",
+    "updated_at": "1990-12-12 12:45:10"
+}</code></pre>
+<div id="execution-results-GETapi-v1-roles--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v1-roles--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-roles--id-"></code></pre>
+</div>
+<div id="execution-error-GETapi-v1-roles--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-roles--id-"></code></pre>
+</div>
+<form id="form-GETapi-v1-roles--id-" data-method="GET" data-path="api/v1/roles/{id}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-roles--id-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-roles--id-" onclick="tryItOut('GETapi-v1-roles--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-roles--id-" onclick="cancelTryOut('GETapi-v1-roles--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-roles--id-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/v1/roles/{id}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="id" data-endpoint="GETapi-v1-roles--id-" data-component="url" required  hidden>
+<br>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<input type="text" name="int" data-endpoint="GETapi-v1-roles--id-" data-component="body" required  hidden>
+<br>
+</p>
+
+</form>
+<h2>Create a Role</h2>
+<p>Store a newly created role in database.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/v1/roles" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"string":"deserunt"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/roles"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "string": "deserunt"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 2,
+    "role_name": "string",
+    "created_at": "1990-12-12 12:45:10",
+    "updated_at": "1990-12-12 12:45:10"
+}</code></pre>
+<div id="execution-results-POSTapi-v1-roles" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-v1-roles"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-roles"></code></pre>
+</div>
+<div id="execution-error-POSTapi-v1-roles" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-roles"></code></pre>
+</div>
+<form id="form-POSTapi-v1-roles" data-method="POST" data-path="api/v1/roles" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-roles', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v1-roles" onclick="tryItOut('POSTapi-v1-roles');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v1-roles" onclick="cancelTryOut('POSTapi-v1-roles');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v1-roles" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/v1/roles</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>string</code></b>&nbsp;&nbsp;<small>role_name</small>  &nbsp;
+<input type="text" name="string" data-endpoint="POSTapi-v1-roles" data-component="body" required  hidden>
+<br>
+</p>
+
+</form>
+<h2>Update Role&#039;s Information</h2>
+<p>Update the specified role in database.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://localhost/api/v1/roles/blanditiis" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"string":"corrupti","int":"aut"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/roles/blanditiis"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "string": "corrupti",
+    "int": "aut"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 2,
+    "role_name": "string",
+    "created_at": "1990-12-12 12:45:10",
+    "updated_at": "1990-12-12 12:45:10"
+}</code></pre>
+<div id="execution-results-PUTapi-v1-roles--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-PUTapi-v1-roles--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-roles--id-"></code></pre>
+</div>
+<div id="execution-error-PUTapi-v1-roles--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-roles--id-"></code></pre>
+</div>
+<form id="form-PUTapi-v1-roles--id-" data-method="PUT" data-path="api/v1/roles/{id}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-roles--id-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-v1-roles--id-" onclick="tryItOut('PUTapi-v1-roles--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-v1-roles--id-" onclick="cancelTryOut('PUTapi-v1-roles--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-v1-roles--id-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-darkblue">PUT</small>
+ <b><code>api/v1/roles/{id}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="id" data-endpoint="PUTapi-v1-roles--id-" data-component="url" required  hidden>
+<br>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>string</code></b>&nbsp;&nbsp;<small>role_name</small>  &nbsp;
+<input type="text" name="string" data-endpoint="PUTapi-v1-roles--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<input type="text" name="int" data-endpoint="PUTapi-v1-roles--id-" data-component="body" required  hidden>
+<br>
+</p>
+
+</form>
+<h2>Remove a Role</h2>
+<p>Remove the specified role from database.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://localhost/api/v1/roles/deserunt" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"int":"corporis"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/roles/deserunt"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "int": "corporis"
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 2,
+    "role_name": "string",
+    "created_at": "1990-12-12 12:45:10",
+    "updated_at": "1990-12-12 12:45:10"
+}</code></pre>
+<div id="execution-results-DELETEapi-v1-roles--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-DELETEapi-v1-roles--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-roles--id-"></code></pre>
+</div>
+<div id="execution-error-DELETEapi-v1-roles--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-roles--id-"></code></pre>
+</div>
+<form id="form-DELETEapi-v1-roles--id-" data-method="DELETE" data-path="api/v1/roles/{id}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-roles--id-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-v1-roles--id-" onclick="tryItOut('DELETEapi-v1-roles--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEapi-v1-roles--id-" onclick="cancelTryOut('DELETEapi-v1-roles--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEapi-v1-roles--id-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-red">DELETE</small>
+ <b><code>api/v1/roles/{id}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="id" data-endpoint="DELETEapi-v1-roles--id-" data-component="url" required  hidden>
+<br>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<input type="text" name="int" data-endpoint="DELETEapi-v1-roles--id-" data-component="body" required  hidden>
+<br>
+</p>
+
+</form><h1>User endpoints</h1>
+<h2>List User</h2>
+<p>Display a listing of the user.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/v1/users" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/users"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+"current_page": 1,
+data: [{
+  'id': 1,
+  'role_id': 1,
+  'first_name': 'string',
+  'last_name': 'string',
+  'dob': '1990-12-12',
+  'phone': '098 0983 092',
+  'email': 'string',
+  'email_verified_at': '1990-12-12 12:45:10',
+  'password': 'string',
+  'address': 'string',
+  'bio': 'string',
+  'social_linkedin': 'string',
+  'social_facebook': 'string',
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+  },
+ {
+  "id": 2,
+  'role_id': 1,
+  'first_name': 'string',
+  'last_name': 'string',
+  'dob': '1990-12-12',
+  'phone': '098 0983 092',
+  'email': 'string',
+  'email_verified_at': '1990-12-12 12:45:10',
+  'password': 'string',
+  'address': 'string',
+  'bio': 'string',
+  'social_linkedin': 'string',
+  'social_facebook': 'string',
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+  }
+],
+,
+  "first_page_url": "http://127.0.0.1:8000/api/v1/users?page=1",
+  "from": 1,
+  "last_page": 1,
+  "last_page_url": "http://127.0.0.1:8000/api/v1/users?page=1",
+  "next_page_url": null,
+  "path": "http://127.0.0.1:8000/api/v1/users",
+  "per_page": 10,
+  "prev_page_url": null,
+  "to": 2,
+  "total": 2
+}</code></pre>
+<div id="execution-results-GETapi-v1-users" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v1-users"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-users"></code></pre>
+</div>
+<div id="execution-error-GETapi-v1-users" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-users"></code></pre>
+</div>
+<form id="form-GETapi-v1-users" data-method="GET" data-path="api/v1/users" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-users', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-users" onclick="tryItOut('GETapi-v1-users');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-users" onclick="cancelTryOut('GETapi-v1-users');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-users" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/v1/users</code></b>
+</p>
+</form>
+<h2>Find a User</h2>
+<p>Display the specified user.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api/v1/users/dicta" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"int":"maiores"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/users/dicta"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "int": "maiores"
+}
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+  'id': 1,
+  'role_id': 1,
+  'first_name': 'string',
+  'last_name': 'string',
+  'dob': '1990-12-12',
+  'phone': '098 0983 092',
+  'email': 'string',
+  'email_verified_at': '1990-12-12 12:45:10',
+  'password': 'string',
+  'address': 'string',
+  'bio': 'string',
+  'social_linkedin': 'string',
+  'social_facebook': 'string',
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+}</code></pre>
+<div id="execution-results-GETapi-v1-users--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v1-users--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-users--id-"></code></pre>
+</div>
+<div id="execution-error-GETapi-v1-users--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-users--id-"></code></pre>
+</div>
+<form id="form-GETapi-v1-users--id-" data-method="GET" data-path="api/v1/users/{id}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-users--id-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-users--id-" onclick="tryItOut('GETapi-v1-users--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-users--id-" onclick="cancelTryOut('GETapi-v1-users--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-users--id-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/v1/users/{id}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="id" data-endpoint="GETapi-v1-users--id-" data-component="url" required  hidden>
+<br>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<input type="text" name="int" data-endpoint="GETapi-v1-users--id-" data-component="body" required  hidden>
+<br>
+</p>
+
+</form>
+<h2>Create a User</h2>
+<p>Store a newly created user in database.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/api/v1/users" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"int":"molestiae","string":"ad","date":"vel","timestamp":"quisquam"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/users"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "int": "molestiae",
+    "string": "ad",
+    "date": "vel",
+    "timestamp": "quisquam"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+  'id': 1,
+  'role_id': 1,
+  'first_name': 'string',
+  'last_name': 'string',
+  'dob': '1990-12-12',
+  'phone': '098 0983 092',
+  'email': 'string',
+  'email_verified_at': '1990-12-12 12:45:10',
+  'password': 'string',
+  'address': 'string',
+  'bio': 'string',
+  'social_linkedin': 'string',
+  'social_facebook': 'string',
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+}</code></pre>
+<div id="execution-results-POSTapi-v1-users" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-v1-users"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-users"></code></pre>
+</div>
+<div id="execution-error-POSTapi-v1-users" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-users"></code></pre>
+</div>
+<form id="form-POSTapi-v1-users" data-method="POST" data-path="api/v1/users" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-users', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v1-users" onclick="tryItOut('POSTapi-v1-users');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v1-users" onclick="cancelTryOut('POSTapi-v1-users');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v1-users" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/v1/users</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<input type="text" name="int" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>string</code></b>&nbsp;&nbsp;<small>social_facebook</small>     <i>optional</i> &nbsp;
+<input type="text" name="string" data-endpoint="POSTapi-v1-users" data-component="body"  hidden>
+<br>
+</p>
+<p>
+<b><code>date</code></b>&nbsp;&nbsp;<small>dob</small>  &nbsp;
+<input type="text" name="date" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>timestamp</code></b>&nbsp;&nbsp;<small>email_verified_at</small>  &nbsp;
+<input type="text" name="timestamp" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
+<br>
+</p>
+
+</form>
+<h2>Update User&#039;s Information</h2>
+<p>Update the specified user in database.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://localhost/api/v1/users/sit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"int":"temporibus","string":"laudantium","date":"omnis","timestamp":"esse"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/users/sit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "int": "temporibus",
+    "string": "laudantium",
+    "date": "omnis",
+    "timestamp": "esse"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+  'id': 1,
+  'role_id': 1,
+  'first_name': 'string',
+  'last_name': 'string',
+  'dob': '1990-12-12',
+  'phone': '098 0983 092',
+  'email': 'string',
+  'email_verified_at': '1990-12-12 12:45:10',
+  'password': 'string',
+  'address': 'string',
+  'bio': 'string',
+  'social_linkedin': 'string',
+  'social_facebook': 'string',
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+}</code></pre>
+<div id="execution-results-PUTapi-v1-users--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-PUTapi-v1-users--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-users--id-"></code></pre>
+</div>
+<div id="execution-error-PUTapi-v1-users--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-users--id-"></code></pre>
+</div>
+<form id="form-PUTapi-v1-users--id-" data-method="PUT" data-path="api/v1/users/{id}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-users--id-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-v1-users--id-" onclick="tryItOut('PUTapi-v1-users--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-v1-users--id-" onclick="cancelTryOut('PUTapi-v1-users--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-v1-users--id-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-darkblue">PUT</small>
+ <b><code>api/v1/users/{id}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="id" data-endpoint="PUTapi-v1-users--id-" data-component="url" required  hidden>
+<br>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<input type="text" name="int" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>string</code></b>&nbsp;&nbsp;<small>social_facebook</small>     <i>optional</i> &nbsp;
+<input type="text" name="string" data-endpoint="PUTapi-v1-users--id-" data-component="body"  hidden>
+<br>
+</p>
+<p>
+<b><code>date</code></b>&nbsp;&nbsp;<small>dob</small>  &nbsp;
+<input type="text" name="date" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>timestamp</code></b>&nbsp;&nbsp;<small>email_verified_at</small>  &nbsp;
+<input type="text" name="timestamp" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
+<br>
+</p>
+
+</form>
+<h2>Remove a User</h2>
+<p>Remove the specified user from database.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://localhost/api/v1/users/ut" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"int":"quasi"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/users/ut"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "int": "quasi"
+}
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+  'id': 1,
+  'role_id': 1,
+  'first_name': 'string',
+  'last_name': 'string',
+  'dob': '1990-12-12',
+  'phone': '098 0983 092',
+  'email': 'string',
+  'email_verified_at': '1990-12-12 12:45:10',
+  'password': 'string',
+  'address': 'string',
+  'bio': 'string',
+  'social_linkedin': 'string',
+  'social_facebook': 'string',
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+}</code></pre>
+<div id="execution-results-DELETEapi-v1-users--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-DELETEapi-v1-users--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-users--id-"></code></pre>
+</div>
+<div id="execution-error-DELETEapi-v1-users--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-users--id-"></code></pre>
+</div>
+<form id="form-DELETEapi-v1-users--id-" data-method="DELETE" data-path="api/v1/users/{id}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-users--id-', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-v1-users--id-" onclick="tryItOut('DELETEapi-v1-users--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEapi-v1-users--id-" onclick="cancelTryOut('DELETEapi-v1-users--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEapi-v1-users--id-" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-red">DELETE</small>
+ <b><code>api/v1/users/{id}</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="id" data-endpoint="DELETEapi-v1-users--id-" data-component="url" required  hidden>
+<br>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<input type="text" name="int" data-endpoint="DELETEapi-v1-users--id-" data-component="body" required  hidden>
 <br>
 </p>
 

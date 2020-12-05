@@ -20,10 +20,8 @@ trait Filterable {
                     $q = $field;
                     if (!empty($this->filterable) && is_array($this->filterable)) {
                         if (in_array($field, $this->filterable)) {
-                            $q = "m";
                             $query->where($this->table . '.' . $field, 'LIKE', '%' .$value. '%');
                         } elseif (key_exists($field, $this->filterable)) {
-                            $q = "e";
                             $query->where($this->table . '.' 
                                 . $this->filterable[$field], 'LIKE', '%' .$value. '%');
                         }

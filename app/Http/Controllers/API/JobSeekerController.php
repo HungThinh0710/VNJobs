@@ -11,7 +11,7 @@ class JobSeekerController extends Controller
     /**
      * List JobSeeker
      * Display a listing of the job-seeker.
-     * @group JobSeeker
+     * @group JobSeeker endpoints
      *
      * @response {
      *   "current_page": 1,
@@ -53,7 +53,7 @@ class JobSeekerController extends Controller
     /**
      * Create a JobSeeker
      * Store a newly created job-seeker in database.
-     * @group JobSeeker
+     * @group JobSeeker endpoints
      *
      * @bodyParam  int  $rn_id
      * @bodyParam  int  $user_id
@@ -87,7 +87,7 @@ class JobSeekerController extends Controller
     /**
      * Find a JobSeeker
      * Display the specified job-seeker.
-     * @group JobSeeker
+     * @group JobSeeker endpoints
      *
      * @bodyParam  int  $id required
      * @response {
@@ -108,7 +108,7 @@ class JobSeekerController extends Controller
     /**
      * Update a JobSeeker
      * Update the specified job-seeker in database.
-     * @group JobSeeker
+     * @group JobSeeker endpoints
      *
      * @bodyParam  int  $rn_id
      * @bodyParam  int  $user_id
@@ -146,7 +146,7 @@ class JobSeekerController extends Controller
     /**
      * Remove a JobSeeker
      * Remove the specified job-seeker from database.
-     * @group JobSeeker
+     * @group JobSeeker endpoints
      *
      * @bodyParam  int  $id required
      * @rresponse {
