@@ -12,7 +12,7 @@ class OrganizationController extends Controller
     /**
      * List Organization
      * Display a listing of the Organization.
-     * @group Organization
+     * @group Organization endpoints
      * 
      * @response {
      * "current_page": 1,
@@ -63,7 +63,7 @@ class OrganizationController extends Controller
     /**
      * Create Organization
      * Store a newly created resource in Database.
-     * @group Organization
+     * @group Organization endpoints
      * 
      * @bodyParam  int $owner_id required
      * @bodyParam  string org_name required
@@ -101,7 +101,7 @@ class OrganizationController extends Controller
     /**
      * Find an Organization
      * Display the specified resource.
-     * @group Organization
+     * @group Organization endpoints
      * @bodyParam  int  $id required
      * 
      * @response {
@@ -126,7 +126,7 @@ class OrganizationController extends Controller
     /**
      * Update an Organization
      * Update the specified resource in Database.
-     * @group Organization
+     * @group Organization endpoints
      * 
      * @bodyParam  int $id required
      * @bodyParam  int $owner_id required
@@ -169,7 +169,7 @@ class OrganizationController extends Controller
     /**
      * Remove an Organization
      * Remove the Organization from Database.
-     * @group Organization
+     * @group Organization endpoints
      * @bodyParam  int  $id required
      * 
      * @response {

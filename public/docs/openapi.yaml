@@ -39,11 +39,11 @@ paths:
                                 email:
                                     type: String
                                     description: ''
-                                    example: error
+                                    example: eaque
                                 password:
                                     type: String
                                     description: ''
-                                    example: perspiciatis
+                                    example: porro
                             required:
                                 - email
                                 - password
@@ -76,7 +76,7 @@ paths:
                                 type: string
                                 example: "{\n  \"current_page\": 1,\n  \"data\": [{\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n  }, {\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n  }],\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/job-seekers?page=1\",\n  \"from\": null,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/job-seekers?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/job-seekers\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": null,\n  \"total\": 0\n}"
             tags:
-                - JobSeeker
+                - 'JobSeeker endpoints'
             security: []
         post:
             summary: "Create a JobSeeker\nStore a newly created job-seeker in database."
@@ -105,7 +105,7 @@ paths:
                                 type: string
                                 example: "{\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n}"
             tags:
-                - JobSeeker
+                - 'JobSeeker endpoints'
             requestBody:
                 required: false
                 content:
@@ -116,11 +116,11 @@ paths:
                                 int:
                                     type: exp_years
                                     description: ''
-                                    example: impedit
+                                    example: nesciunt
                                 string:
                                     type: cover_letter_path
                                     description: ''
-                                    example: distinctio
+                                    example: totam
             security: []
     '/api/v1/job-seekers/{id}':
         get:
@@ -150,7 +150,7 @@ paths:
                                 type: string
                                 example: "{\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n}"
             tags:
-                - JobSeeker
+                - 'JobSeeker endpoints'
             requestBody:
                 required: true
                 content:
@@ -161,7 +161,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: est
+                                    example: aliquam
                             required:
                                 - int
             security: []
@@ -192,7 +192,7 @@ paths:
                                 type: string
                                 example: "{\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n}"
             tags:
-                - JobSeeker
+                - 'JobSeeker endpoints'
             requestBody:
                 required: true
                 content:
@@ -203,11 +203,11 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: perspiciatis
+                                    example: ipsa
                                 string:
                                     type: cover_letter_path
                                     description: ''
-                                    example: autem
+                                    example: exercitationem
                             required:
                                 - int
             security: []
@@ -231,7 +231,7 @@ paths:
                         type: string
             responses: {  }
             tags:
-                - JobSeeker
+                - 'JobSeeker endpoints'
             requestBody:
                 required: true
                 content:
@@ -242,7 +242,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: asperiores
+                                    example: eos
                             required:
                                 - int
             security: []
@@ -251,7 +251,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: qui
+                example: eum
                 required: true
                 schema:
                     type: string
@@ -283,7 +283,7 @@ paths:
                                 type: string
                                 example: "{\n\"current_page\": 1,\ndata: [{\n  \"id\": 1,\n  \"major_name\": \"string\",\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n {\n  \"id\": 1,\n  \"major_name\": \"string\",\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  }\n],\n,\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/majors?page=1\",\n  \"from\": 1,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/majors?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/majors\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": 10,\n  \"total\": 2\n}"
             tags:
-                - Major
+                - 'Major endpoints'
             security: []
         post:
             summary: "Create Major\nStore a newly created major in database."
@@ -321,7 +321,7 @@ paths:
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
-                - Major
+                - 'Major endpoints'
             requestBody:
                 required: true
                 content:
@@ -332,7 +332,7 @@ paths:
                                 string:
                                     type: major_name
                                     description: ''
-                                    example: dolorem
+                                    example: quod
                             required:
                                 - string
             security: []
@@ -373,7 +373,7 @@ paths:
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
-                - Major
+                - 'Major endpoints'
             requestBody:
                 required: true
                 content:
@@ -384,12 +384,12 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: et
+                                    example: nesciunt
                             required:
                                 - int
             security: []
         put:
-            summary: "Update  a Major\nUpdate the specified major in database."
+            summary: "Update Major's Information\nUpdate the specified major in database."
             description: ''
             parameters:
                 -
@@ -424,7 +424,7 @@ paths:
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
-                - Major
+                - 'Major endpoints'
             requestBody:
                 required: true
                 content:
@@ -435,11 +435,11 @@ paths:
                                 string:
                                     type: major_name
                                     description: ''
-                                    example: corporis
+                                    example: eos
                                 int:
                                     type: $id
                                     description: ''
-                                    example: veritatis
+                                    example: quasi
                             required:
                                 - int
             security: []
@@ -479,7 +479,7 @@ paths:
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
-                - Major
+                - 'Major endpoints'
             requestBody:
                 required: true
                 content:
@@ -490,7 +490,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: nostrum
+                                    example: ut
                             required:
                                 - int
             security: []
@@ -499,7 +499,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: ut
+                example: eum
                 required: true
                 schema:
                     type: string
@@ -531,7 +531,7 @@ paths:
                                 type: string
                                 example: "{\n\"current_page\": 1,\ndata: [{\n  \"id\": 1,\n  \"owner_id\": 1,\n  \"org_name\": \"Công ty Vi Inc\",\n  \"phones\": \"+84-165-015-8016\",\n  \"description\": \"string\",\n  \"tax_id\": \"41665\",\n  \"address\": \"string\",\n  \"is_verify\": 0,\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n {\n  \"id\": 2,\n  \"owner_id\": 1,\n  \"org_name\": \"Công ty Vi Inc\",\n  \"phones\": \"+84-165-015-8016\",\n  \"description\": \"string\",\n  \"tax_id\": \"41665\",\n  \"address\": \"string\",\n  \"is_verify\": 0,\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n],\n,\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/organizations?page=1\",\n  \"from\": 1,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/organizations?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/organizations\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": 10,\n  \"total\": 2\n}"
             tags:
-                - Organization
+                - 'Organization endpoints'
             security: []
         post:
             summary: "Create Organization\nStore a newly created resource in Database."
@@ -581,7 +581,7 @@ paths:
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
-                - Organization
+                - 'Organization endpoints'
             requestBody:
                 required: true
                 content:
@@ -592,11 +592,11 @@ paths:
                                 int:
                                     type: is_verify
                                     description: ''
-                                    example: quae
+                                    example: autem
                                 string:
                                     type: address
                                     description: ''
-                                    example: aperiam
+                                    example: ipsam
                             required:
                                 - string
             security: []
@@ -649,7 +649,7 @@ paths:
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
-                - Organization
+                - 'Organization endpoints'
             requestBody:
                 required: true
                 content:
@@ -660,7 +660,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: perspiciatis
+                                    example: omnis
                             required:
                                 - int
             security: []
@@ -712,7 +712,7 @@ paths:
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
-                - Organization
+                - 'Organization endpoints'
             requestBody:
                 required: true
                 content:
@@ -723,11 +723,11 @@ paths:
                                 int:
                                     type: is_verify
                                     description: ''
-                                    example: minima
+                                    example: corporis
                                 string:
                                     type: address
                                     description: ''
-                                    example: et
+                                    example: est
                             required:
                                 - string
             security: []
@@ -779,7 +779,7 @@ paths:
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
-                - Organization
+                - 'Organization endpoints'
             requestBody:
                 required: true
                 content:
@@ -790,7 +790,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: voluptatem
+                                    example: veritatis
                             required:
                                 - int
             security: []
@@ -799,7 +799,720 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: voluptas
+                example: rem
+                required: true
+                schema:
+                    type: string
+    /api/v1/recruitment-news:
+        get:
+            summary: "List Recruitment News\nDisplay a listing of the recruitment news."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n\"current_page\": 1,\ndata: [{\n  'id': 1,\n  'org_id': 1,\n  'author_id': 1,\n  'major_id': 1,\n  'title': 'string',\n  'content': 'string',\n  'address': 'string',\n  'city': 'string',\n  'start_time': '1990-12-12 12:45:10',\n  'end_time': '1990-12-12 12:45:10',\n  'interview_start_time': '1990-12-12 12:45:10',\n  'interview_end_time': '1990-12-12 12:45:10',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n {\n  \"id\": 2,\n  'org_id': 1,\n  'author_id': 1,\n  'major_id': 1,\n  'title': 'string',\n  'content': 'string',\n  'address': 'string',\n  'city': 'string',\n  'start_time': '1990-12-12 12:45:10',\n  'address': '1990-12-12 12:45:10',\n  'interview_start_time': '1990-12-12 12:45:10',\n  'interview_end_time': '1990-12-12 12:45:10',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  }\n],\n,\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/recruitment-news?page=1\",\n  \"from\": 1,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/recruitment-news?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/recruitment-news\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": 2,\n  \"total\": 2\n}"
+            tags:
+                - 'Recruitment News endpoints'
+            security: []
+        post:
+            summary: "Create a Recruitment News\nStore a newly created recruitment news in database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n  'id': 1,\n  'org_id': 1,\n  'author_id': 1,\n  'major_id': 1,\n  'title': 'string',\n  'content': 'string',\n  'address': 'string',\n  'city': 'string',\n  'start_time': '1990-12-12 12:45:10',\n  'end_time': '1990-12-12 12:45:10',\n  'interview_start_time': '1990-12-12 12:45:10',\n  'interview_end_time': '1990-12-12 12:45:10',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
+            tags:
+                - 'Recruitment News endpoints'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $major_id
+                                    description: ''
+                                    example: voluptates
+                                string:
+                                    type: city
+                                    description: ''
+                                    example: possimus
+                                timestamp:
+                                    type: interview_end_time
+                                    description: ''
+                                    example: eaque
+                            required:
+                                - int
+                                - string
+                                - timestamp
+            security: []
+    '/api/v1/recruitment-news/{id}':
+        get:
+            summary: "Find a Recruitment News\nDisplay the specified recruitment news."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n  'id': 1,\n  'org_id': 1,\n  'author_id': 1,\n  'major_id': 1,\n  'title': 'string',\n  'content': 'string',\n  'address': 'string',\n  'city': 'string',\n  'start_time': '1990-12-12 12:45:10',\n  'end_time': '1990-12-12 12:45:10',\n  'interview_start_time': '1990-12-12 12:45:10',\n  'interview_end_time': '1990-12-12 12:45:10',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
+            tags:
+                - 'Recruitment News endpoints'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: occaecati
+                            required:
+                                - int
+            security: []
+        put:
+            summary: "Update Recruitment News's Information\nUpdate the specified recruitment news in database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n  'id': 1,\n  'org_id': 1,\n  'author_id': 1,\n  'major_id': 1,\n  'title': 'string',\n  'content': 'string',\n  'address': 'string',\n  'city': 'string',\n  'start_time': '1990-12-12 12:45:10',\n  'end_time': '1990-12-12 12:45:10',\n  'interview_start_time': '1990-12-12 12:45:10',\n  'interview_end_time': '1990-12-12 12:45:10',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
+            tags:
+                - 'Recruitment News endpoints'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: dolor
+                                string:
+                                    type: city
+                                    description: ''
+                                    example: perferendis
+                                timestamp:
+                                    type: interview_end_time
+                                    description: ''
+                                    example: et
+                            required:
+                                - int
+                                - string
+                                - timestamp
+            security: []
+        delete:
+            summary: "Remove a Recruitment News\nRemove the specified recruitment news from database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n  'id': 1,\n  'org_id': 1,\n  'author_id': 1,\n  'major_id': 1,\n  'title': 'string',\n  'content': 'string',\n  'address': 'string',\n  'city': 'string',\n  'start_time': '1990-12-12 12:45:10',\n  'end_time': '1990-12-12 12:45:10',\n  'interview_start_time': '1990-12-12 12:45:10',\n  'interview_end_time': '1990-12-12 12:45:10',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
+            tags:
+                - 'Recruitment News endpoints'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: voluptas
+                            required:
+                                - int
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: odio
+                required: true
+                schema:
+                    type: string
+    /api/v1/roles:
+        get:
+            summary: "List Role\nDisplay a listing of the role."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n\"current_page\": 1,\ndata: [{\n  \"id\": 1,\n  \"role_name\": \"string\",\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n {\n  \"id\": 2,\n  \"role_name\": \"string\",\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  }\n],\n,\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/roles?page=1\",\n  \"from\": 1,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/roles?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/roles\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": 2,\n  \"total\": 2\n}"
+            tags:
+                - 'Role endpoints'
+            security: []
+        post:
+            summary: "Create a Role\nStore a newly created role in database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    id: 2
+                                    role_name: string
+                                    created_at: '1990-12-12 12:45:10'
+                                    updated_at: '1990-12-12 12:45:10'
+                                properties:
+                                    id: { type: integer, example: 2 }
+                                    role_name: { type: string, example: string }
+                                    created_at: { type: string, example: '1990-12-12 12:45:10' }
+                                    updated_at: { type: string, example: '1990-12-12 12:45:10' }
+            tags:
+                - 'Role endpoints'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                string:
+                                    type: role_name
+                                    description: ''
+                                    example: deserunt
+                            required:
+                                - string
+            security: []
+    '/api/v1/roles/{id}':
+        get:
+            summary: "Find a Role\nDisplay the specified role."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    id: 2
+                                    role_name: string
+                                    created_at: '1990-12-12 12:45:10'
+                                    updated_at: '1990-12-12 12:45:10'
+                                properties:
+                                    id: { type: integer, example: 2 }
+                                    role_name: { type: string, example: string }
+                                    created_at: { type: string, example: '1990-12-12 12:45:10' }
+                                    updated_at: { type: string, example: '1990-12-12 12:45:10' }
+            tags:
+                - 'Role endpoints'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: accusantium
+                            required:
+                                - int
+            security: []
+        put:
+            summary: "Update Role's Information\nUpdate the specified role in database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    id: 2
+                                    role_name: string
+                                    created_at: '1990-12-12 12:45:10'
+                                    updated_at: '1990-12-12 12:45:10'
+                                properties:
+                                    id: { type: integer, example: 2 }
+                                    role_name: { type: string, example: string }
+                                    created_at: { type: string, example: '1990-12-12 12:45:10' }
+                                    updated_at: { type: string, example: '1990-12-12 12:45:10' }
+            tags:
+                - 'Role endpoints'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                string:
+                                    type: role_name
+                                    description: ''
+                                    example: corrupti
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: aut
+                            required:
+                                - string
+                                - int
+            security: []
+        delete:
+            summary: "Remove a Role\nRemove the specified role from database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    id: 2
+                                    role_name: string
+                                    created_at: '1990-12-12 12:45:10'
+                                    updated_at: '1990-12-12 12:45:10'
+                                properties:
+                                    id: { type: integer, example: 2 }
+                                    role_name: { type: string, example: string }
+                                    created_at: { type: string, example: '1990-12-12 12:45:10' }
+                                    updated_at: { type: string, example: '1990-12-12 12:45:10' }
+            tags:
+                - 'Role endpoints'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: corporis
+                            required:
+                                - int
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: reiciendis
+                required: true
+                schema:
+                    type: string
+    /api/v1/users:
+        get:
+            summary: "List User\nDisplay a listing of the user."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n\"current_page\": 1,\ndata: [{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n {\n  \"id\": 2,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  }\n],\n,\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/users?page=1\",\n  \"from\": 1,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/users?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/users\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": 2,\n  \"total\": 2\n}"
+            tags:
+                - 'User endpoints'
+            security: []
+        post:
+            summary: "Create a User\nStore a newly created user in database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
+            tags:
+                - 'User endpoints'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: molestiae
+                                string:
+                                    type: social_facebook
+                                    description: ''
+                                    example: ad
+                                date:
+                                    type: dob
+                                    description: ''
+                                    example: vel
+                                timestamp:
+                                    type: email_verified_at
+                                    description: ''
+                                    example: quisquam
+                            required:
+                                - int
+                                - date
+                                - timestamp
+            security: []
+    '/api/v1/users/{id}':
+        get:
+            summary: "Find a User\nDisplay the specified user."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
+            tags:
+                - 'User endpoints'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: maiores
+                            required:
+                                - int
+            security: []
+        put:
+            summary: "Update User's Information\nUpdate the specified user in database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
+            tags:
+                - 'User endpoints'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: temporibus
+                                string:
+                                    type: social_facebook
+                                    description: ''
+                                    example: laudantium
+                                date:
+                                    type: dob
+                                    description: ''
+                                    example: omnis
+                                timestamp:
+                                    type: email_verified_at
+                                    description: ''
+                                    example: esse
+                            required:
+                                - int
+                                - date
+                                - timestamp
+            security: []
+        delete:
+            summary: "Remove a User\nRemove the specified user from database."
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
+            tags:
+                - 'User endpoints'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                int:
+                                    type: $id
+                                    description: ''
+                                    example: quasi
+                            required:
+                                - int
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: dicta
                 required: true
                 schema:
                     type: string

@@ -11,7 +11,7 @@ class MajorController extends Controller
     /**
      * List Major
      * Display a listing of the resource.
-     * @group Major
+     * @group Major endpoints
      * 
      * @response {
      * "current_page": 1,
@@ -50,7 +50,7 @@ class MajorController extends Controller
     /**
      * Create Major
      * Store a newly created major in database.
-     * @group Major
+     * @group Major endpoints
      * 
      * @bodyParam  string major_name required
      * @response {
@@ -71,7 +71,7 @@ class MajorController extends Controller
     /**
      * Find a Major
      * Display the specified major.
-     * @group Major
+     * @group Major endpoints
      * 
      * @bodyParam  int  $id required
      * @response {
@@ -88,9 +88,9 @@ class MajorController extends Controller
     }
 
     /**
-     * Update  a Major
+     * Update Major's Information
      * Update the specified major in database.
-     * @group Major
+     * @group Major endpoints
      *
      * @bodyParam  string  major_name
      * @bodyParam  int  $id required
@@ -115,7 +115,7 @@ class MajorController extends Controller
     /**
      * Remove a Major
      * Remove the specified major from database.
-     * @group Major
+     * @group Major endpoints
      *
      * @bodyParam  int  $id required
      * @response {

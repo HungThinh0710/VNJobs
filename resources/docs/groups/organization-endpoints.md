@@ -1,4 +1,4 @@
-# Organization
+# Organization endpoints
 
 
 ## List Organization
@@ -110,16 +110,16 @@ Display the specified resource.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/organizations/voluptas" \
+    -G "http://localhost/api/v1/organizations/rem" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"perspiciatis"}'
+    -d '{"int":"omnis"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/organizations/voluptas"
+    "http://localhost/api/v1/organizations/rem"
 );
 
 let headers = {
@@ -128,7 +128,7 @@ let headers = {
 };
 
 let body = {
-    "int": "perspiciatis"
+    "int": "omnis"
 }
 
 fetch(url, {
@@ -203,7 +203,7 @@ curl -X POST \
     "http://localhost/api/v1/organizations" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"quae","string":"aperiam"}'
+    -d '{"int":"autem","string":"ipsam"}'
 
 ```
 
@@ -218,8 +218,8 @@ let headers = {
 };
 
 let body = {
-    "int": "quae",
-    "string": "aperiam"
+    "int": "autem",
+    "string": "ipsam"
 }
 
 fetch(url, {
@@ -290,16 +290,16 @@ Update the specified resource in Database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/organizations/quia" \
+    "http://localhost/api/v1/organizations/harum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"minima","string":"et"}'
+    -d '{"int":"corporis","string":"est"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/organizations/quia"
+    "http://localhost/api/v1/organizations/harum"
 );
 
 let headers = {
@@ -308,8 +308,8 @@ let headers = {
 };
 
 let body = {
-    "int": "minima",
-    "string": "et"
+    "int": "corporis",
+    "string": "est"
 }
 
 fetch(url, {
@@ -386,16 +386,16 @@ Remove the Organization from Database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/organizations/ipsa" \
+    "http://localhost/api/v1/organizations/minus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"voluptatem"}'
+    -d '{"int":"veritatis"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/organizations/ipsa"
+    "http://localhost/api/v1/organizations/minus"
 );
 
 let headers = {
@@ -404,7 +404,7 @@ let headers = {
 };
 
 let body = {
-    "int": "voluptatem"
+    "int": "veritatis"
 }
 
 fetch(url, {

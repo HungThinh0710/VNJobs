@@ -30,6 +30,14 @@ Route::group(['prefix' => 'v1'], function(){
     Route::get('job-seekers/', 'API\JobSeekerController@index');
     Route::get('job-seekers/{id}', 'API\JobSeekerController@show');
     
+    // Roles Publics
+    Route::get('roles/', 'API\RoleController@index');
+    Route::get('roles/{id}', 'API\RoleController@show');
+    
+    // Recruitment News Publics
+    Route::get('recruitment-news/', 'API\RecruitmentNewsController@index');
+    Route::get('recruitment-news/{id}', 'API\RecruitmentNewsController@show');
+
     Route::group(['middleware' => 'auth:api'], function() {
         // Organizations Group Auth
         Route::group(['prefix' => 'organizations'], function() {
@@ -50,6 +58,29 @@ Route::group(['prefix' => 'v1'], function(){
             Route::post('/', 'API\JobSeekerController@store');
             Route::put('/{id}', 'API\JobSeekerController@update');
             Route::delete('/{id}', 'API\JobSeekerController@destroy');
+        });
+        
+        // Roles Group Auth
+        Route::group(['prefix' => 'roles'], function() {
+            Route::post('/', 'API\RoleController@store');
+            Route::put('/{id}', 'API\RoleController@update');
+            Route::delete('/{id}', 'API\RoleController@destroy');
+        });
+
+        // Users Group Auth
+        Route::group(['prefix' => 'users'], function() {
+            Route::get('/', 'API\UserController@index');
+            Route::get('/{id}', 'API\UserController@show');
+            Route::post('/', 'API\UserController@store');
+            Route::put('/{id}', 'API\UserController@update');
+            Route::delete('/{id}', 'API\UserController@destroy');
+        });
+
+        // Recruitment News Group Auth
+        Route::group(['prefix' => 'recruitment-news'], function() {
+            Route::post('/', 'API\RecruitmentNewsController@store');
+            Route::put('/{id}', 'API\RecruitmentNewsController@update');
+            Route::delete('/{id}', 'API\RecruitmentNewsController@destroy');
         });
     });
 });

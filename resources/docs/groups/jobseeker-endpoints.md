@@ -1,4 +1,4 @@
-# JobSeeker
+# JobSeeker endpoints
 
 
 ## List JobSeeker
@@ -101,16 +101,16 @@ Display the specified job-seeker.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/job-seekers/qui" \
+    -G "http://localhost/api/v1/job-seekers/eum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"est"}'
+    -d '{"int":"aliquam"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/qui"
+    "http://localhost/api/v1/job-seekers/eum"
 );
 
 let headers = {
@@ -119,7 +119,7 @@ let headers = {
 };
 
 let body = {
-    "int": "est"
+    "int": "aliquam"
 }
 
 fetch(url, {
@@ -192,7 +192,7 @@ curl -X POST \
     "http://localhost/api/v1/job-seekers" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"impedit","string":"distinctio"}'
+    -d '{"int":"nesciunt","string":"totam"}'
 
 ```
 
@@ -207,8 +207,8 @@ let headers = {
 };
 
 let body = {
-    "int": "impedit",
-    "string": "distinctio"
+    "int": "nesciunt",
+    "string": "totam"
 }
 
 fetch(url, {
@@ -277,16 +277,16 @@ Update the specified job-seeker in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/job-seekers/possimus" \
+    "http://localhost/api/v1/job-seekers/minus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"perspiciatis","string":"autem"}'
+    -d '{"int":"ipsa","string":"exercitationem"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/possimus"
+    "http://localhost/api/v1/job-seekers/minus"
 );
 
 let headers = {
@@ -295,8 +295,8 @@ let headers = {
 };
 
 let body = {
-    "int": "perspiciatis",
-    "string": "autem"
+    "int": "ipsa",
+    "string": "exercitationem"
 }
 
 fetch(url, {
@@ -371,16 +371,16 @@ Remove the specified job-seeker from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/job-seekers/et" \
+    "http://localhost/api/v1/job-seekers/qui" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"asperiores"}'
+    -d '{"int":"eos"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/et"
+    "http://localhost/api/v1/job-seekers/qui"
 );
 
 let headers = {
@@ -389,7 +389,7 @@ let headers = {
 };
 
 let body = {
-    "int": "asperiores"
+    "int": "eos"
 }
 
 fetch(url, {
