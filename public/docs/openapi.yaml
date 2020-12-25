@@ -39,11 +39,11 @@ paths:
                                 email:
                                     type: String
                                     description: ''
-                                    example: eaque
+                                    example: atque
                                 password:
                                     type: String
                                     description: ''
-                                    example: porro
+                                    example: sed
                             required:
                                 - email
                                 - password
@@ -116,11 +116,11 @@ paths:
                                 int:
                                     type: exp_years
                                     description: ''
-                                    example: nesciunt
+                                    example: placeat
                                 string:
                                     type: cover_letter_path
                                     description: ''
-                                    example: totam
+                                    example: quam
             security: []
     '/api/v1/job-seekers/{id}':
         get:
@@ -161,7 +161,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: aliquam
+                                    example: vero
                             required:
                                 - int
             security: []
@@ -203,11 +203,11 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: ipsa
+                                    example: ea
                                 string:
                                     type: cover_letter_path
                                     description: ''
-                                    example: exercitationem
+                                    example: aspernatur
                             required:
                                 - int
             security: []
@@ -242,7 +242,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: eos
+                                    example: consequatur
                             required:
                                 - int
             security: []
@@ -251,7 +251,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: eum
+                example: facere
                 required: true
                 schema:
                     type: string
@@ -332,7 +332,7 @@ paths:
                                 string:
                                     type: major_name
                                     description: ''
-                                    example: quod
+                                    example: nihil
                             required:
                                 - string
             security: []
@@ -384,7 +384,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: nesciunt
+                                    example: voluptatem
                             required:
                                 - int
             security: []
@@ -435,11 +435,11 @@ paths:
                                 string:
                                     type: major_name
                                     description: ''
-                                    example: eos
+                                    example: impedit
                                 int:
                                     type: $id
                                     description: ''
-                                    example: quasi
+                                    example: sint
                             required:
                                 - int
             security: []
@@ -490,7 +490,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: ut
+                                    example: ex
                             required:
                                 - int
             security: []
@@ -499,7 +499,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: eum
+                example: mollitia
                 required: true
                 schema:
                     type: string
@@ -592,11 +592,11 @@ paths:
                                 int:
                                     type: is_verify
                                     description: ''
-                                    example: autem
+                                    example: eum
                                 string:
                                     type: address
                                     description: ''
-                                    example: ipsam
+                                    example: quaerat
                             required:
                                 - string
             security: []
@@ -660,7 +660,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: omnis
+                                    example: architecto
                             required:
                                 - int
             security: []
@@ -723,11 +723,11 @@ paths:
                                 int:
                                     type: is_verify
                                     description: ''
-                                    example: corporis
+                                    example: libero
                                 string:
                                     type: address
                                     description: ''
-                                    example: est
+                                    example: distinctio
                             required:
                                 - string
             security: []
@@ -790,7 +790,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: veritatis
+                                    example: dolor
                             required:
                                 - int
             security: []
@@ -799,7 +799,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: rem
+                example: praesentium
                 required: true
                 schema:
                     type: string
@@ -871,15 +871,15 @@ paths:
                                 int:
                                     type: $major_id
                                     description: ''
-                                    example: voluptates
+                                    example: voluptas
                                 string:
                                     type: city
                                     description: ''
-                                    example: possimus
+                                    example: sit
                                 timestamp:
                                     type: interview_end_time
                                     description: ''
-                                    example: eaque
+                                    example: distinctio
                             required:
                                 - int
                                 - string
@@ -924,7 +924,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: occaecati
+                                    example: eaque
                             required:
                                 - int
             security: []
@@ -966,15 +966,15 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: dolor
+                                    example: dolores
                                 string:
                                     type: city
                                     description: ''
-                                    example: perferendis
+                                    example: non
                                 timestamp:
                                     type: interview_end_time
                                     description: ''
-                                    example: et
+                                    example: est
                             required:
                                 - int
                                 - string
@@ -1018,7 +1018,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: voluptas
+                                    example: temporibus
                             required:
                                 - int
             security: []
@@ -1027,7 +1027,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: odio
+                example: rerum
                 required: true
                 schema:
                     type: string
@@ -1108,7 +1108,7 @@ paths:
                                 string:
                                     type: role_name
                                     description: ''
-                                    example: deserunt
+                                    example: qui
                             required:
                                 - string
             security: []
@@ -1160,7 +1160,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: accusantium
+                                    example: reprehenderit
                             required:
                                 - int
             security: []
@@ -1211,11 +1211,11 @@ paths:
                                 string:
                                     type: role_name
                                     description: ''
-                                    example: corrupti
+                                    example: voluptatem
                                 int:
                                     type: $id
                                     description: ''
-                                    example: aut
+                                    example: earum
                             required:
                                 - string
                                 - int
@@ -1267,7 +1267,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: corporis
+                                    example: excepturi
                             required:
                                 - int
             security: []
@@ -1276,7 +1276,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: reiciendis
+                example: aliquid
                 required: true
                 schema:
                     type: string
@@ -1348,19 +1348,19 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: molestiae
+                                    example: et
                                 string:
                                     type: social_facebook
                                     description: ''
-                                    example: ad
+                                    example: et
                                 date:
                                     type: dob
                                     description: ''
-                                    example: vel
+                                    example: dicta
                                 timestamp:
                                     type: email_verified_at
                                     description: ''
-                                    example: quisquam
+                                    example: officia
                             required:
                                 - int
                                 - date
@@ -1405,7 +1405,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: maiores
+                                    example: asperiores
                             required:
                                 - int
             security: []
@@ -1447,19 +1447,19 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: temporibus
+                                    example: voluptatibus
                                 string:
                                     type: social_facebook
                                     description: ''
-                                    example: laudantium
+                                    example: voluptatem
                                 date:
                                     type: dob
                                     description: ''
-                                    example: omnis
+                                    example: ut
                                 timestamp:
                                     type: email_verified_at
                                     description: ''
-                                    example: esse
+                                    example: optio
                             required:
                                 - int
                                 - date
@@ -1503,7 +1503,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: quasi
+                                    example: voluptatum
                             required:
                                 - int
             security: []
@@ -1512,7 +1512,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: dicta
+                example: temporibus
                 required: true
                 schema:
                     type: string
