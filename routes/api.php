@@ -21,7 +21,7 @@ Route::group(['prefix' => 'v1'], function(){
     // Organizations Publics
     Route::get('organizations/', 'API\OrganizationController@index');
     Route::get('organizations/{id}', 'API\OrganizationController@show');
-    
+
     // Majors Publics
     Route::get('majors/', 'API\MajorController@index');
     Route::get('majors/{id}', 'API\MajorController@show');
@@ -29,16 +29,19 @@ Route::group(['prefix' => 'v1'], function(){
     // JobSeekers Publics
     Route::get('job-seekers/', 'API\JobSeekerController@index');
     Route::get('job-seekers/{id}', 'API\JobSeekerController@show');
-    
+
     // Roles Publics
     Route::get('roles/', 'API\RoleController@index');
     Route::get('roles/{id}', 'API\RoleController@show');
-    
+
     // Recruitment News Publics
     Route::get('recruitment-news/', 'API\RecruitmentNewsController@index');
     Route::get('recruitment-news/{id}', 'API\RecruitmentNewsController@show');
 
     Route::group(['middleware' => 'auth:api'], function() {
+        //Check is token still valid
+        Route::post('/is-valid-token', 'API\AuthenticateController@checkValidToken');
+
         // Organizations Group Auth
         Route::group(['prefix' => 'organizations'], function() {
             Route::post('/', 'API\OrganizationController@store');
@@ -59,7 +62,7 @@ Route::group(['prefix' => 'v1'], function(){
             Route::put('/{id}', 'API\JobSeekerController@update');
             Route::delete('/{id}', 'API\JobSeekerController@destroy');
         });
-        
+
         // Roles Group Auth
         Route::group(['prefix' => 'roles'], function() {
             Route::post('/', 'API\RoleController@store');
