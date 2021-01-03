@@ -34,6 +34,7 @@ $factory->define(User::class, function (Faker $faker) {
         'password' => Hash::make("123123"), // password 123123
         'address' => $faker->address,
         'bio' => Str::random(30),
+        'avatar_path' => 'public/docs/user.png',
         'remember_token' => Str::random(10),
     ];
 });

@@ -28,10 +28,10 @@ class RecruitmentNews extends Model
     public function job_seekers()
     {
         return $this->belongsToMany(
-            'App\User',
-            'job_seekers',
+            'App\JobSeeker',
+            'recruitments_jobseekers',
             'rn_id',
-            'user_id',
+            'js_id',
         );
     }
 }

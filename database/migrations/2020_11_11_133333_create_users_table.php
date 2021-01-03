@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string("address")->nullable();
             $table->longText('bio')->nullable();
+            $table->string("avatar_path")->nullable();
             $table->string("social_linkedin")->nullable();
             $table->string("social_facebook")->nullable();
             $table->rememberToken();

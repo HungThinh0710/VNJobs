@@ -27,6 +27,7 @@ class UserController extends Controller
      *   'password': 'string',
      *   'address': 'string',
      *   'bio': 'string',
+     *   'avatar_path': 'string',
      *   'social_linkedin': 'string',
      *   'social_facebook': 'string',
      *   "created_at": "1990-12-12 12:45:10",
@@ -44,6 +45,7 @@ class UserController extends Controller
      *   'password': 'string',
      *   'address': 'string',
      *   'bio': 'string',
+     *   'avatar_path': 'string',
      *   'social_linkedin': 'string',
      *   'social_facebook': 'string',
      *   "created_at": "1990-12-12 12:45:10",
@@ -84,6 +86,7 @@ class UserController extends Controller
      * @bodyParam string  password required
      * @bodyParam string address required
      * @bodyParam string bio 
+     * @bodyParam string avatar_path
      * @bodyParam string social_linkedin 
      * @bodyParam string social_facebook 
      * @bodyParam  int  $id required
@@ -99,6 +102,7 @@ class UserController extends Controller
      *   'password': 'string',
      *   'address': 'string',
      *   'bio': 'string',
+     *   'avatar_path': 'string',
      *   'social_linkedin': 'string',
      *   'social_facebook': 'string',
      *   "created_at": "1990-12-12 12:45:10",
@@ -118,6 +122,7 @@ class UserController extends Controller
             'password' => $request->password,
             'address' => $request->address,
             'bio' => $request->bio,
+            'avatar_path' => $request->avatar_path,
             'social_linkedin' => $request->social_linkedin,
             'social_facebook' => $request->social_facebook
         ]);
@@ -142,6 +147,7 @@ class UserController extends Controller
      *   'password': 'string',
      *   'address': 'string',
      *   'bio': 'string',
+     *   'avatar_path': 'string',
      *   'social_linkedin': 'string',
      *   'social_facebook': 'string',
      *   "created_at": "1990-12-12 12:45:10",
@@ -169,6 +175,7 @@ class UserController extends Controller
      * @bodyParam string  password required
      * @bodyParam string address required
      * @bodyParam string bio 
+     * @bodyParam string avatar_path
      * @bodyParam string social_linkedin 
      * @bodyParam string social_facebook 
      * @bodyParam  int  $id required
@@ -184,6 +191,7 @@ class UserController extends Controller
      *   'password': 'string',
      *   'address': 'string',
      *   'bio': 'string',
+     *   'avatar_path': 'string',
      *   'social_linkedin': 'string',
      *   'social_facebook': 'string',
      *   "created_at": "1990-12-12 12:45:10",
@@ -205,6 +213,7 @@ class UserController extends Controller
                 'password' => $request->password,
                 'address' => $request->address,
                 'bio' => $request->bio,
+                'avatar_path' => $request->avatar_path,
                 'social_linkedin' => $request->social_linkedin,
                 'social_facebook' => $request->social_facebook
             ]);
@@ -230,6 +239,7 @@ class UserController extends Controller
      *   'password': 'string',
      *   'address': 'string',
      *   'bio': 'string',
+     *   'avatar_path': 'string',
      *   'social_linkedin': 'string',
      *   'social_facebook': 'string',
      *   "created_at": "1990-12-12 12:45:10",

@@ -25,6 +25,8 @@ class OrganizationController extends Controller
      *   "tax_id": "41665",
      *   "address": "string",
      *   "is_verify": 0,
+     *   "logo_path": "string",
+     *   "cover_path": "string",
      *   "created_at": "1990-12-12 12:45:10",
      *   "updated_at": "1990-12-12 12:45:10"
      *   },
@@ -37,6 +39,8 @@ class OrganizationController extends Controller
      *   "tax_id": "41665",
      *   "address": "string",
      *   "is_verify": 0,
+     *   "logo_path": "string",
+     *   "cover_path": "string",
      *   "created_at": "1990-12-12 12:45:10",
      *   "updated_at": "1990-12-12 12:45:10"
      *   },
@@ -72,6 +76,8 @@ class OrganizationController extends Controller
      * @bodyParam  string tax_id required
      * @bodyParam  string address required
      * @bodyParam  int  is_verify
+     * @bodyParam  string logo_path
+     * @bodyParam  string cover_path
      * 
      * @response {
      *   "id": 1,
@@ -82,6 +88,8 @@ class OrganizationController extends Controller
      *   "tax_id": "41665",
      *   "address": "string",
      *   "is_verify": 0,
+     *   "logo_path": "string",
+     *   "cover_path": "string",
      *   "created_at": "1990-12-12 12:45:10",
      *   "updated_at": "1990-12-12 12:45:10"
      * }
@@ -93,7 +101,9 @@ class OrganizationController extends Controller
             "phones" => $request->phones,
             "description" => $request->description,
             "tax_id" => $request->tax_id,
-            "address" => $request->address
+            "address" => $request->address,
+            "logo_path" => $request->logo_path,
+            "cover_path" => $request->cover_path
         ]);
         return response()->json($organization);
     }
@@ -113,6 +123,8 @@ class OrganizationController extends Controller
      *   "tax_id": "41665",
      *   "address": "string",
      *   "is_verify": 0,
+     *   "logo_path": "string",
+     *   "cover_path": "string",
      *   "created_at": "1990-12-12 12:45:10",
      *   "updated_at": "1990-12-12 12:45:10"
      * }
@@ -136,6 +148,8 @@ class OrganizationController extends Controller
      * @bodyParam  string tax_id required
      * @bodyParam  string address required
      * @bodyParam  int  is_verify
+     * @bodyParam  string logo_path
+     * @bodyParam  string cover_path
      * 
      * @response {
      *   "id": 1,
@@ -146,6 +160,8 @@ class OrganizationController extends Controller
      *   "tax_id": "41665",
      *   "address": "string",
      *   "is_verify": 0,
+     *   "logo_path": "string",
+     *   "cover_path": "string",
      *   "created_at": "1990-12-12 12:45:10",
      *   "updated_at": "1990-12-12 12:45:10"
      * }
@@ -160,7 +176,9 @@ class OrganizationController extends Controller
                 "phones" => $request->phones,
                 "description" => $request->description,
                 "tax_id" => $request->tax_id,
-                "address" => $request->address
+                "address" => $request->address,
+                "logo_path" => $request->logo_path,
+                "cover_path" => $request->cover_path
             ]);
         }
         return response()->json($organization);
@@ -181,6 +199,8 @@ class OrganizationController extends Controller
      *   "tax_id": "41665",
      *   "address": "string",
      *   "is_verify": 0,
+     *   "logo_path": "string",
+     *   "cover_path": "string",
      *   "created_at": "1990-12-12 12:45:10",
      *   "updated_at": "1990-12-12 12:45:10"
      * }

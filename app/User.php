@@ -22,6 +22,7 @@ class User extends Authenticatable
         'password',
         'address',
         'bio',
+        'avatar_path',
         'social_linkedin',
         'social_facebook'
     ];
@@ -71,13 +72,13 @@ class User extends Authenticatable
         return $this->hasMany('\App\RecruitmentNews', 'author_id', 'id');
     }
 
-    public function applied_jobs()
-    {
-        return $this->belongsToMany(
-            'App\RecruitmentNews',
-            'job_seekers',
-            'user_id',
-            'rn_id',
-        );
-    }
+    // public function applied_jobs()
+    // {
+    //     return $this->belongsToMany(
+    //         'App\RecruitmentNews',
+    //         'job_seekers',
+    //         'user_id',
+    //         'rn_id',
+    //     );
+    // }
 }

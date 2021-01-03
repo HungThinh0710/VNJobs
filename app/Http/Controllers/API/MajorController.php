@@ -18,6 +18,7 @@ class MajorController extends Controller
      * data: [{
      *   "id": 1,
      *   "major_name": "string",
+     *   "image_path": "string",
      *   "created_at": "1990-12-12 12:45:10",
      *   "updated_at": "1990-12-12 12:45:10"
      *   },
@@ -56,6 +57,7 @@ class MajorController extends Controller
      * @response {
      *   "id": 1,
      *   "major_name": "string",
+     *   "image_path": "string",
      *   "created_at": "1990-12-12 12:45:10",
      *   "updated_at": "1990-12-12 12:45:10"
      * }
@@ -63,7 +65,8 @@ class MajorController extends Controller
     public function store(Request $request)
     {
         $major = Major::create([
-            "major_name" => $request->major_name
+            "major_name" => $request->major_name,
+            "image_path" => $request->image_path
         ]);
         return response()->json($major);
     }
@@ -77,6 +80,7 @@ class MajorController extends Controller
      * @response {
      *   "id": 1,
      *   "major_name": "string",
+     *   "image_path": "string",
      *   "created_at": "1990-12-12 12:45:10",
      *   "updated_at": "1990-12-12 12:45:10"
      * }
@@ -92,11 +96,13 @@ class MajorController extends Controller
      * Update the specified major in database.
      * @group Major endpoints
      *
-     * @bodyParam  string  major_name
+     * @bodyParam string major_name
+     * @bodyParam string image_path
      * @bodyParam  int  $id required
      * @response { 
      *   "id": 1,
      *   "major_name": "string",
+     *   "image_path": "string",
      *   "created_at": "1990-12-12 12:45:10",
      *   "updated_at": "1990-12-12 12:45:10"
      * }
@@ -106,7 +112,8 @@ class MajorController extends Controller
         $major = Major::findOrFail($id);
         if ($major) {
             $major->toQuery()->update([
-                "major_name" => $request->major_name
+                "major_name" => $request->major_name,
+                "image_path" => $request->image_path
             ]);
         }
         return response()->json($major);
@@ -121,6 +128,7 @@ class MajorController extends Controller
      * @response {
      *   "id": 1,
      *   "major_name": "string",
+     *   "image_path": "string",
      *   "created_at": "1990-12-12 12:45:10",
      *   "updated_at": "1990-12-12 12:45:10"
      * }

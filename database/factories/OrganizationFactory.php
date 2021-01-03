@@ -15,5 +15,7 @@ $factory->define(\App\Organization::class, function (Faker $faker) {
         'tax_id' => rand(1,10000).rand(1,10),
         'address' => $faker->address,
         'is_verify' => rand(0,1),
+        'logo_path' => 'public/docs/logo.png',
+        'cover_path' => 'public/docs/logo.png',
     ];
 });
