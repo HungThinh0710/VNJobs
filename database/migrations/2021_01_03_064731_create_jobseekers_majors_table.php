@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMajorsTable extends Migration
+class CreateJobseekersMajorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateMajorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('majors', function (Blueprint $table) {
+        Schema::create('jobseekers_majors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("major_name");
-            $table->string("image_path");
+            $table->unsignedBigInteger('js_id');
+            $table->foreign("js_id")->references('id')->on("job_seekers");
+            $table->unsignedBigInteger('major_id');
+            $table->foreign("major_id")->references('id')->on("majors");
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateMajorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('majors');
+        Schema::dropIfExists('jobseekers_majors');
     }
 }

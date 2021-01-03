@@ -22,6 +22,8 @@ class CreateOrganizationsTable extends Migration
             $table->string("description")->nullable();
             $table->string("tax_id")->nullable();
             $table->string("address")->nullable();
+            $table->string("logo_path")->nullable();
+            $table->string("cover_path")->nullable();
             $table->tinyInteger("is_verify");
             $table->timestamps();
         });

@@ -10,7 +10,7 @@ class Organization extends Model
     use Filterable;
     protected $table = 'organizations';
 
-    protected $fillable = ['owner_id', 'org_name', 'phones', 'description', 'tax_id', 'is_verify'];
+    protected $fillable = ['owner_id', 'org_name', 'phones', 'description', 'tax_id', 'is_verify', 'logo_path', 'cover_path'];
 
     public function owner()
     {
