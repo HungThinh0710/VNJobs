@@ -101,7 +101,7 @@ class OrganizationController extends Controller
      * Display the specified resource.
      * @group Organization endpoints
      * 
-     * @bodyParam int id required
+     * @bodyParam int id required The id of the organization.
      * 
      * @response {
      *   "id": 1,
@@ -156,7 +156,7 @@ class OrganizationController extends Controller
      * Remove the Organization from Database.
      * @group Organization endpoints
      * 
-     * @bodyParam int id required
+     * @bodyParam int id required The id of the organization.
      * 
      * @response {
      *   "id": 1,
