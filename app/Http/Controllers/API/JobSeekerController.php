@@ -80,8 +80,7 @@ class JobSeekerController extends Controller
      * Display the specified job-seeker.
      * @group JobSeeker endpoints
      *
-     * @bodyParam int jobseeker_id required The id of the job seeker.
-     * @bodyParam int $id required
+     * @bodyParam int id required The id of the job seeker.
      * @response {
      *      'id': 1,
      *      'user_id': 1,
@@ -125,7 +124,7 @@ class JobSeekerController extends Controller
      * Remove the specified job-seeker from database.
      * @group JobSeeker endpoints
      *
-     * @bodyParam  int  $id required
+     * @bodyParam int id required
      * @rresponse {
      *      'id': 1,
      *      'user_id': 1,

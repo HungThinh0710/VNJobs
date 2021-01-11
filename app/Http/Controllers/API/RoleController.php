@@ -77,7 +77,7 @@ class RoleController extends Controller
      * Display the specified role.
      * @group Role endpoints
      * 
-     * @bodyParam  int  $id required
+     * @bodyParam int id required The id of the role.
      * @response {
      *   "id": 2,
      *   "role_name": "string",
@@ -115,7 +115,7 @@ class RoleController extends Controller
      * Remove the specified role from database.
      * @group Role endpoints
      * 
-     * @bodyParam  int  $id required
+     * @bodyParam int id required The id of the role.
      * @response {
      *   "id": 2,
      *   "role_name": "string",

@@ -106,7 +106,7 @@ class RecruitmentNewsController extends Controller
      * Display the specified recruitment news.
      * @group Recruitment News endpoints
      *
-     * @bodyParam int id required
+     * @bodyParam int id required The id of the recruiment news.
      * @response {
      *   'id': 1,
      *   'org_id': 1,
