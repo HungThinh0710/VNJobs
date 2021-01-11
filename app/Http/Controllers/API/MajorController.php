@@ -5,7 +5,13 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Major;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreMajor;
 
+/**
+ * @group Major endpoints
+ *
+ * APIs for Major.
+ */
 class MajorController extends Controller
 {
     /**
@@ -53,7 +59,6 @@ class MajorController extends Controller
      * Store a newly created major in database.
      * @group Major endpoints
      * 
-     * @bodyParam  string major_name required
      * @response {
      *   "id": 1,
      *   "major_name": "string",
@@ -62,12 +67,9 @@ class MajorController extends Controller
      *   "updated_at": "1990-12-12 12:45:10"
      * }
      */
-    public function store(Request $request)
+    public function store(StoreMajor $request)
     {
-        $major = Major::create([
-            "major_name" => $request->major_name,
-            "image_path" => $request->image_path
-        ]);
+        $major = Major::create($request->all());
         return response()->json($major);
     }
 
@@ -76,7 +78,7 @@ class MajorController extends Controller
      * Display the specified major.
      * @group Major endpoints
      * 
-     * @bodyParam  int  $id required
+     * @bodyParam int id required The id of the major.
      * @response {
      *   "id": 1,
      *   "major_name": "string",
@@ -96,9 +98,6 @@ class MajorController extends Controller
      * Update the specified major in database.
      * @group Major endpoints
      *
-     * @bodyParam string major_name
-     * @bodyParam string image_path
-     * @bodyParam  int  $id required
      * @response { 
      *   "id": 1,
      *   "major_name": "string",
@@ -107,15 +106,10 @@ class MajorController extends Controller
      *   "updated_at": "1990-12-12 12:45:10"
      * }
      */
-    public function update(Request $request, $id)
+    public function update(StoreMajor $request, $id)
     {
         $major = Major::findOrFail($id);
-        if ($major) {
-            $major->toQuery()->update([
-                "major_name" => $request->major_name,
-                "image_path" => $request->image_path
-            ]);
-        }
+        $major->update($request->all());
         return response()->json($major);
     }
 
@@ -124,7 +118,7 @@ class MajorController extends Controller
      * Remove the specified major from database.
      * @group Major endpoints
      *
-     * @bodyParam  int  $id required
+     * @bodyParam int id required The id of the major.
      * @response {
      *   "id": 1,
      *   "major_name": "string",

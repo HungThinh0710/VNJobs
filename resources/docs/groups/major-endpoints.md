@@ -43,6 +43,7 @@ fetch(url, {
 data: [{
   "id": 1,
   "major_name": "string",
+  "image_path": "string",
   "created_at": "1990-12-12 12:45:10",
   "updated_at": "1990-12-12 12:45:10"
   },
@@ -98,16 +99,16 @@ Display the specified major.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/majors/eum" \
+    -G "http://localhost/api/v1/majors/voluptate" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"nesciunt"}'
+    -d '{"int":"incidunt"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/majors/eum"
+    "http://localhost/api/v1/majors/voluptate"
 );
 
 let headers = {
@@ -116,7 +117,7 @@ let headers = {
 };
 
 let body = {
-    "int": "nesciunt"
+    "int": "incidunt"
 }
 
 fetch(url, {
@@ -133,6 +134,7 @@ fetch(url, {
 {
     "id": 1,
     "major_name": "string",
+    "image_path": "string",
     "created_at": "1990-12-12 12:45:10",
     "updated_at": "1990-12-12 12:45:10"
 }
@@ -164,10 +166,10 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<b><code>int</code></b>&nbsp;&nbsp;<small>id</small>  &nbsp;
 <input type="text" name="int" data-endpoint="GETapi-v1-majors--id-" data-component="body" required  hidden>
 <br>
-</p>
+The id of the major.</p>
 
 </form>
 
@@ -185,7 +187,7 @@ curl -X POST \
     "http://localhost/api/v1/majors" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"string":"quod"}'
+    -d '{"major_name":"rerum","image_path":"est"}'
 
 ```
 
@@ -200,7 +202,8 @@ let headers = {
 };
 
 let body = {
-    "string": "quod"
+    "major_name": "rerum",
+    "image_path": "est"
 }
 
 fetch(url, {
@@ -217,6 +220,7 @@ fetch(url, {
 {
     "id": 1,
     "major_name": "string",
+    "image_path": "string",
     "created_at": "1990-12-12 12:45:10",
     "updated_at": "1990-12-12 12:45:10"
 }
@@ -242,8 +246,13 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>string</code></b>&nbsp;&nbsp;<small>major_name</small>  &nbsp;
-<input type="text" name="string" data-endpoint="POSTapi-v1-majors" data-component="body" required  hidden>
+<b><code>major_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="major_name" data-endpoint="POSTapi-v1-majors" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>image_path</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="image_path" data-endpoint="POSTapi-v1-majors" data-component="body"  hidden>
 <br>
 </p>
 
@@ -260,16 +269,16 @@ Update the specified major in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/majors/molestias" \
+    "http://localhost/api/v1/majors/omnis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"string":"eos","int":"quasi"}'
+    -d '{"major_name":"quia","image_path":"et"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/majors/molestias"
+    "http://localhost/api/v1/majors/omnis"
 );
 
 let headers = {
@@ -278,8 +287,8 @@ let headers = {
 };
 
 let body = {
-    "string": "eos",
-    "int": "quasi"
+    "major_name": "quia",
+    "image_path": "et"
 }
 
 fetch(url, {
@@ -296,6 +305,7 @@ fetch(url, {
 {
     "id": 1,
     "major_name": "string",
+    "image_path": "string",
     "created_at": "1990-12-12 12:45:10",
     "updated_at": "1990-12-12 12:45:10"
 }
@@ -327,13 +337,13 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>string</code></b>&nbsp;&nbsp;<small>major_name</small>     <i>optional</i> &nbsp;
-<input type="text" name="string" data-endpoint="PUTapi-v1-majors--id-" data-component="body"  hidden>
+<b><code>major_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="major_name" data-endpoint="PUTapi-v1-majors--id-" data-component="body" required  hidden>
 <br>
 </p>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
-<input type="text" name="int" data-endpoint="PUTapi-v1-majors--id-" data-component="body" required  hidden>
+<b><code>image_path</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="image_path" data-endpoint="PUTapi-v1-majors--id-" data-component="body"  hidden>
 <br>
 </p>
 
@@ -350,16 +360,16 @@ Remove the specified major from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/majors/expedita" \
+    "http://localhost/api/v1/majors/deserunt" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"ut"}'
+    -d '{"int":"aperiam"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/majors/expedita"
+    "http://localhost/api/v1/majors/deserunt"
 );
 
 let headers = {
@@ -368,7 +378,7 @@ let headers = {
 };
 
 let body = {
-    "int": "ut"
+    "int": "aperiam"
 }
 
 fetch(url, {
@@ -385,6 +395,7 @@ fetch(url, {
 {
     "id": 1,
     "major_name": "string",
+    "image_path": "string",
     "created_at": "1990-12-12 12:45:10",
     "updated_at": "1990-12-12 12:45:10"
 }
@@ -416,10 +427,10 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<b><code>int</code></b>&nbsp;&nbsp;<small>id</small>  &nbsp;
 <input type="text" name="int" data-endpoint="DELETEapi-v1-majors--id-" data-component="body" required  hidden>
 <br>
-</p>
+The id of the major.</p>
 
 </form>
 

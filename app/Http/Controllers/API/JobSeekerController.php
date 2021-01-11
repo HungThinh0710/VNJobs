@@ -5,7 +5,13 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\JobSeeker;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreJobSeeker;
 
+/**
+ * @group JobSeeker endpoints
+ *
+ * APIs for Jobseeker.
+ */
 class JobSeekerController extends Controller
 {
     /**
@@ -16,7 +22,6 @@ class JobSeekerController extends Controller
      * @response {
      *   "current_page": 1,
      *   "data": [{
-     *      'rn_id': 1,
      *      'user_id': 1,
      *      'is_elect': 0,
      *      'cv_path': "string",
@@ -24,7 +29,6 @@ class JobSeekerController extends Controller
      *      'cover_letter_path': "string",
      *      'exp_years': 0,
      *   }, {
-     *      'rn_id': 1,
      *      'user_id': 1,
      *      'is_elect': 0,
      *      'cv_path': "string",
@@ -55,14 +59,8 @@ class JobSeekerController extends Controller
      * Store a newly created job-seeker in database.
      * @group JobSeeker endpoints
      *
-     * @bodyParam  int  $rn_id
-     * @bodyParam  int  $user_id
-     * @bodyParam  int  is_elect
-     * @bodyParam  string  cv_path
-     * @bodyParam  string  cover_letter_path
-     * @bodyParam  int  exp_years
      * @response {
-     *      'rn_id': 1,
+     *      'id': 1,
      *      'user_id': 1,
      *      'is_elect': 0,
      *      'cv_path': "string",
@@ -71,17 +69,10 @@ class JobSeekerController extends Controller
      *      'exp_years': 0,
      * }
      */
-    public function store(Request $request)
+    public function store(StoreJobSeeker $request)
     {
-        $jobSeeker = JobSeeker::create([
-            'rn_id' => $request->rn_id,
-            'user_id' => $request->user_id,
-            'is_elect' => $request->is_elect,
-            'cv_path' => $request->cv_path,
-            'cover_letter_path' => $request->cover_letter_path,
-            'exp_years' => $request->exp_years
-        ]);
-        return response()->json($jobSeeker);
+        $jobSeeker = JobSeeker::create($request->all());
+        return response()->json($jobSeeker, 201);
     }
 
     /**
@@ -89,9 +80,10 @@ class JobSeekerController extends Controller
      * Display the specified job-seeker.
      * @group JobSeeker endpoints
      *
-     * @bodyParam  int  $id required
+     * @bodyParam int jobseeker_id required The id of the job seeker.
+     * @bodyParam int $id required
      * @response {
-     *      'rn_id': 1,
+     *      'id': 1,
      *      'user_id': 1,
      *      'is_elect': 0,
      *      'cv_path': "string",
@@ -102,23 +94,17 @@ class JobSeekerController extends Controller
      */
     public function show($id)
     {
-        return response()->json(JobSeeker::findOrFail($id));
+        $jobSeeker = JobSeeker::findOrFail($id);
+        return response()->json($jobSeeker);
     }
 
     /**
      * Update a JobSeeker
      * Update the specified job-seeker in database.
      * @group JobSeeker endpoints
-     *
-     * @bodyParam  int  $rn_id
-     * @bodyParam  int  $user_id
-     * @bodyParam  int  is_elect
-     * @bodyParam  string  cv_path
-     * @bodyParam  string  cover_letter_path
-     * @bodyParam  int  exp_years
-     * @bodyParam  int  $id required
+     * 
      * @response {
-     *      'rn_id': 1,
+     *      'id': 1,
      *      'user_id': 1,
      *      'is_elect': 0,
      *      'cv_path': "string",
@@ -127,19 +113,10 @@ class JobSeekerController extends Controller
      *      'exp_years': 0,
      * }
      */
-    public function update(Request $request, $id)
+    public function update(StoreJobSeeker $request, $id)
     {
         $jobSeeker = JobSeeker::findOrFail($id);
-        if ($jobSeeker) {
-            $jobSeeker->toQuery()->update([
-                'rn_id' => $request->rn_id,
-                'user_id' => $request->user_id,
-                'is_elect' => $request->is_elect,
-                'cv_path' => $request->cv_path,
-                'cover_letter_path' => $request->cover_letter_path,
-                'exp_years' => $request->exp_years
-            ]);
-        }
+        $jobSeeker->update($request->all());
         return response()->json($jobSeeker);
     }
 
@@ -150,7 +127,7 @@ class JobSeekerController extends Controller
      *
      * @bodyParam  int  $id required
      * @rresponse {
-     *      'rn_id': 1,
+     *      'id': 1,
      *      'user_id': 1,
      *      'is_elect': 0,
      *      'cv_path': "string",
@@ -161,6 +138,7 @@ class JobSeekerController extends Controller
      */
     public function destroy($id)
     {
-        return response()->json(JobSeeker::findOrFail($id)->delete());
+        $jobSeeker = JobSeeker::findOrFail($id)->delete();
+        return response()->json($jobSeeker);
     }
 }

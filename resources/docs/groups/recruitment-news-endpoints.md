@@ -118,16 +118,16 @@ Display the specified recruitment news.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/recruitment-news/odio" \
+    -G "http://localhost/api/v1/recruitment-news/nemo" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"occaecati"}'
+    -d '{"int":"qui"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/recruitment-news/odio"
+    "http://localhost/api/v1/recruitment-news/nemo"
 );
 
 let headers = {
@@ -136,7 +136,7 @@ let headers = {
 };
 
 let body = {
-    "int": "occaecati"
+    "int": "qui"
 }
 
 fetch(url, {
@@ -195,7 +195,7 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<b><code>int</code></b>&nbsp;&nbsp;<small>id</small>  &nbsp;
 <input type="text" name="int" data-endpoint="GETapi-v1-recruitment-news--id-" data-component="body" required  hidden>
 <br>
 </p>
@@ -216,7 +216,7 @@ curl -X POST \
     "http://localhost/api/v1/recruitment-news" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"voluptates","string":"possimus","timestamp":"eaque"}'
+    -d '{"org_id":10,"author_id":4,"major_id":15,"title":"sit","content":"alias","address":"non","city":"enim","start_time":"2021-01-11T05:08:45+0000","end_time":"2021-01-11T05:08:45+0000","interview_start_time":"2021-01-11T05:08:45+0000","interview_end_time":"2021-01-11T05:08:45+0000"}'
 
 ```
 
@@ -231,9 +231,17 @@ let headers = {
 };
 
 let body = {
-    "int": "voluptates",
-    "string": "possimus",
-    "timestamp": "eaque"
+    "org_id": 10,
+    "author_id": 4,
+    "major_id": 15,
+    "title": "sit",
+    "content": "alias",
+    "address": "non",
+    "city": "enim",
+    "start_time": "2021-01-11T05:08:45+0000",
+    "end_time": "2021-01-11T05:08:45+0000",
+    "interview_start_time": "2021-01-11T05:08:45+0000",
+    "interview_end_time": "2021-01-11T05:08:45+0000"
 }
 
 fetch(url, {
@@ -286,20 +294,60 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$major_id</small>  &nbsp;
-<input type="text" name="int" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<b><code>org_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="org_id" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
 <br>
 </p>
 <p>
-<b><code>string</code></b>&nbsp;&nbsp;<small>city</small>  &nbsp;
-<input type="text" name="string" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<b><code>author_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="author_id" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
 <br>
 </p>
 <p>
-<b><code>timestamp</code></b>&nbsp;&nbsp;<small>interview_end_time</small>  &nbsp;
-<input type="text" name="timestamp" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<b><code>major_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="major_id" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
 <br>
 </p>
+<p>
+<b><code>title</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="title" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>content</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="content" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>address</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="address" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>city</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="city" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>start_time</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="start_time" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<br>
+The value must be a valid date.</p>
+<p>
+<b><code>end_time</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="end_time" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<br>
+The value must be a valid date.</p>
+<p>
+<b><code>interview_start_time</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="interview_start_time" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<br>
+The value must be a valid date.</p>
+<p>
+<b><code>interview_end_time</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="interview_end_time" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<br>
+The value must be a valid date.</p>
 
 </form>
 
@@ -314,16 +362,16 @@ Update the specified recruitment news in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/recruitment-news/voluptatem" \
+    "http://localhost/api/v1/recruitment-news/et" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"dolor","string":"perferendis","timestamp":"et"}'
+    -d '{"org_id":3,"author_id":3,"major_id":16,"title":"dolores","content":"in","address":"quod","city":"id","start_time":"2021-01-11T05:08:45+0000","end_time":"2021-01-11T05:08:45+0000","interview_start_time":"2021-01-11T05:08:45+0000","interview_end_time":"2021-01-11T05:08:45+0000"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/recruitment-news/voluptatem"
+    "http://localhost/api/v1/recruitment-news/et"
 );
 
 let headers = {
@@ -332,9 +380,17 @@ let headers = {
 };
 
 let body = {
-    "int": "dolor",
-    "string": "perferendis",
-    "timestamp": "et"
+    "org_id": 3,
+    "author_id": 3,
+    "major_id": 16,
+    "title": "dolores",
+    "content": "in",
+    "address": "quod",
+    "city": "id",
+    "start_time": "2021-01-11T05:08:45+0000",
+    "end_time": "2021-01-11T05:08:45+0000",
+    "interview_start_time": "2021-01-11T05:08:45+0000",
+    "interview_end_time": "2021-01-11T05:08:45+0000"
 }
 
 fetch(url, {
@@ -393,20 +449,60 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
-<input type="text" name="int" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<b><code>org_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="org_id" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
 <br>
 </p>
 <p>
-<b><code>string</code></b>&nbsp;&nbsp;<small>city</small>  &nbsp;
-<input type="text" name="string" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<b><code>author_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="author_id" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
 <br>
 </p>
 <p>
-<b><code>timestamp</code></b>&nbsp;&nbsp;<small>interview_end_time</small>  &nbsp;
-<input type="text" name="timestamp" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<b><code>major_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="major_id" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
 <br>
 </p>
+<p>
+<b><code>title</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="title" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>content</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="content" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>address</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="address" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>city</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="city" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>start_time</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="start_time" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<br>
+The value must be a valid date.</p>
+<p>
+<b><code>end_time</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="end_time" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<br>
+The value must be a valid date.</p>
+<p>
+<b><code>interview_start_time</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="interview_start_time" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<br>
+The value must be a valid date.</p>
+<p>
+<b><code>interview_end_time</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="interview_end_time" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<br>
+The value must be a valid date.</p>
 
 </form>
 
@@ -421,16 +517,16 @@ Remove the specified recruitment news from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/recruitment-news/numquam" \
+    "http://localhost/api/v1/recruitment-news/aspernatur" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"voluptas"}'
+    -d '{"int":"iste"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/recruitment-news/numquam"
+    "http://localhost/api/v1/recruitment-news/aspernatur"
 );
 
 let headers = {
@@ -439,7 +535,7 @@ let headers = {
 };
 
 let body = {
-    "int": "voluptas"
+    "int": "iste"
 }
 
 fetch(url, {
@@ -498,10 +594,10 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<b><code>int</code></b>&nbsp;&nbsp;<small>id</small>  &nbsp;
 <input type="text" name="int" data-endpoint="DELETEapi-v1-recruitment-news--id-" data-component="body" required  hidden>
 <br>
-</p>
+The id of the recruitment news</p>
 
 </form>
 

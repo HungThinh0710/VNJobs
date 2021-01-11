@@ -5,7 +5,14 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Role;
+use App\Http\Requests\StoreRole;
 
+
+/**
+ * @group Role endpoints
+ *
+ * APIs for role.
+ */
 class RoleController extends Controller
 {
     /**
@@ -52,7 +59,6 @@ class RoleController extends Controller
      * Store a newly created role in database.
      * @group Role endpoints
      * 
-     * @bodyParam  string role_name required
      * @response {
      *   "id": 2,
      *   "role_name": "string",
@@ -60,12 +66,10 @@ class RoleController extends Controller
      *   "updated_at": "1990-12-12 12:45:10"
      * }
      */
-    public function store(Request $request)
+    public function store(StoreRole $request)
     {
-        $role = Role::create([
-            "role_name" => $request->role_name
-        ]);
-        return response()->json($role);
+        $role = Role::create($request->all());
+        return response()->json($role, 201);
     }
 
     /**
@@ -92,8 +96,6 @@ class RoleController extends Controller
      * Update the specified role in database.
      * @group Role endpoints
      * 
-     * @bodyParam  string role_name required
-     * @bodyParam  int  $id required
      * @response {
      *   "id": 2,
      *   "role_name": "string",
@@ -101,14 +103,10 @@ class RoleController extends Controller
      *   "updated_at": "1990-12-12 12:45:10"
      * }
      */
-    public function update(Request $request, $id)
+    public function update(StoreRole $request, $id)
     {
         $role = Role::findOrFail($id);
-        if ($role) {
-            $role->toQuery()->update([
-                "role_name" => $request->role_name
-            ]);
-        }
+        $role->update($request->all());
         return response()->json($role);
     }
 

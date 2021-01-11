@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "VNJobs API Documentaion",
-        "_postman_id": "4184f412-815b-4a72-bbfe-91999c1f6ee8",
+        "_postman_id": "7d6359cc-9dd1-471e-b963-13ffa73ebec1",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -42,7 +42,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"atque\",\n    \"password\": \"sed\"\n}"
+                            "raw": "{\n    \"email\": \"est\",\n    \"password\": \"exercitationem\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -99,7 +99,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "facere",
+                                    "value": "voluptate",
                                     "description": ""
                                 }
                             ]
@@ -117,7 +117,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"vero\"\n}"
+                            "raw": "{\n    \"int\": \"fuga\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -149,7 +149,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"placeat\",\n    \"string\": \"quam\"\n}"
+                            "raw": "{\n    \"user_id\": 20,\n    \"is_elect\": false,\n    \"cv_path\": {},\n    \"cover_letter_path\": \"ut\",\n    \"exp_years\": 10\n}"
                         },
                         "description": "",
                         "auth": {
@@ -171,7 +171,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "autem",
+                                    "value": "delectus",
                                     "description": ""
                                 }
                             ]
@@ -189,7 +189,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"ea\",\n    \"string\": \"aspernatur\"\n}"
+                            "raw": "{\n    \"user_id\": 2,\n    \"is_elect\": false,\n    \"cv_path\": {},\n    \"cover_letter_path\": \"aut\",\n    \"exp_years\": 7\n}"
                         },
                         "description": "",
                         "auth": {
@@ -211,7 +211,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "odio",
+                                    "value": "voluptas",
                                     "description": ""
                                 }
                             ]
@@ -229,7 +229,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"consequatur\"\n}"
+                            "raw": "{\n    \"int\": \"rerum\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -286,7 +286,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "mollitia",
+                                    "value": "voluptate",
                                     "description": ""
                                 }
                             ]
@@ -304,7 +304,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"voluptatem\"\n}"
+                            "raw": "{\n    \"int\": \"incidunt\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -336,7 +336,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"string\": \"nihil\"\n}"
+                            "raw": "{\n    \"major_name\": \"rerum\",\n    \"image_path\": \"est\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -358,7 +358,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "esse",
+                                    "value": "omnis",
                                     "description": ""
                                 }
                             ]
@@ -376,7 +376,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"string\": \"impedit\",\n    \"int\": \"sint\"\n}"
+                            "raw": "{\n    \"major_name\": \"quia\",\n    \"image_path\": \"et\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -398,7 +398,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "culpa",
+                                    "value": "deserunt",
                                     "description": ""
                                 }
                             ]
@@ -416,7 +416,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"ex\"\n}"
+                            "raw": "{\n    \"int\": \"aperiam\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -473,7 +473,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "praesentium",
+                                    "value": "est",
                                     "description": ""
                                 }
                             ]
@@ -491,7 +491,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"architecto\"\n}"
+                            "raw": "{\n    \"int\": \"cumque\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -523,7 +523,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"eum\",\n    \"string\": \"quaerat\"\n}"
+                            "raw": "{\n    \"owner_id\": 15,\n    \"org_name\": \"cumque\",\n    \"phones\": \"culpa\",\n    \"description\": \"et\",\n    \"tax_id\": 8,\n    \"address\": \"iste\",\n    \"logo_path\": \"tempore\",\n    \"cover_path\": \"dolorem\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -545,7 +545,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "impedit",
+                                    "value": "odit",
                                     "description": ""
                                 }
                             ]
@@ -563,7 +563,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"libero\",\n    \"string\": \"distinctio\"\n}"
+                            "raw": "{\n    \"owner_id\": 19,\n    \"org_name\": \"vero\",\n    \"phones\": \"impedit\",\n    \"description\": \"officia\",\n    \"tax_id\": 16,\n    \"address\": \"eos\",\n    \"logo_path\": \"expedita\",\n    \"cover_path\": \"quo\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -585,7 +585,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "porro",
                                     "description": ""
                                 }
                             ]
@@ -603,7 +603,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"dolor\"\n}"
+                            "raw": "{\n    \"int\": \"vitae\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -660,7 +660,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "rerum",
+                                    "value": "nemo",
                                     "description": ""
                                 }
                             ]
@@ -678,7 +678,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"eaque\"\n}"
+                            "raw": "{\n    \"int\": \"qui\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -710,7 +710,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"voluptas\",\n    \"string\": \"sit\",\n    \"timestamp\": \"distinctio\"\n}"
+                            "raw": "{\n    \"org_id\": 10,\n    \"author_id\": 4,\n    \"major_id\": 15,\n    \"title\": \"sit\",\n    \"content\": \"alias\",\n    \"address\": \"non\",\n    \"city\": \"enim\",\n    \"start_time\": \"2021-01-11T05:08:45+0000\",\n    \"end_time\": \"2021-01-11T05:08:45+0000\",\n    \"interview_start_time\": \"2021-01-11T05:08:45+0000\",\n    \"interview_end_time\": \"2021-01-11T05:08:45+0000\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -732,7 +732,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "asperiores",
+                                    "value": "et",
                                     "description": ""
                                 }
                             ]
@@ -750,7 +750,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"dolores\",\n    \"string\": \"non\",\n    \"timestamp\": \"est\"\n}"
+                            "raw": "{\n    \"org_id\": 3,\n    \"author_id\": 3,\n    \"major_id\": 16,\n    \"title\": \"dolores\",\n    \"content\": \"in\",\n    \"address\": \"quod\",\n    \"city\": \"id\",\n    \"start_time\": \"2021-01-11T05:08:45+0000\",\n    \"end_time\": \"2021-01-11T05:08:45+0000\",\n    \"interview_start_time\": \"2021-01-11T05:08:45+0000\",\n    \"interview_end_time\": \"2021-01-11T05:08:45+0000\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -772,7 +772,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "at",
+                                    "value": "aspernatur",
                                     "description": ""
                                 }
                             ]
@@ -790,7 +790,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"temporibus\"\n}"
+                            "raw": "{\n    \"int\": \"iste\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -847,7 +847,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aliquid",
+                                    "value": "recusandae",
                                     "description": ""
                                 }
                             ]
@@ -865,7 +865,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"reprehenderit\"\n}"
+                            "raw": "{\n    \"int\": \"et\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -897,7 +897,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"string\": \"qui\"\n}"
+                            "raw": "{\n    \"role_name\": \"ad\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -919,7 +919,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aspernatur",
+                                    "value": "esse",
                                     "description": ""
                                 }
                             ]
@@ -937,7 +937,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"string\": \"voluptatem\",\n    \"int\": \"earum\"\n}"
+                            "raw": "{\n    \"role_name\": \"fugit\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -959,7 +959,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "eos",
+                                    "value": "voluptate",
                                     "description": ""
                                 }
                             ]
@@ -977,7 +977,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"excepturi\"\n}"
+                            "raw": "{\n    \"int\": \"occaecati\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -1034,7 +1034,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "temporibus",
+                                    "value": "distinctio",
                                     "description": ""
                                 }
                             ]
@@ -1052,7 +1052,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"asperiores\"\n}"
+                            "raw": "{\n    \"id\": 8\n}"
                         },
                         "description": "",
                         "auth": {
@@ -1084,7 +1084,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"et\",\n    \"string\": \"et\",\n    \"date\": \"dicta\",\n    \"timestamp\": \"officia\"\n}"
+                            "raw": "{\n    \"role_id\": 6,\n    \"first_name\": \"molestiae\",\n    \"last_name\": \"sed\",\n    \"dob\": \"dolorum\",\n    \"phone\": \"cupiditate\",\n    \"email\": \"id\",\n    \"password\": \"iure\",\n    \"address\": \"tenetur\",\n    \"bio\": \"et\",\n    \"avatar_path\": \"esse\",\n    \"social_linkedin\": \"facere\",\n    \"social_facebook\": \"expedita\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -1106,7 +1106,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "omnis",
+                                    "value": "debitis",
                                     "description": ""
                                 }
                             ]
@@ -1124,9 +1124,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"voluptatibus\",\n    \"string\": \"voluptatem\",\n    \"date\": \"ut\",\n    \"timestamp\": \"optio\"\n}"
+                            "raw": "{\n    \"role_id\": 13,\n    \"first_name\": \"veniam\",\n    \"last_name\": \"soluta\",\n    \"dob\": \"2021-01-11T05:08:45+0000\",\n    \"phone\": \"maxime\",\n    \"email\": \"lueilwitz.kobe@example.com\",\n    \"password\": \"molestiae\",\n    \"address\": \"praesentium\"\n}"
                         },
-                        "description": "",
+                        "description": ".",
                         "auth": {
                             "type": "noauth"
                         }
@@ -1146,7 +1146,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "officia",
+                                    "value": "odio",
                                     "description": ""
                                 }
                             ]
@@ -1164,7 +1164,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"voluptatum\"\n}"
+                            "raw": "{\n    \"id\": 17\n}"
                         },
                         "description": "",
                         "auth": {
