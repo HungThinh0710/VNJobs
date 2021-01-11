@@ -5,7 +5,13 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\RecruitmentNews;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreRecruitmentNews;
 
+/**
+ * @group Recruitment News endpoints
+ *
+ * APIs for Recruitment News.
+ */
 class RecruitmentNewsController extends Controller
 {
     /**
@@ -68,53 +74,30 @@ class RecruitmentNewsController extends Controller
     }
 
     /**
-     * Create a Recruitment News
-     * Store a newly created recruitment news in database.
-     * @group Recruitment News endpoints
-     *
-     * @bodyParam  int  $org_id required
-     * @bodyParam  int  $author_id required
-     * @bodyParam  int  $major_id required
-     * @bodyParam  string  title required
-     * @bodyParam  string  content required
-     * @bodyParam  string  address required
-     * @bodyParam  string  city required
-     * @bodyParam  timestamp  start_time required
-     * @bodyParam  timestamp  end_time required
-     * @bodyParam  timestamp  interview_start_time required
-     * @bodyParam  timestamp  interview_end_time required
-     * @response {
-     *   'id': 1,
-     *   'org_id': 1,
-     *   'author_id': 1,
-     *   'major_id': 1,
-     *   'title': 'string',
-     *   'content': 'string',
-     *   'address': 'string',
-     *   'city': 'string',
-     *   'start_time': '1990-12-12 12:45:10',
-     *   'end_time': '1990-12-12 12:45:10',
-     *   'interview_start_time': '1990-12-12 12:45:10',
-     *   'interview_end_time': '1990-12-12 12:45:10',
-     *   "created_at": "1990-12-12 12:45:10",
-     *   "updated_at": "1990-12-12 12:45:10"
-     * }
-     */
-    public function store(Request $request)
+    * Create a Recruitment News
+    * Store a newly created recruitment news in database.
+    * @group Recruitment News endpoints
+    *
+    * @response {
+    *   'id': 1,
+    *   'org_id': 1,
+    *   'author_id': 1,
+    *   'major_id': 1,
+    *   'title': 'string',
+    *   'content': 'string',
+    *   'address': 'string',
+    *   'city': 'string',
+    *   'start_time': '1990-12-12 12:45:10',
+    *   'end_time': '1990-12-12 12:45:10',
+    *   'interview_start_time': '1990-12-12 12:45:10',
+    *   'interview_end_time': '1990-12-12 12:45:10',
+    *   "created_at": "1990-12-12 12:45:10",
+    *   "updated_at": "1990-12-12 12:45:10"
+    * }
+    */
+    public function store(StoreRecruitmentNews $request)
     {
-        $recruitmentNews = RecruitmentNews::create([
-            'org_id' => $request->org_id, 
-            'author_id' => $request->author_id, 
-            'major_id' => $request->major_id, 
-            'title' => $request->title, 
-            'content' => $request->content, 
-            'address' => $request->address, 
-            'city' => $request->city, 
-            'start_time' => $request->start_time, 
-            'end_time' => $request->end_time, 
-            'interview_start_time' => $request->interview_start_time, 
-            'interview_end_time' => $request->interview_end_time
-        ]);
+        $recruitmentNews = RecruitmentNews::create($request->all());
         return response()->json($recruitmentNews);
     }
 
@@ -123,7 +106,7 @@ class RecruitmentNewsController extends Controller
      * Display the specified recruitment news.
      * @group Recruitment News endpoints
      *
-     * @bodyParam  int  $id required
+     * @bodyParam int id required
      * @response {
      *   'id': 1,
      *   'org_id': 1,
@@ -152,18 +135,6 @@ class RecruitmentNewsController extends Controller
      * Update the specified recruitment news in database.
      * @group Recruitment News endpoints
      *
-     * @bodyParam  int  $org_id required
-     * @bodyParam  int  $author_id required
-     * @bodyParam  int  $major_id required
-     * @bodyParam  string  title required
-     * @bodyParam  string  content required
-     * @bodyParam  string  address required
-     * @bodyParam  string  city required
-     * @bodyParam  timestamp  start_time required
-     * @bodyParam  timestamp  end_time required
-     * @bodyParam  timestamp  interview_start_time required
-     * @bodyParam  timestamp  interview_end_time required
-     * @bodyParam  int  $id required
      * @response {
      *   'id': 1,
      *   'org_id': 1,
@@ -181,24 +152,10 @@ class RecruitmentNewsController extends Controller
      *   "updated_at": "1990-12-12 12:45:10"
      * }
      */
-    public function update(Request $request, $id)
+    public function update(StoreRecruitmentNews $request, $id)
     {
         $recruitmentNews = RecruitmentNews::findOrFail($id);
-        if ($recruitmentNews) {
-            $recruitmentNews->toQuery()->update([
-                'org_id' => $request->org_id, 
-                'author_id' => $request->author_id, 
-                'major_id' => $request->major_id, 
-                'title' => $request->title, 
-                'content' => $request->content, 
-                'address' => $request->address, 
-                'city' => $request->city, 
-                'start_time' => $request->start_time, 
-                'end_time' => $request->end_time, 
-                'interview_start_time' => $request->interview_start_time, 
-                'interview_end_time' => $request->interview_end_time
-            ]);
-        }
+        $recruitmentNews->update($request->all());
         return response()->json($recruitmentNews);
     }
 
@@ -207,7 +164,7 @@ class RecruitmentNewsController extends Controller
      * Remove the specified recruitment news from database.
      * @group Recruitment News endpoints
      *
-     * @bodyParam  int  $id required
+     * @bodyParam  int id required The id of the recruitment news
      * @response {
      *   'id': 1,
      *   'org_id': 1,

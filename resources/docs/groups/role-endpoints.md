@@ -98,16 +98,16 @@ Display the specified role.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/roles/reiciendis" \
+    -G "http://localhost/api/v1/roles/recusandae" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"accusantium"}'
+    -d '{"int":"et"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/roles/reiciendis"
+    "http://localhost/api/v1/roles/recusandae"
 );
 
 let headers = {
@@ -116,7 +116,7 @@ let headers = {
 };
 
 let body = {
-    "int": "accusantium"
+    "int": "et"
 }
 
 fetch(url, {
@@ -185,7 +185,7 @@ curl -X POST \
     "http://localhost/api/v1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"string":"deserunt"}'
+    -d '{"role_name":"ad"}'
 
 ```
 
@@ -200,7 +200,7 @@ let headers = {
 };
 
 let body = {
-    "string": "deserunt"
+    "role_name": "ad"
 }
 
 fetch(url, {
@@ -242,8 +242,8 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>string</code></b>&nbsp;&nbsp;<small>role_name</small>  &nbsp;
-<input type="text" name="string" data-endpoint="POSTapi-v1-roles" data-component="body" required  hidden>
+<b><code>role_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="role_name" data-endpoint="POSTapi-v1-roles" data-component="body" required  hidden>
 <br>
 </p>
 
@@ -260,16 +260,16 @@ Update the specified role in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/roles/blanditiis" \
+    "http://localhost/api/v1/roles/esse" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"string":"corrupti","int":"aut"}'
+    -d '{"role_name":"fugit"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/roles/blanditiis"
+    "http://localhost/api/v1/roles/esse"
 );
 
 let headers = {
@@ -278,8 +278,7 @@ let headers = {
 };
 
 let body = {
-    "string": "corrupti",
-    "int": "aut"
+    "role_name": "fugit"
 }
 
 fetch(url, {
@@ -327,13 +326,8 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>string</code></b>&nbsp;&nbsp;<small>role_name</small>  &nbsp;
-<input type="text" name="string" data-endpoint="PUTapi-v1-roles--id-" data-component="body" required  hidden>
-<br>
-</p>
-<p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
-<input type="text" name="int" data-endpoint="PUTapi-v1-roles--id-" data-component="body" required  hidden>
+<b><code>role_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="role_name" data-endpoint="PUTapi-v1-roles--id-" data-component="body" required  hidden>
 <br>
 </p>
 
@@ -350,16 +344,16 @@ Remove the specified role from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/roles/deserunt" \
+    "http://localhost/api/v1/roles/voluptate" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"corporis"}'
+    -d '{"int":"occaecati"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/roles/deserunt"
+    "http://localhost/api/v1/roles/voluptate"
 );
 
 let headers = {
@@ -368,7 +362,7 @@ let headers = {
 };
 
 let body = {
-    "int": "corporis"
+    "int": "occaecati"
 }
 
 fetch(url, {

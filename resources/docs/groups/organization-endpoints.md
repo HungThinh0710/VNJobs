@@ -49,6 +49,8 @@ data: [{
   "tax_id": "41665",
   "address": "string",
   "is_verify": 0,
+  "logo_path": "string",
+  "cover_path": "string",
   "created_at": "1990-12-12 12:45:10",
   "updated_at": "1990-12-12 12:45:10"
   },
@@ -61,6 +63,8 @@ data: [{
   "tax_id": "41665",
   "address": "string",
   "is_verify": 0,
+  "logo_path": "string",
+  "cover_path": "string",
   "created_at": "1990-12-12 12:45:10",
   "updated_at": "1990-12-12 12:45:10"
   },
@@ -110,16 +114,16 @@ Display the specified resource.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/organizations/rem" \
+    -G "http://localhost/api/v1/organizations/est" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"omnis"}'
+    -d '{"int":"cumque"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/organizations/rem"
+    "http://localhost/api/v1/organizations/est"
 );
 
 let headers = {
@@ -128,7 +132,7 @@ let headers = {
 };
 
 let body = {
-    "int": "omnis"
+    "int": "cumque"
 }
 
 fetch(url, {
@@ -151,6 +155,8 @@ fetch(url, {
     "tax_id": "41665",
     "address": "string",
     "is_verify": 0,
+    "logo_path": "string",
+    "cover_path": "string",
     "created_at": "1990-12-12 12:45:10",
     "updated_at": "1990-12-12 12:45:10"
 }
@@ -182,7 +188,7 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<b><code>int</code></b>&nbsp;&nbsp;<small>id</small>  &nbsp;
 <input type="text" name="int" data-endpoint="GETapi-v1-organizations--id-" data-component="body" required  hidden>
 <br>
 </p>
@@ -203,7 +209,7 @@ curl -X POST \
     "http://localhost/api/v1/organizations" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"autem","string":"ipsam"}'
+    -d '{"owner_id":15,"org_name":"cumque","phones":"culpa","description":"et","tax_id":8,"address":"iste","logo_path":"tempore","cover_path":"dolorem"}'
 
 ```
 
@@ -218,8 +224,14 @@ let headers = {
 };
 
 let body = {
-    "int": "autem",
-    "string": "ipsam"
+    "owner_id": 15,
+    "org_name": "cumque",
+    "phones": "culpa",
+    "description": "et",
+    "tax_id": 8,
+    "address": "iste",
+    "logo_path": "tempore",
+    "cover_path": "dolorem"
 }
 
 fetch(url, {
@@ -242,6 +254,8 @@ fetch(url, {
     "tax_id": "41665",
     "address": "string",
     "is_verify": 0,
+    "logo_path": "string",
+    "cover_path": "string",
     "created_at": "1990-12-12 12:45:10",
     "updated_at": "1990-12-12 12:45:10"
 }
@@ -267,13 +281,43 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>is_verify</small>     <i>optional</i> &nbsp;
-<input type="text" name="int" data-endpoint="POSTapi-v1-organizations" data-component="body"  hidden>
+<b><code>owner_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="owner_id" data-endpoint="POSTapi-v1-organizations" data-component="body" required  hidden>
 <br>
 </p>
 <p>
-<b><code>string</code></b>&nbsp;&nbsp;<small>address</small>  &nbsp;
-<input type="text" name="string" data-endpoint="POSTapi-v1-organizations" data-component="body" required  hidden>
+<b><code>org_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="org_name" data-endpoint="POSTapi-v1-organizations" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>phones</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="phones" data-endpoint="POSTapi-v1-organizations" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>description</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="description" data-endpoint="POSTapi-v1-organizations" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>tax_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="tax_id" data-endpoint="POSTapi-v1-organizations" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>address</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="address" data-endpoint="POSTapi-v1-organizations" data-component="body"  hidden>
+<br>
+</p>
+<p>
+<b><code>logo_path</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="logo_path" data-endpoint="POSTapi-v1-organizations" data-component="body"  hidden>
+<br>
+</p>
+<p>
+<b><code>cover_path</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="cover_path" data-endpoint="POSTapi-v1-organizations" data-component="body"  hidden>
 <br>
 </p>
 
@@ -290,16 +334,16 @@ Update the specified resource in Database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/organizations/harum" \
+    "http://localhost/api/v1/organizations/odit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"corporis","string":"est"}'
+    -d '{"owner_id":19,"org_name":"vero","phones":"impedit","description":"officia","tax_id":16,"address":"eos","logo_path":"expedita","cover_path":"quo"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/organizations/harum"
+    "http://localhost/api/v1/organizations/odit"
 );
 
 let headers = {
@@ -308,8 +352,14 @@ let headers = {
 };
 
 let body = {
-    "int": "corporis",
-    "string": "est"
+    "owner_id": 19,
+    "org_name": "vero",
+    "phones": "impedit",
+    "description": "officia",
+    "tax_id": 16,
+    "address": "eos",
+    "logo_path": "expedita",
+    "cover_path": "quo"
 }
 
 fetch(url, {
@@ -332,6 +382,8 @@ fetch(url, {
     "tax_id": "41665",
     "address": "string",
     "is_verify": 0,
+    "logo_path": "string",
+    "cover_path": "string",
     "created_at": "1990-12-12 12:45:10",
     "updated_at": "1990-12-12 12:45:10"
 }
@@ -363,13 +415,43 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>is_verify</small>     <i>optional</i> &nbsp;
-<input type="text" name="int" data-endpoint="PUTapi-v1-organizations--id-" data-component="body"  hidden>
+<b><code>owner_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="owner_id" data-endpoint="PUTapi-v1-organizations--id-" data-component="body" required  hidden>
 <br>
 </p>
 <p>
-<b><code>string</code></b>&nbsp;&nbsp;<small>address</small>  &nbsp;
-<input type="text" name="string" data-endpoint="PUTapi-v1-organizations--id-" data-component="body" required  hidden>
+<b><code>org_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="org_name" data-endpoint="PUTapi-v1-organizations--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>phones</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="phones" data-endpoint="PUTapi-v1-organizations--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>description</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="description" data-endpoint="PUTapi-v1-organizations--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>tax_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="tax_id" data-endpoint="PUTapi-v1-organizations--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>address</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="address" data-endpoint="PUTapi-v1-organizations--id-" data-component="body"  hidden>
+<br>
+</p>
+<p>
+<b><code>logo_path</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="logo_path" data-endpoint="PUTapi-v1-organizations--id-" data-component="body"  hidden>
+<br>
+</p>
+<p>
+<b><code>cover_path</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="cover_path" data-endpoint="PUTapi-v1-organizations--id-" data-component="body"  hidden>
 <br>
 </p>
 
@@ -386,16 +468,16 @@ Remove the Organization from Database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/organizations/minus" \
+    "http://localhost/api/v1/organizations/porro" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"veritatis"}'
+    -d '{"int":"vitae"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/organizations/minus"
+    "http://localhost/api/v1/organizations/porro"
 );
 
 let headers = {
@@ -404,7 +486,7 @@ let headers = {
 };
 
 let body = {
-    "int": "veritatis"
+    "int": "vitae"
 }
 
 fetch(url, {
@@ -427,6 +509,8 @@ fetch(url, {
     "tax_id": "41665",
     "address": "string",
     "is_verify": 0,
+    "logo_path": "string",
+    "cover_path": "string",
     "created_at": "1990-12-12 12:45:10",
     "updated_at": "1990-12-12 12:45:10"
 }
@@ -458,7 +542,7 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<b><code>int</code></b>&nbsp;&nbsp;<small>id</small>  &nbsp;
 <input type="text" name="int" data-endpoint="DELETEapi-v1-organizations--id-" data-component="body" required  hidden>
 <br>
 </p>

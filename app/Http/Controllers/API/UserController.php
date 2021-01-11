@@ -5,7 +5,13 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\FindUser;
+use App\Http\Requests\StoreUser;
+/**
+ * @group User endpoints
+ *
+ * APIs for user.
+ */
 class UserController extends Controller
 {
     /**
@@ -15,7 +21,7 @@ class UserController extends Controller
      *
      * @response {
      * "current_page": 1,
-     * data: [{
+     * "data": [{
      *   'id': 1,
      *   'role_id': 1,
      *   'first_name': 'string',
@@ -72,61 +78,62 @@ class UserController extends Controller
     }
 
     /**
-     * Create a User
-     * Store a newly created user in database.
-     * @group User endpoints
-     *
-     * @bodyParam int $role_id required
-     * @bodyParam string first_name required
-     * @bodyParam string last_name required
-     * @bodyParam date dob required
-     * @bodyParam string phone required
-     * @bodyParam string email required
-     * @bodyParam timestamp email_verified_at required
-     * @bodyParam string  password required
-     * @bodyParam string address required
-     * @bodyParam string bio 
-     * @bodyParam string avatar_path
-     * @bodyParam string social_linkedin 
-     * @bodyParam string social_facebook 
-     * @bodyParam  int  $id required
-     * @response {
-     *   'id': 1,
-     *   'role_id': 1,
-     *   'first_name': 'string',
-     *   'last_name': 'string',
-     *   'dob': '1990-12-12',
-     *   'phone': '098 0983 092',
-     *   'email': 'string',
-     *   'email_verified_at': '1990-12-12 12:45:10',
-     *   'password': 'string',
-     *   'address': 'string',
-     *   'bio': 'string',
-     *   'avatar_path': 'string',
-     *   'social_linkedin': 'string',
-     *   'social_facebook': 'string',
-     *   "created_at": "1990-12-12 12:45:10",
-     *   "updated_at": "1990-12-12 12:45:10"
-     * }
-     */
-    public function store(Request $request)
+    * Create a User
+    * Store a newly created user in database.
+    * @group User endpoints
+    * 
+    * @bodyParam first_name string required The first name of the user.
+    * @bodyParam last_name string required The last name of the user.
+    * @bodyParam dob date required The date of birth of the user.
+    * @bodyParam phone string required The phone number of the user.
+    * @bodyParam email email required The email of the user.
+    * @bodyParam password string required The password of the user.
+    * @bodyParam address string required The address of the user.
+    * @bodyParam bio string The introduce of the user.
+    * @bodyParam avatar_path string The avatar's image path of the user.
+    * @bodyParam social_linkedin string The linkedin link of the user.
+    * @bodyParam social_facebook string The facebook link of the user.
+    *
+    * @response {
+    *   'id': 1,
+    *   'role_id': 1,
+    *   'first_name': 'string',
+    *   'last_name': 'string',
+    *   'dob': '1990-12-12',
+    *   'phone': '098 0983 092',
+    *   'email': 'string',
+    *   'email_verified_at': '1990-12-12 12:45:10',
+    *   'password': 'string',
+    *   'address': 'string',
+    *   'bio': 'string',
+    *   'avatar_path': 'string',
+    *   'social_linkedin': 'string',
+    *   'social_facebook': 'string',
+    *   "created_at": "1990-12-12 12:45:10",
+    *   "updated_at": "1990-12-12 12:45:10"
+    * }
+    */
+    public function store(StoreUser $request)
     {
-        $user = User::create([
-            'role_id' => $request->role_id,
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'dob' => $request->dob,
-            'phone' => $request->phone,
-            'email' => $request->email,
-            'email_verified_at' => $request->email_verified_at,
-            'password' => $request->password,
-            'address' => $request->address,
-            'bio' => $request->bio,
-            'avatar_path' => $request->avatar_path,
-            'social_linkedin' => $request->social_linkedin,
-            'social_facebook' => $request->social_facebook
-        ]);
-        return response()->json($user);
+        // $user = User::create([
+        //     'role_id' => $request->role_id,
+        //     'first_name' => $request->first_name,
+        //     'last_name' => $request->last_name,
+        //     'dob' => $request->dob,
+        //     'phone' => $request->phone,
+        //     'email' => $request->email,
+        //     'email_verified_at' => $request->email_verified_at,
+        //     'password' => $request->password,
+        //     'address' => $request->address,
+        //     'bio' => $request->bio,
+        //     'avatar_path' => $request->avatar_path,
+        //     'social_linkedin' => $request->social_linkedin,
+        //     'social_facebook' => $request->social_facebook
+        // ]);
+
+        $user = User::create($request->all());
+        
+        return response()->json($user, 201);
     }
 
     /**
@@ -134,7 +141,8 @@ class UserController extends Controller
      * Display the specified user.
      * @group User endpoints
      *
-     * @bodyParam  int  $id required
+     * @bodyParam id int required The id of the user.
+     * 
      * @response {
      *   'id': 1,
      *   'role_id': 1,
@@ -162,23 +170,9 @@ class UserController extends Controller
 
     /**
      * Update User's Information
-     * Update the specified user in database.
+     * Update the specified user in database..
      * @group User endpoints
      *
-     * @bodyParam int $role_id required
-     * @bodyParam string first_name required
-     * @bodyParam string last_name required
-     * @bodyParam date dob required
-     * @bodyParam string phone required
-     * @bodyParam string email required
-     * @bodyParam timestamp email_verified_at required
-     * @bodyParam string  password required
-     * @bodyParam string address required
-     * @bodyParam string bio 
-     * @bodyParam string avatar_path
-     * @bodyParam string social_linkedin 
-     * @bodyParam string social_facebook 
-     * @bodyParam  int  $id required
      * @response {
      *   'id': 1,
      *   'role_id': 1,
@@ -198,10 +192,13 @@ class UserController extends Controller
      *   "updated_at": "1990-12-12 12:45:10"
      * }
      */
-    public function update(Request $request, $id)
+    public function update(StoreUser $request, $id)
     {
+        /*
+        // OLD WAY
         $user = User::findOrFail($id);
         if ($user) {
+            http_response_code(200);
             $user->toQuery()->update([
                 'role_id' => $request->role_id,
                 'first_name' => $request->first_name,
@@ -217,7 +214,15 @@ class UserController extends Controller
                 'social_linkedin' => $request->social_linkedin,
                 'social_facebook' => $request->social_facebook
             ]);
+        } else {
+            http_response_code(404);
         }
+        return response()->json($user);
+        */
+
+        /* NEW WAY */
+        $user = User::findOrFail($id);
+        $user->update($request->all());
         return response()->json($user);
     }
 
@@ -226,7 +231,8 @@ class UserController extends Controller
      * Remove the specified user from database.
      * @group User endpoints
      *
-     * @bodyParam  int  $id required
+     * @bodyParam id int required The id of the user.
+     * 
      * @response {
      *   'id': 1,
      *   'role_id': 1,
@@ -248,6 +254,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        return response()->json(User::findOrFail($id)->delete());
+        $user = User::findOrFail($id)->delete();
+        return response()->json($user);
     }
 }

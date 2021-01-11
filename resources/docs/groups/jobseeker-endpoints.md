@@ -41,7 +41,6 @@ fetch(url, {
 {
   "current_page": 1,
   "data": [{
-     'rn_id': 1,
      'user_id': 1,
      'is_elect': 0,
      'cv_path': "string",
@@ -49,7 +48,6 @@ fetch(url, {
      'cover_letter_path': "string",
      'exp_years': 0,
   }, {
-     'rn_id': 1,
      'user_id': 1,
      'is_elect': 0,
      'cv_path': "string",
@@ -101,16 +99,16 @@ Display the specified job-seeker.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/job-seekers/eum" \
+    -G "http://localhost/api/v1/job-seekers/voluptate" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"aliquam"}'
+    -d '{"int":"fuga"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/eum"
+    "http://localhost/api/v1/job-seekers/voluptate"
 );
 
 let headers = {
@@ -119,7 +117,7 @@ let headers = {
 };
 
 let body = {
-    "int": "aliquam"
+    "int": "fuga"
 }
 
 fetch(url, {
@@ -135,7 +133,7 @@ fetch(url, {
 ```json
 
 {
-     'rn_id': 1,
+     'id': 1,
      'user_id': 1,
      'is_elect': 0,
      'cv_path': "string",
@@ -192,7 +190,7 @@ curl -X POST \
     "http://localhost/api/v1/job-seekers" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"nesciunt","string":"totam"}'
+    -d '{"user_id":20,"is_elect":false,"cv_path":{},"cover_letter_path":"ut","exp_years":10}'
 
 ```
 
@@ -207,8 +205,11 @@ let headers = {
 };
 
 let body = {
-    "int": "nesciunt",
-    "string": "totam"
+    "user_id": 20,
+    "is_elect": false,
+    "cv_path": {},
+    "cover_letter_path": "ut",
+    "exp_years": 10
 }
 
 fetch(url, {
@@ -224,7 +225,7 @@ fetch(url, {
 ```json
 
 {
-     'rn_id': 1,
+     'id': 1,
      'user_id': 1,
      'is_elect': 0,
      'cv_path': "string",
@@ -254,13 +255,29 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>exp_years</small>     <i>optional</i> &nbsp;
-<input type="text" name="int" data-endpoint="POSTapi-v1-job-seekers" data-component="body"  hidden>
+<b><code>user_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="user_id" data-endpoint="POSTapi-v1-job-seekers" data-component="body" required  hidden>
 <br>
 </p>
 <p>
-<b><code>string</code></b>&nbsp;&nbsp;<small>cover_letter_path</small>     <i>optional</i> &nbsp;
-<input type="text" name="string" data-endpoint="POSTapi-v1-job-seekers" data-component="body"  hidden>
+<b><code>is_elect</code></b>&nbsp;&nbsp;<small>boolean</small>     <i>optional</i> &nbsp;
+<label data-endpoint="POSTapi-v1-job-seekers" hidden><input type="radio" name="is_elect" value="true" data-endpoint="POSTapi-v1-job-seekers" data-component="body" ><code>true</code></label>
+<label data-endpoint="POSTapi-v1-job-seekers" hidden><input type="radio" name="is_elect" value="false" data-endpoint="POSTapi-v1-job-seekers" data-component="body" ><code>false</code></label>
+<br>
+</p>
+<p>
+<b><code>cv_path</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="cv_path" data-endpoint="POSTapi-v1-job-seekers" data-component="body"  hidden>
+<br>
+</p>
+<p>
+<b><code>cover_letter_path</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="cover_letter_path" data-endpoint="POSTapi-v1-job-seekers" data-component="body"  hidden>
+<br>
+</p>
+<p>
+<b><code>exp_years</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="exp_years" data-endpoint="POSTapi-v1-job-seekers" data-component="body" required  hidden>
 <br>
 </p>
 
@@ -277,16 +294,16 @@ Update the specified job-seeker in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/job-seekers/minus" \
+    "http://localhost/api/v1/job-seekers/delectus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"ipsa","string":"exercitationem"}'
+    -d '{"user_id":2,"is_elect":false,"cv_path":{},"cover_letter_path":"aut","exp_years":7}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/minus"
+    "http://localhost/api/v1/job-seekers/delectus"
 );
 
 let headers = {
@@ -295,8 +312,11 @@ let headers = {
 };
 
 let body = {
-    "int": "ipsa",
-    "string": "exercitationem"
+    "user_id": 2,
+    "is_elect": false,
+    "cv_path": {},
+    "cover_letter_path": "aut",
+    "exp_years": 7
 }
 
 fetch(url, {
@@ -312,7 +332,7 @@ fetch(url, {
 ```json
 
 {
-     'rn_id': 1,
+     'id': 1,
      'user_id': 1,
      'is_elect': 0,
      'cv_path': "string",
@@ -348,13 +368,29 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
-<input type="text" name="int" data-endpoint="PUTapi-v1-job-seekers--id-" data-component="body" required  hidden>
+<b><code>user_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="user_id" data-endpoint="PUTapi-v1-job-seekers--id-" data-component="body" required  hidden>
 <br>
 </p>
 <p>
-<b><code>string</code></b>&nbsp;&nbsp;<small>cover_letter_path</small>     <i>optional</i> &nbsp;
-<input type="text" name="string" data-endpoint="PUTapi-v1-job-seekers--id-" data-component="body"  hidden>
+<b><code>is_elect</code></b>&nbsp;&nbsp;<small>boolean</small>     <i>optional</i> &nbsp;
+<label data-endpoint="PUTapi-v1-job-seekers--id-" hidden><input type="radio" name="is_elect" value="true" data-endpoint="PUTapi-v1-job-seekers--id-" data-component="body" ><code>true</code></label>
+<label data-endpoint="PUTapi-v1-job-seekers--id-" hidden><input type="radio" name="is_elect" value="false" data-endpoint="PUTapi-v1-job-seekers--id-" data-component="body" ><code>false</code></label>
+<br>
+</p>
+<p>
+<b><code>cv_path</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="cv_path" data-endpoint="PUTapi-v1-job-seekers--id-" data-component="body"  hidden>
+<br>
+</p>
+<p>
+<b><code>cover_letter_path</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="cover_letter_path" data-endpoint="PUTapi-v1-job-seekers--id-" data-component="body"  hidden>
+<br>
+</p>
+<p>
+<b><code>exp_years</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="exp_years" data-endpoint="PUTapi-v1-job-seekers--id-" data-component="body" required  hidden>
 <br>
 </p>
 
@@ -371,16 +407,16 @@ Remove the specified job-seeker from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/job-seekers/qui" \
+    "http://localhost/api/v1/job-seekers/voluptas" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"eos"}'
+    -d '{"int":"rerum"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/qui"
+    "http://localhost/api/v1/job-seekers/voluptas"
 );
 
 let headers = {
@@ -389,7 +425,7 @@ let headers = {
 };
 
 let body = {
-    "int": "eos"
+    "int": "rerum"
 }
 
 fetch(url, {

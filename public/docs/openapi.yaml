@@ -39,11 +39,11 @@ paths:
                                 email:
                                     type: String
                                     description: ''
-                                    example: eaque
+                                    example: est
                                 password:
                                     type: String
                                     description: ''
-                                    example: porro
+                                    example: exercitationem
                             required:
                                 - email
                                 - password
@@ -74,7 +74,7 @@ paths:
                         text/plain:
                             schema:
                                 type: string
-                                example: "{\n  \"current_page\": 1,\n  \"data\": [{\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n  }, {\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n  }],\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/job-seekers?page=1\",\n  \"from\": null,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/job-seekers?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/job-seekers\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": null,\n  \"total\": 0\n}"
+                                example: "{\n  \"current_page\": 1,\n  \"data\": [{\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n  }, {\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n  }],\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/job-seekers?page=1\",\n  \"from\": null,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/job-seekers?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/job-seekers\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": null,\n  \"total\": 0\n}"
             tags:
                 - 'JobSeeker endpoints'
             security: []
@@ -103,24 +103,39 @@ paths:
                         text/plain:
                             schema:
                                 type: string
-                                example: "{\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n}"
+                                example: "{\n     'id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n}"
             tags:
                 - 'JobSeeker endpoints'
             requestBody:
-                required: false
+                required: true
                 content:
                     application/json:
                         schema:
                             type: object
                             properties:
-                                int:
-                                    type: exp_years
+                                user_id:
+                                    type: integer
                                     description: ''
-                                    example: nesciunt
-                                string:
-                                    type: cover_letter_path
+                                    example: 20
+                                is_elect:
+                                    type: boolean
                                     description: ''
-                                    example: totam
+                                    example: false
+                                cv_path:
+                                    type: string
+                                    description: ''
+                                    example: {  }
+                                cover_letter_path:
+                                    type: string
+                                    description: ''
+                                    example: ut
+                                exp_years:
+                                    type: integer
+                                    description: ''
+                                    example: 10
+                            required:
+                                - user_id
+                                - exp_years
             security: []
     '/api/v1/job-seekers/{id}':
         get:
@@ -148,7 +163,7 @@ paths:
                         text/plain:
                             schema:
                                 type: string
-                                example: "{\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n}"
+                                example: "{\n     'id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n}"
             tags:
                 - 'JobSeeker endpoints'
             requestBody:
@@ -161,7 +176,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: aliquam
+                                    example: fuga
                             required:
                                 - int
             security: []
@@ -190,7 +205,7 @@ paths:
                         text/plain:
                             schema:
                                 type: string
-                                example: "{\n     'rn_id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n}"
+                                example: "{\n     'id': 1,\n     'user_id': 1,\n     'is_elect': 0,\n     'cv_path': \"string\",\n     'cover_letter_path': \"string\",\n     'cover_letter_path': \"string\",\n     'exp_years': 0,\n}"
             tags:
                 - 'JobSeeker endpoints'
             requestBody:
@@ -200,16 +215,29 @@ paths:
                         schema:
                             type: object
                             properties:
-                                int:
-                                    type: $id
+                                user_id:
+                                    type: integer
                                     description: ''
-                                    example: ipsa
-                                string:
-                                    type: cover_letter_path
+                                    example: 2
+                                is_elect:
+                                    type: boolean
                                     description: ''
-                                    example: exercitationem
+                                    example: false
+                                cv_path:
+                                    type: string
+                                    description: ''
+                                    example: {  }
+                                cover_letter_path:
+                                    type: string
+                                    description: ''
+                                    example: aut
+                                exp_years:
+                                    type: integer
+                                    description: ''
+                                    example: 7
                             required:
-                                - int
+                                - user_id
+                                - exp_years
             security: []
         delete:
             summary: "Remove a JobSeeker\nRemove the specified job-seeker from database."
@@ -242,7 +270,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: eos
+                                    example: rerum
                             required:
                                 - int
             security: []
@@ -251,7 +279,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: eum
+                example: voluptate
                 required: true
                 schema:
                     type: string
@@ -281,7 +309,7 @@ paths:
                         text/plain:
                             schema:
                                 type: string
-                                example: "{\n\"current_page\": 1,\ndata: [{\n  \"id\": 1,\n  \"major_name\": \"string\",\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n {\n  \"id\": 1,\n  \"major_name\": \"string\",\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  }\n],\n,\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/majors?page=1\",\n  \"from\": 1,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/majors?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/majors\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": 10,\n  \"total\": 2\n}"
+                                example: "{\n\"current_page\": 1,\ndata: [{\n  \"id\": 1,\n  \"major_name\": \"string\",\n  \"image_path\": \"string\",\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n {\n  \"id\": 1,\n  \"major_name\": \"string\",\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  }\n],\n,\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/majors?page=1\",\n  \"from\": 1,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/majors?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/majors\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": 10,\n  \"total\": 2\n}"
             tags:
                 - 'Major endpoints'
             security: []
@@ -313,11 +341,13 @@ paths:
                                 example:
                                     id: 1
                                     major_name: string
+                                    image_path: string
                                     created_at: '1990-12-12 12:45:10'
                                     updated_at: '1990-12-12 12:45:10'
                                 properties:
                                     id: { type: integer, example: 1 }
                                     major_name: { type: string, example: string }
+                                    image_path: { type: string, example: string }
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
@@ -329,12 +359,16 @@ paths:
                         schema:
                             type: object
                             properties:
-                                string:
-                                    type: major_name
+                                major_name:
+                                    type: string
                                     description: ''
-                                    example: quod
+                                    example: rerum
+                                image_path:
+                                    type: string
+                                    description: ''
+                                    example: est
                             required:
-                                - string
+                                - major_name
             security: []
     '/api/v1/majors/{id}':
         get:
@@ -365,11 +399,13 @@ paths:
                                 example:
                                     id: 1
                                     major_name: string
+                                    image_path: string
                                     created_at: '1990-12-12 12:45:10'
                                     updated_at: '1990-12-12 12:45:10'
                                 properties:
                                     id: { type: integer, example: 1 }
                                     major_name: { type: string, example: string }
+                                    image_path: { type: string, example: string }
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
@@ -382,9 +418,9 @@ paths:
                             type: object
                             properties:
                                 int:
-                                    type: $id
-                                    description: ''
-                                    example: nesciunt
+                                    type: id
+                                    description: 'The id of the major.'
+                                    example: incidunt
                             required:
                                 - int
             security: []
@@ -416,11 +452,13 @@ paths:
                                 example:
                                     id: 1
                                     major_name: string
+                                    image_path: string
                                     created_at: '1990-12-12 12:45:10'
                                     updated_at: '1990-12-12 12:45:10'
                                 properties:
                                     id: { type: integer, example: 1 }
                                     major_name: { type: string, example: string }
+                                    image_path: { type: string, example: string }
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
@@ -432,16 +470,16 @@ paths:
                         schema:
                             type: object
                             properties:
-                                string:
-                                    type: major_name
+                                major_name:
+                                    type: string
                                     description: ''
-                                    example: eos
-                                int:
-                                    type: $id
+                                    example: quia
+                                image_path:
+                                    type: string
                                     description: ''
-                                    example: quasi
+                                    example: et
                             required:
-                                - int
+                                - major_name
             security: []
         delete:
             summary: "Remove a Major\nRemove the specified major from database."
@@ -471,11 +509,13 @@ paths:
                                 example:
                                     id: 1
                                     major_name: string
+                                    image_path: string
                                     created_at: '1990-12-12 12:45:10'
                                     updated_at: '1990-12-12 12:45:10'
                                 properties:
                                     id: { type: integer, example: 1 }
                                     major_name: { type: string, example: string }
+                                    image_path: { type: string, example: string }
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
@@ -488,9 +528,9 @@ paths:
                             type: object
                             properties:
                                 int:
-                                    type: $id
-                                    description: ''
-                                    example: ut
+                                    type: id
+                                    description: 'The id of the major.'
+                                    example: aperiam
                             required:
                                 - int
             security: []
@@ -499,7 +539,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: eum
+                example: voluptate
                 required: true
                 schema:
                     type: string
@@ -529,7 +569,7 @@ paths:
                         text/plain:
                             schema:
                                 type: string
-                                example: "{\n\"current_page\": 1,\ndata: [{\n  \"id\": 1,\n  \"owner_id\": 1,\n  \"org_name\": \"Công ty Vi Inc\",\n  \"phones\": \"+84-165-015-8016\",\n  \"description\": \"string\",\n  \"tax_id\": \"41665\",\n  \"address\": \"string\",\n  \"is_verify\": 0,\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n {\n  \"id\": 2,\n  \"owner_id\": 1,\n  \"org_name\": \"Công ty Vi Inc\",\n  \"phones\": \"+84-165-015-8016\",\n  \"description\": \"string\",\n  \"tax_id\": \"41665\",\n  \"address\": \"string\",\n  \"is_verify\": 0,\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n],\n,\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/organizations?page=1\",\n  \"from\": 1,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/organizations?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/organizations\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": 10,\n  \"total\": 2\n}"
+                                example: "{\n\"current_page\": 1,\ndata: [{\n  \"id\": 1,\n  \"owner_id\": 1,\n  \"org_name\": \"Công ty Vi Inc\",\n  \"phones\": \"+84-165-015-8016\",\n  \"description\": \"string\",\n  \"tax_id\": \"41665\",\n  \"address\": \"string\",\n  \"is_verify\": 0,\n  \"logo_path\": \"string\",\n  \"cover_path\": \"string\",\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n {\n  \"id\": 2,\n  \"owner_id\": 1,\n  \"org_name\": \"Công ty Vi Inc\",\n  \"phones\": \"+84-165-015-8016\",\n  \"description\": \"string\",\n  \"tax_id\": \"41665\",\n  \"address\": \"string\",\n  \"is_verify\": 0,\n  \"logo_path\": \"string\",\n  \"cover_path\": \"string\",\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n],\n,\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/organizations?page=1\",\n  \"from\": 1,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/organizations?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/organizations\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": 10,\n  \"total\": 2\n}"
             tags:
                 - 'Organization endpoints'
             security: []
@@ -567,6 +607,8 @@ paths:
                                     tax_id: '41665'
                                     address: string
                                     is_verify: 0
+                                    logo_path: string
+                                    cover_path: string
                                     created_at: '1990-12-12 12:45:10'
                                     updated_at: '1990-12-12 12:45:10'
                                 properties:
@@ -578,6 +620,8 @@ paths:
                                     tax_id: { type: string, example: '41665' }
                                     address: { type: string, example: string }
                                     is_verify: { type: integer, example: 0 }
+                                    logo_path: { type: string, example: string }
+                                    cover_path: { type: string, example: string }
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
@@ -589,16 +633,44 @@ paths:
                         schema:
                             type: object
                             properties:
-                                int:
-                                    type: is_verify
+                                owner_id:
+                                    type: integer
                                     description: ''
-                                    example: autem
-                                string:
-                                    type: address
+                                    example: 15
+                                org_name:
+                                    type: string
                                     description: ''
-                                    example: ipsam
+                                    example: cumque
+                                phones:
+                                    type: string
+                                    description: ''
+                                    example: culpa
+                                description:
+                                    type: string
+                                    description: ''
+                                    example: et
+                                tax_id:
+                                    type: integer
+                                    description: ''
+                                    example: 8
+                                address:
+                                    type: string
+                                    description: ''
+                                    example: iste
+                                logo_path:
+                                    type: string
+                                    description: ''
+                                    example: tempore
+                                cover_path:
+                                    type: string
+                                    description: ''
+                                    example: dolorem
                             required:
-                                - string
+                                - owner_id
+                                - org_name
+                                - phones
+                                - description
+                                - tax_id
             security: []
     '/api/v1/organizations/{id}':
         get:
@@ -635,6 +707,8 @@ paths:
                                     tax_id: '41665'
                                     address: string
                                     is_verify: 0
+                                    logo_path: string
+                                    cover_path: string
                                     created_at: '1990-12-12 12:45:10'
                                     updated_at: '1990-12-12 12:45:10'
                                 properties:
@@ -646,6 +720,8 @@ paths:
                                     tax_id: { type: string, example: '41665' }
                                     address: { type: string, example: string }
                                     is_verify: { type: integer, example: 0 }
+                                    logo_path: { type: string, example: string }
+                                    cover_path: { type: string, example: string }
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
@@ -658,9 +734,9 @@ paths:
                             type: object
                             properties:
                                 int:
-                                    type: $id
+                                    type: id
                                     description: ''
-                                    example: omnis
+                                    example: cumque
                             required:
                                 - int
             security: []
@@ -698,6 +774,8 @@ paths:
                                     tax_id: '41665'
                                     address: string
                                     is_verify: 0
+                                    logo_path: string
+                                    cover_path: string
                                     created_at: '1990-12-12 12:45:10'
                                     updated_at: '1990-12-12 12:45:10'
                                 properties:
@@ -709,6 +787,8 @@ paths:
                                     tax_id: { type: string, example: '41665' }
                                     address: { type: string, example: string }
                                     is_verify: { type: integer, example: 0 }
+                                    logo_path: { type: string, example: string }
+                                    cover_path: { type: string, example: string }
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
@@ -720,16 +800,44 @@ paths:
                         schema:
                             type: object
                             properties:
-                                int:
-                                    type: is_verify
+                                owner_id:
+                                    type: integer
                                     description: ''
-                                    example: corporis
-                                string:
-                                    type: address
+                                    example: 19
+                                org_name:
+                                    type: string
                                     description: ''
-                                    example: est
+                                    example: vero
+                                phones:
+                                    type: string
+                                    description: ''
+                                    example: impedit
+                                description:
+                                    type: string
+                                    description: ''
+                                    example: officia
+                                tax_id:
+                                    type: integer
+                                    description: ''
+                                    example: 16
+                                address:
+                                    type: string
+                                    description: ''
+                                    example: eos
+                                logo_path:
+                                    type: string
+                                    description: ''
+                                    example: expedita
+                                cover_path:
+                                    type: string
+                                    description: ''
+                                    example: quo
                             required:
-                                - string
+                                - owner_id
+                                - org_name
+                                - phones
+                                - description
+                                - tax_id
             security: []
         delete:
             summary: "Remove an Organization\nRemove the Organization from Database."
@@ -765,6 +873,8 @@ paths:
                                     tax_id: '41665'
                                     address: string
                                     is_verify: 0
+                                    logo_path: string
+                                    cover_path: string
                                     created_at: '1990-12-12 12:45:10'
                                     updated_at: '1990-12-12 12:45:10'
                                 properties:
@@ -776,6 +886,8 @@ paths:
                                     tax_id: { type: string, example: '41665' }
                                     address: { type: string, example: string }
                                     is_verify: { type: integer, example: 0 }
+                                    logo_path: { type: string, example: string }
+                                    cover_path: { type: string, example: string }
                                     created_at: { type: string, example: '1990-12-12 12:45:10' }
                                     updated_at: { type: string, example: '1990-12-12 12:45:10' }
             tags:
@@ -788,9 +900,9 @@ paths:
                             type: object
                             properties:
                                 int:
-                                    type: $id
+                                    type: id
                                     description: ''
-                                    example: veritatis
+                                    example: vitae
                             required:
                                 - int
             security: []
@@ -799,7 +911,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: rem
+                example: est
                 required: true
                 schema:
                     type: string
@@ -868,22 +980,62 @@ paths:
                         schema:
                             type: object
                             properties:
-                                int:
-                                    type: $major_id
+                                org_id:
+                                    type: integer
                                     description: ''
-                                    example: voluptates
-                                string:
-                                    type: city
+                                    example: 10
+                                author_id:
+                                    type: integer
                                     description: ''
-                                    example: possimus
-                                timestamp:
-                                    type: interview_end_time
+                                    example: 4
+                                major_id:
+                                    type: integer
                                     description: ''
-                                    example: eaque
+                                    example: 15
+                                title:
+                                    type: string
+                                    description: ''
+                                    example: sit
+                                content:
+                                    type: string
+                                    description: ''
+                                    example: alias
+                                address:
+                                    type: string
+                                    description: ''
+                                    example: non
+                                city:
+                                    type: string
+                                    description: ''
+                                    example: enim
+                                start_time:
+                                    type: string
+                                    description: 'The value must be a valid date.'
+                                    example: '2021-01-11T05:08:45+0000'
+                                end_time:
+                                    type: string
+                                    description: 'The value must be a valid date.'
+                                    example: '2021-01-11T05:08:45+0000'
+                                interview_start_time:
+                                    type: string
+                                    description: 'The value must be a valid date.'
+                                    example: '2021-01-11T05:08:45+0000'
+                                interview_end_time:
+                                    type: string
+                                    description: 'The value must be a valid date.'
+                                    example: '2021-01-11T05:08:45+0000'
                             required:
-                                - int
-                                - string
-                                - timestamp
+                                - org_id
+                                - author_id
+                                - major_id
+                                - title
+                                - content
+                                - address
+                                - city
+                                - start_time
+                                - end_time
+                                - interview_start_time
+                                - interview_end_time
             security: []
     '/api/v1/recruitment-news/{id}':
         get:
@@ -922,9 +1074,9 @@ paths:
                             type: object
                             properties:
                                 int:
-                                    type: $id
+                                    type: id
                                     description: ''
-                                    example: occaecati
+                                    example: qui
                             required:
                                 - int
             security: []
@@ -963,22 +1115,62 @@ paths:
                         schema:
                             type: object
                             properties:
-                                int:
-                                    type: $id
+                                org_id:
+                                    type: integer
                                     description: ''
-                                    example: dolor
-                                string:
-                                    type: city
+                                    example: 3
+                                author_id:
+                                    type: integer
                                     description: ''
-                                    example: perferendis
-                                timestamp:
-                                    type: interview_end_time
+                                    example: 3
+                                major_id:
+                                    type: integer
                                     description: ''
-                                    example: et
+                                    example: 16
+                                title:
+                                    type: string
+                                    description: ''
+                                    example: dolores
+                                content:
+                                    type: string
+                                    description: ''
+                                    example: in
+                                address:
+                                    type: string
+                                    description: ''
+                                    example: quod
+                                city:
+                                    type: string
+                                    description: ''
+                                    example: id
+                                start_time:
+                                    type: string
+                                    description: 'The value must be a valid date.'
+                                    example: '2021-01-11T05:08:45+0000'
+                                end_time:
+                                    type: string
+                                    description: 'The value must be a valid date.'
+                                    example: '2021-01-11T05:08:45+0000'
+                                interview_start_time:
+                                    type: string
+                                    description: 'The value must be a valid date.'
+                                    example: '2021-01-11T05:08:45+0000'
+                                interview_end_time:
+                                    type: string
+                                    description: 'The value must be a valid date.'
+                                    example: '2021-01-11T05:08:45+0000'
                             required:
-                                - int
-                                - string
-                                - timestamp
+                                - org_id
+                                - author_id
+                                - major_id
+                                - title
+                                - content
+                                - address
+                                - city
+                                - start_time
+                                - end_time
+                                - interview_start_time
+                                - interview_end_time
             security: []
         delete:
             summary: "Remove a Recruitment News\nRemove the specified recruitment news from database."
@@ -1016,9 +1208,9 @@ paths:
                             type: object
                             properties:
                                 int:
-                                    type: $id
-                                    description: ''
-                                    example: voluptas
+                                    type: id
+                                    description: 'The id of the recruitment news'
+                                    example: iste
                             required:
                                 - int
             security: []
@@ -1027,7 +1219,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: odio
+                example: nemo
                 required: true
                 schema:
                     type: string
@@ -1105,12 +1297,12 @@ paths:
                         schema:
                             type: object
                             properties:
-                                string:
-                                    type: role_name
+                                role_name:
+                                    type: string
                                     description: ''
-                                    example: deserunt
+                                    example: ad
                             required:
-                                - string
+                                - role_name
             security: []
     '/api/v1/roles/{id}':
         get:
@@ -1160,7 +1352,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: accusantium
+                                    example: et
                             required:
                                 - int
             security: []
@@ -1208,17 +1400,12 @@ paths:
                         schema:
                             type: object
                             properties:
-                                string:
-                                    type: role_name
+                                role_name:
+                                    type: string
                                     description: ''
-                                    example: corrupti
-                                int:
-                                    type: $id
-                                    description: ''
-                                    example: aut
+                                    example: fugit
                             required:
-                                - string
-                                - int
+                                - role_name
             security: []
         delete:
             summary: "Remove a Role\nRemove the specified role from database."
@@ -1267,7 +1454,7 @@ paths:
                                 int:
                                     type: $id
                                     description: ''
-                                    example: corporis
+                                    example: occaecati
                             required:
                                 - int
             security: []
@@ -1276,7 +1463,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: reiciendis
+                example: recusandae
                 required: true
                 schema:
                     type: string
@@ -1306,7 +1493,7 @@ paths:
                         text/plain:
                             schema:
                                 type: string
-                                example: "{\n\"current_page\": 1,\ndata: [{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n {\n  \"id\": 2,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  }\n],\n,\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/users?page=1\",\n  \"from\": 1,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/users?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/users\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": 2,\n  \"total\": 2\n}"
+                                example: "{\n\"current_page\": 1,\n\"data\": [{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'avatar_path': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n {\n  \"id\": 2,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'avatar_path': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  }\n],\n,\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/users?page=1\",\n  \"from\": 1,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/users?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/users\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": 2,\n  \"total\": 2\n}"
             tags:
                 - 'User endpoints'
             security: []
@@ -1335,7 +1522,7 @@ paths:
                         text/plain:
                             schema:
                                 type: string
-                                example: "{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
+                                example: "{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'avatar_path': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
             tags:
                 - 'User endpoints'
             requestBody:
@@ -1345,26 +1532,63 @@ paths:
                         schema:
                             type: object
                             properties:
-                                int:
-                                    type: $id
+                                role_id:
+                                    type: integer
                                     description: ''
+                                    example: 6
+                                first_name:
+                                    type: string
+                                    description: 'The first name of the user.'
                                     example: molestiae
-                                string:
-                                    type: social_facebook
-                                    description: ''
-                                    example: ad
-                                date:
-                                    type: dob
-                                    description: ''
-                                    example: vel
-                                timestamp:
-                                    type: email_verified_at
-                                    description: ''
-                                    example: quisquam
+                                last_name:
+                                    type: string
+                                    description: 'The last name of the user.'
+                                    example: sed
+                                dob:
+                                    type: date
+                                    description: 'The date of birth of the user.'
+                                    example: dolorum
+                                phone:
+                                    type: string
+                                    description: 'The phone number of the user.'
+                                    example: cupiditate
+                                email:
+                                    type: email
+                                    description: 'The email of the user.'
+                                    example: id
+                                password:
+                                    type: string
+                                    description: 'The password of the user.'
+                                    example: iure
+                                address:
+                                    type: string
+                                    description: 'The address of the user.'
+                                    example: tenetur
+                                bio:
+                                    type: string
+                                    description: 'The introduce of the user.'
+                                    example: et
+                                avatar_path:
+                                    type: string
+                                    description: 'The avatar''s image path of the user.'
+                                    example: esse
+                                social_linkedin:
+                                    type: string
+                                    description: 'The linkedin link of the user.'
+                                    example: facere
+                                social_facebook:
+                                    type: string
+                                    description: 'The facebook link of the user.'
+                                    example: expedita
                             required:
-                                - int
-                                - date
-                                - timestamp
+                                - role_id
+                                - first_name
+                                - last_name
+                                - dob
+                                - phone
+                                - email
+                                - password
+                                - address
             security: []
     '/api/v1/users/{id}':
         get:
@@ -1392,7 +1616,7 @@ paths:
                         text/plain:
                             schema:
                                 type: string
-                                example: "{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
+                                example: "{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'avatar_path': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
             tags:
                 - 'User endpoints'
             requestBody:
@@ -1402,16 +1626,16 @@ paths:
                         schema:
                             type: object
                             properties:
-                                int:
-                                    type: $id
-                                    description: ''
-                                    example: maiores
+                                id:
+                                    type: integer
+                                    description: 'The id of the user.'
+                                    example: 8
                             required:
-                                - int
+                                - id
             security: []
         put:
             summary: "Update User's Information\nUpdate the specified user in database."
-            description: ''
+            description: .
             parameters:
                 -
                     in: header
@@ -1434,7 +1658,7 @@ paths:
                         text/plain:
                             schema:
                                 type: string
-                                example: "{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
+                                example: "{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'avatar_path': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
             tags:
                 - 'User endpoints'
             requestBody:
@@ -1444,26 +1668,47 @@ paths:
                         schema:
                             type: object
                             properties:
-                                int:
-                                    type: $id
+                                role_id:
+                                    type: integer
                                     description: ''
-                                    example: temporibus
-                                string:
-                                    type: social_facebook
+                                    example: 13
+                                first_name:
+                                    type: string
                                     description: ''
-                                    example: laudantium
-                                date:
-                                    type: dob
+                                    example: veniam
+                                last_name:
+                                    type: string
                                     description: ''
-                                    example: omnis
-                                timestamp:
-                                    type: email_verified_at
+                                    example: soluta
+                                dob:
+                                    type: string
+                                    description: 'The value must be a valid date.'
+                                    example: '2021-01-11T05:08:45+0000'
+                                phone:
+                                    type: string
                                     description: ''
-                                    example: esse
+                                    example: maxime
+                                email:
+                                    type: string
+                                    description: 'The value must be a valid email address.'
+                                    example: lueilwitz.kobe@example.com
+                                password:
+                                    type: string
+                                    description: ''
+                                    example: molestiae
+                                address:
+                                    type: string
+                                    description: ''
+                                    example: praesentium
                             required:
-                                - int
-                                - date
-                                - timestamp
+                                - role_id
+                                - first_name
+                                - last_name
+                                - dob
+                                - phone
+                                - email
+                                - password
+                                - address
             security: []
         delete:
             summary: "Remove a User\nRemove the specified user from database."
@@ -1490,7 +1735,7 @@ paths:
                         text/plain:
                             schema:
                                 type: string
-                                example: "{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
+                                example: "{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'avatar_path': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n}"
             tags:
                 - 'User endpoints'
             requestBody:
@@ -1500,19 +1745,19 @@ paths:
                         schema:
                             type: object
                             properties:
-                                int:
-                                    type: $id
-                                    description: ''
-                                    example: quasi
+                                id:
+                                    type: integer
+                                    description: 'The id of the user.'
+                                    example: 17
                             required:
-                                - int
+                                - id
             security: []
         parameters:
             -
                 in: path
                 name: id
                 description: ''
-                example: dicta
+                example: distinctio
                 required: true
                 schema:
                     type: string

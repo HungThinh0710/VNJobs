@@ -13,7 +13,7 @@ curl -X POST \
     "http://localhost/api/v1/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"earum","password":"et"}'
+    -d '{"email":"est","password":"exercitationem"}'
 
 ```
 
@@ -28,8 +28,8 @@ let headers = {
 };
 
 let body = {
-    "email": "earum",
-    "password": "et"
+    "email": "est",
+    "password": "exercitationem"
 }
 
 fetch(url, {

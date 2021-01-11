@@ -40,7 +40,7 @@ fetch(url, {
 
 {
 "current_page": 1,
-data: [{
+"data": [{
   'id': 1,
   'role_id': 1,
   'first_name': 'string',
@@ -52,6 +52,7 @@ data: [{
   'password': 'string',
   'address': 'string',
   'bio': 'string',
+  'avatar_path': 'string',
   'social_linkedin': 'string',
   'social_facebook': 'string',
   "created_at": "1990-12-12 12:45:10",
@@ -69,6 +70,7 @@ data: [{
   'password': 'string',
   'address': 'string',
   'bio': 'string',
+  'avatar_path': 'string',
   'social_linkedin': 'string',
   'social_facebook': 'string',
   "created_at": "1990-12-12 12:45:10",
@@ -120,16 +122,16 @@ Display the specified user.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/users/dicta" \
+    -G "http://localhost/api/v1/users/distinctio" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"maiores"}'
+    -d '{"id":8}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/users/dicta"
+    "http://localhost/api/v1/users/distinctio"
 );
 
 let headers = {
@@ -138,7 +140,7 @@ let headers = {
 };
 
 let body = {
-    "int": "maiores"
+    "id": 8
 }
 
 fetch(url, {
@@ -165,6 +167,7 @@ fetch(url, {
   'password': 'string',
   'address': 'string',
   'bio': 'string',
+  'avatar_path': 'string',
   'social_linkedin': 'string',
   'social_facebook': 'string',
   "created_at": "1990-12-12 12:45:10",
@@ -198,10 +201,10 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
-<input type="text" name="int" data-endpoint="GETapi-v1-users--id-" data-component="body" required  hidden>
+<b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="id" data-endpoint="GETapi-v1-users--id-" data-component="body" required  hidden>
 <br>
-</p>
+The id of the user.</p>
 
 </form>
 
@@ -219,7 +222,7 @@ curl -X POST \
     "http://localhost/api/v1/users" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"molestiae","string":"ad","date":"vel","timestamp":"quisquam"}'
+    -d '{"role_id":6,"first_name":"molestiae","last_name":"sed","dob":"dolorum","phone":"cupiditate","email":"id","password":"iure","address":"tenetur","bio":"et","avatar_path":"esse","social_linkedin":"facere","social_facebook":"expedita"}'
 
 ```
 
@@ -234,10 +237,18 @@ let headers = {
 };
 
 let body = {
-    "int": "molestiae",
-    "string": "ad",
-    "date": "vel",
-    "timestamp": "quisquam"
+    "role_id": 6,
+    "first_name": "molestiae",
+    "last_name": "sed",
+    "dob": "dolorum",
+    "phone": "cupiditate",
+    "email": "id",
+    "password": "iure",
+    "address": "tenetur",
+    "bio": "et",
+    "avatar_path": "esse",
+    "social_linkedin": "facere",
+    "social_facebook": "expedita"
 }
 
 fetch(url, {
@@ -264,6 +275,7 @@ fetch(url, {
   'password': 'string',
   'address': 'string',
   'bio': 'string',
+  'avatar_path': 'string',
   'social_linkedin': 'string',
   'social_facebook': 'string',
   "created_at": "1990-12-12 12:45:10",
@@ -291,25 +303,65 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
-<input type="text" name="int" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
+<b><code>role_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="role_id" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
 <br>
 </p>
 <p>
-<b><code>string</code></b>&nbsp;&nbsp;<small>social_facebook</small>     <i>optional</i> &nbsp;
-<input type="text" name="string" data-endpoint="POSTapi-v1-users" data-component="body"  hidden>
+<b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="first_name" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
 <br>
-</p>
+The first name of the user.</p>
 <p>
-<b><code>date</code></b>&nbsp;&nbsp;<small>dob</small>  &nbsp;
-<input type="text" name="date" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
+<b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="last_name" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
 <br>
-</p>
+The last name of the user.</p>
 <p>
-<b><code>timestamp</code></b>&nbsp;&nbsp;<small>email_verified_at</small>  &nbsp;
-<input type="text" name="timestamp" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
+<b><code>dob</code></b>&nbsp;&nbsp;<small>date</small>  &nbsp;
+<input type="text" name="dob" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
 <br>
-</p>
+The date of birth of the user.</p>
+<p>
+<b><code>phone</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="phone" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
+<br>
+The phone number of the user.</p>
+<p>
+<b><code>email</code></b>&nbsp;&nbsp;<small>email</small>  &nbsp;
+<input type="text" name="email" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
+<br>
+The email of the user.</p>
+<p>
+<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="password" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
+<br>
+The password of the user.</p>
+<p>
+<b><code>address</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="address" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
+<br>
+The address of the user.</p>
+<p>
+<b><code>bio</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="bio" data-endpoint="POSTapi-v1-users" data-component="body"  hidden>
+<br>
+The introduce of the user.</p>
+<p>
+<b><code>avatar_path</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="avatar_path" data-endpoint="POSTapi-v1-users" data-component="body"  hidden>
+<br>
+The avatar's image path of the user.</p>
+<p>
+<b><code>social_linkedin</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="social_linkedin" data-endpoint="POSTapi-v1-users" data-component="body"  hidden>
+<br>
+The linkedin link of the user.</p>
+<p>
+<b><code>social_facebook</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="social_facebook" data-endpoint="POSTapi-v1-users" data-component="body"  hidden>
+<br>
+The facebook link of the user.</p>
 
 </form>
 
@@ -318,22 +370,22 @@ fetch(url, {
 Update the specified user in database.
 
 
-
+.
 
 > Example request:
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/users/sit" \
+    "http://localhost/api/v1/users/debitis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"temporibus","string":"laudantium","date":"omnis","timestamp":"esse"}'
+    -d '{"role_id":13,"first_name":"veniam","last_name":"soluta","dob":"2021-01-11T05:08:45+0000","phone":"maxime","email":"lueilwitz.kobe@example.com","password":"molestiae","address":"praesentium"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/users/sit"
+    "http://localhost/api/v1/users/debitis"
 );
 
 let headers = {
@@ -342,10 +394,14 @@ let headers = {
 };
 
 let body = {
-    "int": "temporibus",
-    "string": "laudantium",
-    "date": "omnis",
-    "timestamp": "esse"
+    "role_id": 13,
+    "first_name": "veniam",
+    "last_name": "soluta",
+    "dob": "2021-01-11T05:08:45+0000",
+    "phone": "maxime",
+    "email": "lueilwitz.kobe@example.com",
+    "password": "molestiae",
+    "address": "praesentium"
 }
 
 fetch(url, {
@@ -372,6 +428,7 @@ fetch(url, {
   'password': 'string',
   'address': 'string',
   'bio': 'string',
+  'avatar_path': 'string',
   'social_linkedin': 'string',
   'social_facebook': 'string',
   "created_at": "1990-12-12 12:45:10",
@@ -405,23 +462,43 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
-<input type="text" name="int" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
+<b><code>role_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="role_id" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
 <br>
 </p>
 <p>
-<b><code>string</code></b>&nbsp;&nbsp;<small>social_facebook</small>     <i>optional</i> &nbsp;
-<input type="text" name="string" data-endpoint="PUTapi-v1-users--id-" data-component="body"  hidden>
+<b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="first_name" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
 <br>
 </p>
 <p>
-<b><code>date</code></b>&nbsp;&nbsp;<small>dob</small>  &nbsp;
-<input type="text" name="date" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
+<b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="last_name" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
 <br>
 </p>
 <p>
-<b><code>timestamp</code></b>&nbsp;&nbsp;<small>email_verified_at</small>  &nbsp;
-<input type="text" name="timestamp" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
+<b><code>dob</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="dob" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
+<br>
+The value must be a valid date.</p>
+<p>
+<b><code>phone</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="phone" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="email" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
+<br>
+The value must be a valid email address.</p>
+<p>
+<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="password" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>address</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="address" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
 <br>
 </p>
 
@@ -438,16 +515,16 @@ Remove the specified user from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/users/ut" \
+    "http://localhost/api/v1/users/odio" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"quasi"}'
+    -d '{"id":17}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/users/ut"
+    "http://localhost/api/v1/users/odio"
 );
 
 let headers = {
@@ -456,7 +533,7 @@ let headers = {
 };
 
 let body = {
-    "int": "quasi"
+    "id": 17
 }
 
 fetch(url, {
@@ -483,6 +560,7 @@ fetch(url, {
   'password': 'string',
   'address': 'string',
   'bio': 'string',
+  'avatar_path': 'string',
   'social_linkedin': 'string',
   'social_facebook': 'string',
   "created_at": "1990-12-12 12:45:10",
@@ -516,10 +594,10 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
-<input type="text" name="int" data-endpoint="DELETEapi-v1-users--id-" data-component="body" required  hidden>
+<b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="id" data-endpoint="DELETEapi-v1-users--id-" data-component="body" required  hidden>
 <br>
-</p>
+The id of the user.</p>
 
 </form>
 

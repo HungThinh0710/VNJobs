@@ -6,7 +6,13 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Organization;
+use App\Http\Requests\StoreOrganization;
 
+/**
+ * @group Organization endpoints
+ *
+ * APIs for Organization.
+ */
 class OrganizationController extends Controller
 {
     /**
@@ -69,16 +75,6 @@ class OrganizationController extends Controller
      * Store a newly created resource in Database.
      * @group Organization endpoints
      * 
-     * @bodyParam  int $owner_id required
-     * @bodyParam  string org_name required
-     * @bodyParam  string phones required
-     * @bodyParam  string description required
-     * @bodyParam  string tax_id required
-     * @bodyParam  string address required
-     * @bodyParam  int  is_verify
-     * @bodyParam  string logo_path
-     * @bodyParam  string cover_path
-     * 
      * @response {
      *   "id": 1,
      *   "owner_id": 1,
@@ -94,17 +90,9 @@ class OrganizationController extends Controller
      *   "updated_at": "1990-12-12 12:45:10"
      * }
      */
-    public function store(Request $request)
+    public function store(StoreOrganization $request)
     {
-        $organization = Organization::create([
-            "org_name" => $request->org_name,
-            "phones" => $request->phones,
-            "description" => $request->description,
-            "tax_id" => $request->tax_id,
-            "address" => $request->address,
-            "logo_path" => $request->logo_path,
-            "cover_path" => $request->cover_path
-        ]);
+        $organization = Organization::create($request->all());
         return response()->json($organization);
     }
 
@@ -112,7 +100,8 @@ class OrganizationController extends Controller
      * Find an Organization
      * Display the specified resource.
      * @group Organization endpoints
-     * @bodyParam  int  $id required
+     * 
+     * @bodyParam int id required
      * 
      * @response {
      *   "id": 1,
@@ -140,17 +129,6 @@ class OrganizationController extends Controller
      * Update the specified resource in Database.
      * @group Organization endpoints
      * 
-     * @bodyParam  int $id required
-     * @bodyParam  int $owner_id required
-     * @bodyParam  string org_name required
-     * @bodyParam  string phones required
-     * @bodyParam  string description required
-     * @bodyParam  string tax_id required
-     * @bodyParam  string address required
-     * @bodyParam  int  is_verify
-     * @bodyParam  string logo_path
-     * @bodyParam  string cover_path
-     * 
      * @response {
      *   "id": 1,
      *   "owner_id": 1,
@@ -166,21 +144,10 @@ class OrganizationController extends Controller
      *   "updated_at": "1990-12-12 12:45:10"
      * }
      */
-    public function update(Request $request, $id)
+    public function update(StoreOrganization $request, $id)
     {
         $organization = Organization::findOrFail($id);
-        if ($organization) {
-            $organization->toQuery()->update([
-                "owner_id" => $request->owner_id,
-                "org_name" => $request->org_name,
-                "phones" => $request->phones,
-                "description" => $request->description,
-                "tax_id" => $request->tax_id,
-                "address" => $request->address,
-                "logo_path" => $request->logo_path,
-                "cover_path" => $request->cover_path
-            ]);
-        }
+        $organization->update($request->all());
         return response()->json($organization);
     }
 
@@ -188,7 +155,8 @@ class OrganizationController extends Controller
      * Remove an Organization
      * Remove the Organization from Database.
      * @group Organization endpoints
-     * @bodyParam  int  $id required
+     * 
+     * @bodyParam int id required
      * 
      * @response {
      *   "id": 1,
