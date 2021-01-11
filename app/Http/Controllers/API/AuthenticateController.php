@@ -39,4 +39,13 @@ class AuthenticateController extends Controller
             'expires_at' => Carbon::parse($token->token->expires_at)->toDateTimeString()
         ]);
     }
+
+    /**
+     * Check valid token.
+     * @group Auth endpoints
+     */
+    public function checkValidToken(Request $request)
+    {
+        return response()->json(['status' => 'OK', 'message' => 'Token is valid'], 200);
+    }
 }
