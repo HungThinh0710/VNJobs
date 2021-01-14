@@ -37,10 +37,9 @@ class StoreUser extends FormRequest
     public function messages() //Optional for custom response validate message
     {
         return [
-            'first_name.G' => 'First name is required.',
+            'first_name.required' => 'First name is required.',
             'first_name.string'  => 'First name must be a string',
             'first_name.max' => 'First name max lenght is 255.',
-            'dob.required'  => 'Day of birth is required',
             'dob.date'  => 'Day of birth must be a date',
             'phone.string'  => 'Phone number must be a string',
             'phone.max' => 'Phone number max lenght is 12.',
