@@ -99,16 +99,16 @@ Display the specified major.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/majors/sit" \
+    -G "http://localhost/api/v1/majors/eius" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"unde"}'
+    -d '{"int":"in"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/majors/sit"
+    "http://localhost/api/v1/majors/eius"
 );
 
 let headers = {
@@ -117,7 +117,7 @@ let headers = {
 };
 
 let body = {
-    "int": "unde"
+    "int": "in"
 }
 
 fetch(url, {
@@ -187,7 +187,7 @@ curl -X POST \
     "http://localhost/api/v1/majors" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"major_name":"est","image_path":"voluptatem"}'
+    -d '{"major_name":"veritatis","image_path":"qui"}'
 
 ```
 
@@ -202,8 +202,8 @@ let headers = {
 };
 
 let body = {
-    "major_name": "est",
-    "image_path": "voluptatem"
+    "major_name": "veritatis",
+    "image_path": "qui"
 }
 
 fetch(url, {
@@ -269,16 +269,16 @@ Update the specified major in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/majors/aut" \
+    "http://localhost/api/v1/majors/et" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"major_name":"architecto","image_path":"quos"}'
+    -d '{"major_name":"est","image_path":"quasi"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/majors/aut"
+    "http://localhost/api/v1/majors/et"
 );
 
 let headers = {
@@ -287,8 +287,8 @@ let headers = {
 };
 
 let body = {
-    "major_name": "architecto",
-    "image_path": "quos"
+    "major_name": "est",
+    "image_path": "quasi"
 }
 
 fetch(url, {
@@ -360,16 +360,16 @@ Remove the specified major from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/majors/dolor" \
+    "http://localhost/api/v1/majors/accusantium" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"voluptatibus"}'
+    -d '{"int":"dolorem"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/majors/dolor"
+    "http://localhost/api/v1/majors/accusantium"
 );
 
 let headers = {
@@ -378,7 +378,7 @@ let headers = {
 };
 
 let body = {
-    "int": "voluptatibus"
+    "int": "dolorem"
 }
 
 fetch(url, {

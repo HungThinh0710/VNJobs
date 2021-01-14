@@ -72,8 +72,8 @@ Route::group(['prefix' => 'v1'], function(){
             Route::delete('/{id}', 'API\RoleController@destroy');
         });
 
-        // Users Group Auth
-        Route::group(['prefix' => 'users'], function() {
+        // Users Group Auth |
+        Route::group(['prefix' => 'user'], function() {
             Route::get('/', 'API\UserController@index');
             Route::get('/{id}', 'API\UserController@show');
             Route::put('/{id}', 'API\UserController@update');
