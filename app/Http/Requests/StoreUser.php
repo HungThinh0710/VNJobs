@@ -13,7 +13,7 @@ class StoreUser extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -28,7 +28,7 @@ class StoreUser extends FormRequest
             'last_name' => 'required|string|max:255',
             'dob' => 'date',
             'phone' => 'string|max:12',
-            'email' => 'required|email|max:50',
+            'email' => 'required|unique:users|email|max:50',
             'password' => 'required|string|max:255',
             'address' => 'string|max:255',
         ];

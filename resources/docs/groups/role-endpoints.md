@@ -98,16 +98,16 @@ Display the specified role.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/roles/recusandae" \
+    -G "http://localhost/api/v1/roles/nulla" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"et"}'
+    -d '{"int":"deserunt"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/roles/recusandae"
+    "http://localhost/api/v1/roles/nulla"
 );
 
 let headers = {
@@ -116,7 +116,7 @@ let headers = {
 };
 
 let body = {
-    "int": "et"
+    "int": "deserunt"
 }
 
 fetch(url, {
@@ -164,10 +164,10 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<b><code>int</code></b>&nbsp;&nbsp;<small>id</small>  &nbsp;
 <input type="text" name="int" data-endpoint="GETapi-v1-roles--id-" data-component="body" required  hidden>
 <br>
-</p>
+The id of the role.</p>
 
 </form>
 
@@ -185,7 +185,7 @@ curl -X POST \
     "http://localhost/api/v1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"ad"}'
+    -d '{"role_name":"voluptate"}'
 
 ```
 
@@ -200,7 +200,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "ad"
+    "role_name": "voluptate"
 }
 
 fetch(url, {
@@ -260,16 +260,16 @@ Update the specified role in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/roles/esse" \
+    "http://localhost/api/v1/roles/in" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"fugit"}'
+    -d '{"role_name":"rem"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/roles/esse"
+    "http://localhost/api/v1/roles/in"
 );
 
 let headers = {
@@ -278,7 +278,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "fugit"
+    "role_name": "rem"
 }
 
 fetch(url, {
@@ -344,16 +344,16 @@ Remove the specified role from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/roles/voluptate" \
+    "http://localhost/api/v1/roles/qui" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"occaecati"}'
+    -d '{"int":"excepturi"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/roles/voluptate"
+    "http://localhost/api/v1/roles/qui"
 );
 
 let headers = {
@@ -362,7 +362,7 @@ let headers = {
 };
 
 let body = {
-    "int": "occaecati"
+    "int": "excepturi"
 }
 
 fetch(url, {
@@ -410,10 +410,10 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<b><code>int</code></b>&nbsp;&nbsp;<small>id</small>  &nbsp;
 <input type="text" name="int" data-endpoint="DELETEapi-v1-roles--id-" data-component="body" required  hidden>
 <br>
-</p>
+The id of the role.</p>
 
 </form>
 

@@ -1,6 +1,133 @@
 # User endpoints
 
 
+## Create a User
+Store a newly created user in database.
+
+
+
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/api/v1/auth/register" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"first_name":"non","last_name":"reiciendis","dob":"2021-01-14T10:23:32+0000","phone":"qui","email":"swaniawski.katheryn@example.net","password":"tempora","address":"quia"}'
+
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/v1/auth/register"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "first_name": "non",
+    "last_name": "reiciendis",
+    "dob": "2021-01-14T10:23:32+0000",
+    "phone": "qui",
+    "email": "swaniawski.katheryn@example.net",
+    "password": "tempora",
+    "address": "quia"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response => response.json());
+```
+
+
+> Example response (201):
+
+```json
+
+{
+  'id': 1,
+  'role_id': 1,
+  'first_name': 'string',
+  'last_name': 'string',
+  'dob': '1990-12-12',
+  'phone': '098 0983 092',
+  'email': 'string',
+  'email_verified_at': '1990-12-12 12:45:10',
+  'password': 'string',
+  'address': 'string',
+  'bio': 'string',
+  'avatar_path': 'string',
+  'social_linkedin': 'string',
+  'social_facebook': 'string',
+  "created_at": "1990-12-12 12:45:10",
+  "updated_at": "1990-12-12 12:45:10"
+}
+```
+<div id="execution-results-POSTapi-v1-auth-register" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-v1-auth-register"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-auth-register"></code></pre>
+</div>
+<div id="execution-error-POSTapi-v1-auth-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-auth-register"></code></pre>
+</div>
+<form id="form-POSTapi-v1-auth-register" data-method="POST" data-path="api/v1/auth/register" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-auth-register', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v1-auth-register" onclick="tryItOut('POSTapi-v1-auth-register');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v1-auth-register" onclick="cancelTryOut('POSTapi-v1-auth-register');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v1-auth-register" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/v1/auth/register</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="first_name" data-endpoint="POSTapi-v1-auth-register" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="last_name" data-endpoint="POSTapi-v1-auth-register" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>dob</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="dob" data-endpoint="POSTapi-v1-auth-register" data-component="body"  hidden>
+<br>
+The value must be a valid date.</p>
+<p>
+<b><code>phone</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="phone" data-endpoint="POSTapi-v1-auth-register" data-component="body"  hidden>
+<br>
+</p>
+<p>
+<b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="email" data-endpoint="POSTapi-v1-auth-register" data-component="body" required  hidden>
+<br>
+The value must be a valid email address.</p>
+<p>
+<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="password" data-endpoint="POSTapi-v1-auth-register" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>address</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="address" data-endpoint="POSTapi-v1-auth-register" data-component="body"  hidden>
+<br>
+</p>
+
+</form>
+
+
 ## List User
 Display a listing of the user.
 
@@ -122,16 +249,16 @@ Display the specified user.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/users/distinctio" \
+    -G "http://localhost/api/v1/users/quis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":8}'
+    -d '{"id":7}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/users/distinctio"
+    "http://localhost/api/v1/users/quis"
 );
 
 let headers = {
@@ -140,7 +267,7 @@ let headers = {
 };
 
 let body = {
-    "id": 8
+    "id": 7
 }
 
 fetch(url, {
@@ -209,163 +336,6 @@ The id of the user.</p>
 </form>
 
 
-## Create a User
-Store a newly created user in database.
-
-
-
-
-> Example request:
-
-```bash
-curl -X POST \
-    "http://localhost/api/v1/users" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"role_id":6,"first_name":"molestiae","last_name":"sed","dob":"dolorum","phone":"cupiditate","email":"id","password":"iure","address":"tenetur","bio":"et","avatar_path":"esse","social_linkedin":"facere","social_facebook":"expedita"}'
-
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/api/v1/users"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "role_id": 6,
-    "first_name": "molestiae",
-    "last_name": "sed",
-    "dob": "dolorum",
-    "phone": "cupiditate",
-    "email": "id",
-    "password": "iure",
-    "address": "tenetur",
-    "bio": "et",
-    "avatar_path": "esse",
-    "social_linkedin": "facere",
-    "social_facebook": "expedita"
-}
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response => response.json());
-```
-
-
-> Example response (200):
-
-```json
-
-{
-  'id': 1,
-  'role_id': 1,
-  'first_name': 'string',
-  'last_name': 'string',
-  'dob': '1990-12-12',
-  'phone': '098 0983 092',
-  'email': 'string',
-  'email_verified_at': '1990-12-12 12:45:10',
-  'password': 'string',
-  'address': 'string',
-  'bio': 'string',
-  'avatar_path': 'string',
-  'social_linkedin': 'string',
-  'social_facebook': 'string',
-  "created_at": "1990-12-12 12:45:10",
-  "updated_at": "1990-12-12 12:45:10"
-}
-```
-<div id="execution-results-POSTapi-v1-users" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-v1-users"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-users"></code></pre>
-</div>
-<div id="execution-error-POSTapi-v1-users" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-users"></code></pre>
-</div>
-<form id="form-POSTapi-v1-users" data-method="POST" data-path="api/v1/users" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-users', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v1-users" onclick="tryItOut('POSTapi-v1-users');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v1-users" onclick="cancelTryOut('POSTapi-v1-users');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v1-users" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/v1/users</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-<p>
-<b><code>role_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="role_id" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
-<br>
-</p>
-<p>
-<b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="first_name" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
-<br>
-The first name of the user.</p>
-<p>
-<b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="last_name" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
-<br>
-The last name of the user.</p>
-<p>
-<b><code>dob</code></b>&nbsp;&nbsp;<small>date</small>  &nbsp;
-<input type="text" name="dob" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
-<br>
-The date of birth of the user.</p>
-<p>
-<b><code>phone</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="phone" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
-<br>
-The phone number of the user.</p>
-<p>
-<b><code>email</code></b>&nbsp;&nbsp;<small>email</small>  &nbsp;
-<input type="text" name="email" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
-<br>
-The email of the user.</p>
-<p>
-<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="password" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
-<br>
-The password of the user.</p>
-<p>
-<b><code>address</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="address" data-endpoint="POSTapi-v1-users" data-component="body" required  hidden>
-<br>
-The address of the user.</p>
-<p>
-<b><code>bio</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="bio" data-endpoint="POSTapi-v1-users" data-component="body"  hidden>
-<br>
-The introduce of the user.</p>
-<p>
-<b><code>avatar_path</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="avatar_path" data-endpoint="POSTapi-v1-users" data-component="body"  hidden>
-<br>
-The avatar's image path of the user.</p>
-<p>
-<b><code>social_linkedin</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="social_linkedin" data-endpoint="POSTapi-v1-users" data-component="body"  hidden>
-<br>
-The linkedin link of the user.</p>
-<p>
-<b><code>social_facebook</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="social_facebook" data-endpoint="POSTapi-v1-users" data-component="body"  hidden>
-<br>
-The facebook link of the user.</p>
-
-</form>
-
-
 ## Update User&#039;s Information
 Update the specified user in database.
 
@@ -376,16 +346,16 @@ Update the specified user in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/users/debitis" \
+    "http://localhost/api/v1/users/aspernatur" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_id":13,"first_name":"veniam","last_name":"soluta","dob":"2021-01-11T05:08:45+0000","phone":"maxime","email":"lueilwitz.kobe@example.com","password":"molestiae","address":"praesentium"}'
+    -d '{"first_name":"rerum","last_name":"libero","dob":"2021-01-14T10:23:33+0000","phone":"expedita","email":"hmills@example.com","password":"ea","address":"debitis"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/users/debitis"
+    "http://localhost/api/v1/users/aspernatur"
 );
 
 let headers = {
@@ -394,14 +364,13 @@ let headers = {
 };
 
 let body = {
-    "role_id": 13,
-    "first_name": "veniam",
-    "last_name": "soluta",
-    "dob": "2021-01-11T05:08:45+0000",
-    "phone": "maxime",
-    "email": "lueilwitz.kobe@example.com",
-    "password": "molestiae",
-    "address": "praesentium"
+    "first_name": "rerum",
+    "last_name": "libero",
+    "dob": "2021-01-14T10:23:33+0000",
+    "phone": "expedita",
+    "email": "hmills@example.com",
+    "password": "ea",
+    "address": "debitis"
 }
 
 fetch(url, {
@@ -462,11 +431,6 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>role_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="role_id" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
-<br>
-</p>
-<p>
 <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="first_name" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
 <br>
@@ -477,13 +441,13 @@ fetch(url, {
 <br>
 </p>
 <p>
-<b><code>dob</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="dob" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
+<b><code>dob</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="dob" data-endpoint="PUTapi-v1-users--id-" data-component="body"  hidden>
 <br>
 The value must be a valid date.</p>
 <p>
-<b><code>phone</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="phone" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
+<b><code>phone</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="phone" data-endpoint="PUTapi-v1-users--id-" data-component="body"  hidden>
 <br>
 </p>
 <p>
@@ -497,8 +461,8 @@ The value must be a valid email address.</p>
 <br>
 </p>
 <p>
-<b><code>address</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="address" data-endpoint="PUTapi-v1-users--id-" data-component="body" required  hidden>
+<b><code>address</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="address" data-endpoint="PUTapi-v1-users--id-" data-component="body"  hidden>
 <br>
 </p>
 
@@ -515,16 +479,16 @@ Remove the specified user from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/users/odio" \
+    "http://localhost/api/v1/users/eum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":17}'
+    -d '{"id":2}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/users/odio"
+    "http://localhost/api/v1/users/eum"
 );
 
 let headers = {
@@ -533,7 +497,7 @@ let headers = {
 };
 
 let body = {
-    "id": 17
+    "id": 2
 }
 
 fetch(url, {
