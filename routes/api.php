@@ -16,7 +16,8 @@ use Illuminate\Http\Request;
 Route::group(['prefix' => 'v1'], function(){
     Route::group(['prefix' => 'auth'], function(){
         Route::post('login', 'API\AuthenticateController@login');
-        Route::post('/register', 'API\AuthenticateController@register');
+        Route::post('/register', 'API\UserController@store');
+
     });
 
     // Organizations Publics
@@ -75,7 +76,6 @@ Route::group(['prefix' => 'v1'], function(){
         Route::group(['prefix' => 'users'], function() {
             Route::get('/', 'API\UserController@index');
             Route::get('/{id}', 'API\UserController@show');
-            Route::post('/', 'API\UserController@store');
             Route::put('/{id}', 'API\UserController@update');
             Route::delete('/{id}', 'API\UserController@destroy');
         });
