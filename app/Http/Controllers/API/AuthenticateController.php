@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Http\Requests\AuthenticateRequest;
+use App\Http\Requests\RegisterUserFormRequest;
+use App\User;
 
 /**
  * @group Auth endpoints
@@ -47,5 +49,16 @@ class AuthenticateController extends Controller
     public function checkValidToken(Request $request)
     {
         return response()->json(['status' => 'OK', 'message' => 'Token is valid'], 200);
+    }
+
+    /**
+     * Register a user
+     * @group Auth endpoints
+     */
+
+    public function register(RegisterUserFormRequest $request)
+    {
+        $user = User::create($request->all());
+        return response()->json($user, 201);
     }
 }

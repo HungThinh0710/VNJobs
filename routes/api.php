@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 Route::group(['prefix' => 'v1'], function(){
     Route::group(['prefix' => 'auth'], function(){
         Route::post('login', 'API\AuthenticateController@login');
+        Route::post('/register', 'API\AuthenticateController@register');
     });
 
     // Organizations Publics
