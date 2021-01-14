@@ -99,16 +99,16 @@ Display the specified job-seeker.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/job-seekers/ut" \
+    -G "http://localhost/api/v1/job-seekers/eligendi" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"omnis"}'
+    -d '{"int":"vitae"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/ut"
+    "http://localhost/api/v1/job-seekers/eligendi"
 );
 
 let headers = {
@@ -117,7 +117,7 @@ let headers = {
 };
 
 let body = {
-    "int": "omnis"
+    "int": "vitae"
 }
 
 fetch(url, {
@@ -190,7 +190,7 @@ curl -X POST \
     "http://localhost/api/v1/job-seekers" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":6,"is_elect":false,"cv_path":{},"cover_letter_path":"totam","exp_years":12}'
+    -d '{"user_id":11,"is_elect":false,"cv_path":{},"cover_letter_path":"qui","exp_years":7}'
 
 ```
 
@@ -205,11 +205,11 @@ let headers = {
 };
 
 let body = {
-    "user_id": 6,
+    "user_id": 11,
     "is_elect": false,
     "cv_path": {},
-    "cover_letter_path": "totam",
-    "exp_years": 12
+    "cover_letter_path": "qui",
+    "exp_years": 7
 }
 
 fetch(url, {
@@ -294,16 +294,16 @@ Update the specified job-seeker in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/job-seekers/accusamus" \
+    "http://localhost/api/v1/job-seekers/sit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":14,"is_elect":false,"cv_path":{},"cover_letter_path":"aut","exp_years":18}'
+    -d '{"user_id":3,"is_elect":false,"cv_path":{},"cover_letter_path":"nostrum","exp_years":1}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/accusamus"
+    "http://localhost/api/v1/job-seekers/sit"
 );
 
 let headers = {
@@ -312,11 +312,11 @@ let headers = {
 };
 
 let body = {
-    "user_id": 14,
+    "user_id": 3,
     "is_elect": false,
     "cv_path": {},
-    "cover_letter_path": "aut",
-    "exp_years": 18
+    "cover_letter_path": "nostrum",
+    "exp_years": 1
 }
 
 fetch(url, {
@@ -407,16 +407,16 @@ Remove the specified job-seeker from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/job-seekers/unde" \
+    "http://localhost/api/v1/job-seekers/inventore" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"at"}'
+    -d '{"int":"omnis"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/unde"
+    "http://localhost/api/v1/job-seekers/inventore"
 );
 
 let headers = {
@@ -425,7 +425,7 @@ let headers = {
 };
 
 let body = {
-    "int": "at"
+    "int": "omnis"
 }
 
 fetch(url, {

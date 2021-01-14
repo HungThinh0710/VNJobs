@@ -118,16 +118,16 @@ Display the specified recruitment news.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/recruitment-news/reprehenderit" \
+    -G "http://localhost/api/v1/recruitment-news/nihil" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"omnis"}'
+    -d '{"int":"veniam"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/recruitment-news/reprehenderit"
+    "http://localhost/api/v1/recruitment-news/nihil"
 );
 
 let headers = {
@@ -136,7 +136,7 @@ let headers = {
 };
 
 let body = {
-    "int": "omnis"
+    "int": "veniam"
 }
 
 fetch(url, {
@@ -216,7 +216,7 @@ curl -X POST \
     "http://localhost/api/v1/recruitment-news" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"org_id":13,"author_id":1,"major_id":10,"title":"dolor","content":"repellat","address":"facilis","city":"enim","start_time":"2021-01-14T10:23:33+0000","end_time":"2021-01-14T10:23:33+0000","interview_start_time":"2021-01-14T10:23:33+0000","interview_end_time":"2021-01-14T10:23:33+0000"}'
+    -d '{"org_id":13,"author_id":5,"major_id":7,"title":"ducimus","content":"et","address":"sunt","city":"doloremque","start_time":"2021-01-14T17:31:37+0000","end_time":"2021-01-14T17:31:37+0000","interview_start_time":"2021-01-14T17:31:37+0000","interview_end_time":"2021-01-14T17:31:37+0000"}'
 
 ```
 
@@ -232,16 +232,16 @@ let headers = {
 
 let body = {
     "org_id": 13,
-    "author_id": 1,
-    "major_id": 10,
-    "title": "dolor",
-    "content": "repellat",
-    "address": "facilis",
-    "city": "enim",
-    "start_time": "2021-01-14T10:23:33+0000",
-    "end_time": "2021-01-14T10:23:33+0000",
-    "interview_start_time": "2021-01-14T10:23:33+0000",
-    "interview_end_time": "2021-01-14T10:23:33+0000"
+    "author_id": 5,
+    "major_id": 7,
+    "title": "ducimus",
+    "content": "et",
+    "address": "sunt",
+    "city": "doloremque",
+    "start_time": "2021-01-14T17:31:37+0000",
+    "end_time": "2021-01-14T17:31:37+0000",
+    "interview_start_time": "2021-01-14T17:31:37+0000",
+    "interview_end_time": "2021-01-14T17:31:37+0000"
 }
 
 fetch(url, {
@@ -362,16 +362,16 @@ Update the specified recruitment news in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/recruitment-news/et" \
+    "http://localhost/api/v1/recruitment-news/voluptatem" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"org_id":12,"author_id":5,"major_id":1,"title":"accusamus","content":"quia","address":"labore","city":"neque","start_time":"2021-01-14T10:23:33+0000","end_time":"2021-01-14T10:23:33+0000","interview_start_time":"2021-01-14T10:23:33+0000","interview_end_time":"2021-01-14T10:23:33+0000"}'
+    -d '{"org_id":16,"author_id":5,"major_id":4,"title":"quia","content":"aut","address":"iste","city":"maiores","start_time":"2021-01-14T17:31:37+0000","end_time":"2021-01-14T17:31:37+0000","interview_start_time":"2021-01-14T17:31:37+0000","interview_end_time":"2021-01-14T17:31:37+0000"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/recruitment-news/et"
+    "http://localhost/api/v1/recruitment-news/voluptatem"
 );
 
 let headers = {
@@ -380,17 +380,17 @@ let headers = {
 };
 
 let body = {
-    "org_id": 12,
+    "org_id": 16,
     "author_id": 5,
-    "major_id": 1,
-    "title": "accusamus",
-    "content": "quia",
-    "address": "labore",
-    "city": "neque",
-    "start_time": "2021-01-14T10:23:33+0000",
-    "end_time": "2021-01-14T10:23:33+0000",
-    "interview_start_time": "2021-01-14T10:23:33+0000",
-    "interview_end_time": "2021-01-14T10:23:33+0000"
+    "major_id": 4,
+    "title": "quia",
+    "content": "aut",
+    "address": "iste",
+    "city": "maiores",
+    "start_time": "2021-01-14T17:31:37+0000",
+    "end_time": "2021-01-14T17:31:37+0000",
+    "interview_start_time": "2021-01-14T17:31:37+0000",
+    "interview_end_time": "2021-01-14T17:31:37+0000"
 }
 
 fetch(url, {
@@ -517,16 +517,16 @@ Remove the specified recruitment news from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/recruitment-news/rerum" \
+    "http://localhost/api/v1/recruitment-news/suscipit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"dolores"}'
+    -d '{"int":"et"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/recruitment-news/rerum"
+    "http://localhost/api/v1/recruitment-news/suscipit"
 );
 
 let headers = {
@@ -535,7 +535,7 @@ let headers = {
 };
 
 let body = {
-    "int": "dolores"
+    "int": "et"
 }
 
 fetch(url, {

@@ -17,65 +17,17 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     /**
-     * List User
-     * Display a listing of the user.
+     * Get User
+     * Display data of user by id
      * @group User endpoints
      *
-     * @response {
-     * "current_page": 1,
-     * "data": [{
-     *   'id': 1,
-     *   'role_id': 1,
-     *   'first_name': 'string',
-     *   'last_name': 'string',
-     *   'dob': '1990-12-12',
-     *   'phone': '098 0983 092',
-     *   'email': 'string',
-     *   'email_verified_at': '1990-12-12 12:45:10',
-     *   'password': 'string',
-     *   'address': 'string',
-     *   'bio': 'string',
-     *   'avatar_path': 'string',
-     *   'social_linkedin': 'string',
-     *   'social_facebook': 'string',
-     *   "created_at": "1990-12-12 12:45:10",
-     *   "updated_at": "1990-12-12 12:45:10"
-     *   },
-     *  {
-     *   "id": 2,
-     *   'role_id': 1,
-     *   'first_name': 'string',
-     *   'last_name': 'string',
-     *   'dob': '1990-12-12',
-     *   'phone': '098 0983 092',
-     *   'email': 'string',
-     *   'email_verified_at': '1990-12-12 12:45:10',
-     *   'password': 'string',
-     *   'address': 'string',
-     *   'bio': 'string',
-     *   'avatar_path': 'string',
-     *   'social_linkedin': 'string',
-     *   'social_facebook': 'string',
-     *   "created_at": "1990-12-12 12:45:10",
-     *   "updated_at": "1990-12-12 12:45:10"
-     *   }
-     * ],
-     * ,
-     *   "first_page_url": "http://127.0.0.1:8000/api/v1/users?page=1",
-     *   "from": 1,
-     *   "last_page": 1,
-     *   "last_page_url": "http://127.0.0.1:8000/api/v1/users?page=1",
-     *   "next_page_url": null,
-     *   "path": "http://127.0.0.1:8000/api/v1/users",
-     *   "per_page": 10,
-     *   "prev_page_url": null,
-     *   "to": 2,
-     *   "total": 2
-     * }
+     * @queryParam id int required The id of the user.
+     *
+     *
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::paginate(10);
+        $users = User::findOrFail($request->only('id'));
         return response()->json($users);
     }
 

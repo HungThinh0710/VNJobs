@@ -98,16 +98,16 @@ Display the specified role.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/roles/nulla" \
+    -G "http://localhost/api/v1/roles/accusantium" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"deserunt"}'
+    -d '{"int":"enim"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/roles/nulla"
+    "http://localhost/api/v1/roles/accusantium"
 );
 
 let headers = {
@@ -116,7 +116,7 @@ let headers = {
 };
 
 let body = {
-    "int": "deserunt"
+    "int": "enim"
 }
 
 fetch(url, {
@@ -185,7 +185,7 @@ curl -X POST \
     "http://localhost/api/v1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"voluptate"}'
+    -d '{"role_name":"ad"}'
 
 ```
 
@@ -200,7 +200,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "voluptate"
+    "role_name": "ad"
 }
 
 fetch(url, {
@@ -260,16 +260,16 @@ Update the specified role in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/roles/in" \
+    "http://localhost/api/v1/roles/eos" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"rem"}'
+    -d '{"role_name":"qui"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/roles/in"
+    "http://localhost/api/v1/roles/eos"
 );
 
 let headers = {
@@ -278,7 +278,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "rem"
+    "role_name": "qui"
 }
 
 fetch(url, {
@@ -344,16 +344,16 @@ Remove the specified role from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/roles/qui" \
+    "http://localhost/api/v1/roles/ipsa" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"excepturi"}'
+    -d '{"int":"voluptatibus"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/roles/qui"
+    "http://localhost/api/v1/roles/ipsa"
 );
 
 let headers = {
@@ -362,7 +362,7 @@ let headers = {
 };
 
 let body = {
-    "int": "excepturi"
+    "int": "voluptatibus"
 }
 
 fetch(url, {

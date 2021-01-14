@@ -39,11 +39,11 @@ paths:
                                 email:
                                     type: String
                                     description: ''
-                                    example: harum
+                                    example: neque
                                 password:
                                     type: String
                                     description: ''
-                                    example: accusamus
+                                    example: ratione
                             required:
                                 - email
                                 - password
@@ -139,7 +139,7 @@ paths:
                                 user_id:
                                     type: integer
                                     description: ''
-                                    example: 6
+                                    example: 11
                                 is_elect:
                                     type: boolean
                                     description: ''
@@ -151,11 +151,11 @@ paths:
                                 cover_letter_path:
                                     type: string
                                     description: ''
-                                    example: totam
+                                    example: qui
                                 exp_years:
                                     type: integer
                                     description: ''
-                                    example: 12
+                                    example: 7
                             required:
                                 - user_id
                                 - exp_years
@@ -199,7 +199,7 @@ paths:
                                 int:
                                     type: id
                                     description: 'The id of the job seeker.'
-                                    example: omnis
+                                    example: vitae
                             required:
                                 - int
             security: []
@@ -241,7 +241,7 @@ paths:
                                 user_id:
                                     type: integer
                                     description: ''
-                                    example: 14
+                                    example: 3
                                 is_elect:
                                     type: boolean
                                     description: ''
@@ -253,11 +253,11 @@ paths:
                                 cover_letter_path:
                                     type: string
                                     description: ''
-                                    example: aut
+                                    example: nostrum
                                 exp_years:
                                     type: integer
                                     description: ''
-                                    example: 18
+                                    example: 1
                             required:
                                 - user_id
                                 - exp_years
@@ -293,7 +293,7 @@ paths:
                                 int:
                                     type: id
                                     description: ''
-                                    example: at
+                                    example: omnis
                             required:
                                 - int
             security: []
@@ -302,7 +302,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: ut
+                example: eligendi
                 required: true
                 schema:
                     type: string
@@ -385,11 +385,11 @@ paths:
                                 major_name:
                                     type: string
                                     description: ''
-                                    example: est
+                                    example: veritatis
                                 image_path:
                                     type: string
                                     description: ''
-                                    example: voluptatem
+                                    example: qui
                             required:
                                 - major_name
             security: []
@@ -443,7 +443,7 @@ paths:
                                 int:
                                     type: id
                                     description: 'The id of the major.'
-                                    example: unde
+                                    example: in
                             required:
                                 - int
             security: []
@@ -496,11 +496,11 @@ paths:
                                 major_name:
                                     type: string
                                     description: ''
-                                    example: architecto
+                                    example: est
                                 image_path:
                                     type: string
                                     description: ''
-                                    example: quos
+                                    example: quasi
                             required:
                                 - major_name
             security: []
@@ -553,7 +553,7 @@ paths:
                                 int:
                                     type: id
                                     description: 'The id of the major.'
-                                    example: voluptatibus
+                                    example: dolorem
                             required:
                                 - int
             security: []
@@ -562,7 +562,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: sit
+                example: eius
                 required: true
                 schema:
                     type: string
@@ -659,35 +659,35 @@ paths:
                                 owner_id:
                                     type: integer
                                     description: ''
-                                    example: 8
+                                    example: 3
                                 org_name:
                                     type: string
                                     description: ''
-                                    example: praesentium
+                                    example: earum
                                 phones:
                                     type: string
                                     description: ''
-                                    example: nostrum
+                                    example: mollitia
                                 description:
                                     type: string
                                     description: ''
-                                    example: recusandae
+                                    example: quia
                                 tax_id:
                                     type: integer
                                     description: ''
-                                    example: 7
+                                    example: 15
                                 address:
                                     type: string
                                     description: ''
-                                    example: et
+                                    example: enim
                                 logo_path:
                                     type: string
                                     description: ''
-                                    example: assumenda
+                                    example: ex
                                 cover_path:
                                     type: string
                                     description: ''
-                                    example: dolores
+                                    example: fugit
                             required:
                                 - owner_id
                                 - org_name
@@ -759,7 +759,7 @@ paths:
                                 int:
                                     type: id
                                     description: 'The id of the organization.'
-                                    example: perspiciatis
+                                    example: aliquid
                             required:
                                 - int
             security: []
@@ -826,35 +826,35 @@ paths:
                                 owner_id:
                                     type: integer
                                     description: ''
-                                    example: 11
+                                    example: 13
                                 org_name:
                                     type: string
                                     description: ''
-                                    example: iure
+                                    example: ex
                                 phones:
                                     type: string
                                     description: ''
-                                    example: necessitatibus
+                                    example: et
                                 description:
                                     type: string
                                     description: ''
-                                    example: sint
+                                    example: aut
                                 tax_id:
                                     type: integer
                                     description: ''
-                                    example: 7
+                                    example: 12
                                 address:
                                     type: string
                                     description: ''
-                                    example: neque
+                                    example: quasi
                                 logo_path:
                                     type: string
                                     description: ''
-                                    example: impedit
+                                    example: nobis
                                 cover_path:
                                     type: string
                                     description: ''
-                                    example: sint
+                                    example: sed
                             required:
                                 - owner_id
                                 - org_name
@@ -925,7 +925,7 @@ paths:
                                 int:
                                     type: id
                                     description: 'The id of the organization.'
-                                    example: quia
+                                    example: expedita
                             required:
                                 - int
             security: []
@@ -934,7 +934,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: necessitatibus
+                example: sunt
                 required: true
                 schema:
                     type: string
@@ -1010,43 +1010,43 @@ paths:
                                 author_id:
                                     type: integer
                                     description: ''
-                                    example: 1
+                                    example: 5
                                 major_id:
                                     type: integer
                                     description: ''
-                                    example: 10
+                                    example: 7
                                 title:
                                     type: string
                                     description: ''
-                                    example: dolor
+                                    example: ducimus
                                 content:
                                     type: string
                                     description: ''
-                                    example: repellat
+                                    example: et
                                 address:
                                     type: string
                                     description: ''
-                                    example: facilis
+                                    example: sunt
                                 city:
                                     type: string
                                     description: ''
-                                    example: enim
+                                    example: doloremque
                                 start_time:
                                     type: string
                                     description: 'The value must be a valid date.'
-                                    example: '2021-01-14T10:23:33+0000'
+                                    example: '2021-01-14T17:31:37+0000'
                                 end_time:
                                     type: string
                                     description: 'The value must be a valid date.'
-                                    example: '2021-01-14T10:23:33+0000'
+                                    example: '2021-01-14T17:31:37+0000'
                                 interview_start_time:
                                     type: string
                                     description: 'The value must be a valid date.'
-                                    example: '2021-01-14T10:23:33+0000'
+                                    example: '2021-01-14T17:31:37+0000'
                                 interview_end_time:
                                     type: string
                                     description: 'The value must be a valid date.'
-                                    example: '2021-01-14T10:23:33+0000'
+                                    example: '2021-01-14T17:31:37+0000'
                             required:
                                 - org_id
                                 - author_id
@@ -1099,7 +1099,7 @@ paths:
                                 int:
                                     type: id
                                     description: 'The id of the recruiment news.'
-                                    example: omnis
+                                    example: veniam
                             required:
                                 - int
             security: []
@@ -1141,7 +1141,7 @@ paths:
                                 org_id:
                                     type: integer
                                     description: ''
-                                    example: 12
+                                    example: 16
                                 author_id:
                                     type: integer
                                     description: ''
@@ -1149,39 +1149,39 @@ paths:
                                 major_id:
                                     type: integer
                                     description: ''
-                                    example: 1
+                                    example: 4
                                 title:
                                     type: string
                                     description: ''
-                                    example: accusamus
+                                    example: quia
                                 content:
                                     type: string
                                     description: ''
-                                    example: quia
+                                    example: aut
                                 address:
                                     type: string
                                     description: ''
-                                    example: labore
+                                    example: iste
                                 city:
                                     type: string
                                     description: ''
-                                    example: neque
+                                    example: maiores
                                 start_time:
                                     type: string
                                     description: 'The value must be a valid date.'
-                                    example: '2021-01-14T10:23:33+0000'
+                                    example: '2021-01-14T17:31:37+0000'
                                 end_time:
                                     type: string
                                     description: 'The value must be a valid date.'
-                                    example: '2021-01-14T10:23:33+0000'
+                                    example: '2021-01-14T17:31:37+0000'
                                 interview_start_time:
                                     type: string
                                     description: 'The value must be a valid date.'
-                                    example: '2021-01-14T10:23:33+0000'
+                                    example: '2021-01-14T17:31:37+0000'
                                 interview_end_time:
                                     type: string
                                     description: 'The value must be a valid date.'
-                                    example: '2021-01-14T10:23:33+0000'
+                                    example: '2021-01-14T17:31:37+0000'
                             required:
                                 - org_id
                                 - author_id
@@ -1233,7 +1233,7 @@ paths:
                                 int:
                                     type: id
                                     description: 'The id of the recruitment news'
-                                    example: dolores
+                                    example: et
                             required:
                                 - int
             security: []
@@ -1242,7 +1242,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: reprehenderit
+                example: nihil
                 required: true
                 schema:
                     type: string
@@ -1323,7 +1323,7 @@ paths:
                                 role_name:
                                     type: string
                                     description: ''
-                                    example: voluptate
+                                    example: ad
                             required:
                                 - role_name
             security: []
@@ -1375,7 +1375,7 @@ paths:
                                 int:
                                     type: id
                                     description: 'The id of the role.'
-                                    example: deserunt
+                                    example: enim
                             required:
                                 - int
             security: []
@@ -1426,7 +1426,7 @@ paths:
                                 role_name:
                                     type: string
                                     description: ''
-                                    example: rem
+                                    example: qui
                             required:
                                 - role_name
             security: []
@@ -1477,7 +1477,7 @@ paths:
                                 int:
                                     type: id
                                     description: 'The id of the role.'
-                                    example: excepturi
+                                    example: voluptatibus
                             required:
                                 - int
             security: []
@@ -1486,7 +1486,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: nulla
+                example: accusantium
                 required: true
                 schema:
                     type: string
@@ -1529,42 +1529,52 @@ paths:
                                 first_name:
                                     type: string
                                     description: ''
-                                    example: non
+                                    example: tenetur
                                 last_name:
                                     type: string
                                     description: ''
-                                    example: reiciendis
+                                    example: et
                                 dob:
                                     type: string
                                     description: 'The value must be a valid date.'
-                                    example: '2021-01-14T10:23:32+0000'
+                                    example: '2021-01-14T17:31:37+0000'
                                 phone:
                                     type: string
                                     description: ''
-                                    example: qui
+                                    example: et
                                 email:
                                     type: string
                                     description: 'The value must be a valid email address.'
-                                    example: swaniawski.katheryn@example.net
+                                    example: xjohnston@example.com
                                 password:
                                     type: string
                                     description: ''
-                                    example: tempora
+                                    example: dicta
                                 address:
                                     type: string
                                     description: ''
-                                    example: quia
+                                    example: et
                             required:
                                 - first_name
                                 - last_name
                                 - email
                                 - password
             security: []
-    /api/v1/users:
+    /api/v1/user:
         get:
-            summary: "List User\nDisplay a listing of the user."
+            summary: "Get User\nDisplay data of user by id"
             description: ''
             parameters:
+                -
+                    in: query
+                    name: id
+                    description: 'The id of the user.'
+                    example: 11
+                    required: true
+                    schema:
+                        type: integer
+                        description: 'The id of the user.'
+                        example: 11
                 -
                     in: header
                     name: Content-Type
@@ -1580,17 +1590,20 @@ paths:
                     schema:
                         type: string
             responses:
-                200:
-                    description: '200'
+                401:
+                    description: ''
                     content:
-                        text/plain:
+                        application/json:
                             schema:
-                                type: string
-                                example: "{\n\"current_page\": 1,\n\"data\": [{\n  'id': 1,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'avatar_path': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  },\n {\n  \"id\": 2,\n  'role_id': 1,\n  'first_name': 'string',\n  'last_name': 'string',\n  'dob': '1990-12-12',\n  'phone': '098 0983 092',\n  'email': 'string',\n  'email_verified_at': '1990-12-12 12:45:10',\n  'password': 'string',\n  'address': 'string',\n  'bio': 'string',\n  'avatar_path': 'string',\n  'social_linkedin': 'string',\n  'social_facebook': 'string',\n  \"created_at\": \"1990-12-12 12:45:10\",\n  \"updated_at\": \"1990-12-12 12:45:10\"\n  }\n],\n,\n  \"first_page_url\": \"http://127.0.0.1:8000/api/v1/users?page=1\",\n  \"from\": 1,\n  \"last_page\": 1,\n  \"last_page_url\": \"http://127.0.0.1:8000/api/v1/users?page=1\",\n  \"next_page_url\": null,\n  \"path\": \"http://127.0.0.1:8000/api/v1/users\",\n  \"per_page\": 10,\n  \"prev_page_url\": null,\n  \"to\": 2,\n  \"total\": 2\n}"
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
             tags:
                 - 'User endpoints'
             security: []
-    '/api/v1/users/{id}':
+    '/api/v1/user/{id}':
         get:
             summary: "Find a User\nDisplay the specified user."
             description: ''
@@ -1671,31 +1684,31 @@ paths:
                                 first_name:
                                     type: string
                                     description: ''
-                                    example: rerum
+                                    example: sunt
                                 last_name:
                                     type: string
                                     description: ''
-                                    example: libero
+                                    example: quo
                                 dob:
                                     type: string
                                     description: 'The value must be a valid date.'
-                                    example: '2021-01-14T10:23:33+0000'
+                                    example: '2021-01-14T17:31:37+0000'
                                 phone:
                                     type: string
                                     description: ''
-                                    example: expedita
+                                    example: voluptas
                                 email:
                                     type: string
                                     description: 'The value must be a valid email address.'
-                                    example: hmills@example.com
+                                    example: bschinner@example.net
                                 password:
                                     type: string
                                     description: ''
-                                    example: ea
+                                    example: aliquid
                                 address:
                                     type: string
                                     description: ''
-                                    example: debitis
+                                    example: doloremque
                             required:
                                 - first_name
                                 - last_name
@@ -1740,7 +1753,7 @@ paths:
                                 id:
                                     type: integer
                                     description: 'The id of the user.'
-                                    example: 2
+                                    example: 12
                             required:
                                 - id
             security: []
@@ -1749,7 +1762,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: quis
+                example: voluptates
                 required: true
                 schema:
                     type: string
