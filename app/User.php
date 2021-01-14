@@ -11,8 +11,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;
 
+    protected $guarded = ['role_id'];
+
     protected $fillable = [
-        'role_id',
+//        'role_id',
         'first_name',
         'last_name',
         'dob',

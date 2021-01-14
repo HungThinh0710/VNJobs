@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Http\Requests\AuthenticateRequest;
+use App\Http\Requests\RegisterUserFormRequest;
+use App\User;
 
 /**
  * @group Auth endpoints
