@@ -99,16 +99,16 @@ Display the specified job-seeker.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/job-seekers/voluptate" \
+    -G "http://localhost/api/v1/job-seekers/ut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"fuga"}'
+    -d '{"int":"omnis"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/voluptate"
+    "http://localhost/api/v1/job-seekers/ut"
 );
 
 let headers = {
@@ -117,7 +117,7 @@ let headers = {
 };
 
 let body = {
-    "int": "fuga"
+    "int": "omnis"
 }
 
 fetch(url, {
@@ -169,10 +169,10 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<b><code>int</code></b>&nbsp;&nbsp;<small>id</small>  &nbsp;
 <input type="text" name="int" data-endpoint="GETapi-v1-job-seekers--id-" data-component="body" required  hidden>
 <br>
-</p>
+The id of the job seeker.</p>
 
 </form>
 
@@ -190,7 +190,7 @@ curl -X POST \
     "http://localhost/api/v1/job-seekers" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":20,"is_elect":false,"cv_path":{},"cover_letter_path":"ut","exp_years":10}'
+    -d '{"user_id":6,"is_elect":false,"cv_path":{},"cover_letter_path":"totam","exp_years":12}'
 
 ```
 
@@ -205,11 +205,11 @@ let headers = {
 };
 
 let body = {
-    "user_id": 20,
+    "user_id": 6,
     "is_elect": false,
     "cv_path": {},
-    "cover_letter_path": "ut",
-    "exp_years": 10
+    "cover_letter_path": "totam",
+    "exp_years": 12
 }
 
 fetch(url, {
@@ -294,16 +294,16 @@ Update the specified job-seeker in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/job-seekers/delectus" \
+    "http://localhost/api/v1/job-seekers/accusamus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":2,"is_elect":false,"cv_path":{},"cover_letter_path":"aut","exp_years":7}'
+    -d '{"user_id":14,"is_elect":false,"cv_path":{},"cover_letter_path":"aut","exp_years":18}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/delectus"
+    "http://localhost/api/v1/job-seekers/accusamus"
 );
 
 let headers = {
@@ -312,11 +312,11 @@ let headers = {
 };
 
 let body = {
-    "user_id": 2,
+    "user_id": 14,
     "is_elect": false,
     "cv_path": {},
     "cover_letter_path": "aut",
-    "exp_years": 7
+    "exp_years": 18
 }
 
 fetch(url, {
@@ -407,16 +407,16 @@ Remove the specified job-seeker from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/job-seekers/voluptas" \
+    "http://localhost/api/v1/job-seekers/unde" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"rerum"}'
+    -d '{"int":"at"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/voluptas"
+    "http://localhost/api/v1/job-seekers/unde"
 );
 
 let headers = {
@@ -425,7 +425,7 @@ let headers = {
 };
 
 let body = {
-    "int": "rerum"
+    "int": "at"
 }
 
 fetch(url, {
@@ -463,7 +463,7 @@ fetch(url, {
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
-<b><code>int</code></b>&nbsp;&nbsp;<small>$id</small>  &nbsp;
+<b><code>int</code></b>&nbsp;&nbsp;<small>id</small>  &nbsp;
 <input type="text" name="int" data-endpoint="DELETEapi-v1-job-seekers--id-" data-component="body" required  hidden>
 <br>
 </p>

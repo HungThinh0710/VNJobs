@@ -7,6 +7,8 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\FindUser;
 use App\Http\Requests\StoreUser;
+use Illuminate\Support\Facades\Hash;
+
 /**
  * @group User endpoints
  *
@@ -119,8 +121,13 @@ class UserController extends Controller
         //     'social_facebook' => $request->social_facebook
         // ]);
 
-        $user = User::create($request->all());
+        $request->merge([
+            'password' => Hash::make($request->input('password'))
+        ]);
 
+        $user = new User($request->all());
+        $user->role_id = 4; //default role for new user;
+        $user->save();
         return response()->json($user, 201);
     }
 
