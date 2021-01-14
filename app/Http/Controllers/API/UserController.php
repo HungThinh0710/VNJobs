@@ -81,20 +81,8 @@ class UserController extends Controller
     * Create a User
     * Store a newly created user in database.
     * @group User endpoints
-    * 
-    * @bodyParam first_name string required The first name of the user.
-    * @bodyParam last_name string required The last name of the user.
-    * @bodyParam dob date required The date of birth of the user.
-    * @bodyParam phone string required The phone number of the user.
-    * @bodyParam email email required The email of the user.
-    * @bodyParam password string required The password of the user.
-    * @bodyParam address string required The address of the user.
-    * @bodyParam bio string The introduce of the user.
-    * @bodyParam avatar_path string The avatar's image path of the user.
-    * @bodyParam social_linkedin string The linkedin link of the user.
-    * @bodyParam social_facebook string The facebook link of the user.
     *
-    * @response {
+    * @response 201{
     *   'id': 1,
     *   'role_id': 1,
     *   'first_name': 'string',
@@ -132,7 +120,7 @@ class UserController extends Controller
         // ]);
 
         $user = User::create($request->all());
-        
+
         return response()->json($user, 201);
     }
 
@@ -142,7 +130,7 @@ class UserController extends Controller
      * @group User endpoints
      *
      * @bodyParam id int required The id of the user.
-     * 
+     *
      * @response {
      *   'id': 1,
      *   'role_id': 1,
@@ -232,7 +220,7 @@ class UserController extends Controller
      * @group User endpoints
      *
      * @bodyParam id int required The id of the user.
-     * 
+     *
      * @response {
      *   'id': 1,
      *   'role_id': 1,
