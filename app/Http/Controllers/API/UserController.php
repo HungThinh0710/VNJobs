@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\FindUser;
 use App\Http\Requests\StoreUser;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\User\UpdateUserFormRequest;
 
 /**
  * @group User endpoints
@@ -21,13 +22,10 @@ class UserController extends Controller
      * Display data of user by id
      * @group User endpoints
      *
-     * @queryParam id int required The id of the user.
-     *
-     *
      */
     public function index(Request $request)
     {
-        $users = User::findOrFail($request->only('id'));
+        $users = User::findOrFail($request->user()->id);
         return response()->json($users);
     }
 
@@ -139,38 +137,13 @@ class UserController extends Controller
      *   "updated_at": "1990-12-12 12:45:10"
      * }
      */
-    public function update(StoreUser $request, $id)
+    public function update(UpdateUserFormRequest $request)
     {
-        /*
-        // OLD WAY
-        $user = User::findOrFail($id);
-        if ($user) {
-            http_response_code(200);
-            $user->toQuery()->update([
-                'role_id' => $request->role_id,
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'dob' => $request->dob,
-                'phone' => $request->phone,
-                'email' => $request->email,
-                'email_verified_at' => $request->email_verified_at,
-                'password' => $request->password,
-                'address' => $request->address,
-                'bio' => $request->bio,
-                'avatar_path' => $request->avatar_path,
-                'social_linkedin' => $request->social_linkedin,
-                'social_facebook' => $request->social_facebook
-            ]);
-        } else {
-            http_response_code(404);
-        }
-        return response()->json($user);
-        */
 
-        /* NEW WAY */
-        $user = User::findOrFail($id);
+
+        $user = User::findOrFail($request->user()->id);
         $user->update($request->all());
-        return response()->json($user);
+        return response()->json(['message' => 'Cập nhật hồ sơ thành công!', 'user' => $user]);
     }
 
     /**
