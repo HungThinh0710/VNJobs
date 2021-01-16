@@ -72,11 +72,11 @@ Route::group(['prefix' => 'v1'], function(){
             Route::delete('/{id}', 'API\RoleController@destroy');
         });
 
-        // Users Group Auth |
+        // Users Group Auth
         Route::group(['prefix' => 'user'], function() {
             Route::get('/', 'API\UserController@index');
             Route::get('/{id}', 'API\UserController@show');
-            Route::put('/{id}', 'API\UserController@update');
+            Route::put('/', 'API\UserController@update');
             Route::delete('/{id}', 'API\UserController@destroy');
         });
 
