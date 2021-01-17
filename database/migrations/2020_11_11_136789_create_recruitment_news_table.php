@@ -25,6 +25,7 @@ class CreateRecruitmentNewsTable extends Migration
             $table->longText("content");
             $table->string("address");
             $table->string("city");
+            $table->string("work_type");
             $table->timestamp("start_time")->useCurrent();
             $table->timestamp("end_time")->useCurrent();
             $table->timestamp("interview_start_time")->useCurrent();
