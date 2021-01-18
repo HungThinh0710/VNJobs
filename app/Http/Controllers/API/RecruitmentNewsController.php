@@ -156,7 +156,15 @@ class RecruitmentNewsController extends Controller
     {
         $recruitmentNews = RecruitmentNews::findOrFail($id);
         $recruitmentNews->update($request->all());
-        return response()->json($recruitmentNews);
+        // $userId = $request->user()->id;
+        // // dd($recruitmentNews->author_id);
+        // // dd($userId);
+        // if ($userId != $recruitmentNews->author_id) {
+        //     $recruitmentNews->job_seeker()->attach($userId);
+        //     dd($recruitmentNews);
+        //     $recruitmentNews->save();
+        // }
+        return response()->json(['message' => 'Cập nhật bài viết thành công!', 'recruitmentNews' => $recruitmentNews]);
     }
 
     /**

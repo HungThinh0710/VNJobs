@@ -69,18 +69,18 @@ class User extends Authenticatable
         return $this->hasMany('App\Organization', 'owner_id', 'id');
     }
 
-    public function recruitment_news()
-    {
-        return $this->hasMany('\App\RecruitmentNews', 'author_id', 'id');
-    }
-
-    // public function applied_jobs()
+    // public function recruitment_news()
     // {
-    //     return $this->belongsToMany(
-    //         'App\RecruitmentNews',
-    //         'job_seekers',
-    //         'user_id',
-    //         'rn_id',
-    //     );
+    //     return $this->hasMany('\App\RecruitmentNews', 'author_id', 'id');
     // }
+
+    public function applied_jobs()
+    {
+        return $this->belongsToMany(
+            'App\RecruitmentNews',
+            'job_seekers',
+            'user_id',
+            'rn_id',
+        );
+    }
 }
