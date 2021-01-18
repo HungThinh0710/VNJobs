@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Major;
 use App\RecruitmentNews;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreRecruitmentNews;
 
@@ -69,8 +71,18 @@ class RecruitmentNewsController extends Controller
      */
     public function index()
     {
-        $listRecruitmentNews = RecruitmentNews::paginate(10);
+        $listRecruitmentNews = RecruitmentNews::with('major')->paginate(10);
         return response()->json($listRecruitmentNews);
+    }
+
+    public function showByMajor()
+    {
+        $listRecruitmentNewsByMajor = Major::with(['recruitment_news' => function($q){
+           $q->whereDate('end_time', '>', Carbon::today()->toDateString())->with('org')->latest()->limit(10);
+        }])->get();
+
+
+        return response()->json($listRecruitmentNewsByMajor);
     }
 
     /**
