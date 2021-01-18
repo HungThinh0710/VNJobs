@@ -20,14 +20,14 @@ class Major extends Model
         );
     }
 
-    public function job_seekers() {
-        return $this->belongsToMany(
-            'App\JobSeeker', 
-            'jobseekers_majors',
-            'major_id',
-            'js_id'
-        );
-    }
+    // public function job_seekers() {
+    //     return $this->belongsToMany(
+    //         'App\JobSeeker', 
+    //         'jobseekers_majors',
+    //         'major_id',
+    //         'js_id'
+    //     );
+    // }
     
     public function recruitment_news()
     {
