@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Major extends Model
 {
+    use \Staudenmeir\EloquentEagerLimit\HasEagerLimit;
+
     protected $table = 'majors';
 
     protected $fillable = ['major_name', 'image_path'];
@@ -13,7 +15,7 @@ class Major extends Model
     public function orgs()
     {
         return $this->belongsTomany(
-            'App\Organization', 
+            'App\Organization',
             'organizations_majors',
             'major_id',
             'org_id'
@@ -22,13 +24,13 @@ class Major extends Model
 
     // public function job_seekers() {
     //     return $this->belongsToMany(
-    //         'App\JobSeeker', 
+    //         'App\JobSeeker',
     //         'jobseekers_majors',
     //         'major_id',
     //         'js_id'
     //     );
     // }
-    
+
     public function recruitment_news()
     {
         return $this->hasMany('App\RecruitmentNews','major_id', 'id');

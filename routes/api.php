@@ -38,6 +38,7 @@ Route::group(['prefix' => 'v1'], function(){
 
     // Recruitment News Publics
     Route::get('recruitment-news/', 'API\RecruitmentNewsController@index');
+    Route::get('recruitment-news-by-major/','API\RecruitmentNewsController@showByMajor');
     Route::get('recruitment-news/{id}', 'API\RecruitmentNewsController@show');
 
     Route::group(['middleware' => 'auth:api'], function() {
