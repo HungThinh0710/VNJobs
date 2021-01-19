@@ -35,7 +35,7 @@ class JobSeeker extends Model
     // public function applied_job() {
     //     return $this->belongsToMany(
     //         'App\User',          
-    //         'recruitmentnews_jobseekers', 
+    //         'job_seekers', 
     //         'js_id',              
     //         'rn_id'
     //     );
