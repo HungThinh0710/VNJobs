@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class RecruitmentNews extends Model
 {
+    use \Staudenmeir\EloquentEagerLimit\HasEagerLimit;
+
     protected $table = 'recruitment_news';
 
     protected $fillable = ['org_id', 'author_id', 'major_id', 'title', 'content', ' address', 'city', 'work_type', 'start_time', 'end_time', 'interview_start_time', 'interview_end_time'];

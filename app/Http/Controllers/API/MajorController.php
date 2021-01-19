@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Major;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreMajor;
 
@@ -18,7 +19,7 @@ class MajorController extends Controller
      * List Major
      * Display a listing of the resource.
      * @group Major endpoints
-     * 
+     *
      * @response {
      * "current_page": 1,
      * data: [{
@@ -50,15 +51,18 @@ class MajorController extends Controller
      */
     public function index()
     {
-        $majors = Major::paginate(10);
-        return response()->json($majors);
+        $majors = Major::withCount(['recruitment_news as job_left' => function($q){
+            $q->whereDate('end_time', '>', Carbon::today()->toDateString());
+        }])->get();
+
+        return response()->json(['data' => $majors]);
     }
 
     /**
      * Create Major
      * Store a newly created major in database.
      * @group Major endpoints
-     * 
+     *
      * @response {
      *   "id": 1,
      *   "major_name": "string",
@@ -77,7 +81,7 @@ class MajorController extends Controller
      * Find a Major
      * Display the specified major.
      * @group Major endpoints
-     * 
+     *
      * @bodyParam int id required The id of the major.
      * @response {
      *   "id": 1,
@@ -98,7 +102,7 @@ class MajorController extends Controller
      * Update the specified major in database.
      * @group Major endpoints
      *
-     * @response { 
+     * @response {
      *   "id": 1,
      *   "major_name": "string",
      *   "image_path": "string",
