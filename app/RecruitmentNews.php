@@ -33,7 +33,12 @@ class RecruitmentNews extends Model
             'App\User',
             'job_seekers',
             'rn_id',
-            'user_id',
-        );
+            'user_id'
+        )->withPivot(
+            'cv_path',
+            'is_elect',
+            'cover_letter_path',
+            'exp_years'
+        );;
     }
 }
