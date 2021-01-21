@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function showIndex()
     {
-        return 'This is temp index';
+        return view('dashboard.admin.index');
     }
 }
