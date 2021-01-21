@@ -15,9 +15,20 @@
 
 Auth::routes();
 
-Route::post('/login', 'Dashboard\\Admin\\AuthenticateController@login')->name('admin_login');
+Route::get('/admincp/login', 'Dashboard\\Admin\\AuthenticateController@showLogin')->name('admin_show_login');
+Route::post('admincp/login', 'Dashboard\\Admin\\AuthenticateController@login')->name('admin_login');
 
-Route::group(['prefix' => 'admincp'], function () {
+Route::group(['prefix' => 'admincp', 'middleware' => 'auth:admin'], function () {
     Route::get('/home', 'Dashboard\\Admin\\HomeController@showIndex')->name('show_admin');
     Route::get('/home', 'Dashboard\\Admin\\HomeController@showIndex')->name('show_admin');
+
+    //Logout
+    Route::get('logout', 'Dashboard\\Admin\\AuthenticateController@logout')->name('admin_logout');;
+
+    /*
+     * List Org
+     */
+    Route::get('list-org', 'Dashboard\\Admin\\OrgController@showListOrg')->name('show_admin_list_org');
+
+
 });

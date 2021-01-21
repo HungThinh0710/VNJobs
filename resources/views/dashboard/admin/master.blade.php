@@ -16,6 +16,12 @@
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+    @if(Auth::guard('admin')->check() == false)
+    <script>
+            window.location = {{route('admin_show_login')}};
+    </script>
+
+    @endif
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -42,6 +48,7 @@
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
+
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
