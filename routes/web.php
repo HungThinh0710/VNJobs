@@ -13,6 +13,11 @@
 
 //Route::get('/', 'TestController@show');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Auth::routes();
+
+Route::post('/login', 'Dashboard\\Admin\\AuthenticateController@login')->name('admin_login');
+
+Route::group(['prefix' => 'admincp'], function () {
+    Route::get('/home', 'Dashboard\\Admin\\HomeController@showIndex')->name('show_admin');
+    Route::get('/home', 'Dashboard\\Admin\\HomeController@showIndex')->name('show_admin');
+});
