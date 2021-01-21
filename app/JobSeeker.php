@@ -14,7 +14,6 @@ class JobSeeker extends Model
         'is_elect',
         'cv_path',
         'cover_letter_path',
-        'cover_letter_path',
         'exp_years',
     ];
 
@@ -41,5 +40,5 @@ class JobSeeker extends Model
     //     );
     // }
 
-    // public $timestampts = true; //already exist with default laravel
+    public $timestamps = true; //already exist with default laravel
 }

@@ -177,4 +177,24 @@ class UserController extends Controller
         $user = User::findOrFail($id)->delete();
         return response()->json($user);
     }
+
+
+    public function apply(Request $request) {
+        $rnId = $request->rn_id;
+        $userId = $request->user()->id;
+        $user = User::findOrFail($userId);
+        // dd($request);
+        $exists = $user->applied_jobs()->where('rn_id', $rnId)->exists();
+        if ($exists) {
+            return response()->json(['data' => $user], 201);
+        }
+        $user->applied_jobs()->attach($rnId, [
+            'is_elect' => $request->is_elect,
+            'cv_path' => $request->cv_path,
+            'cover_letter_path' => $request->cover_letter_path,
+            'exp_years' => $request->exp_years
+        ]);
+        $user->save();
+        return response()->json(['data' => $user], 200);
+    }
 }
