@@ -16,6 +16,7 @@ use App\Http\Requests\StoreRecruitmentNews;
  */
 class RecruitmentNewsController extends Controller
 {
+
     /**
      * List Recruitment News
      * Display a listing of the recruitment news.
@@ -205,5 +206,16 @@ class RecruitmentNewsController extends Controller
     public function destroy($id)
     {
         return response()->json(RecruitmentNews::findOrFail($id)->delete());
+    }
+
+    public function search(Request $request) {
+        $params = $request->all();
+        //$recruitmentNews = RecruitmentNews::filter($params);
+        //dd($recruitmentNews);
+        
+        $recruitmentNews = RecruitmentNews::with('org', 'major')->filter($params);
+            //->workType($request);
+        
+        return response()->json($recruitmentNews);
     }
 }

@@ -40,7 +40,7 @@ Route::group(['prefix' => 'v1'], function(){
     Route::get('recruitment-news/', 'API\RecruitmentNewsController@index');
     Route::get('recruitment-news-by-major/','API\RecruitmentNewsController@showByMajor');
     Route::get('recruitment-news/{id}', 'API\RecruitmentNewsController@show');
-
+    Route::post('search', 'API\RecruitmentNewsController@search');
     Route::group(['middleware' => 'auth:api'], function() {
         //Check is token still valid
         Route::post('/is-valid-token', 'API\AuthenticateController@checkValidToken');
@@ -87,6 +87,9 @@ Route::group(['prefix' => 'v1'], function(){
             Route::put('/{id}', 'API\RecruitmentNewsController@update');
             Route::delete('/{id}', 'API\RecruitmentNewsController@destroy');
         });
+
+        Route::put('users/apply', 'API\UserController@apply');
+        
     });
 });
 
