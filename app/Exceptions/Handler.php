@@ -72,6 +72,6 @@ class Handler extends ExceptionHandler
             return redirect()->guest(route('admin_show_login'));
         }
 
-        return redirect()->guest(route('show_org_login'));
+        return redirect()->guest(route('org_show_login'));
     }
 }

@@ -26,7 +26,7 @@ class AuthenticateController extends Controller
         if (Auth::guard('admin')->attempt($credential)) {
             return redirect()->route('show_admin');
         }
-        return back()->withInput($request->only('email', 'remember'));
+        return back()->withErrors('Tài khoản hoặc mật khẩu không đúng')->withInput($request->only('email'));
     }
 
     public function logout()
