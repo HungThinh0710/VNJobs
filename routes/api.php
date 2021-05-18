@@ -35,7 +35,6 @@ Route::group(['prefix' => 'v1'], function(){
     // Roles Publics
     Route::get('roles/', 'API\RoleController@index');
     Route::get('roles/{id}', 'API\RoleController@show');
-
     // Recruitment News Publics
     Route::get('recruitment-news/', 'API\RecruitmentNewsController@index');
     Route::get('recruitment-news-by-major/','API\RecruitmentNewsController@showByMajor');
@@ -76,7 +75,8 @@ Route::group(['prefix' => 'v1'], function(){
         // Users Group Auth
         Route::group(['prefix' => 'user'], function() {
             Route::get('/', 'API\UserController@index');
-            Route::get('/{id}', 'API\UserController@show');
+            Route::get('/find/{id}', 'API\UserController@show');
+            Route::get('/applied', 'API\UserController@applied');
             Route::put('/', 'API\UserController@update');
             Route::delete('/{id}', 'API\UserController@destroy');
         });
@@ -89,7 +89,7 @@ Route::group(['prefix' => 'v1'], function(){
         });
 
         Route::put('users/apply', 'API\UserController@apply');
-        
+
     });
 });
 

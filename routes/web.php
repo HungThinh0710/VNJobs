@@ -14,7 +14,9 @@
 //Route::get('/', 'TestController@show');
 
 Auth::routes();
-
+Route::get('/', function(){
+  return redirect('/docs/#');
+});
 Route::get('/admincp/login', 'Dashboard\\Admin\\AuthenticateController@showLogin')->name('admin_show_login');
 Route::post('admincp/login', 'Dashboard\\Admin\\AuthenticateController@login')->name('admin_login');
 
