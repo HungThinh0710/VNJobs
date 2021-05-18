@@ -44,7 +44,7 @@
                             <li><a href='http://github.com/knuckleswtf/scribe'>Documentation powered by Scribe ✍</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: December 25 2020</li>
+            <li>Last updated: May 18 2021</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -56,26 +56,26 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 <script>
-    var baseUrl = "http://localhost";
+    var baseUrl = "http://localhost:8000";
 </script>
-<script src="js/tryitout-2.3.0.js"></script>
+<script src="js/tryitout-2.4.2.js"></script>
 <blockquote>
 <p>Base URL</p>
 </blockquote>
-<pre><code class="language-yaml">http://localhost</code></pre><h1>Authenticating requests</h1>
+<pre><code class="language-yaml">http://localhost:8000</code></pre><h1>Authenticating requests</h1>
 <p>This API is not authenticated.</p><h1>Auth endpoints</h1>
 <h2>Login.</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/v1/auth/login" \
+    "http://localhost:8000/api/v1/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"neque","password":"ratione"}'
+    -d '{"email":"quaerat","password":"consequuntur"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/auth/login"
+    "http://localhost:8000/api/v1/auth/login"
 );
 
 let headers = {
@@ -84,8 +84,8 @@ let headers = {
 };
 
 let body = {
-    "email": "neque",
-    "password": "ratione"
+    "email": "quaerat",
+    "password": "consequuntur"
 }
 
 fetch(url, {
@@ -130,11 +130,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/v1/is-valid-token" \
+    "http://localhost:8000/api/v1/is-valid-token" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/is-valid-token"
+    "http://localhost:8000/api/v1/is-valid-token"
 );
 
 let headers = {
@@ -172,11 +172,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/job-seekers" \
+    -G "http://localhost:8000/api/v1/job-seekers" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/job-seekers"
+    "http://localhost:8000/api/v1/job-seekers"
 );
 
 let headers = {
@@ -246,13 +246,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/job-seekers/eligendi" \
+    -G "http://localhost:8000/api/v1/job-seekers/aliquam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"vitae"}'
+    -d '{"int":"saepe"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/job-seekers/eligendi"
+    "http://localhost:8000/api/v1/job-seekers/aliquam"
 );
 
 let headers = {
@@ -261,7 +261,7 @@ let headers = {
 };
 
 let body = {
-    "int": "vitae"
+    "int": "saepe"
 }
 
 fetch(url, {
@@ -321,13 +321,13 @@ The id of the job seeker.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/v1/job-seekers" \
+    "http://localhost:8000/api/v1/job-seekers" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":11,"is_elect":false,"cv_path":{},"cover_letter_path":"qui","exp_years":7}'
+    -d '{"user_id":16,"is_elect":false,"cv_path":{},"cover_letter_path":"aliquid","exp_years":8}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/job-seekers"
+    "http://localhost:8000/api/v1/job-seekers"
 );
 
 let headers = {
@@ -336,11 +336,11 @@ let headers = {
 };
 
 let body = {
-    "user_id": 11,
+    "user_id": 16,
     "is_elect": false,
     "cv_path": {},
-    "cover_letter_path": "qui",
-    "exp_years": 7
+    "cover_letter_path": "aliquid",
+    "exp_years": 8
 }
 
 fetch(url, {
@@ -415,13 +415,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost/api/v1/job-seekers/sit" \
+    "http://localhost:8000/api/v1/job-seekers/eum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":3,"is_elect":false,"cv_path":{},"cover_letter_path":"nostrum","exp_years":1}'
+    -d '{"user_id":11,"is_elect":false,"cv_path":{},"cover_letter_path":"voluptatem","exp_years":2}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/job-seekers/sit"
+    "http://localhost:8000/api/v1/job-seekers/eum"
 );
 
 let headers = {
@@ -430,11 +430,11 @@ let headers = {
 };
 
 let body = {
-    "user_id": 3,
+    "user_id": 11,
     "is_elect": false,
     "cv_path": {},
-    "cover_letter_path": "nostrum",
-    "exp_years": 1
+    "cover_letter_path": "voluptatem",
+    "exp_years": 2
 }
 
 fetch(url, {
@@ -515,13 +515,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/v1/job-seekers/inventore" \
+    "http://localhost:8000/api/v1/job-seekers/recusandae" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"omnis"}'
+    -d '{"int":"iste"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/job-seekers/inventore"
+    "http://localhost:8000/api/v1/job-seekers/recusandae"
 );
 
 let headers = {
@@ -530,7 +530,7 @@ let headers = {
 };
 
 let body = {
-    "int": "omnis"
+    "int": "iste"
 }
 
 fetch(url, {
@@ -577,11 +577,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/majors" \
+    -G "http://localhost:8000/api/v1/majors" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/majors"
+    "http://localhost:8000/api/v1/majors"
 );
 
 let headers = {
@@ -651,13 +651,13 @@ data: [{
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/majors/eius" \
+    -G "http://localhost:8000/api/v1/majors/laborum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"in"}'
+    -d '{"int":"dolor"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/majors/eius"
+    "http://localhost:8000/api/v1/majors/laborum"
 );
 
 let headers = {
@@ -666,7 +666,7 @@ let headers = {
 };
 
 let body = {
-    "int": "in"
+    "int": "dolor"
 }
 
 fetch(url, {
@@ -723,13 +723,13 @@ The id of the major.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/v1/majors" \
+    "http://localhost:8000/api/v1/majors" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"major_name":"veritatis","image_path":"qui"}'
+    -d '{"major_name":"eligendi","image_path":"quis"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/majors"
+    "http://localhost:8000/api/v1/majors"
 );
 
 let headers = {
@@ -738,8 +738,8 @@ let headers = {
 };
 
 let body = {
-    "major_name": "veritatis",
-    "image_path": "qui"
+    "major_name": "eligendi",
+    "image_path": "quis"
 }
 
 fetch(url, {
@@ -795,13 +795,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost/api/v1/majors/et" \
+    "http://localhost:8000/api/v1/majors/reiciendis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"major_name":"est","image_path":"quasi"}'
+    -d '{"major_name":"velit","image_path":"ut"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/majors/et"
+    "http://localhost:8000/api/v1/majors/reiciendis"
 );
 
 let headers = {
@@ -810,8 +810,8 @@ let headers = {
 };
 
 let body = {
-    "major_name": "est",
-    "image_path": "quasi"
+    "major_name": "velit",
+    "image_path": "ut"
 }
 
 fetch(url, {
@@ -873,13 +873,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/v1/majors/accusantium" \
+    "http://localhost:8000/api/v1/majors/alias" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"dolorem"}'
+    -d '{"int":"voluptate"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/majors/accusantium"
+    "http://localhost:8000/api/v1/majors/alias"
 );
 
 let headers = {
@@ -888,7 +888,7 @@ let headers = {
 };
 
 let body = {
-    "int": "dolorem"
+    "int": "voluptate"
 }
 
 fetch(url, {
@@ -945,11 +945,11 @@ The id of the major.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/organizations" \
+    -G "http://localhost:8000/api/v1/organizations" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/organizations"
+    "http://localhost:8000/api/v1/organizations"
 );
 
 let headers = {
@@ -1034,13 +1034,13 @@ data: [{
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/organizations/sunt" \
+    -G "http://localhost:8000/api/v1/organizations/quidem" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"aliquid"}'
+    -d '{"int":"suscipit"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/organizations/sunt"
+    "http://localhost:8000/api/v1/organizations/quidem"
 );
 
 let headers = {
@@ -1049,7 +1049,7 @@ let headers = {
 };
 
 let body = {
-    "int": "aliquid"
+    "int": "suscipit"
 }
 
 fetch(url, {
@@ -1113,13 +1113,13 @@ The id of the organization.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/v1/organizations" \
+    "http://localhost:8000/api/v1/organizations" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"owner_id":3,"org_name":"earum","phones":"mollitia","description":"quia","tax_id":15,"address":"enim","logo_path":"ex","cover_path":"fugit"}'
+    -d '{"owner_id":8,"org_name":"quia","phones":"odit","description":"voluptatem","tax_id":12,"address":"mollitia","logo_path":"deserunt","cover_path":"et"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/organizations"
+    "http://localhost:8000/api/v1/organizations"
 );
 
 let headers = {
@@ -1128,14 +1128,14 @@ let headers = {
 };
 
 let body = {
-    "owner_id": 3,
-    "org_name": "earum",
-    "phones": "mollitia",
-    "description": "quia",
-    "tax_id": 15,
-    "address": "enim",
-    "logo_path": "ex",
-    "cover_path": "fugit"
+    "owner_id": 8,
+    "org_name": "quia",
+    "phones": "odit",
+    "description": "voluptatem",
+    "tax_id": 12,
+    "address": "mollitia",
+    "logo_path": "deserunt",
+    "cover_path": "et"
 }
 
 fetch(url, {
@@ -1228,13 +1228,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost/api/v1/organizations/architecto" \
+    "http://localhost:8000/api/v1/organizations/esse" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"owner_id":13,"org_name":"ex","phones":"et","description":"aut","tax_id":12,"address":"quasi","logo_path":"nobis","cover_path":"sed"}'
+    -d '{"owner_id":7,"org_name":"provident","phones":"illo","description":"quasi","tax_id":6,"address":"ut","logo_path":"occaecati","cover_path":"labore"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/organizations/architecto"
+    "http://localhost:8000/api/v1/organizations/esse"
 );
 
 let headers = {
@@ -1243,14 +1243,14 @@ let headers = {
 };
 
 let body = {
-    "owner_id": 13,
-    "org_name": "ex",
-    "phones": "et",
-    "description": "aut",
-    "tax_id": 12,
-    "address": "quasi",
-    "logo_path": "nobis",
-    "cover_path": "sed"
+    "owner_id": 7,
+    "org_name": "provident",
+    "phones": "illo",
+    "description": "quasi",
+    "tax_id": 6,
+    "address": "ut",
+    "logo_path": "occaecati",
+    "cover_path": "labore"
 }
 
 fetch(url, {
@@ -1349,13 +1349,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/v1/organizations/officiis" \
+    "http://localhost:8000/api/v1/organizations/nobis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"expedita"}'
+    -d '{"int":"soluta"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/organizations/officiis"
+    "http://localhost:8000/api/v1/organizations/nobis"
 );
 
 let headers = {
@@ -1364,7 +1364,7 @@ let headers = {
 };
 
 let body = {
-    "int": "expedita"
+    "int": "soluta"
 }
 
 fetch(url, {
@@ -1422,17 +1422,18 @@ fetch(url, {
 The id of the organization.</p>
 
 </form><h1>Recruitment News endpoints</h1>
+<p>APIs for Recruitment News.</p>
 <h2>List Recruitment News</h2>
 <p>Display a listing of the recruitment news.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/recruitment-news" \
+    -G "http://localhost:8000/api/v1/recruitment-news" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/recruitment-news"
+    "http://localhost:8000/api/v1/recruitment-news"
 );
 
 let headers = {
@@ -1515,19 +1516,1248 @@ data: [{
  <b><code>api/v1/recruitment-news</code></b>
 </p>
 </form>
+<h2>api/v1/recruitment-news-by-major</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost:8000/api/v1/recruitment-news-by-major" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/recruitment-news-by-major"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">[
+    {
+        "id": 1,
+        "major_name": "IT",
+        "image_path": ".\/public\/images\/major.png",
+        "created_at": null,
+        "updated_at": null,
+        "recruitment_news": [
+            {
+                "id": 3,
+                "org_id": 4,
+                "author_id": 4,
+                "major_id": 1,
+                "title": "Remote NodeJS",
+                "content": "Cần tuyển Id cupiditate sit incidunt quia. In dicta unde sequi et et. Aut dolor atque deleniti ut quia labore nulla illo.",
+                "address": "1011 Phố Cam Thiện Phương, Xã 68, Quận Tiếp Ty Trí\nBình Thuận",
+                "city": "Cần Thơ",
+                "work_type": "Fulltime",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 4,
+                    "owner_id": 2,
+                    "org_name": "Công ty Bá and Sons",
+                    "phones": "(099)892-6369",
+                    "description": null,
+                    "tax_id": "58011",
+                    "address": "95, Ấp Thịnh An Khương, Xã 52, Quận Ngọc Kim\nBà Rịa - Vũng Tàu",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 4,
+                "org_id": 8,
+                "author_id": 1,
+                "major_id": 1,
+                "title": "Part-time Ruby",
+                "content": "Cần tuyển Molestiae architecto reiciendis omnis recusandae vero ipsam aliquam beatae. Debitis ut et hic ratione animi et ex incidunt. Recusandae et tempore nemo aut laboriosam ut debitis.",
+                "address": "59 Phố Xuân, Phường Cơ, Huyện Trương\nHà Nội",
+                "city": "Hồ Chí Minh",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 8,
+                    "owner_id": 3,
+                    "org_name": "Công ty Mang LLC",
+                    "phones": "0167 653 0061",
+                    "description": null,
+                    "tax_id": "5636",
+                    "address": "335 Phố Lương Tuyết Lan, Xã 9, Quận Trương Ca\nHà Nội",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 5,
+                "org_id": 4,
+                "author_id": 5,
+                "major_id": 1,
+                "title": "Remote Java",
+                "content": "Cần tuyển Neque qui quae magni quidem culpa voluptate. Consequatur corrupti eligendi minus. Quae harum tenetur blanditiis quo.",
+                "address": "2776 Phố Ân Bửu Đào, Xã Thư Tân, Quận Sâm\nBình Phước",
+                "city": "Hồ Chí Minh",
+                "work_type": "Part-time",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 4,
+                    "owner_id": 2,
+                    "org_name": "Công ty Bá and Sons",
+                    "phones": "(099)892-6369",
+                    "description": null,
+                    "tax_id": "58011",
+                    "address": "95, Ấp Thịnh An Khương, Xã 52, Quận Ngọc Kim\nBà Rịa - Vũng Tàu",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 6,
+                "org_id": 2,
+                "author_id": 4,
+                "major_id": 1,
+                "title": "Part-time Ruby",
+                "content": "Cần tuyển Minus in dolorum enim sapiente incidunt voluptatem eius molestiae. Neque ut provident molestias enim dolorem quae. Assumenda et est tempora rem non autem ut. Accusantium qui ea dolorem eligendi.",
+                "address": "6729 Phố Bùi Quân Diệp, Ấp Bùi Thuận, Quận Thy Điệp\nHồ Chí Minh",
+                "city": "Hà Nội",
+                "work_type": "Part-time",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 2,
+                    "owner_id": 1,
+                    "org_name": "Công ty Đinh, Khâu and Quản",
+                    "phones": "039-237-2533",
+                    "description": null,
+                    "tax_id": "56592",
+                    "address": "4, Ấp Tạ Thuận, Phường Hiền Hán, Huyện 7\nSơn La",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 7,
+                "org_id": 5,
+                "author_id": 8,
+                "major_id": 1,
+                "title": "Part-time .Net",
+                "content": "Cần tuyển Blanditiis quam non suscipit consequatur cumque. Odio rerum sed amet magnam dolor libero animi. Itaque voluptate ut voluptatem numquam. Fuga dolorem perspiciatis optio et quo vitae et.",
+                "address": "350 Phố Duyên, Phường Quyền, Quận Cát Chi\nHồ Chí Minh",
+                "city": "Hải Phòng",
+                "work_type": "Part-time",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 5,
+                    "owner_id": 1,
+                    "org_name": "Công ty Cát-Cù",
+                    "phones": "059-475-0363",
+                    "description": null,
+                    "tax_id": "8125",
+                    "address": "2475 Phố Đoàn, Phường 4, Quận Vừ Thi Khai\nĐà Nẵng",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 17,
+                "org_id": 6,
+                "author_id": 9,
+                "major_id": 1,
+                "title": "Fulltime ReactJS",
+                "content": "Cần tuyển Voluptates molestiae adipisci aliquid. Pariatur perspiciatis sit sint aut beatae omnis. Molestiae reprehenderit omnis pariatur rem.",
+                "address": "9, Thôn Du Hiền, Thôn Giả Thủy, Quận Bùi Nga Lý\nQuảng Ngãi",
+                "city": "Đà Nẵng",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 6,
+                    "owner_id": 3,
+                    "org_name": "Công ty La PLC",
+                    "phones": "84-75-563-7508",
+                    "description": null,
+                    "tax_id": "54749",
+                    "address": "1329 Phố Vừ, Thôn Khuất Tiển, Huyện Khê Sĩ\nHà Nội",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 18,
+                "org_id": 6,
+                "author_id": 5,
+                "major_id": 1,
+                "title": "Part-time Java",
+                "content": "Cần tuyển Ut magni quam eum quae expedita praesentium voluptatem. Atque sapiente laboriosam iste error est eum eius. Explicabo earum facilis adipisci.",
+                "address": "6489, Thôn Bửu Thơ, Xã 3, Huyện Thơ Ngôn\nHà Giang",
+                "city": "Cần Thơ",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 6,
+                    "owner_id": 3,
+                    "org_name": "Công ty La PLC",
+                    "phones": "84-75-563-7508",
+                    "description": null,
+                    "tax_id": "54749",
+                    "address": "1329 Phố Vừ, Thôn Khuất Tiển, Huyện Khê Sĩ\nHà Nội",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 22,
+                "org_id": 3,
+                "author_id": 8,
+                "major_id": 1,
+                "title": "Remote ReactJS",
+                "content": "Cần tuyển A reiciendis ut ut facilis mollitia quo dolores et. Vel amet omnis magnam rerum.",
+                "address": "6700 Phố Lỳ, Phường Bạc, Quận Phùng Trác Dao\nHà Nội",
+                "city": "Đà Nẵng",
+                "work_type": "Part-time",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 3,
+                    "owner_id": 9,
+                    "org_name": "Công ty Phó-Cái",
+                    "phones": "(0510) 703 9459",
+                    "description": null,
+                    "tax_id": "743410",
+                    "address": "793, Thôn Hy Bình, Thôn Lã Nhiên, Quận Huỳnh Trân Kiên\nLào Cai",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 23,
+                "org_id": 9,
+                "author_id": 1,
+                "major_id": 1,
+                "title": "Remote Ruby",
+                "content": "Cần tuyển Ipsum et doloremque quaerat et animi aut. Quis ab vel eos.",
+                "address": "7340 Phố Cấn Đoàn Trinh, Xã Tăng Ngôn Nguyệt, Huyện Chiêm Đăng\nĐắk Lắk",
+                "city": "Hồ Chí Minh",
+                "work_type": "Fulltime",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 9,
+                    "owner_id": 3,
+                    "org_name": "Công ty Lều-Hàng",
+                    "phones": "84-127-072-3782",
+                    "description": null,
+                    "tax_id": "42926",
+                    "address": "7, Ấp Đường Hậu, Xã Chung, Huyện Thạch\nCao Bằng",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 26,
+                "org_id": 2,
+                "author_id": 6,
+                "major_id": 1,
+                "title": "Fulltime NodeJS",
+                "content": "Cần tuyển Asperiores harum reiciendis esse excepturi nam sapiente. Dolores fuga qui sint recusandae quo. Veniam quis facilis maxime ipsa consequatur. Perferendis omnis aut sapiente non.",
+                "address": "31 Phố Thái Linh Hội, Phường Phong Đan, Huyện Hy Hòa\nHồ Chí Minh",
+                "city": "Hồ Chí Minh",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 2,
+                    "owner_id": 1,
+                    "org_name": "Công ty Đinh, Khâu and Quản",
+                    "phones": "039-237-2533",
+                    "description": null,
+                    "tax_id": "56592",
+                    "address": "4, Ấp Tạ Thuận, Phường Hiền Hán, Huyện 7\nSơn La",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "major_name": "BA",
+        "image_path": ".\/public\/images\/major.png",
+        "created_at": null,
+        "updated_at": null,
+        "recruitment_news": [
+            {
+                "id": 1,
+                "org_id": 1,
+                "author_id": 8,
+                "major_id": 2,
+                "title": "Part-time Java",
+                "content": "Cần tuyển Aut ea nihil amet est. Impedit totam qui ipsam veniam. Excepturi ab deserunt et earum nisi magnam laboriosam. Similique excepturi et voluptas magni. Nulla sint quidem eum id earum.",
+                "address": "571 Phố Bồ Ánh Tú, Phường 6, Huyện Phượng Trung\nTây Ninh",
+                "city": "Hồ Chí Minh",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 1,
+                    "owner_id": 10,
+                    "org_name": "Công ty Cái, Phạm and Tăng",
+                    "phones": "(84)(164)829-1230",
+                    "description": null,
+                    "tax_id": "77536",
+                    "address": "8227 Phố Đặng Khanh Hiệp, Phường Lâm Giả, Huyện Bửu\nQuảng Ninh",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 10,
+                "org_id": 4,
+                "author_id": 4,
+                "major_id": 2,
+                "title": "Remote Ruby",
+                "content": "Cần tuyển Corporis esse fuga et neque. Voluptatibus omnis quaerat qui cumque sint enim quasi. Dolore dolorem est numquam animi. Fuga sed ipsam suscipit et est quisquam ut.",
+                "address": "246, Thôn Luận Tôn, Xã Thanh, Quận Vân\nBến Tre",
+                "city": "Cần Thơ",
+                "work_type": "Part-time",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 4,
+                    "owner_id": 2,
+                    "org_name": "Công ty Bá and Sons",
+                    "phones": "(099)892-6369",
+                    "description": null,
+                    "tax_id": "58011",
+                    "address": "95, Ấp Thịnh An Khương, Xã 52, Quận Ngọc Kim\nBà Rịa - Vũng Tàu",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 11,
+                "org_id": 1,
+                "author_id": 1,
+                "major_id": 2,
+                "title": "Remote ReactJS",
+                "content": "Cần tuyển Rerum accusantium aut quas sint eos. Rem aut rem vero dolores nostrum. Praesentium quis recusandae in.",
+                "address": "961 Phố Hồng Ty Ngọc, Phường Đàn Giao, Quận 30\nHồ Chí Minh",
+                "city": "Cần Thơ",
+                "work_type": "Fulltime",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 1,
+                    "owner_id": 10,
+                    "org_name": "Công ty Cái, Phạm and Tăng",
+                    "phones": "(84)(164)829-1230",
+                    "description": null,
+                    "tax_id": "77536",
+                    "address": "8227 Phố Đặng Khanh Hiệp, Phường Lâm Giả, Huyện Bửu\nQuảng Ninh",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 12,
+                "org_id": 2,
+                "author_id": 5,
+                "major_id": 2,
+                "title": "Fulltime ReactJS",
+                "content": "Cần tuyển Dolor commodi eos laborum alias sit. Nobis non cupiditate sed quos illo. Deserunt veniam fugit fugit provident excepturi. Numquam sit deserunt est qui eligendi. Accusantium molestiae et ex iste.",
+                "address": "51 Phố Bàng Ngọc Ngôn, Phường 59, Quận Khưu\nHà Nội",
+                "city": "Hà Nội",
+                "work_type": "Part-time",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 2,
+                    "owner_id": 1,
+                    "org_name": "Công ty Đinh, Khâu and Quản",
+                    "phones": "039-237-2533",
+                    "description": null,
+                    "tax_id": "56592",
+                    "address": "4, Ấp Tạ Thuận, Phường Hiền Hán, Huyện 7\nSơn La",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 13,
+                "org_id": 9,
+                "author_id": 10,
+                "major_id": 2,
+                "title": "Remote Java",
+                "content": "Cần tuyển Quisquam sunt aut cum nulla quia provident error. Tempore sed consequatur facere occaecati. Nam est perspiciatis ad earum eum.",
+                "address": "90 Phố Chiêu, Xã 31, Huyện 6\nHải Phòng",
+                "city": "Hải Phòng",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 9,
+                    "owner_id": 3,
+                    "org_name": "Công ty Lều-Hàng",
+                    "phones": "84-127-072-3782",
+                    "description": null,
+                    "tax_id": "42926",
+                    "address": "7, Ấp Đường Hậu, Xã Chung, Huyện Thạch\nCao Bằng",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 16,
+                "org_id": 2,
+                "author_id": 6,
+                "major_id": 2,
+                "title": "Fulltime Ruby",
+                "content": "Cần tuyển Ea cum aut unde possimus. Et maxime quis ea adipisci dolores veniam et. Sed dicta magnam totam voluptas nobis et sit. Nobis perspiciatis quibusdam iure sequi quis qui.",
+                "address": "16 Phố Lý Chiến Bổng, Xã 94, Quận Tăng Thương\nGia Lai",
+                "city": "Hà Nội",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 2,
+                    "owner_id": 1,
+                    "org_name": "Công ty Đinh, Khâu and Quản",
+                    "phones": "039-237-2533",
+                    "description": null,
+                    "tax_id": "56592",
+                    "address": "4, Ấp Tạ Thuận, Phường Hiền Hán, Huyện 7\nSơn La",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 20,
+                "org_id": 6,
+                "author_id": 1,
+                "major_id": 2,
+                "title": "Part-time Java",
+                "content": "Cần tuyển Consequatur sit numquam dignissimos animi vel non nam magni. Non ex neque hic vero eaque autem. Eaque explicabo quis recusandae eius repellendus quo nostrum.",
+                "address": "606 Phố Kim Tùng Kiều, Phường Trâm Quyên, Huyện 8\nPhú Yên",
+                "city": "Đà Nẵng",
+                "work_type": "Fulltime",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 6,
+                    "owner_id": 3,
+                    "org_name": "Công ty La PLC",
+                    "phones": "84-75-563-7508",
+                    "description": null,
+                    "tax_id": "54749",
+                    "address": "1329 Phố Vừ, Thôn Khuất Tiển, Huyện Khê Sĩ\nHà Nội",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 21,
+                "org_id": 4,
+                "author_id": 6,
+                "major_id": 2,
+                "title": "Fulltime ReactJS",
+                "content": "Cần tuyển Adipisci repellendus at magni. Maxime in et voluptatem quas expedita. Rerum corporis consequatur aliquam voluptatum quod. Debitis accusamus omnis ipsum earum magnam nobis vel.",
+                "address": "7, Thôn 4, Xã 7, Huyện Cao Dương\nThừa Thiên Huế",
+                "city": "Cần Thơ",
+                "work_type": "Fulltime",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 4,
+                    "owner_id": 2,
+                    "org_name": "Công ty Bá and Sons",
+                    "phones": "(099)892-6369",
+                    "description": null,
+                    "tax_id": "58011",
+                    "address": "95, Ấp Thịnh An Khương, Xã 52, Quận Ngọc Kim\nBà Rịa - Vũng Tàu",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 24,
+                "org_id": 2,
+                "author_id": 4,
+                "major_id": 2,
+                "title": "Remote Java",
+                "content": "Cần tuyển Nostrum sequi maiores cupiditate autem laudantium et quo provident. Vero aut aut quo enim. Magni necessitatibus cumque illum labore est quis suscipit est. Tenetur optio quia consequatur amet.",
+                "address": "8868, Thôn Khưu Phụng Nhân, Phường Hà, Huyện Mẫn Thiên\nBình Thuận",
+                "city": "Đà Nẵng",
+                "work_type": "Part-time",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 2,
+                    "owner_id": 1,
+                    "org_name": "Công ty Đinh, Khâu and Quản",
+                    "phones": "039-237-2533",
+                    "description": null,
+                    "tax_id": "56592",
+                    "address": "4, Ấp Tạ Thuận, Phường Hiền Hán, Huyện 7\nSơn La",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 27,
+                "org_id": 1,
+                "author_id": 1,
+                "major_id": 2,
+                "title": "Part-time NodeJS",
+                "content": "Cần tuyển Ipsa harum hic maxime quibusdam quisquam architecto. Facere aut tenetur unde velit praesentium qui officia.",
+                "address": "276 Phố Khoa Viên Phi, Ấp Mai Hỷ, Quận 75\nHà Tĩnh",
+                "city": "Cần Thơ",
+                "work_type": "Fulltime",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 1,
+                    "owner_id": 10,
+                    "org_name": "Công ty Cái, Phạm and Tăng",
+                    "phones": "(84)(164)829-1230",
+                    "description": null,
+                    "tax_id": "77536",
+                    "address": "8227 Phố Đặng Khanh Hiệp, Phường Lâm Giả, Huyện Bửu\nQuảng Ninh",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "major_name": "BrSE",
+        "image_path": ".\/public\/images\/major.png",
+        "created_at": null,
+        "updated_at": null,
+        "recruitment_news": [
+            {
+                "id": 8,
+                "org_id": 2,
+                "author_id": 7,
+                "major_id": 3,
+                "title": "Part-time Java",
+                "content": "Cần tuyển Nisi quis omnis nulla explicabo. Cupiditate sit velit qui consequatur omnis. Debitis repellat eos sunt dolor fugiat ut.",
+                "address": "49, Thôn 3, Phường Đan Nhượng Cương, Quận Nghị Chưởng Dân\nThanh Hóa",
+                "city": "Đà Nẵng",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 2,
+                    "owner_id": 1,
+                    "org_name": "Công ty Đinh, Khâu and Quản",
+                    "phones": "039-237-2533",
+                    "description": null,
+                    "tax_id": "56592",
+                    "address": "4, Ấp Tạ Thuận, Phường Hiền Hán, Huyện 7\nSơn La",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 9,
+                "org_id": 1,
+                "author_id": 10,
+                "major_id": 3,
+                "title": "Part-time .Net",
+                "content": "Cần tuyển Tempore id ea et commodi ut in. Delectus et libero quibusdam. Cum odit voluptas sunt fuga aliquam impedit velit.",
+                "address": "9, Thôn Hy Hà, Xã Tống, Quận Vĩnh\nLào Cai",
+                "city": "Hải Phòng",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 1,
+                    "owner_id": 10,
+                    "org_name": "Công ty Cái, Phạm and Tăng",
+                    "phones": "(84)(164)829-1230",
+                    "description": null,
+                    "tax_id": "77536",
+                    "address": "8227 Phố Đặng Khanh Hiệp, Phường Lâm Giả, Huyện Bửu\nQuảng Ninh",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 19,
+                "org_id": 10,
+                "author_id": 6,
+                "major_id": 3,
+                "title": "Part-time Java",
+                "content": "Cần tuyển Dolorem illo ut praesentium sunt enim sit sed atque. Occaecati occaecati quisquam quidem sint maiores amet ut ipsam. Cupiditate inventore autem rerum iste officia.",
+                "address": "6, Thôn Kiều, Xã Lực Sinh, Quận Hậu Hàn\nGia Lai",
+                "city": "Hồ Chí Minh",
+                "work_type": "Part-time",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 10,
+                    "owner_id": 2,
+                    "org_name": "Công ty Thái-Đái",
+                    "phones": "(0166)513-8558",
+                    "description": null,
+                    "tax_id": "67765",
+                    "address": "894, Thôn Khánh Văn, Phường 0, Huyện Giác Lô\nBạc Liêu",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 28,
+                "org_id": 5,
+                "author_id": 2,
+                "major_id": 3,
+                "title": "Part-time Java",
+                "content": "Cần tuyển Et consequatur aut dolorum neque. Ut odio praesentium ad autem et qui.",
+                "address": "6 Phố Lạc Anh Ân, Ấp Diêm Hành, Quận 23\nĐồng Nai",
+                "city": "Hải Phòng",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 5,
+                    "owner_id": 1,
+                    "org_name": "Công ty Cát-Cù",
+                    "phones": "059-475-0363",
+                    "description": null,
+                    "tax_id": "8125",
+                    "address": "2475 Phố Đoàn, Phường 4, Quận Vừ Thi Khai\nĐà Nẵng",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 30,
+                "org_id": 6,
+                "author_id": 4,
+                "major_id": 3,
+                "title": "Remote NodeJS",
+                "content": "Cần tuyển Aut rem illum repudiandae vitae aspernatur laborum. Nemo iure quo rerum consequatur tempore earum. Officiis aliquam aspernatur et rerum omnis aliquid. Deserunt aperiam voluptates et magni id unde.",
+                "address": "277, Thôn Phi, Phường Phượng Ngôn, Quận Châu Liên Thư\nKon Tum",
+                "city": "Cần Thơ",
+                "work_type": "Fulltime",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 6,
+                    "owner_id": 3,
+                    "org_name": "Công ty La PLC",
+                    "phones": "84-75-563-7508",
+                    "description": null,
+                    "tax_id": "54749",
+                    "address": "1329 Phố Vừ, Thôn Khuất Tiển, Huyện Khê Sĩ\nHà Nội",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 31,
+                "org_id": 8,
+                "author_id": 10,
+                "major_id": 3,
+                "title": "Part-time Java",
+                "content": "Cần tuyển Beatae id et itaque rerum tenetur veniam ut. Enim ut quis aut nemo aut.",
+                "address": "534 Phố Đoàn Quỳnh Quyết, Ấp Hào Tài, Huyện Khải Nam\nLong An",
+                "city": "Hà Nội",
+                "work_type": "Part-time",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 8,
+                    "owner_id": 3,
+                    "org_name": "Công ty Mang LLC",
+                    "phones": "0167 653 0061",
+                    "description": null,
+                    "tax_id": "5636",
+                    "address": "335 Phố Lương Tuyết Lan, Xã 9, Quận Trương Ca\nHà Nội",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 36,
+                "org_id": 3,
+                "author_id": 5,
+                "major_id": 3,
+                "title": "Fulltime ReactJS",
+                "content": "Cần tuyển Dicta voluptatum enim et quos odit quasi. Repudiandae reiciendis rerum ducimus dolores explicabo corporis. Facilis voluptate illum quasi modi magnam qui.",
+                "address": "1801, Ấp Trình Ngọc, Xã Mai, Huyện Bảo Ý\nBình Thuận",
+                "city": "Hải Phòng",
+                "work_type": "Fulltime",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 3,
+                    "owner_id": 9,
+                    "org_name": "Công ty Phó-Cái",
+                    "phones": "(0510) 703 9459",
+                    "description": null,
+                    "tax_id": "743410",
+                    "address": "793, Thôn Hy Bình, Thôn Lã Nhiên, Quận Huỳnh Trân Kiên\nLào Cai",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 39,
+                "org_id": 8,
+                "author_id": 9,
+                "major_id": 3,
+                "title": "Fulltime Ruby",
+                "content": "Cần tuyển Tempore et ut voluptatum quasi atque sed. Mollitia dolorem voluptates et. Voluptatem tenetur dolorem quia voluptas earum. Et enim et doloribus itaque quidem deleniti et culpa.",
+                "address": "7023, Thôn Lợi Ty, Phường Yên Quế, Huyện 68\nLào Cai",
+                "city": "Hồ Chí Minh",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 8,
+                    "owner_id": 3,
+                    "org_name": "Công ty Mang LLC",
+                    "phones": "0167 653 0061",
+                    "description": null,
+                    "tax_id": "5636",
+                    "address": "335 Phố Lương Tuyết Lan, Xã 9, Quận Trương Ca\nHà Nội",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "major_name": "Sales",
+        "image_path": ".\/public\/images\/major.png",
+        "created_at": null,
+        "updated_at": null,
+        "recruitment_news": [
+            {
+                "id": 2,
+                "org_id": 1,
+                "author_id": 3,
+                "major_id": 4,
+                "title": "Part-time Ruby",
+                "content": "Cần tuyển Saepe voluptatem quo omnis in animi illum. Iusto provident placeat error. Cumque et commodi omnis eum. Nulla possimus veniam provident nisi voluptatem est voluptatem.",
+                "address": "74 Phố Thuần, Phường 3, Huyện Phúc Nhàn\nHà Nam",
+                "city": "Cần Thơ",
+                "work_type": "Part-time",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 1,
+                    "owner_id": 10,
+                    "org_name": "Công ty Cái, Phạm and Tăng",
+                    "phones": "(84)(164)829-1230",
+                    "description": null,
+                    "tax_id": "77536",
+                    "address": "8227 Phố Đặng Khanh Hiệp, Phường Lâm Giả, Huyện Bửu\nQuảng Ninh",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 14,
+                "org_id": 10,
+                "author_id": 6,
+                "major_id": 4,
+                "title": "Part-time Java",
+                "content": "Cần tuyển Est fuga rerum quo facere itaque assumenda nihil. Laboriosam omnis dolore omnis laboriosam. Sed architecto sint nobis est eveniet et dignissimos.",
+                "address": "803 Phố Lân, Phường 51, Quận 60\nHải Phòng",
+                "city": "Đà Nẵng",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 10,
+                    "owner_id": 2,
+                    "org_name": "Công ty Thái-Đái",
+                    "phones": "(0166)513-8558",
+                    "description": null,
+                    "tax_id": "67765",
+                    "address": "894, Thôn Khánh Văn, Phường 0, Huyện Giác Lô\nBạc Liêu",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 15,
+                "org_id": 8,
+                "author_id": 2,
+                "major_id": 4,
+                "title": "Remote NodeJS",
+                "content": "Cần tuyển Deleniti pariatur voluptate est ipsa et. Rem eius et nihil numquam qui qui.",
+                "address": "150, Thôn 7, Ấp Vương Khanh, Quận Chinh Công\nThanh Hóa",
+                "city": "Hà Nội",
+                "work_type": "Fulltime",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 8,
+                    "owner_id": 3,
+                    "org_name": "Công ty Mang LLC",
+                    "phones": "0167 653 0061",
+                    "description": null,
+                    "tax_id": "5636",
+                    "address": "335 Phố Lương Tuyết Lan, Xã 9, Quận Trương Ca\nHà Nội",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 25,
+                "org_id": 8,
+                "author_id": 10,
+                "major_id": 4,
+                "title": "Part-time Java",
+                "content": "Cần tuyển Quia recusandae aut cum debitis soluta. Quas quo et quaerat quod ex. Quae labore facere adipisci voluptas culpa possimus ratione.",
+                "address": "174 Phố Chung Thoại Thành, Xã 0, Quận Diễm Tiêu\nHải Phòng",
+                "city": "Cần Thơ",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 8,
+                    "owner_id": 3,
+                    "org_name": "Công ty Mang LLC",
+                    "phones": "0167 653 0061",
+                    "description": null,
+                    "tax_id": "5636",
+                    "address": "335 Phố Lương Tuyết Lan, Xã 9, Quận Trương Ca\nHà Nội",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 29,
+                "org_id": 3,
+                "author_id": 9,
+                "major_id": 4,
+                "title": "Remote .Net",
+                "content": "Cần tuyển Illo libero exercitationem necessitatibus expedita. Eligendi maxime odio sed amet saepe. Tenetur sed vel et nobis exercitationem qui eius voluptatem.",
+                "address": "96 Phố Mộc Điệp Thông, Xã Bì Hải Tiên, Huyện 9\nBắc Kạn",
+                "city": "Đà Nẵng",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 3,
+                    "owner_id": 9,
+                    "org_name": "Công ty Phó-Cái",
+                    "phones": "(0510) 703 9459",
+                    "description": null,
+                    "tax_id": "743410",
+                    "address": "793, Thôn Hy Bình, Thôn Lã Nhiên, Quận Huỳnh Trân Kiên\nLào Cai",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 32,
+                "org_id": 10,
+                "author_id": 2,
+                "major_id": 4,
+                "title": "Fulltime NodeJS",
+                "content": "Cần tuyển Illo est necessitatibus molestiae dolores. Mollitia molestiae possimus doloribus. Occaecati aut velit et aliquam aspernatur et.",
+                "address": "873 Phố Phan Nhu Thiện, Xã Trân, Huyện 6\nBắc Giang",
+                "city": "Hồ Chí Minh",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 10,
+                    "owner_id": 2,
+                    "org_name": "Công ty Thái-Đái",
+                    "phones": "(0166)513-8558",
+                    "description": null,
+                    "tax_id": "67765",
+                    "address": "894, Thôn Khánh Văn, Phường 0, Huyện Giác Lô\nBạc Liêu",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 35,
+                "org_id": 5,
+                "author_id": 10,
+                "major_id": 4,
+                "title": "Fulltime ReactJS",
+                "content": "Cần tuyển Quisquam sunt quis voluptatibus tenetur. Veniam repudiandae nam sed voluptatibus atque harum. Et nemo corporis quaerat dignissimos ea. Cupiditate architecto facere enim quasi quidem.",
+                "address": "534, Thôn 02, Xã Âu, Huyện Hương\nPhú Yên",
+                "city": "Cần Thơ",
+                "work_type": "Remote",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 5,
+                    "owner_id": 1,
+                    "org_name": "Công ty Cát-Cù",
+                    "phones": "059-475-0363",
+                    "description": null,
+                    "tax_id": "8125",
+                    "address": "2475 Phố Đoàn, Phường 4, Quận Vừ Thi Khai\nĐà Nẵng",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 37,
+                "org_id": 5,
+                "author_id": 7,
+                "major_id": 4,
+                "title": "Fulltime Java",
+                "content": "Cần tuyển Corporis praesentium quaerat reiciendis sint. In assumenda itaque omnis suscipit et est voluptatem. Quaerat optio laudantium ad nam eius et.",
+                "address": "1, Thôn Oanh Nhậm, Phường Ánh, Quận Ân Oanh\nBình Dương",
+                "city": "Hà Nội",
+                "work_type": "Fulltime",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 5,
+                    "owner_id": 1,
+                    "org_name": "Công ty Cát-Cù",
+                    "phones": "059-475-0363",
+                    "description": null,
+                    "tax_id": "8125",
+                    "address": "2475 Phố Đoàn, Phường 4, Quận Vừ Thi Khai\nĐà Nẵng",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            },
+            {
+                "id": 38,
+                "org_id": 8,
+                "author_id": 5,
+                "major_id": 4,
+                "title": "Fulltime Ruby",
+                "content": "Cần tuyển Qui dolores voluptas eligendi doloremque soluta. Repellendus ea laudantium facere temporibus corrupti voluptatum.",
+                "address": "316 Phố Tống Trạch Hương, Phường 0, Quận Trưng Châu Tuyền\nCần Thơ",
+                "city": "Đà Nẵng",
+                "work_type": "Part-time",
+                "start_time": "2021-05-18 03:47:00",
+                "end_time": "2021-05-23 03:47:00",
+                "interview_start_time": "2021-05-24 03:47:00",
+                "interview_end_time": "2021-05-28 03:47:00",
+                "created_at": "2021-05-18 03:47:00",
+                "updated_at": "2021-05-18 03:47:00",
+                "org": {
+                    "id": 8,
+                    "owner_id": 3,
+                    "org_name": "Công ty Mang LLC",
+                    "phones": "0167 653 0061",
+                    "description": null,
+                    "tax_id": "5636",
+                    "address": "335 Phố Lương Tuyết Lan, Xã 9, Quận Trương Ca\nHà Nội",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-05-18 03:47:00",
+                    "updated_at": "2021-05-18 03:47:00"
+                }
+            }
+        ]
+    }
+]</code></pre>
+<div id="execution-results-GETapi-v1-recruitment-news-by-major" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v1-recruitment-news-by-major"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-recruitment-news-by-major"></code></pre>
+</div>
+<div id="execution-error-GETapi-v1-recruitment-news-by-major" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-recruitment-news-by-major"></code></pre>
+</div>
+<form id="form-GETapi-v1-recruitment-news-by-major" data-method="GET" data-path="api/v1/recruitment-news-by-major" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-recruitment-news-by-major', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-recruitment-news-by-major" onclick="tryItOut('GETapi-v1-recruitment-news-by-major');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-recruitment-news-by-major" onclick="cancelTryOut('GETapi-v1-recruitment-news-by-major');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-recruitment-news-by-major" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/v1/recruitment-news-by-major</code></b>
+</p>
+</form>
 <h2>Find a Recruitment News</h2>
 <p>Display the specified recruitment news.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/recruitment-news/nihil" \
+    -G "http://localhost:8000/api/v1/recruitment-news/laboriosam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"veniam"}'
+    -d '{"int":"maiores"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/recruitment-news/nihil"
+    "http://localhost:8000/api/v1/recruitment-news/laboriosam"
 );
 
 let headers = {
@@ -1536,7 +2766,7 @@ let headers = {
 };
 
 let body = {
-    "int": "veniam"
+    "int": "maiores"
 }
 
 fetch(url, {
@@ -1597,19 +2827,60 @@ fetch(url, {
 The id of the recruiment news.</p>
 
 </form>
+<h2>api/v1/search</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost:8000/api/v1/search" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/search"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-POSTapi-v1-search" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-v1-search"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-search"></code></pre>
+</div>
+<div id="execution-error-POSTapi-v1-search" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-search"></code></pre>
+</div>
+<form id="form-POSTapi-v1-search" data-method="POST" data-path="api/v1/search" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-search', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v1-search" onclick="tryItOut('POSTapi-v1-search');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v1-search" onclick="cancelTryOut('POSTapi-v1-search');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v1-search" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/v1/search</code></b>
+</p>
+</form>
 <h2>Create a Recruitment News</h2>
 <p>Store a newly created recruitment news in database.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/v1/recruitment-news" \
+    "http://localhost:8000/api/v1/recruitment-news" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"org_id":13,"author_id":5,"major_id":7,"title":"ducimus","content":"et","address":"sunt","city":"doloremque","start_time":"2021-01-14T17:31:37+0000","end_time":"2021-01-14T17:31:37+0000","interview_start_time":"2021-01-14T17:31:37+0000","interview_end_time":"2021-01-14T17:31:37+0000"}'
+    -d '{"org_id":9,"author_id":2,"major_id":3,"title":"ratione","content":"sed","address":"laborum","city":"enim","work_type":"tenetur","start_time":"2021-05-18T07:17:25+0000","end_time":"2021-05-18T07:17:25+0000","interview_start_time":"2021-05-18T07:17:25+0000","interview_end_time":"2021-05-18T07:17:25+0000"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/recruitment-news"
+    "http://localhost:8000/api/v1/recruitment-news"
 );
 
 let headers = {
@@ -1618,17 +2889,18 @@ let headers = {
 };
 
 let body = {
-    "org_id": 13,
-    "author_id": 5,
-    "major_id": 7,
-    "title": "ducimus",
-    "content": "et",
-    "address": "sunt",
-    "city": "doloremque",
-    "start_time": "2021-01-14T17:31:37+0000",
-    "end_time": "2021-01-14T17:31:37+0000",
-    "interview_start_time": "2021-01-14T17:31:37+0000",
-    "interview_end_time": "2021-01-14T17:31:37+0000"
+    "org_id": 9,
+    "author_id": 2,
+    "major_id": 3,
+    "title": "ratione",
+    "content": "sed",
+    "address": "laborum",
+    "city": "enim",
+    "work_type": "tenetur",
+    "start_time": "2021-05-18T07:17:25+0000",
+    "end_time": "2021-05-18T07:17:25+0000",
+    "interview_start_time": "2021-05-18T07:17:25+0000",
+    "interview_end_time": "2021-05-18T07:17:25+0000"
 }
 
 fetch(url, {
@@ -1712,6 +2984,11 @@ fetch(url, {
 <br>
 </p>
 <p>
+<b><code>work_type</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="work_type" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
+<br>
+</p>
+<p>
 <b><code>start_time</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="start_time" data-endpoint="POSTapi-v1-recruitment-news" data-component="body" required  hidden>
 <br>
@@ -1739,13 +3016,13 @@ The value must be a valid date.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost/api/v1/recruitment-news/voluptatem" \
+    "http://localhost:8000/api/v1/recruitment-news/repudiandae" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"org_id":16,"author_id":5,"major_id":4,"title":"quia","content":"aut","address":"iste","city":"maiores","start_time":"2021-01-14T17:31:37+0000","end_time":"2021-01-14T17:31:37+0000","interview_start_time":"2021-01-14T17:31:37+0000","interview_end_time":"2021-01-14T17:31:37+0000"}'
+    -d '{"org_id":14,"author_id":3,"major_id":18,"title":"aut","content":"suscipit","address":"soluta","city":"soluta","work_type":"sit","start_time":"2021-05-18T07:17:25+0000","end_time":"2021-05-18T07:17:25+0000","interview_start_time":"2021-05-18T07:17:25+0000","interview_end_time":"2021-05-18T07:17:25+0000"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/recruitment-news/voluptatem"
+    "http://localhost:8000/api/v1/recruitment-news/repudiandae"
 );
 
 let headers = {
@@ -1754,17 +3031,18 @@ let headers = {
 };
 
 let body = {
-    "org_id": 16,
-    "author_id": 5,
-    "major_id": 4,
-    "title": "quia",
-    "content": "aut",
-    "address": "iste",
-    "city": "maiores",
-    "start_time": "2021-01-14T17:31:37+0000",
-    "end_time": "2021-01-14T17:31:37+0000",
-    "interview_start_time": "2021-01-14T17:31:37+0000",
-    "interview_end_time": "2021-01-14T17:31:37+0000"
+    "org_id": 14,
+    "author_id": 3,
+    "major_id": 18,
+    "title": "aut",
+    "content": "suscipit",
+    "address": "soluta",
+    "city": "soluta",
+    "work_type": "sit",
+    "start_time": "2021-05-18T07:17:25+0000",
+    "end_time": "2021-05-18T07:17:25+0000",
+    "interview_start_time": "2021-05-18T07:17:25+0000",
+    "interview_end_time": "2021-05-18T07:17:25+0000"
 }
 
 fetch(url, {
@@ -1854,6 +3132,11 @@ fetch(url, {
 <br>
 </p>
 <p>
+<b><code>work_type</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="work_type" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
+<br>
+</p>
+<p>
 <b><code>start_time</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="start_time" data-endpoint="PUTapi-v1-recruitment-news--id-" data-component="body" required  hidden>
 <br>
@@ -1881,13 +3164,13 @@ The value must be a valid date.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/v1/recruitment-news/suscipit" \
+    "http://localhost:8000/api/v1/recruitment-news/et" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"et"}'
+    -d '{"int":"sunt"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/recruitment-news/suscipit"
+    "http://localhost:8000/api/v1/recruitment-news/et"
 );
 
 let headers = {
@@ -1896,7 +3179,7 @@ let headers = {
 };
 
 let body = {
-    "int": "et"
+    "int": "sunt"
 }
 
 fetch(url, {
@@ -1963,11 +3246,11 @@ The id of the recruitment news</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/roles" \
+    -G "http://localhost:8000/api/v1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/roles"
+    "http://localhost:8000/api/v1/roles"
 );
 
 let headers = {
@@ -2036,13 +3319,13 @@ data: [{
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/roles/accusantium" \
+    -G "http://localhost:8000/api/v1/roles/quos" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"enim"}'
+    -d '{"int":"temporibus"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/roles/accusantium"
+    "http://localhost:8000/api/v1/roles/quos"
 );
 
 let headers = {
@@ -2051,7 +3334,7 @@ let headers = {
 };
 
 let body = {
-    "int": "enim"
+    "int": "temporibus"
 }
 
 fetch(url, {
@@ -2107,13 +3390,13 @@ The id of the role.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/v1/roles" \
+    "http://localhost:8000/api/v1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"ad"}'
+    -d '{"role_name":"et"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/roles"
+    "http://localhost:8000/api/v1/roles"
 );
 
 let headers = {
@@ -2122,7 +3405,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "ad"
+    "role_name": "et"
 }
 
 fetch(url, {
@@ -2172,13 +3455,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost/api/v1/roles/eos" \
+    "http://localhost:8000/api/v1/roles/facilis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"qui"}'
+    -d '{"role_name":"ut"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/roles/eos"
+    "http://localhost:8000/api/v1/roles/facilis"
 );
 
 let headers = {
@@ -2187,7 +3470,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "qui"
+    "role_name": "ut"
 }
 
 fetch(url, {
@@ -2243,13 +3526,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/v1/roles/ipsa" \
+    "http://localhost:8000/api/v1/roles/magnam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"voluptatibus"}'
+    -d '{"int":"corrupti"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/roles/ipsa"
+    "http://localhost:8000/api/v1/roles/magnam"
 );
 
 let headers = {
@@ -2258,7 +3541,7 @@ let headers = {
 };
 
 let body = {
-    "int": "voluptatibus"
+    "int": "corrupti"
 }
 
 fetch(url, {
@@ -2308,19 +3591,21 @@ fetch(url, {
 The id of the role.</p>
 
 </form><h1>User endpoints</h1>
+<p>APIs for user.</p>
 <h2>Create a User</h2>
 <p>Store a newly created user in database.</p>
+<p><small class="badge badge-darkred">requires authentication</small></p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost/api/v1/auth/register" \
+    "http://localhost:8000/api/v1/auth/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"first_name":"tenetur","last_name":"et","dob":"2021-01-14T17:31:37+0000","phone":"et","email":"xjohnston@example.com","password":"dicta","address":"et"}'
+    -d '{"first_name":"nesciunt","last_name":"consequatur","dob":"2021-05-18T07:17:25+0000","phone":"blanditiis","email":"rippin.fern@example.org","password":"eos","address":"nemo"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/auth/register"
+    "http://localhost:8000/api/v1/auth/register"
 );
 
 let headers = {
@@ -2329,13 +3614,13 @@ let headers = {
 };
 
 let body = {
-    "first_name": "tenetur",
-    "last_name": "et",
-    "dob": "2021-01-14T17:31:37+0000",
-    "phone": "et",
-    "email": "xjohnston@example.com",
-    "password": "dicta",
-    "address": "et"
+    "first_name": "nesciunt",
+    "last_name": "consequatur",
+    "dob": "2021-05-18T07:17:25+0000",
+    "phone": "blanditiis",
+    "email": "rippin.fern@example.org",
+    "password": "eos",
+    "address": "nemo"
 }
 
 fetch(url, {
@@ -2373,7 +3658,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-POSTapi-v1-auth-register"></code></pre>
 </div>
-<form id="form-POSTapi-v1-auth-register" data-method="POST" data-path="api/v1/auth/register" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-auth-register', this);">
+<form id="form-POSTapi-v1-auth-register" data-method="POST" data-path="api/v1/auth/register" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-auth-register', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v1-auth-register" onclick="tryItOut('POSTapi-v1-auth-register');">Try it out ⚡</button>
@@ -2383,6 +3668,9 @@ fetch(url, {
 <p>
 <small class="badge badge-black">POST</small>
  <b><code>api/v1/auth/register</code></b>
+</p>
+<p>
+<label id="auth-POSTapi-v1-auth-register" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="POSTapi-v1-auth-register" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
@@ -2424,22 +3712,17 @@ The value must be a valid email address.</p>
 </form>
 <h2>Get User</h2>
 <p>Display data of user by id</p>
+<p><small class="badge badge-darkred">requires authentication</small></p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/user?id=11" \
+    -G "http://localhost:8000/api/v1/user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/user"
+    "http://localhost:8000/api/v1/user"
 );
-
-let params = {
-    "id": "11",
-};
-Object.keys(params)
-    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
     "Content-Type": "application/json",
@@ -2454,7 +3737,7 @@ fetch(url, {
 <p>Example response (401):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "message": "Unauthenticated."
+    "error": "Unauthenticated."
 }</code></pre>
 <div id="execution-results-GETapi-v1-user" hidden>
     <blockquote>Received response<span id="execution-response-status-GETapi-v1-user"></span>:</blockquote>
@@ -2464,7 +3747,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-v1-user"></code></pre>
 </div>
-<form id="form-GETapi-v1-user" data-method="GET" data-path="api/v1/user" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-user', this);">
+<form id="form-GETapi-v1-user" data-method="GET" data-path="api/v1/user" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-user', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-user" onclick="tryItOut('GETapi-v1-user');">Try it out ⚡</button>
@@ -2475,26 +3758,24 @@ fetch(url, {
 <small class="badge badge-green">GET</small>
  <b><code>api/v1/user</code></b>
 </p>
-<h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
 <p>
-<b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="id" data-endpoint="GETapi-v1-user" data-component="query" required  hidden>
-<br>
-The id of the user.</p>
+<label id="auth-GETapi-v1-user" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v1-user" data-component="header"></label>
+</p>
 </form>
 <h2>Find a User</h2>
 <p>Display the specified user.</p>
+<p><small class="badge badge-darkred">requires authentication</small></p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost/api/v1/user/voluptates" \
+    -G "http://localhost:8000/api/v1/user/find/sunt" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":7}'
+    -d '{"id":6}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/user/voluptates"
+    "http://localhost:8000/api/v1/user/find/sunt"
 );
 
 let headers = {
@@ -2503,7 +3784,7 @@ let headers = {
 };
 
 let body = {
-    "id": 7
+    "id": 6
 }
 
 fetch(url, {
@@ -2533,53 +3814,133 @@ fetch(url, {
   "created_at": "1990-12-12 12:45:10",
   "updated_at": "1990-12-12 12:45:10"
 }</code></pre>
-<div id="execution-results-GETapi-v1-user--id-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-v1-user--id-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-user--id-"></code></pre>
+<div id="execution-results-GETapi-v1-user-find--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v1-user-find--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-user-find--id-"></code></pre>
 </div>
-<div id="execution-error-GETapi-v1-user--id-" hidden>
+<div id="execution-error-GETapi-v1-user-find--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-user--id-"></code></pre>
+    <pre><code id="execution-error-message-GETapi-v1-user-find--id-"></code></pre>
 </div>
-<form id="form-GETapi-v1-user--id-" data-method="GET" data-path="api/v1/user/{id}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-user--id-', this);">
+<form id="form-GETapi-v1-user-find--id-" data-method="GET" data-path="api/v1/user/find/{id}" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-user-find--id-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-user--id-" onclick="tryItOut('GETapi-v1-user--id-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-user--id-" onclick="cancelTryOut('GETapi-v1-user--id-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-user--id-" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-user-find--id-" onclick="tryItOut('GETapi-v1-user-find--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-user-find--id-" onclick="cancelTryOut('GETapi-v1-user-find--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-user-find--id-" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-green">GET</small>
- <b><code>api/v1/user/{id}</code></b>
+ <b><code>api/v1/user/find/{id}</code></b>
+</p>
+<p>
+<label id="auth-GETapi-v1-user-find--id-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v1-user-find--id-" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
 <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="id" data-endpoint="GETapi-v1-user--id-" data-component="url" required  hidden>
+<input type="text" name="id" data-endpoint="GETapi-v1-user-find--id-" data-component="url" required  hidden>
 <br>
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
 <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="id" data-endpoint="GETapi-v1-user--id-" data-component="body" required  hidden>
+<input type="number" name="id" data-endpoint="GETapi-v1-user-find--id-" data-component="body" required  hidden>
 <br>
 The id of the user.</p>
 
 </form>
+<h2>Applied Jobs</h2>
+<p>View list applied jobs for that user.</p>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost:8000/api/v1/user/applied" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/user/applied"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 1,
+    "rn_id": 1,
+    "user_id": 1,
+    "is_elect": 1,
+    "cv_path": "cv_path_tmp",
+    "cover_letter_path": "cover_letter_path_tmp",
+    "exp_years": 1,
+    "created_at": null,
+    "updated_at": null,
+    "recruitment_news": {
+        "id": 1,
+        "org_id": 1,
+        "author_id": 8,
+        "major_id": 2,
+        "title": "Part-time Java",
+        "content": "Cần tuyển Aut ea nihil amet est. Impedit totam qui ipsam veniam.earum.",
+        "address": "571 Phố Bồ Ánh Tú, Phường 6, Huyện Phượng Trung\nTây Ninh",
+        "city": "Hồ Chí Minh",
+        "work_type": "Remote",
+        "start_time": "2021-05-18 03:47:00",
+        "end_time": "2021-05-23 03:47:00",
+        "interview_start_time": "2021-05-24 03:47:00",
+        "interview_end_time": "2021-05-28 03:47:00",
+        "created_at": "2021-05-18 03:47:00",
+        "updated_at": "2021-05-18 03:47:00"
+    }
+}</code></pre>
+<div id="execution-results-GETapi-v1-user-applied" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v1-user-applied"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-user-applied"></code></pre>
+</div>
+<div id="execution-error-GETapi-v1-user-applied" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-user-applied"></code></pre>
+</div>
+<form id="form-GETapi-v1-user-applied" data-method="GET" data-path="api/v1/user/applied" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-user-applied', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-user-applied" onclick="tryItOut('GETapi-v1-user-applied');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-user-applied" onclick="cancelTryOut('GETapi-v1-user-applied');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-user-applied" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/v1/user/applied</code></b>
+</p>
+<p>
+<label id="auth-GETapi-v1-user-applied" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v1-user-applied" data-component="header"></label>
+</p>
+</form>
 <h2>Update User&#039;s Information</h2>
 <p>Update the specified user in database.</p>
-<p>.</p>
+<p><small class="badge badge-darkred">requires authentication</small></p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost/api/v1/user/quod" \
+    "http://localhost:8000/api/v1/user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"first_name":"sunt","last_name":"quo","dob":"2021-01-14T17:31:37+0000","phone":"voluptas","email":"bschinner@example.net","password":"aliquid","address":"doloremque"}'
+    -d '{"first_name":"illo","last_name":"suscipit","dob":"2021-05-18T07:17:25+0000","phone":967629.0712842,"email":"carson.fritsch@example.org","address":"asperiores","id":17,"id2":20}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/user/quod"
+    "http://localhost:8000/api/v1/user"
 );
 
 let headers = {
@@ -2588,13 +3949,14 @@ let headers = {
 };
 
 let body = {
-    "first_name": "sunt",
-    "last_name": "quo",
-    "dob": "2021-01-14T17:31:37+0000",
-    "phone": "voluptas",
-    "email": "bschinner@example.net",
-    "password": "aliquid",
-    "address": "doloremque"
+    "first_name": "illo",
+    "last_name": "suscipit",
+    "dob": "2021-05-18T07:17:25+0000",
+    "phone": 967629.0712842,
+    "email": "carson.fritsch@example.org",
+    "address": "asperiores",
+    "id": 17,
+    "id2": 20
 }
 
 fetch(url, {
@@ -2624,82 +3986,85 @@ fetch(url, {
   "created_at": "1990-12-12 12:45:10",
   "updated_at": "1990-12-12 12:45:10"
 }</code></pre>
-<div id="execution-results-PUTapi-v1-user--id-" hidden>
-    <blockquote>Received response<span id="execution-response-status-PUTapi-v1-user--id-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-v1-user--id-"></code></pre>
+<div id="execution-results-PUTapi-v1-user" hidden>
+    <blockquote>Received response<span id="execution-response-status-PUTapi-v1-user"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-user"></code></pre>
 </div>
-<div id="execution-error-PUTapi-v1-user--id-" hidden>
+<div id="execution-error-PUTapi-v1-user" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-v1-user--id-"></code></pre>
+    <pre><code id="execution-error-message-PUTapi-v1-user"></code></pre>
 </div>
-<form id="form-PUTapi-v1-user--id-" data-method="PUT" data-path="api/v1/user/{id}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-user--id-', this);">
+<form id="form-PUTapi-v1-user" data-method="PUT" data-path="api/v1/user" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-user', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-v1-user--id-" onclick="tryItOut('PUTapi-v1-user--id-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-v1-user--id-" onclick="cancelTryOut('PUTapi-v1-user--id-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-v1-user--id-" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-v1-user" onclick="tryItOut('PUTapi-v1-user');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-v1-user" onclick="cancelTryOut('PUTapi-v1-user');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-v1-user" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-darkblue">PUT</small>
- <b><code>api/v1/user/{id}</code></b>
+ <b><code>api/v1/user</code></b>
 </p>
-<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
-<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="id" data-endpoint="PUTapi-v1-user--id-" data-component="url" required  hidden>
-<br>
+<label id="auth-PUTapi-v1-user" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="PUTapi-v1-user" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
 <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="first_name" data-endpoint="PUTapi-v1-user--id-" data-component="body" required  hidden>
+<input type="text" name="first_name" data-endpoint="PUTapi-v1-user" data-component="body" required  hidden>
 <br>
 </p>
 <p>
 <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="last_name" data-endpoint="PUTapi-v1-user--id-" data-component="body" required  hidden>
+<input type="text" name="last_name" data-endpoint="PUTapi-v1-user" data-component="body" required  hidden>
 <br>
 </p>
 <p>
 <b><code>dob</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="dob" data-endpoint="PUTapi-v1-user--id-" data-component="body"  hidden>
+<input type="text" name="dob" data-endpoint="PUTapi-v1-user" data-component="body"  hidden>
 <br>
 The value must be a valid date.</p>
 <p>
-<b><code>phone</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="phone" data-endpoint="PUTapi-v1-user--id-" data-component="body"  hidden>
+<b><code>phone</code></b>&nbsp;&nbsp;<small>number</small>     <i>optional</i> &nbsp;
+<input type="number" name="phone" data-endpoint="PUTapi-v1-user" data-component="body"  hidden>
 <br>
 </p>
 <p>
 <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="email" data-endpoint="PUTapi-v1-user--id-" data-component="body" required  hidden>
+<input type="text" name="email" data-endpoint="PUTapi-v1-user" data-component="body" required  hidden>
 <br>
 The value must be a valid email address.</p>
 <p>
-<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="password" data-endpoint="PUTapi-v1-user--id-" data-component="body" required  hidden>
+<b><code>address</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="address" data-endpoint="PUTapi-v1-user" data-component="body"  hidden>
 <br>
 </p>
 <p>
-<b><code>address</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="address" data-endpoint="PUTapi-v1-user--id-" data-component="body"  hidden>
+<b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="id" data-endpoint="PUTapi-v1-user" data-component="body" required  hidden>
 <br>
-</p>
+The id of the user.</p>
+<p>
+<b><code>id2</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="id2" data-endpoint="PUTapi-v1-user" data-component="body" required  hidden>
+<br>
+The id of the user.</p>
 
 </form>
 <h2>Remove a User</h2>
 <p>Remove the specified user from database.</p>
+<p><small class="badge badge-darkred">requires authentication</small></p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost/api/v1/user/harum" \
+    "http://localhost:8000/api/v1/user/nemo" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":12}'
+    -d '{"id":3}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/user/harum"
+    "http://localhost:8000/api/v1/user/nemo"
 );
 
 let headers = {
@@ -2708,7 +4073,7 @@ let headers = {
 };
 
 let body = {
-    "id": 12
+    "id": 3
 }
 
 fetch(url, {
@@ -2746,7 +4111,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-DELETEapi-v1-user--id-"></code></pre>
 </div>
-<form id="form-DELETEapi-v1-user--id-" data-method="DELETE" data-path="api/v1/user/{id}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-user--id-', this);">
+<form id="form-DELETEapi-v1-user--id-" data-method="DELETE" data-path="api/v1/user/{id}" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-user--id-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-v1-user--id-" onclick="tryItOut('DELETEapi-v1-user--id-');">Try it out ⚡</button>
@@ -2756,6 +4121,9 @@ fetch(url, {
 <p>
 <small class="badge badge-red">DELETE</small>
  <b><code>api/v1/user/{id}</code></b>
+</p>
+<p>
+<label id="auth-DELETEapi-v1-user--id-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="DELETEapi-v1-user--id-" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
@@ -2770,6 +4138,47 @@ fetch(url, {
 <br>
 The id of the user.</p>
 
+</form>
+<h2>api/v1/users/apply</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://localhost:8000/api/v1/users/apply" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/users/apply"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-PUTapi-v1-users-apply" hidden>
+    <blockquote>Received response<span id="execution-response-status-PUTapi-v1-users-apply"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-users-apply"></code></pre>
+</div>
+<div id="execution-error-PUTapi-v1-users-apply" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-users-apply"></code></pre>
+</div>
+<form id="form-PUTapi-v1-users-apply" data-method="PUT" data-path="api/v1/users/apply" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-users-apply', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-v1-users-apply" onclick="tryItOut('PUTapi-v1-users-apply');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-v1-users-apply" onclick="cancelTryOut('PUTapi-v1-users-apply');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-v1-users-apply" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-darkblue">PUT</small>
+ <b><code>api/v1/users/apply</code></b>
+</p>
 </form>
     </div>
     <div class="dark-box">

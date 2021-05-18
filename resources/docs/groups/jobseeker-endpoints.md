@@ -11,14 +11,14 @@ Display a listing of the job-seeker.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/job-seekers" \
+    -G "http://localhost:8000/api/v1/job-seekers" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers"
+    "http://localhost:8000/api/v1/job-seekers"
 );
 
 let headers = {
@@ -99,16 +99,16 @@ Display the specified job-seeker.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/job-seekers/eligendi" \
+    -G "http://localhost:8000/api/v1/job-seekers/aliquam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"vitae"}'
+    -d '{"int":"saepe"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/eligendi"
+    "http://localhost:8000/api/v1/job-seekers/aliquam"
 );
 
 let headers = {
@@ -117,7 +117,7 @@ let headers = {
 };
 
 let body = {
-    "int": "vitae"
+    "int": "saepe"
 }
 
 fetch(url, {
@@ -187,16 +187,16 @@ Store a newly created job-seeker in database.
 
 ```bash
 curl -X POST \
-    "http://localhost/api/v1/job-seekers" \
+    "http://localhost:8000/api/v1/job-seekers" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":11,"is_elect":false,"cv_path":{},"cover_letter_path":"qui","exp_years":7}'
+    -d '{"user_id":16,"is_elect":false,"cv_path":{},"cover_letter_path":"aliquid","exp_years":8}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers"
+    "http://localhost:8000/api/v1/job-seekers"
 );
 
 let headers = {
@@ -205,11 +205,11 @@ let headers = {
 };
 
 let body = {
-    "user_id": 11,
+    "user_id": 16,
     "is_elect": false,
     "cv_path": {},
-    "cover_letter_path": "qui",
-    "exp_years": 7
+    "cover_letter_path": "aliquid",
+    "exp_years": 8
 }
 
 fetch(url, {
@@ -294,16 +294,16 @@ Update the specified job-seeker in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/job-seekers/sit" \
+    "http://localhost:8000/api/v1/job-seekers/eum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":3,"is_elect":false,"cv_path":{},"cover_letter_path":"nostrum","exp_years":1}'
+    -d '{"user_id":11,"is_elect":false,"cv_path":{},"cover_letter_path":"voluptatem","exp_years":2}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/sit"
+    "http://localhost:8000/api/v1/job-seekers/eum"
 );
 
 let headers = {
@@ -312,11 +312,11 @@ let headers = {
 };
 
 let body = {
-    "user_id": 3,
+    "user_id": 11,
     "is_elect": false,
     "cv_path": {},
-    "cover_letter_path": "nostrum",
-    "exp_years": 1
+    "cover_letter_path": "voluptatem",
+    "exp_years": 2
 }
 
 fetch(url, {
@@ -407,16 +407,16 @@ Remove the specified job-seeker from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/job-seekers/inventore" \
+    "http://localhost:8000/api/v1/job-seekers/recusandae" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"omnis"}'
+    -d '{"int":"iste"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/job-seekers/inventore"
+    "http://localhost:8000/api/v1/job-seekers/recusandae"
 );
 
 let headers = {
@@ -425,7 +425,7 @@ let headers = {
 };
 
 let body = {
-    "int": "omnis"
+    "int": "iste"
 }
 
 fetch(url, {

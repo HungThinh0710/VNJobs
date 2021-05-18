@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\JobSeeker;
 use Illuminate\Http\Request;
 use App\Http\Requests\FindUser;
 use App\Http\Requests\StoreUser;
@@ -20,6 +21,7 @@ class UserController extends Controller
     /**
      * Get User
      * Display data of user by id
+     * @authenticated
      * @group User endpoints
      *
      */
@@ -32,6 +34,7 @@ class UserController extends Controller
     /**
     * Create a User
     * Store a newly created user in database.
+    * @authenticated
     * @group User endpoints
     *
     * @response 201{
@@ -84,6 +87,7 @@ class UserController extends Controller
     /**
      * Find a User
      * Display the specified user.
+     * @authenticated
      * @group User endpoints
      *
      * @bodyParam id int required The id of the user.
@@ -115,8 +119,11 @@ class UserController extends Controller
 
     /**
      * Update User's Information
-     * Update the specified user in database..
+     * Update the specified user in database.
+     * @authenticated
      * @group User endpoints
+     * @bodyParam id int required The id of the user.
+     * @bodyParam id2 int required The id of the user.
      *
      * @response {
      *   'id': 1,
@@ -149,6 +156,7 @@ class UserController extends Controller
     /**
      * Remove a User
      * Remove the specified user from database.
+     * @authenticated
      * @group User endpoints
      *
      * @bodyParam id int required The id of the user.
@@ -189,12 +197,53 @@ class UserController extends Controller
             return response()->json(['data' => $user], 201);
         }
         $user->applied_jobs()->attach($rnId, [
-            'is_elect' => $request->is_elect,
+            'is_elect' => 0,
             'cv_path' => $request->cv_path,
             'cover_letter_path' => $request->cover_letter_path,
             'exp_years' => $request->exp_years
         ]);
         $user->save();
         return response()->json(['data' => $user], 200);
+    }
+
+    /**
+     * Applied Jobs
+     * View list applied jobs for that user.
+     * @authenticated
+     * @group User endpoints
+     *
+     * @response {
+     *   "id": 1,
+     *   "rn_id": 1,
+     *   "user_id": 1,
+     *   "is_elect": 1,
+     *   "cv_path": "cv_path_tmp",
+     *   "cover_letter_path": "cover_letter_path_tmp",
+     *   "exp_years": 1,
+     *   "created_at": null,
+     *   "updated_at": null,
+     *   "recruitment_news": {
+     *       "id": 1,
+     *       "org_id": 1,
+     *       "author_id": 8,
+     *       "major_id": 2,
+     *       "title": "Part-time Java",
+     *       "content": "Cần tuyển Aut ea nihil amet est. Impedit totam qui ipsam veniam.earum.",
+     *       "address": "571 Phố Bồ Ánh Tú, Phường 6, Huyện Phượng Trung\nTây Ninh",
+     *       "city": "Hồ Chí Minh",
+     *       "work_type": "Remote",
+     *       "start_time": "2021-05-18 03:47:00",
+     *       "end_time": "2021-05-23 03:47:00",
+     *       "interview_start_time": "2021-05-24 03:47:00",
+     *       "interview_end_time": "2021-05-28 03:47:00",
+     *       "created_at": "2021-05-18 03:47:00",
+     *       "updated_at": "2021-05-18 03:47:00"
+     *   }
+     * }
+     */
+    public function applied(Request $request) {
+
+        $listApplied = JobSeeker::with('recruitment_news')->where("user_id", $request->user()->id)->get();
+        return response()->json($listApplied);
     }
 }

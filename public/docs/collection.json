@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "VNJobs API Documentaion",
-        "_postman_id": "d764f4fb-f176-4880-bdb3-d8b37a0375db",
+        "_postman_id": "ad444479-beb3-40b5-a8a9-ae259ae085b9",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -42,7 +42,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"aliquid\",\n    \"password\": \"in\"\n}"
+                            "raw": "{\n    \"email\": \"quaerat\",\n    \"password\": \"consequuntur\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -128,7 +128,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ea",
+                                    "value": "aliquam",
                                     "description": ""
                                 }
                             ]
@@ -146,7 +146,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"eveniet\"\n}"
+                            "raw": "{\n    \"int\": \"saepe\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -178,7 +178,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user_id\": 18,\n    \"is_elect\": false,\n    \"cv_path\": {},\n    \"cover_letter_path\": \"est\",\n    \"exp_years\": 6\n}"
+                            "raw": "{\n    \"user_id\": 16,\n    \"is_elect\": false,\n    \"cv_path\": {},\n    \"cover_letter_path\": \"aliquid\",\n    \"exp_years\": 8\n}"
                         },
                         "description": "",
                         "auth": {
@@ -200,7 +200,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "possimus",
+                                    "value": "eum",
                                     "description": ""
                                 }
                             ]
@@ -218,7 +218,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user_id\": 18,\n    \"is_elect\": false,\n    \"cv_path\": {},\n    \"cover_letter_path\": \"quia\",\n    \"exp_years\": 17\n}"
+                            "raw": "{\n    \"user_id\": 11,\n    \"is_elect\": false,\n    \"cv_path\": {},\n    \"cover_letter_path\": \"voluptatem\",\n    \"exp_years\": 2\n}"
                         },
                         "description": "",
                         "auth": {
@@ -240,7 +240,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "molestias",
+                                    "value": "recusandae",
                                     "description": ""
                                 }
                             ]
@@ -258,7 +258,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"incidunt\"\n}"
+                            "raw": "{\n    \"int\": \"iste\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -315,7 +315,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "eaque",
+                                    "value": "laborum",
                                     "description": ""
                                 }
                             ]
@@ -333,7 +333,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"perferendis\"\n}"
+                            "raw": "{\n    \"int\": \"dolor\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -365,7 +365,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"major_name\": \"architecto\",\n    \"image_path\": \"modi\"\n}"
+                            "raw": "{\n    \"major_name\": \"eligendi\",\n    \"image_path\": \"quis\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -387,7 +387,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "consequatur",
+                                    "value": "reiciendis",
                                     "description": ""
                                 }
                             ]
@@ -405,7 +405,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"major_name\": \"dolores\",\n    \"image_path\": \"dolores\"\n}"
+                            "raw": "{\n    \"major_name\": \"velit\",\n    \"image_path\": \"ut\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -427,7 +427,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "mollitia",
+                                    "value": "alias",
                                     "description": ""
                                 }
                             ]
@@ -445,7 +445,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"voluptatem\"\n}"
+                            "raw": "{\n    \"int\": \"voluptate\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -502,7 +502,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "sit",
+                                    "value": "quidem",
                                     "description": ""
                                 }
                             ]
@@ -520,7 +520,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"quas\"\n}"
+                            "raw": "{\n    \"int\": \"suscipit\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -552,7 +552,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"owner_id\": 5,\n    \"org_name\": \"voluptatem\",\n    \"phones\": \"id\",\n    \"description\": \"tempore\",\n    \"tax_id\": 16,\n    \"address\": \"sed\",\n    \"logo_path\": \"neque\",\n    \"cover_path\": \"aut\"\n}"
+                            "raw": "{\n    \"owner_id\": 8,\n    \"org_name\": \"quia\",\n    \"phones\": \"odit\",\n    \"description\": \"voluptatem\",\n    \"tax_id\": 12,\n    \"address\": \"mollitia\",\n    \"logo_path\": \"deserunt\",\n    \"cover_path\": \"et\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -574,7 +574,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "error",
+                                    "value": "esse",
                                     "description": ""
                                 }
                             ]
@@ -592,7 +592,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"owner_id\": 2,\n    \"org_name\": \"qui\",\n    \"phones\": \"dolorem\",\n    \"description\": \"est\",\n    \"tax_id\": 2,\n    \"address\": \"adipisci\",\n    \"logo_path\": \"at\",\n    \"cover_path\": \"ut\"\n}"
+                            "raw": "{\n    \"owner_id\": 7,\n    \"org_name\": \"provident\",\n    \"phones\": \"illo\",\n    \"description\": \"quasi\",\n    \"tax_id\": 6,\n    \"address\": \"ut\",\n    \"logo_path\": \"occaecati\",\n    \"cover_path\": \"labore\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -614,7 +614,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "corrupti",
+                                    "value": "nobis",
                                     "description": ""
                                 }
                             ]
@@ -632,7 +632,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"sit\"\n}"
+                            "raw": "{\n    \"int\": \"soluta\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -677,6 +677,35 @@
                     "response": []
                 },
                 {
+                    "name": "api\/v1\/recruitment-news-by-major",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/recruitment-news-by-major",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/recruitment-news-by-major"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
                     "name": "Find a Recruitment News\nDisplay the specified recruitment news.",
                     "request": {
                         "url": {
@@ -689,7 +718,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aspernatur",
+                                    "value": "laboriosam",
                                     "description": ""
                                 }
                             ]
@@ -707,8 +736,37 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"occaecati\"\n}"
+                            "raw": "{\n    \"int\": \"maiores\"\n}"
                         },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api\/v1\/search",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/search",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/search"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
                         "description": "",
                         "auth": {
                             "type": "noauth"
@@ -739,7 +797,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"org_id\": 20,\n    \"author_id\": 12,\n    \"major_id\": 20,\n    \"title\": \"quas\",\n    \"content\": \"qui\",\n    \"address\": \"suscipit\",\n    \"city\": \"ut\",\n    \"work_type\": \"eligendi\",\n    \"start_time\": \"2021-01-17T07:36:12+0000\",\n    \"end_time\": \"2021-01-17T07:36:12+0000\",\n    \"interview_start_time\": \"2021-01-17T07:36:12+0000\",\n    \"interview_end_time\": \"2021-01-17T07:36:12+0000\"\n}"
+                            "raw": "{\n    \"org_id\": 9,\n    \"author_id\": 2,\n    \"major_id\": 3,\n    \"title\": \"ratione\",\n    \"content\": \"sed\",\n    \"address\": \"laborum\",\n    \"city\": \"enim\",\n    \"work_type\": \"tenetur\",\n    \"start_time\": \"2021-05-18T07:17:25+0000\",\n    \"end_time\": \"2021-05-18T07:17:25+0000\",\n    \"interview_start_time\": \"2021-05-18T07:17:25+0000\",\n    \"interview_end_time\": \"2021-05-18T07:17:25+0000\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -761,7 +819,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "id",
+                                    "value": "repudiandae",
                                     "description": ""
                                 }
                             ]
@@ -779,7 +837,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"org_id\": 13,\n    \"author_id\": 11,\n    \"major_id\": 6,\n    \"title\": \"neque\",\n    \"content\": \"omnis\",\n    \"address\": \"atque\",\n    \"city\": \"consectetur\",\n    \"work_type\": \"nobis\",\n    \"start_time\": \"2021-01-17T07:36:12+0000\",\n    \"end_time\": \"2021-01-17T07:36:12+0000\",\n    \"interview_start_time\": \"2021-01-17T07:36:12+0000\",\n    \"interview_end_time\": \"2021-01-17T07:36:12+0000\"\n}"
+                            "raw": "{\n    \"org_id\": 14,\n    \"author_id\": 3,\n    \"major_id\": 18,\n    \"title\": \"aut\",\n    \"content\": \"suscipit\",\n    \"address\": \"soluta\",\n    \"city\": \"soluta\",\n    \"work_type\": \"sit\",\n    \"start_time\": \"2021-05-18T07:17:25+0000\",\n    \"end_time\": \"2021-05-18T07:17:25+0000\",\n    \"interview_start_time\": \"2021-05-18T07:17:25+0000\",\n    \"interview_end_time\": \"2021-05-18T07:17:25+0000\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -801,7 +859,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "fuga",
+                                    "value": "et",
                                     "description": ""
                                 }
                             ]
@@ -819,7 +877,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"minus\"\n}"
+                            "raw": "{\n    \"int\": \"sunt\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -876,7 +934,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "modi",
+                                    "value": "quos",
                                     "description": ""
                                 }
                             ]
@@ -894,7 +952,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"et\"\n}"
+                            "raw": "{\n    \"int\": \"temporibus\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -926,7 +984,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"role_name\": \"velit\"\n}"
+                            "raw": "{\n    \"role_name\": \"et\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -948,7 +1006,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quisquam",
+                                    "value": "facilis",
                                     "description": ""
                                 }
                             ]
@@ -966,7 +1024,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"role_name\": \"vel\"\n}"
+                            "raw": "{\n    \"role_name\": \"ut\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -988,7 +1046,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "eos",
+                                    "value": "magnam",
                                     "description": ""
                                 }
                             ]
@@ -1006,7 +1064,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"int\": \"deleniti\"\n}"
+                            "raw": "{\n    \"int\": \"corrupti\"\n}"
                         },
                         "description": "",
                         "auth": {
@@ -1044,12 +1102,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"first_name\": \"perspiciatis\",\n    \"last_name\": \"incidunt\",\n    \"dob\": \"2021-01-17T07:36:12+0000\",\n    \"phone\": \"minus\",\n    \"email\": \"eusebio.kuphal@example.net\",\n    \"password\": \"inventore\",\n    \"address\": \"repellat\"\n}"
+                            "raw": "{\n    \"first_name\": \"nesciunt\",\n    \"last_name\": \"consequatur\",\n    \"dob\": \"2021-05-18T07:17:25+0000\",\n    \"phone\": \"blanditiis\",\n    \"email\": \"rippin.fern@example.org\",\n    \"password\": \"eos\",\n    \"address\": \"nemo\"\n}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -1075,10 +1130,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -1088,14 +1140,14 @@
                         "url": {
                             "protocol": "http",
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/user\/:id",
+                            "path": "api\/v1\/user\/find\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/user\/:id",
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/user\/find\/:id",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "non",
+                                    "value": "sunt",
                                     "description": ""
                                 }
                             ]
@@ -1113,12 +1165,64 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"id\": 1\n}"
+                            "raw": "{\n    \"id\": 6\n}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Applied Jobs\nView list applied jobs for that user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/user\/applied",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/user\/applied"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update User's Information\nUpdate the specified user in database.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/user",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/user"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"first_name\": \"illo\",\n    \"last_name\": \"suscipit\",\n    \"dob\": \"2021-05-18T07:17:25+0000\",\n    \"phone\": 967629.0712842,\n    \"email\": \"carson.fritsch@example.org\",\n    \"address\": \"asperiores\",\n    \"id\": 17,\n    \"id2\": 20\n}"
+                        },
+                        "description": ""
                     },
                     "response": []
                 },
@@ -1135,7 +1239,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "qui",
+                                    "value": "nemo",
                                     "description": ""
                                 }
                             ]
@@ -1153,8 +1257,34 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"id\": 9\n}"
+                            "raw": "{\n    \"id\": 3\n}"
                         },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api\/v1\/users\/apply",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/users\/apply",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/users\/apply"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
                         "description": "",
                         "auth": {
                             "type": "noauth"

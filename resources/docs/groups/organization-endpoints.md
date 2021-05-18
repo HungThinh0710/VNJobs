@@ -11,14 +11,14 @@ Display a listing of the Organization.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/organizations" \
+    -G "http://localhost:8000/api/v1/organizations" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/organizations"
+    "http://localhost:8000/api/v1/organizations"
 );
 
 let headers = {
@@ -114,16 +114,16 @@ Display the specified resource.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/organizations/sunt" \
+    -G "http://localhost:8000/api/v1/organizations/quidem" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"aliquid"}'
+    -d '{"int":"suscipit"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/organizations/sunt"
+    "http://localhost:8000/api/v1/organizations/quidem"
 );
 
 let headers = {
@@ -132,7 +132,7 @@ let headers = {
 };
 
 let body = {
-    "int": "aliquid"
+    "int": "suscipit"
 }
 
 fetch(url, {
@@ -206,16 +206,16 @@ Store a newly created resource in Database.
 
 ```bash
 curl -X POST \
-    "http://localhost/api/v1/organizations" \
+    "http://localhost:8000/api/v1/organizations" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"owner_id":3,"org_name":"earum","phones":"mollitia","description":"quia","tax_id":15,"address":"enim","logo_path":"ex","cover_path":"fugit"}'
+    -d '{"owner_id":8,"org_name":"quia","phones":"odit","description":"voluptatem","tax_id":12,"address":"mollitia","logo_path":"deserunt","cover_path":"et"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/organizations"
+    "http://localhost:8000/api/v1/organizations"
 );
 
 let headers = {
@@ -224,14 +224,14 @@ let headers = {
 };
 
 let body = {
-    "owner_id": 3,
-    "org_name": "earum",
-    "phones": "mollitia",
-    "description": "quia",
-    "tax_id": 15,
-    "address": "enim",
-    "logo_path": "ex",
-    "cover_path": "fugit"
+    "owner_id": 8,
+    "org_name": "quia",
+    "phones": "odit",
+    "description": "voluptatem",
+    "tax_id": 12,
+    "address": "mollitia",
+    "logo_path": "deserunt",
+    "cover_path": "et"
 }
 
 fetch(url, {
@@ -334,16 +334,16 @@ Update the specified resource in Database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/organizations/architecto" \
+    "http://localhost:8000/api/v1/organizations/esse" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"owner_id":13,"org_name":"ex","phones":"et","description":"aut","tax_id":12,"address":"quasi","logo_path":"nobis","cover_path":"sed"}'
+    -d '{"owner_id":7,"org_name":"provident","phones":"illo","description":"quasi","tax_id":6,"address":"ut","logo_path":"occaecati","cover_path":"labore"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/organizations/architecto"
+    "http://localhost:8000/api/v1/organizations/esse"
 );
 
 let headers = {
@@ -352,14 +352,14 @@ let headers = {
 };
 
 let body = {
-    "owner_id": 13,
-    "org_name": "ex",
-    "phones": "et",
-    "description": "aut",
-    "tax_id": 12,
-    "address": "quasi",
-    "logo_path": "nobis",
-    "cover_path": "sed"
+    "owner_id": 7,
+    "org_name": "provident",
+    "phones": "illo",
+    "description": "quasi",
+    "tax_id": 6,
+    "address": "ut",
+    "logo_path": "occaecati",
+    "cover_path": "labore"
 }
 
 fetch(url, {
@@ -468,16 +468,16 @@ Remove the Organization from Database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/organizations/officiis" \
+    "http://localhost:8000/api/v1/organizations/nobis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"expedita"}'
+    -d '{"int":"soluta"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/organizations/officiis"
+    "http://localhost:8000/api/v1/organizations/nobis"
 );
 
 let headers = {
@@ -486,7 +486,7 @@ let headers = {
 };
 
 let body = {
-    "int": "expedita"
+    "int": "soluta"
 }
 
 fetch(url, {

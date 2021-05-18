@@ -22,20 +22,24 @@ class JobSeeker extends Model
         return $this->hasOne('\App\User', 'id');
     }
 
+    public function recruitment_news()
+    {
+        return $this->belongsTo('App\RecruitmentNews', 'rn_id', 'id');
+    }
     // public function majors() {
     //     return $this->belongsToMany(
-    //         'App\Major',          
-    //         'jobseekers_majors', 
-    //         'js_id',              
+    //         'App\Major',
+    //         'jobseekers_majors',
+    //         'js_id',
     //         'major_id'
     //     );
     // }
 
     // public function applied_job() {
     //     return $this->belongsToMany(
-    //         'App\User',          
-    //         'job_seekers', 
-    //         'js_id',              
+    //         'App\User',
+    //         'job_seekers',
+    //         'js_id',
     //         'rn_id'
     //     );
     // }

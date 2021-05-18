@@ -11,14 +11,14 @@ Display a listing of the role.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/roles" \
+    -G "http://localhost:8000/api/v1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/roles"
+    "http://localhost:8000/api/v1/roles"
 );
 
 let headers = {
@@ -98,16 +98,16 @@ Display the specified role.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/roles/accusantium" \
+    -G "http://localhost:8000/api/v1/roles/quos" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"enim"}'
+    -d '{"int":"temporibus"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/roles/accusantium"
+    "http://localhost:8000/api/v1/roles/quos"
 );
 
 let headers = {
@@ -116,7 +116,7 @@ let headers = {
 };
 
 let body = {
-    "int": "enim"
+    "int": "temporibus"
 }
 
 fetch(url, {
@@ -182,16 +182,16 @@ Store a newly created role in database.
 
 ```bash
 curl -X POST \
-    "http://localhost/api/v1/roles" \
+    "http://localhost:8000/api/v1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"ad"}'
+    -d '{"role_name":"et"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/roles"
+    "http://localhost:8000/api/v1/roles"
 );
 
 let headers = {
@@ -200,7 +200,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "ad"
+    "role_name": "et"
 }
 
 fetch(url, {
@@ -260,16 +260,16 @@ Update the specified role in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/roles/eos" \
+    "http://localhost:8000/api/v1/roles/facilis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"qui"}'
+    -d '{"role_name":"ut"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/roles/eos"
+    "http://localhost:8000/api/v1/roles/facilis"
 );
 
 let headers = {
@@ -278,7 +278,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "qui"
+    "role_name": "ut"
 }
 
 fetch(url, {
@@ -344,16 +344,16 @@ Remove the specified role from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/roles/ipsa" \
+    "http://localhost:8000/api/v1/roles/magnam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"voluptatibus"}'
+    -d '{"int":"corrupti"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/roles/ipsa"
+    "http://localhost:8000/api/v1/roles/magnam"
 );
 
 let headers = {
@@ -362,7 +362,7 @@ let headers = {
 };
 
 let body = {
-    "int": "voluptatibus"
+    "int": "corrupti"
 }
 
 fetch(url, {
