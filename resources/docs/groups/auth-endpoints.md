@@ -10,16 +10,16 @@
 
 ```bash
 curl -X POST \
-    "http://localhost/api/v1/auth/login" \
+    "http://localhost:8000/api/v1/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"neque","password":"ratione"}'
+    -d '{"email":"quaerat","password":"consequuntur"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/auth/login"
+    "http://localhost:8000/api/v1/auth/login"
 );
 
 let headers = {
@@ -28,8 +28,8 @@ let headers = {
 };
 
 let body = {
-    "email": "neque",
-    "password": "ratione"
+    "email": "quaerat",
+    "password": "consequuntur"
 }
 
 fetch(url, {
@@ -83,14 +83,14 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost/api/v1/is-valid-token" \
+    "http://localhost:8000/api/v1/is-valid-token" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/is-valid-token"
+    "http://localhost:8000/api/v1/is-valid-token"
 );
 
 let headers = {

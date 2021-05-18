@@ -11,14 +11,14 @@ Display a listing of the resource.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/majors" \
+    -G "http://localhost:8000/api/v1/majors" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/majors"
+    "http://localhost:8000/api/v1/majors"
 );
 
 let headers = {
@@ -99,16 +99,16 @@ Display the specified major.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/v1/majors/eius" \
+    -G "http://localhost:8000/api/v1/majors/laborum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"in"}'
+    -d '{"int":"dolor"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/majors/eius"
+    "http://localhost:8000/api/v1/majors/laborum"
 );
 
 let headers = {
@@ -117,7 +117,7 @@ let headers = {
 };
 
 let body = {
-    "int": "in"
+    "int": "dolor"
 }
 
 fetch(url, {
@@ -184,16 +184,16 @@ Store a newly created major in database.
 
 ```bash
 curl -X POST \
-    "http://localhost/api/v1/majors" \
+    "http://localhost:8000/api/v1/majors" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"major_name":"veritatis","image_path":"qui"}'
+    -d '{"major_name":"eligendi","image_path":"quis"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/majors"
+    "http://localhost:8000/api/v1/majors"
 );
 
 let headers = {
@@ -202,8 +202,8 @@ let headers = {
 };
 
 let body = {
-    "major_name": "veritatis",
-    "image_path": "qui"
+    "major_name": "eligendi",
+    "image_path": "quis"
 }
 
 fetch(url, {
@@ -269,16 +269,16 @@ Update the specified major in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/v1/majors/et" \
+    "http://localhost:8000/api/v1/majors/reiciendis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"major_name":"est","image_path":"quasi"}'
+    -d '{"major_name":"velit","image_path":"ut"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/majors/et"
+    "http://localhost:8000/api/v1/majors/reiciendis"
 );
 
 let headers = {
@@ -287,8 +287,8 @@ let headers = {
 };
 
 let body = {
-    "major_name": "est",
-    "image_path": "quasi"
+    "major_name": "velit",
+    "image_path": "ut"
 }
 
 fetch(url, {
@@ -360,16 +360,16 @@ Remove the specified major from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/v1/majors/accusantium" \
+    "http://localhost:8000/api/v1/majors/alias" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"dolorem"}'
+    -d '{"int":"voluptate"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/v1/majors/accusantium"
+    "http://localhost:8000/api/v1/majors/alias"
 );
 
 let headers = {
@@ -378,7 +378,7 @@ let headers = {
 };
 
 let body = {
-    "int": "dolorem"
+    "int": "voluptate"
 }
 
 fetch(url, {
