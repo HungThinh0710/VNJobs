@@ -24,7 +24,8 @@ class JobSeeker extends Model
 
     public function recruitment_news()
     {
-        return $this->belongsTo('App\RecruitmentNews', 'rn_id', 'id');
+        return $this->belongsTo('App\RecruitmentNews', 'rn_id', 'id')
+          ->select(['id', 'org_id', 'title', 'address', 'city', 'work_type', 'start_time', 'end_time', 'interview_start_time', 'interview_end_time']);
     }
     // public function majors() {
     //     return $this->belongsToMany(

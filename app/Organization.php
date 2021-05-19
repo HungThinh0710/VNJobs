@@ -30,10 +30,10 @@ class Organization extends Model
     public function majors()
     {
         return $this->belongsTomany(
-            'App\Major',          
-            'organizations_majors', 
-            'org_id',              
-            'major_id'              
+            'App\Major',
+            'organizations_majors',
+            'org_id',
+            'major_id'
         );
     }
 
