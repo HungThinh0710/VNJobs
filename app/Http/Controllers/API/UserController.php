@@ -188,18 +188,52 @@ class UserController extends Controller
 
 
     public function apply(Request $request) {
+        var_dump($request->all());
+//        return $request->rn_id;
         $rnId = $request->rn_id;
         $userId = $request->user()->id;
         $user = User::findOrFail($userId);
         // dd($request);
         $exists = $user->applied_jobs()->where('rn_id', $rnId)->exists();
+
         if ($exists) {
             return response()->json(['data' => $user], 201);
         }
+
+        if($request->hasFile('cv_path')) {
+            // Get filename with extension
+            $filenameWithExtCV = $request->file('cv_path')->getClientOriginalName();
+            // Get just filename
+            $filenameCV = pathinfo($filenameWithExtCV, PATHINFO_FILENAME);
+           // Get just ext
+            $extensionCV = $request->file('cv_path')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStoreCV = $filenameCV.'_'.time().'.'.$extensionCV;
+          // Upload Image
+            $pathCV = $request->file('cv_path')->storeAs('cv_path', $fileNameToStoreCV);
+        } else {
+            $pathCV = '';
+        }
+
+        if($request->hasFile('cover_letter_path')) {
+            // Get filename with extension
+            $filenameWithExtCVLetter = $request->file('cover_letter_path')->getClientOriginalName();
+            // Get just filename
+            $filenameCVLetter = pathinfo($filenameWithExtCVLetter, PATHINFO_FILENAME);
+            // Get just ext
+            $extensionCVLetter = $request->file('cover_letter_path')->getClientOriginalExtension();
+            //Filename to store
+            $fileNameToStoreCVLetter = $filenameCVLetter.'_'.time().'.'.$extensionCVLetter;
+            // Upload Image
+            $pathCVLetter = $request->file('cover_letter_path')->storeAs('cover_letter_path', $fileNameToStoreCVLetter);
+        } else {
+            $pathCVLetter = '';
+        }
+
         $user->applied_jobs()->attach($rnId, [
             'is_elect' => 0,
-            'cv_path' => $request->cv_path,
-            'cover_letter_path' => $request->cover_letter_path,
+            'cv_path' => $pathCV,
+            'cover_letter_path' => $pathCVLetter,
             'exp_years' => $request->exp_years
         ]);
         $user->save();

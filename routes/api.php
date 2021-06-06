@@ -88,7 +88,7 @@ Route::group(['prefix' => 'v1'], function(){
             Route::delete('/{id}', 'API\RecruitmentNewsController@destroy');
         });
 
-        Route::put('users/apply', 'API\UserController@apply');
+        Route::post('users/apply', 'API\UserController@apply');
 
     });
 });
