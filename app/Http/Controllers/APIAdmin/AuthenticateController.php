@@ -31,7 +31,7 @@ class AuthenticateController extends Controller
                 'message' => 'Email or password are wrong! Please try again.'
             ], 401);
 
-        $token = Auth::guard('admin')->user()->createToken('Laravel Admin Grant Client');
+        $token = Auth::guard('admin')->user()->createToken('Admin Access Token',['admin']);
 
         return response()->json([
             'user' => Auth::guard('admin')->user(),

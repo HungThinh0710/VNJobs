@@ -33,7 +33,8 @@ class AuthenticateController extends Controller
                 'message' => 'Email or password are wrong! Please try again.'
             ], 401);
 
-        $token = Auth::user()->createToken('authToken');
+        config(['auth.guards.api.provider' => 'users']);
+        $token = Auth::user()->createToken('authToken',['user']);
 
         return response()->json([
             'user' => Auth::user(),

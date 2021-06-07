@@ -16,7 +16,7 @@ curl -X POST \
     "http://localhost:8000/api/v1/auth/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"first_name":"nulla","last_name":"et","dob":"2021-06-07T04:15:00+0000","phone":"odio","email":"lisandro.koelpin@example.com","password":"velit","address":"eum"}'
+    -d '{"first_name":"nam","last_name":"natus","dob":"2021-06-07T05:41:59+0000","phone":"tenetur","email":"leuschke.granville@example.com","password":"nihil","address":"perspiciatis"}'
 
 ```
 
@@ -31,13 +31,13 @@ let headers = {
 };
 
 let body = {
-    "first_name": "nulla",
-    "last_name": "et",
-    "dob": "2021-06-07T04:15:00+0000",
-    "phone": "odio",
-    "email": "lisandro.koelpin@example.com",
-    "password": "velit",
-    "address": "eum"
+    "first_name": "nam",
+    "last_name": "natus",
+    "dob": "2021-06-07T05:41:59+0000",
+    "phone": "tenetur",
+    "email": "leuschke.granville@example.com",
+    "password": "nihil",
+    "address": "perspiciatis"
 }
 
 fetch(url, {
@@ -210,16 +210,16 @@ Display the specified user.
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/v1/user/find/optio" \
+    -G "http://localhost:8000/api/v1/user/find/ut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":8}'
+    -d '{"id":5}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/user/find/optio"
+    "http://localhost:8000/api/v1/user/find/ut"
 );
 
 let headers = {
@@ -228,7 +228,7 @@ let headers = {
 };
 
 let body = {
-    "id": 8
+    "id": 5
 }
 
 fetch(url, {
@@ -405,7 +405,7 @@ curl -X PUT \
     "http://localhost:8000/api/v1/user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"first_name":"eveniet","last_name":"ea","dob":"2021-06-07T04:15:01+0000","phone":5.9,"email":"arnaldo85@example.com","address":"perferendis","id":16,"id2":3}'
+    -d '{"first_name":"rerum","last_name":"distinctio","dob":"2021-06-07T05:41:59+0000","phone":382.9039,"email":"camron.huels@example.org","address":"alias","id":14,"id2":5}'
 
 ```
 
@@ -420,14 +420,14 @@ let headers = {
 };
 
 let body = {
-    "first_name": "eveniet",
-    "last_name": "ea",
-    "dob": "2021-06-07T04:15:01+0000",
-    "phone": 5.9,
-    "email": "arnaldo85@example.com",
-    "address": "perferendis",
-    "id": 16,
-    "id2": 3
+    "first_name": "rerum",
+    "last_name": "distinctio",
+    "dob": "2021-06-07T05:41:59+0000",
+    "phone": 382.9039,
+    "email": "camron.huels@example.org",
+    "address": "alias",
+    "id": 14,
+    "id2": 5
 }
 
 fetch(url, {
@@ -539,16 +539,16 @@ Remove the specified user from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost:8000/api/v1/user/voluptas" \
+    "http://localhost:8000/api/v1/user/quae" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":19}'
+    -d '{"id":13}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/user/voluptas"
+    "http://localhost:8000/api/v1/user/quae"
 );
 
 let headers = {
@@ -557,7 +557,7 @@ let headers = {
 };
 
 let body = {
-    "id": 19
+    "id": 13
 }
 
 fetch(url, {

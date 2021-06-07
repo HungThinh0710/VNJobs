@@ -55,7 +55,6 @@ return [
         'api-admins' => [
             'driver' => 'passport',
             'provider' => 'admins',
-            'hash' => false,
         ]
     ],
 

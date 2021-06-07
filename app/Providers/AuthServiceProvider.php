@@ -29,8 +29,12 @@ class AuthServiceProvider extends ServiceProvider
         Passport::routes();
 
         Passport::tokensCan([
-            'user' => 'User Type',
-            'admin' => 'Admin User Type',
+            'user' => 'Access user API',
+            'admin' => 'Access admin API',
+        ]);
+
+        Passport::setDefaultScope([
+            'user',
         ]);
     }
 }

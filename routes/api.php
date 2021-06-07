@@ -40,7 +40,11 @@ Route::group(['prefix' => 'v1'], function(){
     Route::get('recruitment-news-by-major/','API\RecruitmentNewsController@showByMajor');
     Route::get('recruitment-news/{id}', 'API\RecruitmentNewsController@show');
     Route::post('search', 'API\RecruitmentNewsController@search');
-    Route::group(['middleware' => 'auth:api'], function() {
+
+    /**
+     * AUTHENTICATE USER SCOPE
+     */
+    Route::group(['middleware' => ['auth:api', 'scope:user']], function() {
         //Check is token still valid
         Route::post('/is-valid-token', 'API\AuthenticateController@checkValidToken');
 
