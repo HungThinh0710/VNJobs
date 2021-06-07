@@ -50,6 +50,12 @@ return [
         'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
+        ],
+
+        'api-admins' => [
+            'driver' => 'passport',
+            'provider' => 'admins',
+            'hash' => false,
         ]
     ],
 

@@ -1,18 +1,19 @@
 # GENERATED. YOU SHOULDN'T MODIFY OR DELETE THIS FILE.
 # Scribe uses this file to know when you change something manually in your docs.
-resources/docs/groups/endpoints.md=1610122555
-resources/docs/index.md=1621322245
-resources/docs/authentication.md=1621322245
-resources/docs/groups/auth-endpoints.md=1621322245
+resources/docs/groups/endpoints.md=1623038957
+resources/docs/index.md=1623039301
+resources/docs/authentication.md=1623039086
+resources/docs/groups/auth-endpoints.md=1623039301
 resources/docs/groups/organization.md=1607157344
 resources/docs/groups/jobseeker.md=1607157344
 resources/docs/groups/major.md=1607157344
 resources/docs/groups/recruitment-news.md=1607157344
 resources/docs/groups/role.md=1607157344
 resources/docs/groups/user.md=1607157344
-resources/docs/groups/jobseeker-endpoints.md=1621322245
-resources/docs/groups/major-endpoints.md=1621322245
-resources/docs/groups/organization-endpoints.md=1621322245
-resources/docs/groups/recruitment-news-endpoints.md=1621322245
-resources/docs/groups/role-endpoints.md=1621322245
-resources/docs/groups/user-endpoints.md=1621322245
+resources/docs/groups/jobseeker-endpoints.md=1623039301
+resources/docs/groups/major-endpoints.md=1623039301
+resources/docs/groups/organization-endpoints.md=1623039301
+resources/docs/groups/recruitment-news-endpoints.md=1623039301
+resources/docs/groups/role-endpoints.md=1623039301
+resources/docs/groups/user-endpoints.md=1623039301
+resources/docs/groups/admin-authenticate.md=1623039301

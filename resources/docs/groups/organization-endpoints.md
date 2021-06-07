@@ -114,16 +114,16 @@ Display the specified resource.
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/v1/organizations/quidem" \
+    -G "http://localhost:8000/api/v1/organizations/itaque" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"suscipit"}'
+    -d '{"int":"saepe"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/organizations/quidem"
+    "http://localhost:8000/api/v1/organizations/itaque"
 );
 
 let headers = {
@@ -132,7 +132,7 @@ let headers = {
 };
 
 let body = {
-    "int": "suscipit"
+    "int": "saepe"
 }
 
 fetch(url, {
@@ -209,7 +209,7 @@ curl -X POST \
     "http://localhost:8000/api/v1/organizations" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"owner_id":8,"org_name":"quia","phones":"odit","description":"voluptatem","tax_id":12,"address":"mollitia","logo_path":"deserunt","cover_path":"et"}'
+    -d '{"owner_id":15,"org_name":"amet","phones":"qui","description":"voluptas","tax_id":9,"address":"dolores","logo_path":"saepe","cover_path":"libero"}'
 
 ```
 
@@ -224,14 +224,14 @@ let headers = {
 };
 
 let body = {
-    "owner_id": 8,
-    "org_name": "quia",
-    "phones": "odit",
-    "description": "voluptatem",
-    "tax_id": 12,
-    "address": "mollitia",
-    "logo_path": "deserunt",
-    "cover_path": "et"
+    "owner_id": 15,
+    "org_name": "amet",
+    "phones": "qui",
+    "description": "voluptas",
+    "tax_id": 9,
+    "address": "dolores",
+    "logo_path": "saepe",
+    "cover_path": "libero"
 }
 
 fetch(url, {
@@ -334,16 +334,16 @@ Update the specified resource in Database.
 
 ```bash
 curl -X PUT \
-    "http://localhost:8000/api/v1/organizations/esse" \
+    "http://localhost:8000/api/v1/organizations/aut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"owner_id":7,"org_name":"provident","phones":"illo","description":"quasi","tax_id":6,"address":"ut","logo_path":"occaecati","cover_path":"labore"}'
+    -d '{"owner_id":9,"org_name":"assumenda","phones":"rerum","description":"beatae","tax_id":1,"address":"debitis","logo_path":"consequuntur","cover_path":"rerum"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/organizations/esse"
+    "http://localhost:8000/api/v1/organizations/aut"
 );
 
 let headers = {
@@ -352,14 +352,14 @@ let headers = {
 };
 
 let body = {
-    "owner_id": 7,
-    "org_name": "provident",
-    "phones": "illo",
-    "description": "quasi",
-    "tax_id": 6,
-    "address": "ut",
-    "logo_path": "occaecati",
-    "cover_path": "labore"
+    "owner_id": 9,
+    "org_name": "assumenda",
+    "phones": "rerum",
+    "description": "beatae",
+    "tax_id": 1,
+    "address": "debitis",
+    "logo_path": "consequuntur",
+    "cover_path": "rerum"
 }
 
 fetch(url, {
@@ -468,16 +468,16 @@ Remove the Organization from Database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost:8000/api/v1/organizations/nobis" \
+    "http://localhost:8000/api/v1/organizations/aut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"soluta"}'
+    -d '{"int":"et"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/organizations/nobis"
+    "http://localhost:8000/api/v1/organizations/aut"
 );
 
 let headers = {
@@ -486,7 +486,7 @@ let headers = {
 };
 
 let body = {
-    "int": "soluta"
+    "int": "et"
 }
 
 fetch(url, {

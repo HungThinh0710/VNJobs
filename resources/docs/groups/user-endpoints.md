@@ -16,7 +16,7 @@ curl -X POST \
     "http://localhost:8000/api/v1/auth/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"first_name":"nesciunt","last_name":"consequatur","dob":"2021-05-18T07:17:25+0000","phone":"blanditiis","email":"rippin.fern@example.org","password":"eos","address":"nemo"}'
+    -d '{"first_name":"nulla","last_name":"et","dob":"2021-06-07T04:15:00+0000","phone":"odio","email":"lisandro.koelpin@example.com","password":"velit","address":"eum"}'
 
 ```
 
@@ -31,13 +31,13 @@ let headers = {
 };
 
 let body = {
-    "first_name": "nesciunt",
-    "last_name": "consequatur",
-    "dob": "2021-05-18T07:17:25+0000",
-    "phone": "blanditiis",
-    "email": "rippin.fern@example.org",
-    "password": "eos",
-    "address": "nemo"
+    "first_name": "nulla",
+    "last_name": "et",
+    "dob": "2021-06-07T04:15:00+0000",
+    "phone": "odio",
+    "email": "lisandro.koelpin@example.com",
+    "password": "velit",
+    "address": "eum"
 }
 
 fetch(url, {
@@ -210,16 +210,16 @@ Display the specified user.
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/v1/user/find/sunt" \
+    -G "http://localhost:8000/api/v1/user/find/optio" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":6}'
+    -d '{"id":8}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/user/find/sunt"
+    "http://localhost:8000/api/v1/user/find/optio"
 );
 
 let headers = {
@@ -228,7 +228,7 @@ let headers = {
 };
 
 let body = {
-    "id": 6
+    "id": 8
 }
 
 fetch(url, {
@@ -405,7 +405,7 @@ curl -X PUT \
     "http://localhost:8000/api/v1/user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"first_name":"illo","last_name":"suscipit","dob":"2021-05-18T07:17:25+0000","phone":967629.0712842,"email":"carson.fritsch@example.org","address":"asperiores","id":17,"id2":20}'
+    -d '{"first_name":"eveniet","last_name":"ea","dob":"2021-06-07T04:15:01+0000","phone":5.9,"email":"arnaldo85@example.com","address":"perferendis","id":16,"id2":3}'
 
 ```
 
@@ -420,14 +420,14 @@ let headers = {
 };
 
 let body = {
-    "first_name": "illo",
-    "last_name": "suscipit",
-    "dob": "2021-05-18T07:17:25+0000",
-    "phone": 967629.0712842,
-    "email": "carson.fritsch@example.org",
-    "address": "asperiores",
-    "id": 17,
-    "id2": 20
+    "first_name": "eveniet",
+    "last_name": "ea",
+    "dob": "2021-06-07T04:15:01+0000",
+    "phone": 5.9,
+    "email": "arnaldo85@example.com",
+    "address": "perferendis",
+    "id": 16,
+    "id2": 3
 }
 
 fetch(url, {
@@ -539,16 +539,16 @@ Remove the specified user from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost:8000/api/v1/user/nemo" \
+    "http://localhost:8000/api/v1/user/voluptas" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":3}'
+    -d '{"id":19}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/user/nemo"
+    "http://localhost:8000/api/v1/user/voluptas"
 );
 
 let headers = {
@@ -557,7 +557,7 @@ let headers = {
 };
 
 let body = {
-    "id": 3
+    "id": 19
 }
 
 fetch(url, {
@@ -637,7 +637,7 @@ The id of the user.</p>
 > Example request:
 
 ```bash
-curl -X PUT \
+curl -X POST \
     "http://localhost:8000/api/v1/users/apply" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -655,29 +655,29 @@ let headers = {
 
 
 fetch(url, {
-    method: "PUT",
+    method: "POST",
     headers,
 }).then(response => response.json());
 ```
 
 
-<div id="execution-results-PUTapi-v1-users-apply" hidden>
-    <blockquote>Received response<span id="execution-response-status-PUTapi-v1-users-apply"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-v1-users-apply"></code></pre>
+<div id="execution-results-POSTapi-v1-users-apply" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-v1-users-apply"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-users-apply"></code></pre>
 </div>
-<div id="execution-error-PUTapi-v1-users-apply" hidden>
+<div id="execution-error-POSTapi-v1-users-apply" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-v1-users-apply"></code></pre>
+    <pre><code id="execution-error-message-POSTapi-v1-users-apply"></code></pre>
 </div>
-<form id="form-PUTapi-v1-users-apply" data-method="PUT" data-path="api/v1/users/apply" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-users-apply', this);">
+<form id="form-POSTapi-v1-users-apply" data-method="POST" data-path="api/v1/users/apply" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-users-apply', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-v1-users-apply" onclick="tryItOut('PUTapi-v1-users-apply');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-v1-users-apply" onclick="cancelTryOut('PUTapi-v1-users-apply');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-v1-users-apply" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v1-users-apply" onclick="tryItOut('POSTapi-v1-users-apply');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v1-users-apply" onclick="cancelTryOut('POSTapi-v1-users-apply');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v1-users-apply" hidden>Send Request 💥</button>
     </h3>
 <p>
-<small class="badge badge-darkblue">PUT</small>
+<small class="badge badge-black">POST</small>
  <b><code>api/v1/users/apply</code></b>
 </p>
 </form>

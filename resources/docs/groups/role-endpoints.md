@@ -98,16 +98,16 @@ Display the specified role.
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/v1/roles/quos" \
+    -G "http://localhost:8000/api/v1/roles/iste" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"temporibus"}'
+    -d '{"int":"minus"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/roles/quos"
+    "http://localhost:8000/api/v1/roles/iste"
 );
 
 let headers = {
@@ -116,7 +116,7 @@ let headers = {
 };
 
 let body = {
-    "int": "temporibus"
+    "int": "minus"
 }
 
 fetch(url, {
@@ -185,7 +185,7 @@ curl -X POST \
     "http://localhost:8000/api/v1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"et"}'
+    -d '{"role_name":"repellendus"}'
 
 ```
 
@@ -200,7 +200,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "et"
+    "role_name": "repellendus"
 }
 
 fetch(url, {
@@ -260,7 +260,7 @@ Update the specified role in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost:8000/api/v1/roles/facilis" \
+    "http://localhost:8000/api/v1/roles/quis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"role_name":"ut"}'
@@ -269,7 +269,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/roles/facilis"
+    "http://localhost:8000/api/v1/roles/quis"
 );
 
 let headers = {
@@ -344,16 +344,16 @@ Remove the specified role from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost:8000/api/v1/roles/magnam" \
+    "http://localhost:8000/api/v1/roles/id" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"corrupti"}'
+    -d '{"int":"amet"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/roles/magnam"
+    "http://localhost:8000/api/v1/roles/id"
 );
 
 let headers = {
@@ -362,7 +362,7 @@ let headers = {
 };
 
 let body = {
-    "int": "corrupti"
+    "int": "amet"
 }
 
 fetch(url, {
