@@ -99,16 +99,16 @@ Display the specified major.
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/v1/majors/laborum" \
+    -G "http://localhost:8000/api/v1/majors/reiciendis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"dolor"}'
+    -d '{"int":"rerum"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/majors/laborum"
+    "http://localhost:8000/api/v1/majors/reiciendis"
 );
 
 let headers = {
@@ -117,7 +117,7 @@ let headers = {
 };
 
 let body = {
-    "int": "dolor"
+    "int": "rerum"
 }
 
 fetch(url, {
@@ -187,7 +187,7 @@ curl -X POST \
     "http://localhost:8000/api/v1/majors" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"major_name":"eligendi","image_path":"quis"}'
+    -d '{"major_name":"deserunt","image_path":"repellat"}'
 
 ```
 
@@ -202,8 +202,8 @@ let headers = {
 };
 
 let body = {
-    "major_name": "eligendi",
-    "image_path": "quis"
+    "major_name": "deserunt",
+    "image_path": "repellat"
 }
 
 fetch(url, {
@@ -269,16 +269,16 @@ Update the specified major in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost:8000/api/v1/majors/reiciendis" \
+    "http://localhost:8000/api/v1/majors/velit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"major_name":"velit","image_path":"ut"}'
+    -d '{"major_name":"ab","image_path":"dolorem"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/majors/reiciendis"
+    "http://localhost:8000/api/v1/majors/velit"
 );
 
 let headers = {
@@ -287,8 +287,8 @@ let headers = {
 };
 
 let body = {
-    "major_name": "velit",
-    "image_path": "ut"
+    "major_name": "ab",
+    "image_path": "dolorem"
 }
 
 fetch(url, {
@@ -360,16 +360,16 @@ Remove the specified major from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost:8000/api/v1/majors/alias" \
+    "http://localhost:8000/api/v1/majors/qui" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"voluptate"}'
+    -d '{"int":"et"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/majors/alias"
+    "http://localhost:8000/api/v1/majors/qui"
 );
 
 let headers = {
@@ -378,7 +378,7 @@ let headers = {
 };
 
 let body = {
-    "int": "voluptate"
+    "int": "et"
 }
 
 fetch(url, {

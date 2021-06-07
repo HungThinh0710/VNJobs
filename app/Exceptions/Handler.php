@@ -52,6 +52,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof \Laravel\Passport\Exceptions\MissingScopeException)
+        {
+            return response()->json(['error' => 'You do not have permission to do this action'], 403);
+            //abort(401);
+        }
+
         return parent::render($request, $exception);
     }
 

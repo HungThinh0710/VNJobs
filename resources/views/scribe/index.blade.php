@@ -8,12 +8,12 @@
 
     <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="css/style.css" media="screen" />
-        <link rel="stylesheet" href="css/print.css" media="print" />
-        <script src="js/all.js"></script>
+        <link rel="stylesheet" href="{{ asset("vendor/scribe/css/style.css") }}" media="screen" />
+        <link rel="stylesheet" href="{{ asset("vendor/scribe/css/print.css") }}" media="print" />
+        <script src="{{ asset("vendor/scribe/js/all.js") }}"></script>
 
-        <link rel="stylesheet" href="css/highlight-darcula.css" media="" />
-        <script src="js/highlight.pack.js"></script>
+        <link rel="stylesheet" href="{{ asset("vendor/scribe/css/highlight-darcula.css") }}" media="" />
+        <script src="{{ asset("vendor/scribe/js/highlight.pack.js") }}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
 </head>
@@ -22,7 +22,7 @@
 <a href="#" id="nav-button">
       <span>
         NAV
-            <img src="images/navbar.png" alt="-image" class=""/>
+            <img src="{{ asset("vendor/scribe/images/navbar.png") }}" alt="-image" class=""/>
       </span>
 </a>
 <div class="tocify-wrapper">
@@ -39,31 +39,133 @@
     </ul>
 
             <ul class="toc-footer" id="toc-footer">
-                            <li><a href="./collection.json">View Postman collection</a></li>
-                            <li><a href="./openapi.yaml">View OpenAPI (Swagger) spec</a></li>
+                            <li><a href="{{ route("scribe.postman") }}">View Postman collection</a></li>
+                            <li><a href="{{ route("scribe.openapi") }}">View OpenAPI (Swagger) spec</a></li>
                             <li><a href='http://github.com/knuckleswtf/scribe'>Documentation powered by Scribe ✍</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: May 18 2021</li>
+            <li>Last updated: June 7 2021</li>
         </ul>
 </div>
 <div class="page-wrapper">
     <div class="dark-box"></div>
     <div class="content">
         <h1>Introduction</h1>
-<p>This documentation aims to provide all the information you need to work with our API.</p>
+<p>API for mobile, web client of VNJobs Project - By Phoenix (aka Hưng Thịnh) &amp; Khắc Tuấn (aka SinJunior)</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 <script>
     var baseUrl = "http://localhost:8000";
 </script>
-<script src="js/tryitout-2.4.2.js"></script>
+<script src="{{ asset("vendor/scribe/js/tryitout-2.4.2.js") }}"></script>
 <blockquote>
 <p>Base URL</p>
 </blockquote>
-<pre><code class="language-yaml">http://localhost:8000</code></pre><h1>Authenticating requests</h1>
-<p>This API is not authenticated.</p><h1>Auth endpoints</h1>
+<pre><code class="language-yaml">http://localhost:8000</code></pre><h1>Admin Authenticate</h1>
+<p>APIs for authentication admin.</p>
+<h2>Login.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost:8000/api/admin/v1/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"email":"vitae","password":"quia"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/admin/v1/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "vitae",
+    "password": "quia"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-POSTapi-admin-v1-login" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-admin-v1-login"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-admin-v1-login"></code></pre>
+</div>
+<div id="execution-error-POSTapi-admin-v1-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-admin-v1-login"></code></pre>
+</div>
+<form id="form-POSTapi-admin-v1-login" data-method="POST" data-path="api/admin/v1/login" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-admin-v1-login', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-admin-v1-login" onclick="tryItOut('POSTapi-admin-v1-login');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-admin-v1-login" onclick="cancelTryOut('POSTapi-admin-v1-login');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-admin-v1-login" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/admin/v1/login</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>email</code></b>&nbsp;&nbsp;<small>String</small>  &nbsp;
+<input type="text" name="email" data-endpoint="POSTapi-admin-v1-login" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>password</code></b>&nbsp;&nbsp;<small>String</small>  &nbsp;
+<input type="text" name="password" data-endpoint="POSTapi-admin-v1-login" data-component="body" required  hidden>
+<br>
+</p>
+
+</form>
+<h2>api/admin/v1/auth/token</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost:8000/api/admin/v1/auth/token" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/admin/v1/auth/token"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-POSTapi-admin-v1-auth-token" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-admin-v1-auth-token"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-admin-v1-auth-token"></code></pre>
+</div>
+<div id="execution-error-POSTapi-admin-v1-auth-token" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-admin-v1-auth-token"></code></pre>
+</div>
+<form id="form-POSTapi-admin-v1-auth-token" data-method="POST" data-path="api/admin/v1/auth/token" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-admin-v1-auth-token', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-admin-v1-auth-token" onclick="tryItOut('POSTapi-admin-v1-auth-token');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-admin-v1-auth-token" onclick="cancelTryOut('POSTapi-admin-v1-auth-token');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-admin-v1-auth-token" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/admin/v1/auth/token</code></b>
+</p>
+</form><h1>Auth endpoints</h1>
 <h2>Login.</h2>
 <blockquote>
 <p>Example request:</p>
@@ -72,7 +174,7 @@ You can switch the language used with the tabs at the top right (or from the nav
     "http://localhost:8000/api/v1/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"quaerat","password":"consequuntur"}'
+    -d '{"email":"quasi","password":"reprehenderit"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/auth/login"
@@ -84,8 +186,8 @@ let headers = {
 };
 
 let body = {
-    "email": "quaerat",
-    "password": "consequuntur"
+    "email": "quasi",
+    "password": "reprehenderit"
 }
 
 fetch(url, {
@@ -249,7 +351,7 @@ fetch(url, {
     -G "http://localhost:8000/api/v1/job-seekers/aliquam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"saepe"}'
+    -d '{"int":"qui"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/job-seekers/aliquam"
@@ -261,7 +363,7 @@ let headers = {
 };
 
 let body = {
-    "int": "saepe"
+    "int": "qui"
 }
 
 fetch(url, {
@@ -324,7 +426,7 @@ The id of the job seeker.</p>
     "http://localhost:8000/api/v1/job-seekers" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":16,"is_elect":false,"cv_path":{},"cover_letter_path":"aliquid","exp_years":8}'
+    -d '{"user_id":3,"is_elect":false,"cv_path":{},"cover_letter_path":"aut","exp_years":2}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/job-seekers"
@@ -336,11 +438,11 @@ let headers = {
 };
 
 let body = {
-    "user_id": 16,
+    "user_id": 3,
     "is_elect": false,
     "cv_path": {},
-    "cover_letter_path": "aliquid",
-    "exp_years": 8
+    "cover_letter_path": "aut",
+    "exp_years": 2
 }
 
 fetch(url, {
@@ -415,13 +517,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/v1/job-seekers/eum" \
+    "http://localhost:8000/api/v1/job-seekers/qui" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":11,"is_elect":false,"cv_path":{},"cover_letter_path":"voluptatem","exp_years":2}'
+    -d '{"user_id":6,"is_elect":false,"cv_path":{},"cover_letter_path":"nemo","exp_years":13}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/job-seekers/eum"
+    "http://localhost:8000/api/v1/job-seekers/qui"
 );
 
 let headers = {
@@ -430,11 +532,11 @@ let headers = {
 };
 
 let body = {
-    "user_id": 11,
+    "user_id": 6,
     "is_elect": false,
     "cv_path": {},
-    "cover_letter_path": "voluptatem",
-    "exp_years": 2
+    "cover_letter_path": "nemo",
+    "exp_years": 13
 }
 
 fetch(url, {
@@ -515,13 +617,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/v1/job-seekers/recusandae" \
+    "http://localhost:8000/api/v1/job-seekers/nulla" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"iste"}'
+    -d '{"int":"maxime"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/job-seekers/recusandae"
+    "http://localhost:8000/api/v1/job-seekers/nulla"
 );
 
 let headers = {
@@ -530,7 +632,7 @@ let headers = {
 };
 
 let body = {
-    "int": "iste"
+    "int": "maxime"
 }
 
 fetch(url, {
@@ -651,13 +753,13 @@ data: [{
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/v1/majors/laborum" \
+    -G "http://localhost:8000/api/v1/majors/reiciendis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"dolor"}'
+    -d '{"int":"rerum"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/majors/laborum"
+    "http://localhost:8000/api/v1/majors/reiciendis"
 );
 
 let headers = {
@@ -666,7 +768,7 @@ let headers = {
 };
 
 let body = {
-    "int": "dolor"
+    "int": "rerum"
 }
 
 fetch(url, {
@@ -726,7 +828,7 @@ The id of the major.</p>
     "http://localhost:8000/api/v1/majors" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"major_name":"eligendi","image_path":"quis"}'
+    -d '{"major_name":"deserunt","image_path":"repellat"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/majors"
@@ -738,8 +840,8 @@ let headers = {
 };
 
 let body = {
-    "major_name": "eligendi",
-    "image_path": "quis"
+    "major_name": "deserunt",
+    "image_path": "repellat"
 }
 
 fetch(url, {
@@ -795,13 +897,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/v1/majors/reiciendis" \
+    "http://localhost:8000/api/v1/majors/velit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"major_name":"velit","image_path":"ut"}'
+    -d '{"major_name":"ab","image_path":"dolorem"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/majors/reiciendis"
+    "http://localhost:8000/api/v1/majors/velit"
 );
 
 let headers = {
@@ -810,8 +912,8 @@ let headers = {
 };
 
 let body = {
-    "major_name": "velit",
-    "image_path": "ut"
+    "major_name": "ab",
+    "image_path": "dolorem"
 }
 
 fetch(url, {
@@ -873,13 +975,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/v1/majors/alias" \
+    "http://localhost:8000/api/v1/majors/qui" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"voluptate"}'
+    -d '{"int":"et"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/majors/alias"
+    "http://localhost:8000/api/v1/majors/qui"
 );
 
 let headers = {
@@ -888,7 +990,7 @@ let headers = {
 };
 
 let body = {
-    "int": "voluptate"
+    "int": "et"
 }
 
 fetch(url, {
@@ -1034,13 +1136,13 @@ data: [{
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/v1/organizations/quidem" \
+    -G "http://localhost:8000/api/v1/organizations/sed" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"suscipit"}'
+    -d '{"int":"maiores"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/organizations/quidem"
+    "http://localhost:8000/api/v1/organizations/sed"
 );
 
 let headers = {
@@ -1049,7 +1151,7 @@ let headers = {
 };
 
 let body = {
-    "int": "suscipit"
+    "int": "maiores"
 }
 
 fetch(url, {
@@ -1116,7 +1218,7 @@ The id of the organization.</p>
     "http://localhost:8000/api/v1/organizations" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"owner_id":8,"org_name":"quia","phones":"odit","description":"voluptatem","tax_id":12,"address":"mollitia","logo_path":"deserunt","cover_path":"et"}'
+    -d '{"owner_id":19,"org_name":"libero","phones":"eos","description":"dignissimos","tax_id":3,"address":"aut","logo_path":"natus","cover_path":"ut"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/organizations"
@@ -1128,14 +1230,14 @@ let headers = {
 };
 
 let body = {
-    "owner_id": 8,
-    "org_name": "quia",
-    "phones": "odit",
-    "description": "voluptatem",
-    "tax_id": 12,
-    "address": "mollitia",
-    "logo_path": "deserunt",
-    "cover_path": "et"
+    "owner_id": 19,
+    "org_name": "libero",
+    "phones": "eos",
+    "description": "dignissimos",
+    "tax_id": 3,
+    "address": "aut",
+    "logo_path": "natus",
+    "cover_path": "ut"
 }
 
 fetch(url, {
@@ -1228,13 +1330,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/v1/organizations/esse" \
+    "http://localhost:8000/api/v1/organizations/nisi" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"owner_id":7,"org_name":"provident","phones":"illo","description":"quasi","tax_id":6,"address":"ut","logo_path":"occaecati","cover_path":"labore"}'
+    -d '{"owner_id":13,"org_name":"amet","phones":"reiciendis","description":"omnis","tax_id":4,"address":"autem","logo_path":"molestiae","cover_path":"doloremque"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/organizations/esse"
+    "http://localhost:8000/api/v1/organizations/nisi"
 );
 
 let headers = {
@@ -1243,14 +1345,14 @@ let headers = {
 };
 
 let body = {
-    "owner_id": 7,
-    "org_name": "provident",
-    "phones": "illo",
-    "description": "quasi",
-    "tax_id": 6,
-    "address": "ut",
-    "logo_path": "occaecati",
-    "cover_path": "labore"
+    "owner_id": 13,
+    "org_name": "amet",
+    "phones": "reiciendis",
+    "description": "omnis",
+    "tax_id": 4,
+    "address": "autem",
+    "logo_path": "molestiae",
+    "cover_path": "doloremque"
 }
 
 fetch(url, {
@@ -1349,13 +1451,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/v1/organizations/nobis" \
+    "http://localhost:8000/api/v1/organizations/cupiditate" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"soluta"}'
+    -d '{"int":"adipisci"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/organizations/nobis"
+    "http://localhost:8000/api/v1/organizations/cupiditate"
 );
 
 let headers = {
@@ -1364,7 +1466,7 @@ let headers = {
 };
 
 let body = {
-    "int": "soluta"
+    "int": "adipisci"
 }
 
 fetch(url, {
@@ -1549,313 +1651,313 @@ fetch(url, {
         "updated_at": null,
         "recruitment_news": [
             {
-                "id": 3,
-                "org_id": 4,
-                "author_id": 4,
-                "major_id": 1,
-                "title": "Remote NodeJS",
-                "content": "Cần tuyển Id cupiditate sit incidunt quia. In dicta unde sequi et et. Aut dolor atque deleniti ut quia labore nulla illo.",
-                "address": "1011 Phố Cam Thiện Phương, Xã 68, Quận Tiếp Ty Trí\nBình Thuận",
-                "city": "Cần Thơ",
-                "work_type": "Fulltime",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 4,
-                    "owner_id": 2,
-                    "org_name": "Công ty Bá and Sons",
-                    "phones": "(099)892-6369",
-                    "description": null,
-                    "tax_id": "58011",
-                    "address": "95, Ấp Thịnh An Khương, Xã 52, Quận Ngọc Kim\nBà Rịa - Vũng Tàu",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 4,
-                "org_id": 8,
-                "author_id": 1,
-                "major_id": 1,
-                "title": "Part-time Ruby",
-                "content": "Cần tuyển Molestiae architecto reiciendis omnis recusandae vero ipsam aliquam beatae. Debitis ut et hic ratione animi et ex incidunt. Recusandae et tempore nemo aut laboriosam ut debitis.",
-                "address": "59 Phố Xuân, Phường Cơ, Huyện Trương\nHà Nội",
-                "city": "Hồ Chí Minh",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 8,
-                    "owner_id": 3,
-                    "org_name": "Công ty Mang LLC",
-                    "phones": "0167 653 0061",
-                    "description": null,
-                    "tax_id": "5636",
-                    "address": "335 Phố Lương Tuyết Lan, Xã 9, Quận Trương Ca\nHà Nội",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 5,
-                "org_id": 4,
-                "author_id": 5,
-                "major_id": 1,
-                "title": "Remote Java",
-                "content": "Cần tuyển Neque qui quae magni quidem culpa voluptate. Consequatur corrupti eligendi minus. Quae harum tenetur blanditiis quo.",
-                "address": "2776 Phố Ân Bửu Đào, Xã Thư Tân, Quận Sâm\nBình Phước",
-                "city": "Hồ Chí Minh",
-                "work_type": "Part-time",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 4,
-                    "owner_id": 2,
-                    "org_name": "Công ty Bá and Sons",
-                    "phones": "(099)892-6369",
-                    "description": null,
-                    "tax_id": "58011",
-                    "address": "95, Ấp Thịnh An Khương, Xã 52, Quận Ngọc Kim\nBà Rịa - Vũng Tàu",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 6,
+                "id": 2,
                 "org_id": 2,
-                "author_id": 4,
-                "major_id": 1,
-                "title": "Part-time Ruby",
-                "content": "Cần tuyển Minus in dolorum enim sapiente incidunt voluptatem eius molestiae. Neque ut provident molestias enim dolorem quae. Assumenda et est tempora rem non autem ut. Accusantium qui ea dolorem eligendi.",
-                "address": "6729 Phố Bùi Quân Diệp, Ấp Bùi Thuận, Quận Thy Điệp\nHồ Chí Minh",
-                "city": "Hà Nội",
-                "work_type": "Part-time",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 2,
-                    "owner_id": 1,
-                    "org_name": "Công ty Đinh, Khâu and Quản",
-                    "phones": "039-237-2533",
-                    "description": null,
-                    "tax_id": "56592",
-                    "address": "4, Ấp Tạ Thuận, Phường Hiền Hán, Huyện 7\nSơn La",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 7,
-                "org_id": 5,
-                "author_id": 8,
-                "major_id": 1,
-                "title": "Part-time .Net",
-                "content": "Cần tuyển Blanditiis quam non suscipit consequatur cumque. Odio rerum sed amet magnam dolor libero animi. Itaque voluptate ut voluptatem numquam. Fuga dolorem perspiciatis optio et quo vitae et.",
-                "address": "350 Phố Duyên, Phường Quyền, Quận Cát Chi\nHồ Chí Minh",
-                "city": "Hải Phòng",
-                "work_type": "Part-time",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 5,
-                    "owner_id": 1,
-                    "org_name": "Công ty Cát-Cù",
-                    "phones": "059-475-0363",
-                    "description": null,
-                    "tax_id": "8125",
-                    "address": "2475 Phố Đoàn, Phường 4, Quận Vừ Thi Khai\nĐà Nẵng",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 17,
-                "org_id": 6,
                 "author_id": 9,
                 "major_id": 1,
-                "title": "Fulltime ReactJS",
-                "content": "Cần tuyển Voluptates molestiae adipisci aliquid. Pariatur perspiciatis sit sint aut beatae omnis. Molestiae reprehenderit omnis pariatur rem.",
-                "address": "9, Thôn Du Hiền, Thôn Giả Thủy, Quận Bùi Nga Lý\nQuảng Ngãi",
-                "city": "Đà Nẵng",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 6,
-                    "owner_id": 3,
-                    "org_name": "Công ty La PLC",
-                    "phones": "84-75-563-7508",
-                    "description": null,
-                    "tax_id": "54749",
-                    "address": "1329 Phố Vừ, Thôn Khuất Tiển, Huyện Khê Sĩ\nHà Nội",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 0,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 18,
-                "org_id": 6,
-                "author_id": 5,
-                "major_id": 1,
-                "title": "Part-time Java",
-                "content": "Cần tuyển Ut magni quam eum quae expedita praesentium voluptatem. Atque sapiente laboriosam iste error est eum eius. Explicabo earum facilis adipisci.",
-                "address": "6489, Thôn Bửu Thơ, Xã 3, Huyện Thơ Ngôn\nHà Giang",
+                "title": "Part-time .Net",
+                "content": "Cần tuyển Est maxime officia provident quas. Dolores ducimus nulla non tempora quia recusandae.",
+                "address": "8463, Ấp Phượng, Xã 16, Quận Nhiệm Ty Dũng\nHậu Giang",
                 "city": "Cần Thơ",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 6,
-                    "owner_id": 3,
-                    "org_name": "Công ty La PLC",
-                    "phones": "84-75-563-7508",
-                    "description": null,
-                    "tax_id": "54749",
-                    "address": "1329 Phố Vừ, Thôn Khuất Tiển, Huyện Khê Sĩ\nHà Nội",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 0,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 22,
-                "org_id": 3,
-                "author_id": 8,
-                "major_id": 1,
-                "title": "Remote ReactJS",
-                "content": "Cần tuyển A reiciendis ut ut facilis mollitia quo dolores et. Vel amet omnis magnam rerum.",
-                "address": "6700 Phố Lỳ, Phường Bạc, Quận Phùng Trác Dao\nHà Nội",
-                "city": "Đà Nẵng",
-                "work_type": "Part-time",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 3,
-                    "owner_id": 9,
-                    "org_name": "Công ty Phó-Cái",
-                    "phones": "(0510) 703 9459",
-                    "description": null,
-                    "tax_id": "743410",
-                    "address": "793, Thôn Hy Bình, Thôn Lã Nhiên, Quận Huỳnh Trân Kiên\nLào Cai",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 23,
-                "org_id": 9,
-                "author_id": 1,
-                "major_id": 1,
-                "title": "Remote Ruby",
-                "content": "Cần tuyển Ipsum et doloremque quaerat et animi aut. Quis ab vel eos.",
-                "address": "7340 Phố Cấn Đoàn Trinh, Xã Tăng Ngôn Nguyệt, Huyện Chiêm Đăng\nĐắk Lắk",
-                "city": "Hồ Chí Minh",
                 "work_type": "Fulltime",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 9,
-                    "owner_id": 3,
-                    "org_name": "Công ty Lều-Hàng",
-                    "phones": "84-127-072-3782",
-                    "description": null,
-                    "tax_id": "42926",
-                    "address": "7, Ấp Đường Hậu, Xã Chung, Huyện Thạch\nCao Bằng",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 0,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 26,
-                "org_id": 2,
-                "author_id": 6,
-                "major_id": 1,
-                "title": "Fulltime NodeJS",
-                "content": "Cần tuyển Asperiores harum reiciendis esse excepturi nam sapiente. Dolores fuga qui sint recusandae quo. Veniam quis facilis maxime ipsa consequatur. Perferendis omnis aut sapiente non.",
-                "address": "31 Phố Thái Linh Hội, Phường Phong Đan, Huyện Hy Hòa\nHồ Chí Minh",
-                "city": "Hồ Chí Minh",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
                 "org": {
                     "id": 2,
                     "owner_id": 1,
-                    "org_name": "Công ty Đinh, Khâu and Quản",
-                    "phones": "039-237-2533",
+                    "org_name": "Công ty Bế-Bá",
+                    "phones": "84-57-069-8209",
                     "description": null,
-                    "tax_id": "56592",
-                    "address": "4, Ấp Tạ Thuận, Phường Hiền Hán, Huyện 7\nSơn La",
+                    "tax_id": "60865",
+                    "address": "70 Phố Hàng Quân Bắc, Xã Khương Việt Thống, Quận Điền\nNam Định",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 3,
+                "org_id": 2,
+                "author_id": 10,
+                "major_id": 1,
+                "title": "Part-time Java",
+                "content": "Cần tuyển Vitae voluptas error quia. Suscipit fugiat est neque quia quia placeat. Rerum autem unde provident quia in et. Accusantium necessitatibus qui magnam omnis.",
+                "address": "7 Phố Mạc, Phường 6, Quận Phi Vũ\nPhú Thọ",
+                "city": "Hải Phòng",
+                "work_type": "Remote",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 2,
+                    "owner_id": 1,
+                    "org_name": "Công ty Bế-Bá",
+                    "phones": "84-57-069-8209",
+                    "description": null,
+                    "tax_id": "60865",
+                    "address": "70 Phố Hàng Quân Bắc, Xã Khương Việt Thống, Quận Điền\nNam Định",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 8,
+                "org_id": 4,
+                "author_id": 9,
+                "major_id": 1,
+                "title": "Remote ReactJS",
+                "content": "Cần tuyển Deleniti commodi et repellendus. Adipisci rerum illo officiis iure animi soluta tenetur. Vel nam culpa odit delectus tempore dolorem. Dolorem explicabo odit ut.",
+                "address": "9, Ấp Chi Hoàn, Phường 4, Quận Đoàn Tuyến\nTây Ninh",
+                "city": "Hà Nội",
+                "work_type": "Remote",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 4,
+                    "owner_id": 5,
+                    "org_name": "Công ty Vừ, Bế and Bình",
+                    "phones": "0510 451 3735",
+                    "description": null,
+                    "tax_id": "18403",
+                    "address": "26 Phố Phi, Xã Lý Kim Viên, Quận Ánh\nGia Lai",
                     "logo_path": "public\/docs\/logo.png",
                     "cover_path": "public\/docs\/logo.png",
                     "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 12,
+                "org_id": 10,
+                "author_id": 7,
+                "major_id": 1,
+                "title": "Fulltime NodeJS",
+                "content": "Cần tuyển Incidunt laboriosam qui minus aut magnam recusandae dolore. Blanditiis molestiae laudantium recusandae vero a ipsam. Aliquam fugit aperiam nesciunt ea aut rerum consequatur et.",
+                "address": "3218 Phố Lại Thiên Tâm, Phường Đôn Lợi Phụng, Huyện Loan\nHà Nội",
+                "city": "Hải Phòng",
+                "work_type": "Remote",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 10,
+                    "owner_id": 4,
+                    "org_name": "Công ty Nhiệm and Sons",
+                    "phones": "(092) 328 8654",
+                    "description": null,
+                    "tax_id": "2766",
+                    "address": "2307 Phố Viên Vĩ Quyết, Xã Điền, Quận Đổng Đan\nThái Nguyên",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 13,
+                "org_id": 7,
+                "author_id": 10,
+                "major_id": 1,
+                "title": "Part-time .Net",
+                "content": "Cần tuyển Molestiae aliquam sit voluptates excepturi itaque ipsam ut. Molestiae voluptate voluptas velit optio molestiae aliquid ut exercitationem.",
+                "address": "4698, Thôn 8, Phường 54, Huyện Chu Hà\nBắc Giang",
+                "city": "Hà Nội",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 7,
+                    "owner_id": 1,
+                    "org_name": "Công ty An PLC",
+                    "phones": "+84-55-056-9978",
+                    "description": null,
+                    "tax_id": "86563",
+                    "address": "8 Phố Khổng, Thôn Mai Anh, Huyện 28\nNinh Bình",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 14,
+                "org_id": 4,
+                "author_id": 6,
+                "major_id": 1,
+                "title": "Part-time Ruby",
+                "content": "Cần tuyển Aut amet autem ut exercitationem. Maiores sunt rerum ut et eveniet. Velit perspiciatis esse commodi voluptas. Ut alias omnis quisquam quo eveniet quibusdam soluta.",
+                "address": "38 Phố Giao, Xã 1, Huyện Văn Khê\nHải Phòng",
+                "city": "Hải Phòng",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 4,
+                    "owner_id": 5,
+                    "org_name": "Công ty Vừ, Bế and Bình",
+                    "phones": "0510 451 3735",
+                    "description": null,
+                    "tax_id": "18403",
+                    "address": "26 Phố Phi, Xã Lý Kim Viên, Quận Ánh\nGia Lai",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 15,
+                "org_id": 4,
+                "author_id": 7,
+                "major_id": 1,
+                "title": "Remote NodeJS",
+                "content": "Cần tuyển Unde perferendis sunt voluptatem voluptates est. Tempore et sit ut. Esse animi labore placeat facere ratione ut qui laudantium. Non officiis quia quia fugiat numquam ut est ut.",
+                "address": "44 Phố Hà Cẩn Thục, Xã 89, Huyện Diêm Sử Thắm\nBình Dương",
+                "city": "Đà Nẵng",
+                "work_type": "Fulltime",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 4,
+                    "owner_id": 5,
+                    "org_name": "Công ty Vừ, Bế and Bình",
+                    "phones": "0510 451 3735",
+                    "description": null,
+                    "tax_id": "18403",
+                    "address": "26 Phố Phi, Xã Lý Kim Viên, Quận Ánh\nGia Lai",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 16,
+                "org_id": 7,
+                "author_id": 9,
+                "major_id": 1,
+                "title": "Part-time NodeJS",
+                "content": "Cần tuyển Quae quam voluptatem aperiam voluptatem ea aliquid. Modi quia iure facilis et ab velit aliquid est. Aut sint cumque veniam non. Non nam ad eos quidem ut facere dolorem.",
+                "address": "4247 Phố Thịnh Vinh Phúc, Phường Tuyền, Quận Ngụy\nCần Thơ",
+                "city": "Hồ Chí Minh",
+                "work_type": "Remote",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 7,
+                    "owner_id": 1,
+                    "org_name": "Công ty An PLC",
+                    "phones": "+84-55-056-9978",
+                    "description": null,
+                    "tax_id": "86563",
+                    "address": "8 Phố Khổng, Thôn Mai Anh, Huyện 28\nNinh Bình",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 20,
+                "org_id": 3,
+                "author_id": 2,
+                "major_id": 1,
+                "title": "Fulltime ReactJS",
+                "content": "Cần tuyển Dicta illo excepturi nobis beatae. Laudantium amet voluptatem expedita et. Odit veritatis sunt voluptatem velit.",
+                "address": "6082, Thôn Bảo, Phường Kiều, Huyện Tiếp Khiếu\nBắc Giang",
+                "city": "Hải Phòng",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 3,
+                    "owner_id": 1,
+                    "org_name": "Công ty Lỳ, Lỡ and Giáp",
+                    "phones": "(84)(56)496-4003",
+                    "description": null,
+                    "tax_id": "56638",
+                    "address": "72 Phố Nông Khiêm San, Xã Bá, Quận Hình Sơn Ca\nGia Lai",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 21,
+                "org_id": 2,
+                "author_id": 10,
+                "major_id": 1,
+                "title": "Remote .Net",
+                "content": "Cần tuyển Quia iusto dolorum maxime quos sunt fugit. Numquam consequatur maiores dolorum ab iure voluptatem. Fugit sunt blanditiis numquam non quod et amet. Id officia distinctio ipsum totam.",
+                "address": "8 Phố Hoa Khoa Thương, Phường Hiên, Huyện 65\nHà Nội",
+                "city": "Hồ Chí Minh",
+                "work_type": "Remote",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 2,
+                    "owner_id": 1,
+                    "org_name": "Công ty Bế-Bá",
+                    "phones": "84-57-069-8209",
+                    "description": null,
+                    "tax_id": "60865",
+                    "address": "70 Phố Hàng Quân Bắc, Xã Khương Việt Thống, Quận Điền\nNam Định",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
                 }
             }
         ]
@@ -1868,313 +1970,313 @@ fetch(url, {
         "updated_at": null,
         "recruitment_news": [
             {
-                "id": 1,
-                "org_id": 1,
+                "id": 5,
+                "org_id": 8,
+                "author_id": 3,
+                "major_id": 2,
+                "title": "Remote Java",
+                "content": "Cần tuyển Et nihil rerum eveniet placeat et molestias est nihil. Quaerat qui ducimus rerum provident mollitia dignissimos dolores libero. Autem dolorem saepe consequatur velit enim expedita.",
+                "address": "43 Phố Khoa, Phường Giả Thanh Thy, Quận 5\nHải Phòng",
+                "city": "Hồ Chí Minh",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 8,
+                    "owner_id": 8,
+                    "org_name": "Công ty Hùng LLC",
+                    "phones": "84-120-770-4958",
+                    "description": null,
+                    "tax_id": "10738",
+                    "address": "83 Phố Triệu Nhu Ân, Thôn Dao Khải, Quận An\nCần Thơ",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 7,
+                "org_id": 2,
+                "author_id": 6,
+                "major_id": 2,
+                "title": "Fulltime NodeJS",
+                "content": "Cần tuyển Asperiores vero eius cum saepe unde rem. Deserunt ad quaerat consequuntur cumque ab. Tempora exercitationem qui est totam eos debitis et. Et autem fugit aut nulla aut.",
+                "address": "49, Ấp Vĩnh Khu, Phường 8, Quận Đan\nĐồng Tháp",
+                "city": "Cần Thơ",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 2,
+                    "owner_id": 1,
+                    "org_name": "Công ty Bế-Bá",
+                    "phones": "84-57-069-8209",
+                    "description": null,
+                    "tax_id": "60865",
+                    "address": "70 Phố Hàng Quân Bắc, Xã Khương Việt Thống, Quận Điền\nNam Định",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 9,
+                "org_id": 2,
+                "author_id": 3,
+                "major_id": 2,
+                "title": "Fulltime Ruby",
+                "content": "Cần tuyển Occaecati tempore vel soluta qui ad modi sed possimus. Aut voluptatum molestias vel non aliquid fugiat reprehenderit. Odit et ut quidem officia. Quia earum iusto corporis quae.",
+                "address": "4561, Ấp Lưu Nhiên, Xã 11, Quận Phượng Đậu\nPhú Yên",
+                "city": "Hà Nội",
+                "work_type": "Fulltime",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 2,
+                    "owner_id": 1,
+                    "org_name": "Công ty Bế-Bá",
+                    "phones": "84-57-069-8209",
+                    "description": null,
+                    "tax_id": "60865",
+                    "address": "70 Phố Hàng Quân Bắc, Xã Khương Việt Thống, Quận Điền\nNam Định",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 19,
+                "org_id": 10,
                 "author_id": 8,
                 "major_id": 2,
                 "title": "Part-time Java",
-                "content": "Cần tuyển Aut ea nihil amet est. Impedit totam qui ipsam veniam. Excepturi ab deserunt et earum nisi magnam laboriosam. Similique excepturi et voluptas magni. Nulla sint quidem eum id earum.",
-                "address": "571 Phố Bồ Ánh Tú, Phường 6, Huyện Phượng Trung\nTây Ninh",
-                "city": "Hồ Chí Minh",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 1,
-                    "owner_id": 10,
-                    "org_name": "Công ty Cái, Phạm and Tăng",
-                    "phones": "(84)(164)829-1230",
-                    "description": null,
-                    "tax_id": "77536",
-                    "address": "8227 Phố Đặng Khanh Hiệp, Phường Lâm Giả, Huyện Bửu\nQuảng Ninh",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 10,
-                "org_id": 4,
-                "author_id": 4,
-                "major_id": 2,
-                "title": "Remote Ruby",
-                "content": "Cần tuyển Corporis esse fuga et neque. Voluptatibus omnis quaerat qui cumque sint enim quasi. Dolore dolorem est numquam animi. Fuga sed ipsam suscipit et est quisquam ut.",
-                "address": "246, Thôn Luận Tôn, Xã Thanh, Quận Vân\nBến Tre",
-                "city": "Cần Thơ",
-                "work_type": "Part-time",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 4,
-                    "owner_id": 2,
-                    "org_name": "Công ty Bá and Sons",
-                    "phones": "(099)892-6369",
-                    "description": null,
-                    "tax_id": "58011",
-                    "address": "95, Ấp Thịnh An Khương, Xã 52, Quận Ngọc Kim\nBà Rịa - Vũng Tàu",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 11,
-                "org_id": 1,
-                "author_id": 1,
-                "major_id": 2,
-                "title": "Remote ReactJS",
-                "content": "Cần tuyển Rerum accusantium aut quas sint eos. Rem aut rem vero dolores nostrum. Praesentium quis recusandae in.",
-                "address": "961 Phố Hồng Ty Ngọc, Phường Đàn Giao, Quận 30\nHồ Chí Minh",
+                "content": "Cần tuyển Quis molestias aperiam aperiam repellendus aut deleniti. Soluta laborum id iusto accusantium. Expedita dolorum nesciunt quia et modi sit unde.",
+                "address": "8, Thôn Phát Nghiêm, Xã Hạ, Huyện Sa Trác\nĐồng Nai",
                 "city": "Cần Thơ",
                 "work_type": "Fulltime",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
                 "org": {
-                    "id": 1,
-                    "owner_id": 10,
-                    "org_name": "Công ty Cái, Phạm and Tăng",
-                    "phones": "(84)(164)829-1230",
+                    "id": 10,
+                    "owner_id": 4,
+                    "org_name": "Công ty Nhiệm and Sons",
+                    "phones": "(092) 328 8654",
                     "description": null,
-                    "tax_id": "77536",
-                    "address": "8227 Phố Đặng Khanh Hiệp, Phường Lâm Giả, Huyện Bửu\nQuảng Ninh",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 12,
-                "org_id": 2,
-                "author_id": 5,
-                "major_id": 2,
-                "title": "Fulltime ReactJS",
-                "content": "Cần tuyển Dolor commodi eos laborum alias sit. Nobis non cupiditate sed quos illo. Deserunt veniam fugit fugit provident excepturi. Numquam sit deserunt est qui eligendi. Accusantium molestiae et ex iste.",
-                "address": "51 Phố Bàng Ngọc Ngôn, Phường 59, Quận Khưu\nHà Nội",
-                "city": "Hà Nội",
-                "work_type": "Part-time",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 2,
-                    "owner_id": 1,
-                    "org_name": "Công ty Đinh, Khâu and Quản",
-                    "phones": "039-237-2533",
-                    "description": null,
-                    "tax_id": "56592",
-                    "address": "4, Ấp Tạ Thuận, Phường Hiền Hán, Huyện 7\nSơn La",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 13,
-                "org_id": 9,
-                "author_id": 10,
-                "major_id": 2,
-                "title": "Remote Java",
-                "content": "Cần tuyển Quisquam sunt aut cum nulla quia provident error. Tempore sed consequatur facere occaecati. Nam est perspiciatis ad earum eum.",
-                "address": "90 Phố Chiêu, Xã 31, Huyện 6\nHải Phòng",
-                "city": "Hải Phòng",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 9,
-                    "owner_id": 3,
-                    "org_name": "Công ty Lều-Hàng",
-                    "phones": "84-127-072-3782",
-                    "description": null,
-                    "tax_id": "42926",
-                    "address": "7, Ấp Đường Hậu, Xã Chung, Huyện Thạch\nCao Bằng",
+                    "tax_id": "2766",
+                    "address": "2307 Phố Viên Vĩ Quyết, Xã Điền, Quận Đổng Đan\nThái Nguyên",
                     "logo_path": "public\/docs\/logo.png",
                     "cover_path": "public\/docs\/logo.png",
                     "is_verify": 0,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
                 }
             },
             {
-                "id": 16,
-                "org_id": 2,
-                "author_id": 6,
-                "major_id": 2,
-                "title": "Fulltime Ruby",
-                "content": "Cần tuyển Ea cum aut unde possimus. Et maxime quis ea adipisci dolores veniam et. Sed dicta magnam totam voluptas nobis et sit. Nobis perspiciatis quibusdam iure sequi quis qui.",
-                "address": "16 Phố Lý Chiến Bổng, Xã 94, Quận Tăng Thương\nGia Lai",
-                "city": "Hà Nội",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 2,
-                    "owner_id": 1,
-                    "org_name": "Công ty Đinh, Khâu and Quản",
-                    "phones": "039-237-2533",
-                    "description": null,
-                    "tax_id": "56592",
-                    "address": "4, Ấp Tạ Thuận, Phường Hiền Hán, Huyện 7\nSơn La",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 20,
-                "org_id": 6,
-                "author_id": 1,
-                "major_id": 2,
-                "title": "Part-time Java",
-                "content": "Cần tuyển Consequatur sit numquam dignissimos animi vel non nam magni. Non ex neque hic vero eaque autem. Eaque explicabo quis recusandae eius repellendus quo nostrum.",
-                "address": "606 Phố Kim Tùng Kiều, Phường Trâm Quyên, Huyện 8\nPhú Yên",
-                "city": "Đà Nẵng",
-                "work_type": "Fulltime",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 6,
-                    "owner_id": 3,
-                    "org_name": "Công ty La PLC",
-                    "phones": "84-75-563-7508",
-                    "description": null,
-                    "tax_id": "54749",
-                    "address": "1329 Phố Vừ, Thôn Khuất Tiển, Huyện Khê Sĩ\nHà Nội",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 0,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 21,
-                "org_id": 4,
-                "author_id": 6,
-                "major_id": 2,
-                "title": "Fulltime ReactJS",
-                "content": "Cần tuyển Adipisci repellendus at magni. Maxime in et voluptatem quas expedita. Rerum corporis consequatur aliquam voluptatum quod. Debitis accusamus omnis ipsum earum magnam nobis vel.",
-                "address": "7, Thôn 4, Xã 7, Huyện Cao Dương\nThừa Thiên Huế",
-                "city": "Cần Thơ",
-                "work_type": "Fulltime",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 4,
-                    "owner_id": 2,
-                    "org_name": "Công ty Bá and Sons",
-                    "phones": "(099)892-6369",
-                    "description": null,
-                    "tax_id": "58011",
-                    "address": "95, Ấp Thịnh An Khương, Xã 52, Quận Ngọc Kim\nBà Rịa - Vũng Tàu",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 24,
-                "org_id": 2,
-                "author_id": 4,
-                "major_id": 2,
-                "title": "Remote Java",
-                "content": "Cần tuyển Nostrum sequi maiores cupiditate autem laudantium et quo provident. Vero aut aut quo enim. Magni necessitatibus cumque illum labore est quis suscipit est. Tenetur optio quia consequatur amet.",
-                "address": "8868, Thôn Khưu Phụng Nhân, Phường Hà, Huyện Mẫn Thiên\nBình Thuận",
-                "city": "Đà Nẵng",
-                "work_type": "Part-time",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 2,
-                    "owner_id": 1,
-                    "org_name": "Công ty Đinh, Khâu and Quản",
-                    "phones": "039-237-2533",
-                    "description": null,
-                    "tax_id": "56592",
-                    "address": "4, Ấp Tạ Thuận, Phường Hiền Hán, Huyện 7\nSơn La",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 27,
-                "org_id": 1,
+                "id": 22,
+                "org_id": 8,
                 "author_id": 1,
                 "major_id": 2,
                 "title": "Part-time NodeJS",
-                "content": "Cần tuyển Ipsa harum hic maxime quibusdam quisquam architecto. Facere aut tenetur unde velit praesentium qui officia.",
-                "address": "276 Phố Khoa Viên Phi, Ấp Mai Hỷ, Quận 75\nHà Tĩnh",
+                "content": "Cần tuyển Quasi alias nihil tenetur. Voluptatibus et nihil nihil tempore accusamus natus provident. Hic doloremque repellendus ducimus qui corrupti nihil. Iusto iste voluptatem blanditiis magnam eius nisi.",
+                "address": "16 Phố Dã, Xã Chế, Quận Lý Trinh Ngọc\nBắc Kạn",
                 "city": "Cần Thơ",
-                "work_type": "Fulltime",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
                 "org": {
-                    "id": 1,
-                    "owner_id": 10,
-                    "org_name": "Công ty Cái, Phạm and Tăng",
-                    "phones": "(84)(164)829-1230",
+                    "id": 8,
+                    "owner_id": 8,
+                    "org_name": "Công ty Hùng LLC",
+                    "phones": "84-120-770-4958",
                     "description": null,
-                    "tax_id": "77536",
-                    "address": "8227 Phố Đặng Khanh Hiệp, Phường Lâm Giả, Huyện Bửu\nQuảng Ninh",
+                    "tax_id": "10738",
+                    "address": "83 Phố Triệu Nhu Ân, Thôn Dao Khải, Quận An\nCần Thơ",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 31,
+                "org_id": 3,
+                "author_id": 8,
+                "major_id": 2,
+                "title": "Fulltime Java",
+                "content": "Cần tuyển Ut et molestiae enim quia expedita nemo ad. Eum ut itaque et aliquam eveniet unde cum. Voluptas ex laboriosam saepe voluptas. Autem sit ut ullam beatae.",
+                "address": "736, Thôn 7, Phường Vượng Hy, Quận Thạch Khánh Lâm\nPhú Thọ",
+                "city": "Đà Nẵng",
+                "work_type": "Fulltime",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 3,
+                    "owner_id": 1,
+                    "org_name": "Công ty Lỳ, Lỡ and Giáp",
+                    "phones": "(84)(56)496-4003",
+                    "description": null,
+                    "tax_id": "56638",
+                    "address": "72 Phố Nông Khiêm San, Xã Bá, Quận Hình Sơn Ca\nGia Lai",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 32,
+                "org_id": 9,
+                "author_id": 7,
+                "major_id": 2,
+                "title": "Remote ReactJS",
+                "content": "Cần tuyển Explicabo consequuntur porro consectetur ut cumque veniam nobis optio. Voluptas corrupti omnis consectetur. Molestiae qui quis neque quidem.",
+                "address": "59, Thôn Đình Phượng, Phường Tú, Quận Bích Ngô\nThanh Hóa",
+                "city": "Cần Thơ",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 9,
+                    "owner_id": 6,
+                    "org_name": "Công ty Đồng, Quách and Mộc",
+                    "phones": "84-166-984-1562",
+                    "description": null,
+                    "tax_id": "35238",
+                    "address": "80 Phố Chiêm, Phường Võ, Huyện Phương Cấn\nHải Phòng",
                     "logo_path": "public\/docs\/logo.png",
                     "cover_path": "public\/docs\/logo.png",
                     "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 33,
+                "org_id": 8,
+                "author_id": 8,
+                "major_id": 2,
+                "title": "Part-time ReactJS",
+                "content": "Cần tuyển Et maiores nihil sed. Saepe ut qui error qui minus. Maiores porro qui et. Architecto deserunt magnam blanditiis incidunt voluptas nam. Quis aut veniam pariatur dignissimos alias.",
+                "address": "7567 Phố Bàng Huyền Khôi, Phường 3, Huyện 7\nLạng Sơn",
+                "city": "Cần Thơ",
+                "work_type": "Remote",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 8,
+                    "owner_id": 8,
+                    "org_name": "Công ty Hùng LLC",
+                    "phones": "84-120-770-4958",
+                    "description": null,
+                    "tax_id": "10738",
+                    "address": "83 Phố Triệu Nhu Ân, Thôn Dao Khải, Quận An\nCần Thơ",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 38,
+                "org_id": 9,
+                "author_id": 5,
+                "major_id": 2,
+                "title": "Part-time Java",
+                "content": "Cần tuyển Natus maiores est dolorem unde quos. Id vel qui numquam doloribus sint aut consectetur. Aut dolor et nostrum ut. Culpa perspiciatis ab iure recusandae quis.",
+                "address": "142 Phố Trà Nhi Tân, Xã Ý Ma, Huyện 73\nBến Tre",
+                "city": "Đà Nẵng",
+                "work_type": "Fulltime",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 9,
+                    "owner_id": 6,
+                    "org_name": "Công ty Đồng, Quách and Mộc",
+                    "phones": "84-166-984-1562",
+                    "description": null,
+                    "tax_id": "35238",
+                    "address": "80 Phố Chiêm, Phường Võ, Huyện Phương Cấn\nHải Phòng",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 41,
+                "org_id": 6,
+                "author_id": 10,
+                "major_id": 2,
+                "title": "Part-time NodeJS",
+                "content": "Cần tuyển Exercitationem reiciendis aut est non. Quis sint aut ut ut cum. Asperiores ut rerum error totam non omnis. Officiis rerum repellat expedita sit.",
+                "address": "8, Ấp 5, Xã Nhiệm, Quận Án Phát\nĐắk Nông",
+                "city": "Hải Phòng",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 6,
+                    "owner_id": 1,
+                    "org_name": "Công ty Chế-Khương",
+                    "phones": "84-163-221-6480",
+                    "description": null,
+                    "tax_id": "73710",
+                    "address": "826, Thôn Hằng, Phường 93, Huyện 98\nBình Định",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
                 }
             }
         ]
@@ -2187,251 +2289,313 @@ fetch(url, {
         "updated_at": null,
         "recruitment_news": [
             {
-                "id": 8,
-                "org_id": 2,
-                "author_id": 7,
+                "id": 1,
+                "org_id": 10,
+                "author_id": 10,
                 "major_id": 3,
-                "title": "Part-time Java",
-                "content": "Cần tuyển Nisi quis omnis nulla explicabo. Cupiditate sit velit qui consequatur omnis. Debitis repellat eos sunt dolor fugiat ut.",
-                "address": "49, Thôn 3, Phường Đan Nhượng Cương, Quận Nghị Chưởng Dân\nThanh Hóa",
-                "city": "Đà Nẵng",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
+                "title": "Fulltime ReactJS",
+                "content": "Cần tuyển Autem voluptates architecto eligendi. Minima soluta qui reprehenderit qui. Sequi dolores ipsa et iure non amet. Nisi nobis eum et culpa quia fugiat.",
+                "address": "652 Phố Ma, Phường Kiện, Quận Trinh Hạnh\nVĩnh Phúc",
+                "city": "Hải Phòng",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 10,
+                    "owner_id": 4,
+                    "org_name": "Công ty Nhiệm and Sons",
+                    "phones": "(092) 328 8654",
+                    "description": null,
+                    "tax_id": "2766",
+                    "address": "2307 Phố Viên Vĩ Quyết, Xã Điền, Quận Đổng Đan\nThái Nguyên",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 6,
+                "org_id": 2,
+                "author_id": 4,
+                "major_id": 3,
+                "title": "Fulltime ReactJS",
+                "content": "Cần tuyển Ea consequuntur blanditiis temporibus omnis. Non omnis iste aspernatur ut dolorum. Quasi velit aliquam tempore voluptatem minus eum consequuntur.",
+                "address": "538 Phố Lữ Thuận Định, Phường 1, Huyện Thành Kiên\nHà Nội",
+                "city": "Hồ Chí Minh",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
                 "org": {
                     "id": 2,
                     "owner_id": 1,
-                    "org_name": "Công ty Đinh, Khâu and Quản",
-                    "phones": "039-237-2533",
+                    "org_name": "Công ty Bế-Bá",
+                    "phones": "84-57-069-8209",
                     "description": null,
-                    "tax_id": "56592",
-                    "address": "4, Ấp Tạ Thuận, Phường Hiền Hán, Huyện 7\nSơn La",
+                    "tax_id": "60865",
+                    "address": "70 Phố Hàng Quân Bắc, Xã Khương Việt Thống, Quận Điền\nNam Định",
                     "logo_path": "public\/docs\/logo.png",
                     "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
                 }
             },
             {
-                "id": 9,
-                "org_id": 1,
-                "author_id": 10,
+                "id": 11,
+                "org_id": 7,
+                "author_id": 9,
                 "major_id": 3,
                 "title": "Part-time .Net",
-                "content": "Cần tuyển Tempore id ea et commodi ut in. Delectus et libero quibusdam. Cum odit voluptas sunt fuga aliquam impedit velit.",
-                "address": "9, Thôn Hy Hà, Xã Tống, Quận Vĩnh\nLào Cai",
+                "content": "Cần tuyển Qui et qui eaque. Eius nostrum omnis quis voluptas non dicta possimus quia. Dolor voluptatibus quas iusto perferendis beatae. Dolor et omnis excepturi et illum.",
+                "address": "99 Phố Mang Hải Cường, Xã Bồ Quốc Hiếu, Quận 11\nCần Thơ",
                 "city": "Hải Phòng",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
                 "org": {
-                    "id": 1,
-                    "owner_id": 10,
-                    "org_name": "Công ty Cái, Phạm and Tăng",
-                    "phones": "(84)(164)829-1230",
+                    "id": 7,
+                    "owner_id": 1,
+                    "org_name": "Công ty An PLC",
+                    "phones": "+84-55-056-9978",
                     "description": null,
-                    "tax_id": "77536",
-                    "address": "8227 Phố Đặng Khanh Hiệp, Phường Lâm Giả, Huyện Bửu\nQuảng Ninh",
+                    "tax_id": "86563",
+                    "address": "8 Phố Khổng, Thôn Mai Anh, Huyện 28\nNinh Bình",
                     "logo_path": "public\/docs\/logo.png",
                     "cover_path": "public\/docs\/logo.png",
                     "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
                 }
             },
             {
-                "id": 19,
-                "org_id": 10,
-                "author_id": 6,
+                "id": 23,
+                "org_id": 7,
+                "author_id": 3,
                 "major_id": 3,
-                "title": "Part-time Java",
-                "content": "Cần tuyển Dolorem illo ut praesentium sunt enim sit sed atque. Occaecati occaecati quisquam quidem sint maiores amet ut ipsam. Cupiditate inventore autem rerum iste officia.",
-                "address": "6, Thôn Kiều, Xã Lực Sinh, Quận Hậu Hàn\nGia Lai",
-                "city": "Hồ Chí Minh",
-                "work_type": "Part-time",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
+                "title": "Fulltime NodeJS",
+                "content": "Cần tuyển Qui velit quidem eos. Consequuntur est earum earum non. Et iste libero et delectus voluptatum ab.",
+                "address": "9, Ấp Tuyền Lô, Xã Đức, Quận Ty Vĩ\nLào Cai",
+                "city": "Cần Thơ",
+                "work_type": "Remote",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
                 "org": {
-                    "id": 10,
-                    "owner_id": 2,
-                    "org_name": "Công ty Thái-Đái",
-                    "phones": "(0166)513-8558",
+                    "id": 7,
+                    "owner_id": 1,
+                    "org_name": "Công ty An PLC",
+                    "phones": "+84-55-056-9978",
                     "description": null,
-                    "tax_id": "67765",
-                    "address": "894, Thôn Khánh Văn, Phường 0, Huyện Giác Lô\nBạc Liêu",
+                    "tax_id": "86563",
+                    "address": "8 Phố Khổng, Thôn Mai Anh, Huyện 28\nNinh Bình",
                     "logo_path": "public\/docs\/logo.png",
                     "cover_path": "public\/docs\/logo.png",
                     "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 25,
+                "org_id": 8,
+                "author_id": 7,
+                "major_id": 3,
+                "title": "Remote NodeJS",
+                "content": "Cần tuyển Saepe cupiditate distinctio et velit aliquam. Minus consequuntur recusandae fugit in autem hic.",
+                "address": "3045, Ấp Bàng, Xã Mộc, Huyện Giao Như Chương\nYên Bái",
+                "city": "Hải Phòng",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 8,
+                    "owner_id": 8,
+                    "org_name": "Công ty Hùng LLC",
+                    "phones": "84-120-770-4958",
+                    "description": null,
+                    "tax_id": "10738",
+                    "address": "83 Phố Triệu Nhu Ân, Thôn Dao Khải, Quận An\nCần Thơ",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
                 }
             },
             {
                 "id": 28,
-                "org_id": 5,
-                "author_id": 2,
+                "org_id": 7,
+                "author_id": 6,
                 "major_id": 3,
                 "title": "Part-time Java",
-                "content": "Cần tuyển Et consequatur aut dolorum neque. Ut odio praesentium ad autem et qui.",
-                "address": "6 Phố Lạc Anh Ân, Ấp Diêm Hành, Quận 23\nĐồng Nai",
-                "city": "Hải Phòng",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
+                "content": "Cần tuyển Odio aut aut voluptatem perferendis. Magnam repellat quis dolores unde et est qui optio. Vero eum minus vel saepe. Numquam harum tenetur minus consectetur.",
+                "address": "711 Phố Ánh Phụng Đạt, Xã Lâm Diệu Hậu, Huyện Quyền Lư\nHải Phòng",
+                "city": "Đà Nẵng",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
                 "org": {
-                    "id": 5,
+                    "id": 7,
                     "owner_id": 1,
-                    "org_name": "Công ty Cát-Cù",
-                    "phones": "059-475-0363",
+                    "org_name": "Công ty An PLC",
+                    "phones": "+84-55-056-9978",
                     "description": null,
-                    "tax_id": "8125",
-                    "address": "2475 Phố Đoàn, Phường 4, Quận Vừ Thi Khai\nĐà Nẵng",
+                    "tax_id": "86563",
+                    "address": "8 Phố Khổng, Thôn Mai Anh, Huyện 28\nNinh Bình",
                     "logo_path": "public\/docs\/logo.png",
                     "cover_path": "public\/docs\/logo.png",
                     "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
                 }
             },
             {
                 "id": 30,
-                "org_id": 6,
+                "org_id": 3,
                 "author_id": 4,
                 "major_id": 3,
-                "title": "Remote NodeJS",
-                "content": "Cần tuyển Aut rem illum repudiandae vitae aspernatur laborum. Nemo iure quo rerum consequatur tempore earum. Officiis aliquam aspernatur et rerum omnis aliquid. Deserunt aperiam voluptates et magni id unde.",
-                "address": "277, Thôn Phi, Phường Phượng Ngôn, Quận Châu Liên Thư\nKon Tum",
-                "city": "Cần Thơ",
-                "work_type": "Fulltime",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
+                "title": "Fulltime .Net",
+                "content": "Cần tuyển Libero temporibus culpa molestias tempore et qui ut. Blanditiis iusto exercitationem qui aspernatur ullam. Dignissimos ut minus omnis perspiciatis quia aperiam.",
+                "address": "6104 Phố Nghiêm Công Tuyền, Phường 75, Huyện 8\nHà Tĩnh",
+                "city": "Hải Phòng",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
                 "org": {
-                    "id": 6,
-                    "owner_id": 3,
-                    "org_name": "Công ty La PLC",
-                    "phones": "84-75-563-7508",
+                    "id": 3,
+                    "owner_id": 1,
+                    "org_name": "Công ty Lỳ, Lỡ and Giáp",
+                    "phones": "(84)(56)496-4003",
                     "description": null,
-                    "tax_id": "54749",
-                    "address": "1329 Phố Vừ, Thôn Khuất Tiển, Huyện Khê Sĩ\nHà Nội",
+                    "tax_id": "56638",
+                    "address": "72 Phố Nông Khiêm San, Xã Bá, Quận Hình Sơn Ca\nGia Lai",
                     "logo_path": "public\/docs\/logo.png",
                     "cover_path": "public\/docs\/logo.png",
                     "is_verify": 0,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
                 }
             },
             {
-                "id": 31,
+                "id": 34,
                 "org_id": 8,
-                "author_id": 10,
-                "major_id": 3,
-                "title": "Part-time Java",
-                "content": "Cần tuyển Beatae id et itaque rerum tenetur veniam ut. Enim ut quis aut nemo aut.",
-                "address": "534 Phố Đoàn Quỳnh Quyết, Ấp Hào Tài, Huyện Khải Nam\nLong An",
-                "city": "Hà Nội",
-                "work_type": "Part-time",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 8,
-                    "owner_id": 3,
-                    "org_name": "Công ty Mang LLC",
-                    "phones": "0167 653 0061",
-                    "description": null,
-                    "tax_id": "5636",
-                    "address": "335 Phố Lương Tuyết Lan, Xã 9, Quận Trương Ca\nHà Nội",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 36,
-                "org_id": 3,
-                "author_id": 5,
+                "author_id": 3,
                 "major_id": 3,
                 "title": "Fulltime ReactJS",
-                "content": "Cần tuyển Dicta voluptatum enim et quos odit quasi. Repudiandae reiciendis rerum ducimus dolores explicabo corporis. Facilis voluptate illum quasi modi magnam qui.",
-                "address": "1801, Ấp Trình Ngọc, Xã Mai, Huyện Bảo Ý\nBình Thuận",
+                "content": "Cần tuyển Facere doloremque neque harum in officiis eum. Eos rerum commodi doloremque alias accusantium et ad veniam. Eum aut vel quas debitis illo voluptatem. Non sint soluta ut mollitia et incidunt ut.",
+                "address": "9, Thôn 1, Phường Đỗ, Quận Sơn Bích Nhật\nSóc Trăng",
                 "city": "Hải Phòng",
-                "work_type": "Fulltime",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
+                "work_type": "Remote",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
                 "org": {
-                    "id": 3,
-                    "owner_id": 9,
-                    "org_name": "Công ty Phó-Cái",
-                    "phones": "(0510) 703 9459",
+                    "id": 8,
+                    "owner_id": 8,
+                    "org_name": "Công ty Hùng LLC",
+                    "phones": "84-120-770-4958",
                     "description": null,
-                    "tax_id": "743410",
-                    "address": "793, Thôn Hy Bình, Thôn Lã Nhiên, Quận Huỳnh Trân Kiên\nLào Cai",
+                    "tax_id": "10738",
+                    "address": "83 Phố Triệu Nhu Ân, Thôn Dao Khải, Quận An\nCần Thơ",
                     "logo_path": "public\/docs\/logo.png",
                     "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
                 }
             },
             {
-                "id": 39,
-                "org_id": 8,
-                "author_id": 9,
+                "id": 35,
+                "org_id": 1,
+                "author_id": 8,
                 "major_id": 3,
-                "title": "Fulltime Ruby",
-                "content": "Cần tuyển Tempore et ut voluptatum quasi atque sed. Mollitia dolorem voluptates et. Voluptatem tenetur dolorem quia voluptas earum. Et enim et doloribus itaque quidem deleniti et culpa.",
-                "address": "7023, Thôn Lợi Ty, Phường Yên Quế, Huyện 68\nLào Cai",
-                "city": "Hồ Chí Minh",
+                "title": "Part-time Ruby",
+                "content": "Cần tuyển Occaecati quia sint et nihil dolores doloremque molestias repellat. Placeat aspernatur dolor omnis est rem. Ut non debitis libero sint dolorum est odit. Molestiae ea qui quia.",
+                "address": "987 Phố Thôi Điệp Thể, Phường Trân Lư, Huyện Nhiên Lộc\nBình Dương",
+                "city": "Đà Nẵng",
                 "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
                 "org": {
-                    "id": 8,
-                    "owner_id": 3,
-                    "org_name": "Công ty Mang LLC",
-                    "phones": "0167 653 0061",
+                    "id": 1,
+                    "owner_id": 1,
+                    "org_name": "Công ty Bồ, Đậu and Lều",
+                    "phones": "064-002-5977",
                     "description": null,
-                    "tax_id": "5636",
-                    "address": "335 Phố Lương Tuyết Lan, Xã 9, Quận Trương Ca\nHà Nội",
+                    "tax_id": "9432",
+                    "address": "31, Thôn Khổng Khiếu Nghĩa, Phường Trác, Huyện Lê Trúc Tuyến\nĐồng Tháp",
                     "logo_path": "public\/docs\/logo.png",
                     "cover_path": "public\/docs\/logo.png",
                     "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 40,
+                "org_id": 5,
+                "author_id": 1,
+                "major_id": 3,
+                "title": "Part-time .Net",
+                "content": "Cần tuyển Eum aperiam aut sit provident repudiandae vel. Cum ea et odio asperiores ut quis sunt. Odio commodi sed modi earum quia molestiae error.",
+                "address": "3783, Thôn Khánh Hồng, Xã Nghị, Huyện 6\nHà Tĩnh",
+                "city": "Cần Thơ",
+                "work_type": "Remote",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 5,
+                    "owner_id": 1,
+                    "org_name": "Công ty Lâm-Lỡ",
+                    "phones": "84-127-672-5465",
+                    "description": null,
+                    "tax_id": "39296",
+                    "address": "7 Phố Cù, Xã 9, Quận Tiển\nYên Bái",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
                 }
             }
         ]
@@ -2444,282 +2608,282 @@ fetch(url, {
         "updated_at": null,
         "recruitment_news": [
             {
-                "id": 2,
-                "org_id": 1,
-                "author_id": 3,
-                "major_id": 4,
-                "title": "Part-time Ruby",
-                "content": "Cần tuyển Saepe voluptatem quo omnis in animi illum. Iusto provident placeat error. Cumque et commodi omnis eum. Nulla possimus veniam provident nisi voluptatem est voluptatem.",
-                "address": "74 Phố Thuần, Phường 3, Huyện Phúc Nhàn\nHà Nam",
-                "city": "Cần Thơ",
-                "work_type": "Part-time",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 1,
-                    "owner_id": 10,
-                    "org_name": "Công ty Cái, Phạm and Tăng",
-                    "phones": "(84)(164)829-1230",
-                    "description": null,
-                    "tax_id": "77536",
-                    "address": "8227 Phố Đặng Khanh Hiệp, Phường Lâm Giả, Huyện Bửu\nQuảng Ninh",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 14,
-                "org_id": 10,
-                "author_id": 6,
-                "major_id": 4,
-                "title": "Part-time Java",
-                "content": "Cần tuyển Est fuga rerum quo facere itaque assumenda nihil. Laboriosam omnis dolore omnis laboriosam. Sed architecto sint nobis est eveniet et dignissimos.",
-                "address": "803 Phố Lân, Phường 51, Quận 60\nHải Phòng",
-                "city": "Đà Nẵng",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 10,
-                    "owner_id": 2,
-                    "org_name": "Công ty Thái-Đái",
-                    "phones": "(0166)513-8558",
-                    "description": null,
-                    "tax_id": "67765",
-                    "address": "894, Thôn Khánh Văn, Phường 0, Huyện Giác Lô\nBạc Liêu",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 15,
-                "org_id": 8,
-                "author_id": 2,
-                "major_id": 4,
-                "title": "Remote NodeJS",
-                "content": "Cần tuyển Deleniti pariatur voluptate est ipsa et. Rem eius et nihil numquam qui qui.",
-                "address": "150, Thôn 7, Ấp Vương Khanh, Quận Chinh Công\nThanh Hóa",
-                "city": "Hà Nội",
-                "work_type": "Fulltime",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 8,
-                    "owner_id": 3,
-                    "org_name": "Công ty Mang LLC",
-                    "phones": "0167 653 0061",
-                    "description": null,
-                    "tax_id": "5636",
-                    "address": "335 Phố Lương Tuyết Lan, Xã 9, Quận Trương Ca\nHà Nội",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 25,
-                "org_id": 8,
-                "author_id": 10,
-                "major_id": 4,
-                "title": "Part-time Java",
-                "content": "Cần tuyển Quia recusandae aut cum debitis soluta. Quas quo et quaerat quod ex. Quae labore facere adipisci voluptas culpa possimus ratione.",
-                "address": "174 Phố Chung Thoại Thành, Xã 0, Quận Diễm Tiêu\nHải Phòng",
-                "city": "Cần Thơ",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 8,
-                    "owner_id": 3,
-                    "org_name": "Công ty Mang LLC",
-                    "phones": "0167 653 0061",
-                    "description": null,
-                    "tax_id": "5636",
-                    "address": "335 Phố Lương Tuyết Lan, Xã 9, Quận Trương Ca\nHà Nội",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 29,
-                "org_id": 3,
-                "author_id": 9,
-                "major_id": 4,
-                "title": "Remote .Net",
-                "content": "Cần tuyển Illo libero exercitationem necessitatibus expedita. Eligendi maxime odio sed amet saepe. Tenetur sed vel et nobis exercitationem qui eius voluptatem.",
-                "address": "96 Phố Mộc Điệp Thông, Xã Bì Hải Tiên, Huyện 9\nBắc Kạn",
-                "city": "Đà Nẵng",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 3,
-                    "owner_id": 9,
-                    "org_name": "Công ty Phó-Cái",
-                    "phones": "(0510) 703 9459",
-                    "description": null,
-                    "tax_id": "743410",
-                    "address": "793, Thôn Hy Bình, Thôn Lã Nhiên, Quận Huỳnh Trân Kiên\nLào Cai",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 32,
-                "org_id": 10,
-                "author_id": 2,
-                "major_id": 4,
-                "title": "Fulltime NodeJS",
-                "content": "Cần tuyển Illo est necessitatibus molestiae dolores. Mollitia molestiae possimus doloribus. Occaecati aut velit et aliquam aspernatur et.",
-                "address": "873 Phố Phan Nhu Thiện, Xã Trân, Huyện 6\nBắc Giang",
-                "city": "Hồ Chí Minh",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 10,
-                    "owner_id": 2,
-                    "org_name": "Công ty Thái-Đái",
-                    "phones": "(0166)513-8558",
-                    "description": null,
-                    "tax_id": "67765",
-                    "address": "894, Thôn Khánh Văn, Phường 0, Huyện Giác Lô\nBạc Liêu",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 35,
-                "org_id": 5,
-                "author_id": 10,
-                "major_id": 4,
-                "title": "Fulltime ReactJS",
-                "content": "Cần tuyển Quisquam sunt quis voluptatibus tenetur. Veniam repudiandae nam sed voluptatibus atque harum. Et nemo corporis quaerat dignissimos ea. Cupiditate architecto facere enim quasi quidem.",
-                "address": "534, Thôn 02, Xã Âu, Huyện Hương\nPhú Yên",
-                "city": "Cần Thơ",
-                "work_type": "Remote",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 5,
-                    "owner_id": 1,
-                    "org_name": "Công ty Cát-Cù",
-                    "phones": "059-475-0363",
-                    "description": null,
-                    "tax_id": "8125",
-                    "address": "2475 Phố Đoàn, Phường 4, Quận Vừ Thi Khai\nĐà Nẵng",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 37,
-                "org_id": 5,
-                "author_id": 7,
-                "major_id": 4,
-                "title": "Fulltime Java",
-                "content": "Cần tuyển Corporis praesentium quaerat reiciendis sint. In assumenda itaque omnis suscipit et est voluptatem. Quaerat optio laudantium ad nam eius et.",
-                "address": "1, Thôn Oanh Nhậm, Phường Ánh, Quận Ân Oanh\nBình Dương",
-                "city": "Hà Nội",
-                "work_type": "Fulltime",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
-                "org": {
-                    "id": 5,
-                    "owner_id": 1,
-                    "org_name": "Công ty Cát-Cù",
-                    "phones": "059-475-0363",
-                    "description": null,
-                    "tax_id": "8125",
-                    "address": "2475 Phố Đoàn, Phường 4, Quận Vừ Thi Khai\nĐà Nẵng",
-                    "logo_path": "public\/docs\/logo.png",
-                    "cover_path": "public\/docs\/logo.png",
-                    "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
-                }
-            },
-            {
-                "id": 38,
+                "id": 4,
                 "org_id": 8,
                 "author_id": 5,
                 "major_id": 4,
                 "title": "Fulltime Ruby",
-                "content": "Cần tuyển Qui dolores voluptas eligendi doloremque soluta. Repellendus ea laudantium facere temporibus corrupti voluptatum.",
-                "address": "316 Phố Tống Trạch Hương, Phường 0, Quận Trưng Châu Tuyền\nCần Thơ",
-                "city": "Đà Nẵng",
+                "content": "Cần tuyển Quidem et optio nam enim. Sit aut necessitatibus distinctio rerum officiis aut. Iusto et et in.",
+                "address": "87 Phố Đào Nhiên Di, Xã Cung Phượng Kiện, Huyện 1\nBình Dương",
+                "city": "Cần Thơ",
                 "work_type": "Part-time",
-                "start_time": "2021-05-18 03:47:00",
-                "end_time": "2021-05-23 03:47:00",
-                "interview_start_time": "2021-05-24 03:47:00",
-                "interview_end_time": "2021-05-28 03:47:00",
-                "created_at": "2021-05-18 03:47:00",
-                "updated_at": "2021-05-18 03:47:00",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
                 "org": {
                     "id": 8,
-                    "owner_id": 3,
-                    "org_name": "Công ty Mang LLC",
-                    "phones": "0167 653 0061",
+                    "owner_id": 8,
+                    "org_name": "Công ty Hùng LLC",
+                    "phones": "84-120-770-4958",
                     "description": null,
-                    "tax_id": "5636",
-                    "address": "335 Phố Lương Tuyết Lan, Xã 9, Quận Trương Ca\nHà Nội",
+                    "tax_id": "10738",
+                    "address": "83 Phố Triệu Nhu Ân, Thôn Dao Khải, Quận An\nCần Thơ",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 10,
+                "org_id": 7,
+                "author_id": 10,
+                "major_id": 4,
+                "title": "Part-time ReactJS",
+                "content": "Cần tuyển Consequuntur aut aspernatur rerum hic. At suscipit voluptas maiores repellat rerum tenetur nobis. Totam quia ipsa eos porro pariatur illum voluptatem architecto.",
+                "address": "787 Phố Diệp Diệp Cát, Thôn Hàn Diệu, Huyện 8\nQuảng Ngãi",
+                "city": "Cần Thơ",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 7,
+                    "owner_id": 1,
+                    "org_name": "Công ty An PLC",
+                    "phones": "+84-55-056-9978",
+                    "description": null,
+                    "tax_id": "86563",
+                    "address": "8 Phố Khổng, Thôn Mai Anh, Huyện 28\nNinh Bình",
                     "logo_path": "public\/docs\/logo.png",
                     "cover_path": "public\/docs\/logo.png",
                     "is_verify": 1,
-                    "created_at": "2021-05-18 03:47:00",
-                    "updated_at": "2021-05-18 03:47:00"
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 17,
+                "org_id": 1,
+                "author_id": 10,
+                "major_id": 4,
+                "title": "Fulltime ReactJS",
+                "content": "Cần tuyển Fuga molestiae unde consequatur aut eaque qui saepe. Tempora aut nemo incidunt at. Sed non libero placeat. Ut rem animi in.",
+                "address": "1 Phố Thạch Uy Bảo, Thôn Cương Định, Huyện Trọng Kỳ\nCần Thơ",
+                "city": "Hà Nội",
+                "work_type": "Remote",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 1,
+                    "owner_id": 1,
+                    "org_name": "Công ty Bồ, Đậu and Lều",
+                    "phones": "064-002-5977",
+                    "description": null,
+                    "tax_id": "9432",
+                    "address": "31, Thôn Khổng Khiếu Nghĩa, Phường Trác, Huyện Lê Trúc Tuyến\nĐồng Tháp",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 18,
+                "org_id": 3,
+                "author_id": 7,
+                "major_id": 4,
+                "title": "Remote .Net",
+                "content": "Cần tuyển Dignissimos nihil fugiat mollitia id. Omnis suscipit in dolorem quia ipsam corporis molestiae. Aliquid dicta corporis mollitia sint molestiae aliquam. Aperiam iusto doloribus quos doloribus dolor.",
+                "address": "5 Phố Du, Phường 12, Huyện Quyên Thoại\nCần Thơ",
+                "city": "Hải Phòng",
+                "work_type": "Fulltime",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 3,
+                    "owner_id": 1,
+                    "org_name": "Công ty Lỳ, Lỡ and Giáp",
+                    "phones": "(84)(56)496-4003",
+                    "description": null,
+                    "tax_id": "56638",
+                    "address": "72 Phố Nông Khiêm San, Xã Bá, Quận Hình Sơn Ca\nGia Lai",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 24,
+                "org_id": 5,
+                "author_id": 5,
+                "major_id": 4,
+                "title": "Fulltime Java",
+                "content": "Cần tuyển Architecto nam consequuntur sed et. Dolore sed excepturi nihil numquam quia ab. Vero esse ipsum quo quia aut.",
+                "address": "2 Phố Thiều, Thôn Hạ Sỹ, Huyện Khôi Bế\nSơn La",
+                "city": "Hải Phòng",
+                "work_type": "Fulltime",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 5,
+                    "owner_id": 1,
+                    "org_name": "Công ty Lâm-Lỡ",
+                    "phones": "84-127-672-5465",
+                    "description": null,
+                    "tax_id": "39296",
+                    "address": "7 Phố Cù, Xã 9, Quận Tiển\nYên Bái",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 26,
+                "org_id": 3,
+                "author_id": 7,
+                "major_id": 4,
+                "title": "Part-time NodeJS",
+                "content": "Cần tuyển Sunt aspernatur repellendus autem qui ratione eligendi quis. Alias perferendis qui aut esse laudantium. Non quia assumenda error. Aspernatur tempora asperiores aut et.",
+                "address": "246, Thôn Khoa Toản, Phường Bùi Quân Khanh, Huyện An Bắc Trúc\nHà Nam",
+                "city": "Hồ Chí Minh",
+                "work_type": "Part-time",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 3,
+                    "owner_id": 1,
+                    "org_name": "Công ty Lỳ, Lỡ and Giáp",
+                    "phones": "(84)(56)496-4003",
+                    "description": null,
+                    "tax_id": "56638",
+                    "address": "72 Phố Nông Khiêm San, Xã Bá, Quận Hình Sơn Ca\nGia Lai",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 37,
+                "org_id": 9,
+                "author_id": 6,
+                "major_id": 4,
+                "title": "Fulltime Ruby",
+                "content": "Cần tuyển Aut est veniam adipisci velit a iste nobis. Quidem doloribus est consequatur sunt eaque. Nihil magnam et quo quisquam consequatur. Quia hic ad debitis ea.",
+                "address": "2505 Phố Ngô Như Phượng, Phường 0, Quận Mạnh Vân\nHà Nội",
+                "city": "Hải Phòng",
+                "work_type": "Fulltime",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 9,
+                    "owner_id": 6,
+                    "org_name": "Công ty Đồng, Quách and Mộc",
+                    "phones": "84-166-984-1562",
+                    "description": null,
+                    "tax_id": "35238",
+                    "address": "80 Phố Chiêm, Phường Võ, Huyện Phương Cấn\nHải Phòng",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 1,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 43,
+                "org_id": 2,
+                "author_id": 4,
+                "major_id": 4,
+                "title": "Part-time ReactJS",
+                "content": "Cần tuyển Iusto omnis nostrum blanditiis. Maiores totam et vel iste. Aut et officia beatae perferendis aut. Omnis sed quis voluptas vel quis.",
+                "address": "4811, Thôn Tú Lục, Xã Hậu Lại, Huyện Xuyến Thủy\nThái Bình",
+                "city": "Cần Thơ",
+                "work_type": "Remote",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 2,
+                    "owner_id": 1,
+                    "org_name": "Công ty Bế-Bá",
+                    "phones": "84-57-069-8209",
+                    "description": null,
+                    "tax_id": "60865",
+                    "address": "70 Phố Hàng Quân Bắc, Xã Khương Việt Thống, Quận Điền\nNam Định",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
+                }
+            },
+            {
+                "id": 44,
+                "org_id": 6,
+                "author_id": 4,
+                "major_id": 4,
+                "title": "Part-time NodeJS",
+                "content": "Cần tuyển Non aut repellendus nam hic saepe sit. Aut ad explicabo officia repellat. Nobis vero porro tenetur dolorem. Labore et qui doloremque velit.",
+                "address": "8623 Phố Hợp, Xã Định Đào, Quận Hồng Lều\nHồ Chí Minh",
+                "city": "Hà Nội",
+                "work_type": "Fulltime",
+                "start_time": "2021-06-07 04:40:31",
+                "end_time": "2021-06-12 04:40:31",
+                "interview_start_time": "2021-06-13 04:40:31",
+                "interview_end_time": "2021-06-17 04:40:31",
+                "created_at": "2021-06-07 04:40:31",
+                "updated_at": "2021-06-07 04:40:31",
+                "org": {
+                    "id": 6,
+                    "owner_id": 1,
+                    "org_name": "Công ty Chế-Khương",
+                    "phones": "84-163-221-6480",
+                    "description": null,
+                    "tax_id": "73710",
+                    "address": "826, Thôn Hằng, Phường 93, Huyện 98\nBình Định",
+                    "logo_path": "public\/docs\/logo.png",
+                    "cover_path": "public\/docs\/logo.png",
+                    "is_verify": 0,
+                    "created_at": "2021-06-07 04:40:31",
+                    "updated_at": "2021-06-07 04:40:31"
                 }
             }
         ]
@@ -2751,13 +2915,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/v1/recruitment-news/laboriosam" \
+    -G "http://localhost:8000/api/v1/recruitment-news/voluptate" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"maiores"}'
+    -d '{"int":"atque"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/recruitment-news/laboriosam"
+    "http://localhost:8000/api/v1/recruitment-news/voluptate"
 );
 
 let headers = {
@@ -2766,7 +2930,7 @@ let headers = {
 };
 
 let body = {
-    "int": "maiores"
+    "int": "atque"
 }
 
 fetch(url, {
@@ -2877,7 +3041,7 @@ fetch(url, {
     "http://localhost:8000/api/v1/recruitment-news" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"org_id":9,"author_id":2,"major_id":3,"title":"ratione","content":"sed","address":"laborum","city":"enim","work_type":"tenetur","start_time":"2021-05-18T07:17:25+0000","end_time":"2021-05-18T07:17:25+0000","interview_start_time":"2021-05-18T07:17:25+0000","interview_end_time":"2021-05-18T07:17:25+0000"}'
+    -d '{"org_id":3,"author_id":14,"major_id":12,"title":"labore","content":"qui","address":"odio","city":"aperiam","work_type":"aperiam","start_time":"2021-06-07T05:41:59+0000","end_time":"2021-06-07T05:41:59+0000","interview_start_time":"2021-06-07T05:41:59+0000","interview_end_time":"2021-06-07T05:41:59+0000"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/recruitment-news"
@@ -2889,18 +3053,18 @@ let headers = {
 };
 
 let body = {
-    "org_id": 9,
-    "author_id": 2,
-    "major_id": 3,
-    "title": "ratione",
-    "content": "sed",
-    "address": "laborum",
-    "city": "enim",
-    "work_type": "tenetur",
-    "start_time": "2021-05-18T07:17:25+0000",
-    "end_time": "2021-05-18T07:17:25+0000",
-    "interview_start_time": "2021-05-18T07:17:25+0000",
-    "interview_end_time": "2021-05-18T07:17:25+0000"
+    "org_id": 3,
+    "author_id": 14,
+    "major_id": 12,
+    "title": "labore",
+    "content": "qui",
+    "address": "odio",
+    "city": "aperiam",
+    "work_type": "aperiam",
+    "start_time": "2021-06-07T05:41:59+0000",
+    "end_time": "2021-06-07T05:41:59+0000",
+    "interview_start_time": "2021-06-07T05:41:59+0000",
+    "interview_end_time": "2021-06-07T05:41:59+0000"
 }
 
 fetch(url, {
@@ -3016,13 +3180,13 @@ The value must be a valid date.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/v1/recruitment-news/repudiandae" \
+    "http://localhost:8000/api/v1/recruitment-news/qui" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"org_id":14,"author_id":3,"major_id":18,"title":"aut","content":"suscipit","address":"soluta","city":"soluta","work_type":"sit","start_time":"2021-05-18T07:17:25+0000","end_time":"2021-05-18T07:17:25+0000","interview_start_time":"2021-05-18T07:17:25+0000","interview_end_time":"2021-05-18T07:17:25+0000"}'
+    -d '{"org_id":15,"author_id":20,"major_id":17,"title":"fugiat","content":"natus","address":"et","city":"sapiente","work_type":"minus","start_time":"2021-06-07T05:41:59+0000","end_time":"2021-06-07T05:41:59+0000","interview_start_time":"2021-06-07T05:41:59+0000","interview_end_time":"2021-06-07T05:41:59+0000"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/recruitment-news/repudiandae"
+    "http://localhost:8000/api/v1/recruitment-news/qui"
 );
 
 let headers = {
@@ -3031,18 +3195,18 @@ let headers = {
 };
 
 let body = {
-    "org_id": 14,
-    "author_id": 3,
-    "major_id": 18,
-    "title": "aut",
-    "content": "suscipit",
-    "address": "soluta",
-    "city": "soluta",
-    "work_type": "sit",
-    "start_time": "2021-05-18T07:17:25+0000",
-    "end_time": "2021-05-18T07:17:25+0000",
-    "interview_start_time": "2021-05-18T07:17:25+0000",
-    "interview_end_time": "2021-05-18T07:17:25+0000"
+    "org_id": 15,
+    "author_id": 20,
+    "major_id": 17,
+    "title": "fugiat",
+    "content": "natus",
+    "address": "et",
+    "city": "sapiente",
+    "work_type": "minus",
+    "start_time": "2021-06-07T05:41:59+0000",
+    "end_time": "2021-06-07T05:41:59+0000",
+    "interview_start_time": "2021-06-07T05:41:59+0000",
+    "interview_end_time": "2021-06-07T05:41:59+0000"
 }
 
 fetch(url, {
@@ -3164,13 +3328,13 @@ The value must be a valid date.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/v1/recruitment-news/et" \
+    "http://localhost:8000/api/v1/recruitment-news/eum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"sunt"}'
+    -d '{"int":"minima"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/recruitment-news/et"
+    "http://localhost:8000/api/v1/recruitment-news/eum"
 );
 
 let headers = {
@@ -3179,7 +3343,7 @@ let headers = {
 };
 
 let body = {
-    "int": "sunt"
+    "int": "minima"
 }
 
 fetch(url, {
@@ -3319,13 +3483,13 @@ data: [{
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/v1/roles/quos" \
+    -G "http://localhost:8000/api/v1/roles/quasi" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"temporibus"}'
+    -d '{"int":"possimus"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/quos"
+    "http://localhost:8000/api/v1/roles/quasi"
 );
 
 let headers = {
@@ -3334,7 +3498,7 @@ let headers = {
 };
 
 let body = {
-    "int": "temporibus"
+    "int": "possimus"
 }
 
 fetch(url, {
@@ -3393,7 +3557,7 @@ The id of the role.</p>
     "http://localhost:8000/api/v1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"et"}'
+    -d '{"role_name":"reiciendis"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/roles"
@@ -3405,7 +3569,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "et"
+    "role_name": "reiciendis"
 }
 
 fetch(url, {
@@ -3455,13 +3619,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/v1/roles/facilis" \
+    "http://localhost:8000/api/v1/roles/eos" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"ut"}'
+    -d '{"role_name":"non"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/facilis"
+    "http://localhost:8000/api/v1/roles/eos"
 );
 
 let headers = {
@@ -3470,7 +3634,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "ut"
+    "role_name": "non"
 }
 
 fetch(url, {
@@ -3526,13 +3690,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/v1/roles/magnam" \
+    "http://localhost:8000/api/v1/roles/quia" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"corrupti"}'
+    -d '{"int":"numquam"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/magnam"
+    "http://localhost:8000/api/v1/roles/quia"
 );
 
 let headers = {
@@ -3541,7 +3705,7 @@ let headers = {
 };
 
 let body = {
-    "int": "corrupti"
+    "int": "numquam"
 }
 
 fetch(url, {
@@ -3602,7 +3766,7 @@ The id of the role.</p>
     "http://localhost:8000/api/v1/auth/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"first_name":"nesciunt","last_name":"consequatur","dob":"2021-05-18T07:17:25+0000","phone":"blanditiis","email":"rippin.fern@example.org","password":"eos","address":"nemo"}'
+    -d '{"first_name":"nam","last_name":"natus","dob":"2021-06-07T05:41:59+0000","phone":"tenetur","email":"leuschke.granville@example.com","password":"nihil","address":"perspiciatis"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/auth/register"
@@ -3614,13 +3778,13 @@ let headers = {
 };
 
 let body = {
-    "first_name": "nesciunt",
-    "last_name": "consequatur",
-    "dob": "2021-05-18T07:17:25+0000",
-    "phone": "blanditiis",
-    "email": "rippin.fern@example.org",
-    "password": "eos",
-    "address": "nemo"
+    "first_name": "nam",
+    "last_name": "natus",
+    "dob": "2021-06-07T05:41:59+0000",
+    "phone": "tenetur",
+    "email": "leuschke.granville@example.com",
+    "password": "nihil",
+    "address": "perspiciatis"
 }
 
 fetch(url, {
@@ -3769,13 +3933,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/v1/user/find/sunt" \
+    -G "http://localhost:8000/api/v1/user/find/ut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":6}'
+    -d '{"id":5}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/user/find/sunt"
+    "http://localhost:8000/api/v1/user/find/ut"
 );
 
 let headers = {
@@ -3784,7 +3948,7 @@ let headers = {
 };
 
 let body = {
-    "id": 6
+    "id": 5
 }
 
 fetch(url, {
@@ -3937,7 +4101,7 @@ fetch(url, {
     "http://localhost:8000/api/v1/user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"first_name":"illo","last_name":"suscipit","dob":"2021-05-18T07:17:25+0000","phone":967629.0712842,"email":"carson.fritsch@example.org","address":"asperiores","id":17,"id2":20}'
+    -d '{"first_name":"rerum","last_name":"distinctio","dob":"2021-06-07T05:41:59+0000","phone":382.9039,"email":"camron.huels@example.org","address":"alias","id":14,"id2":5}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/user"
@@ -3949,14 +4113,14 @@ let headers = {
 };
 
 let body = {
-    "first_name": "illo",
-    "last_name": "suscipit",
-    "dob": "2021-05-18T07:17:25+0000",
-    "phone": 967629.0712842,
-    "email": "carson.fritsch@example.org",
-    "address": "asperiores",
-    "id": 17,
-    "id2": 20
+    "first_name": "rerum",
+    "last_name": "distinctio",
+    "dob": "2021-06-07T05:41:59+0000",
+    "phone": 382.9039,
+    "email": "camron.huels@example.org",
+    "address": "alias",
+    "id": 14,
+    "id2": 5
 }
 
 fetch(url, {
@@ -4058,13 +4222,13 @@ The id of the user.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/v1/user/nemo" \
+    "http://localhost:8000/api/v1/user/quae" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":3}'
+    -d '{"id":13}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/user/nemo"
+    "http://localhost:8000/api/v1/user/quae"
 );
 
 let headers = {
@@ -4073,7 +4237,7 @@ let headers = {
 };
 
 let body = {
-    "id": 3
+    "id": 13
 }
 
 fetch(url, {
@@ -4143,7 +4307,7 @@ The id of the user.</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
+<pre><code class="language-bash">curl -X POST \
     "http://localhost:8000/api/v1/users/apply" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
@@ -4157,26 +4321,26 @@ let headers = {
 };
 
 fetch(url, {
-    method: "PUT",
+    method: "POST",
     headers,
 }).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-PUTapi-v1-users-apply" hidden>
-    <blockquote>Received response<span id="execution-response-status-PUTapi-v1-users-apply"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-v1-users-apply"></code></pre>
+<div id="execution-results-POSTapi-v1-users-apply" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-v1-users-apply"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-users-apply"></code></pre>
 </div>
-<div id="execution-error-PUTapi-v1-users-apply" hidden>
+<div id="execution-error-POSTapi-v1-users-apply" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-v1-users-apply"></code></pre>
+    <pre><code id="execution-error-message-POSTapi-v1-users-apply"></code></pre>
 </div>
-<form id="form-PUTapi-v1-users-apply" data-method="PUT" data-path="api/v1/users/apply" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-users-apply', this);">
+<form id="form-POSTapi-v1-users-apply" data-method="POST" data-path="api/v1/users/apply" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-users-apply', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-v1-users-apply" onclick="tryItOut('PUTapi-v1-users-apply');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-v1-users-apply" onclick="cancelTryOut('PUTapi-v1-users-apply');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-v1-users-apply" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v1-users-apply" onclick="tryItOut('POSTapi-v1-users-apply');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v1-users-apply" onclick="cancelTryOut('POSTapi-v1-users-apply');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v1-users-apply" hidden>Send Request 💥</button>
     </h3>
 <p>
-<small class="badge badge-darkblue">PUT</small>
+<small class="badge badge-black">POST</small>
  <b><code>api/v1/users/apply</code></b>
 </p>
 </form>

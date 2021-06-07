@@ -1,54 +1,47 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\APIAdmin;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
 use App\Http\Requests\AuthenticateRequest;
-use App\Http\Requests\RegisterUserFormRequest;
-use App\User;
+use App\Admin;
+
 
 /**
- * @group Auth endpoints
+ * @group Admin Authenticate
  *
- * APIs for authentication user.
+ * APIs for authentication admin.
  */
-
 class AuthenticateController extends Controller
 {
-
-
     /**
      * Login.
-     * @group Auth endpoints
+     * @group Admin Authenticate
      * @bodyParam email String required
      * @bodyParam password String required
      */
-    public function login(AuthenticateRequest $request){
+    public function login(AuthenticateRequest $request)
+    {
         $credentials = $request->only('email', 'password');
-        if(!Auth::attempt($credentials))
+        if(!Auth::guard('admin')->attempt($credentials))
             return response()->json([
                 'message' => 'Email or password are wrong! Please try again.'
             ], 401);
 
-        config(['auth.guards.api.provider' => 'users']);
-        $token = Auth::user()->createToken('authToken',['user']);
+        $token = Auth::guard('admin')->user()->createToken('Admin Access Token',['admin']);
 
         return response()->json([
-            'user' => Auth::user(),
+            'user' => Auth::guard('admin')->user(),
             'access_token' => $token->accessToken,
             'expires_at' => Carbon::parse($token->token->expires_at)->toDateTimeString()
         ]);
     }
 
-    /**
-     * Check valid token.
-     * @group Auth endpoints
-     */
-    public function checkValidToken(Request $request)
+    public function token(Request $request)
     {
-        return response()->json(['status' => 'OK', 'message' => 'Token is valid'], 200);
+        return response()->json(['status' => 'OK', 'message' => 'Token admin is valid'], 200);
     }
 }
