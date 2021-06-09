@@ -1424,16 +1424,16 @@ Display the specified recruitment news.
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/v1/recruitment-news/voluptate" \
+    -G "http://localhost:8000/api/v1/recruitment-news/incidunt" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"atque"}'
+    -d '{"int":"laboriosam"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/recruitment-news/voluptate"
+    "http://localhost:8000/api/v1/recruitment-news/incidunt"
 );
 
 let headers = {
@@ -1442,7 +1442,7 @@ let headers = {
 };
 
 let body = {
-    "int": "atque"
+    "int": "laboriosam"
 }
 
 fetch(url, {
@@ -1576,7 +1576,7 @@ curl -X POST \
     "http://localhost:8000/api/v1/recruitment-news" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"org_id":3,"author_id":14,"major_id":12,"title":"labore","content":"qui","address":"odio","city":"aperiam","work_type":"aperiam","start_time":"2021-06-07T05:41:59+0000","end_time":"2021-06-07T05:41:59+0000","interview_start_time":"2021-06-07T05:41:59+0000","interview_end_time":"2021-06-07T05:41:59+0000"}'
+    -d '{"org_id":10,"author_id":20,"major_id":17,"title":"voluptate","content":"consequatur","address":"sed","city":"sed","work_type":"culpa","start_time":"2021-06-07T13:19:28+0000","end_time":"2021-06-07T13:19:28+0000","interview_start_time":"2021-06-07T13:19:28+0000","interview_end_time":"2021-06-07T13:19:28+0000"}'
 
 ```
 
@@ -1591,18 +1591,18 @@ let headers = {
 };
 
 let body = {
-    "org_id": 3,
-    "author_id": 14,
-    "major_id": 12,
-    "title": "labore",
-    "content": "qui",
-    "address": "odio",
-    "city": "aperiam",
-    "work_type": "aperiam",
-    "start_time": "2021-06-07T05:41:59+0000",
-    "end_time": "2021-06-07T05:41:59+0000",
-    "interview_start_time": "2021-06-07T05:41:59+0000",
-    "interview_end_time": "2021-06-07T05:41:59+0000"
+    "org_id": 10,
+    "author_id": 20,
+    "major_id": 17,
+    "title": "voluptate",
+    "content": "consequatur",
+    "address": "sed",
+    "city": "sed",
+    "work_type": "culpa",
+    "start_time": "2021-06-07T13:19:28+0000",
+    "end_time": "2021-06-07T13:19:28+0000",
+    "interview_start_time": "2021-06-07T13:19:28+0000",
+    "interview_end_time": "2021-06-07T13:19:28+0000"
 }
 
 fetch(url, {
@@ -1728,16 +1728,16 @@ Update the specified recruitment news in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost:8000/api/v1/recruitment-news/qui" \
+    "http://localhost:8000/api/v1/recruitment-news/aut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"org_id":15,"author_id":20,"major_id":17,"title":"fugiat","content":"natus","address":"et","city":"sapiente","work_type":"minus","start_time":"2021-06-07T05:41:59+0000","end_time":"2021-06-07T05:41:59+0000","interview_start_time":"2021-06-07T05:41:59+0000","interview_end_time":"2021-06-07T05:41:59+0000"}'
+    -d '{"org_id":11,"author_id":5,"major_id":17,"title":"repellendus","content":"debitis","address":"velit","city":"et","work_type":"distinctio","start_time":"2021-06-07T13:19:28+0000","end_time":"2021-06-07T13:19:28+0000","interview_start_time":"2021-06-07T13:19:28+0000","interview_end_time":"2021-06-07T13:19:28+0000"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/recruitment-news/qui"
+    "http://localhost:8000/api/v1/recruitment-news/aut"
 );
 
 let headers = {
@@ -1746,18 +1746,18 @@ let headers = {
 };
 
 let body = {
-    "org_id": 15,
-    "author_id": 20,
+    "org_id": 11,
+    "author_id": 5,
     "major_id": 17,
-    "title": "fugiat",
-    "content": "natus",
-    "address": "et",
-    "city": "sapiente",
-    "work_type": "minus",
-    "start_time": "2021-06-07T05:41:59+0000",
-    "end_time": "2021-06-07T05:41:59+0000",
-    "interview_start_time": "2021-06-07T05:41:59+0000",
-    "interview_end_time": "2021-06-07T05:41:59+0000"
+    "title": "repellendus",
+    "content": "debitis",
+    "address": "velit",
+    "city": "et",
+    "work_type": "distinctio",
+    "start_time": "2021-06-07T13:19:28+0000",
+    "end_time": "2021-06-07T13:19:28+0000",
+    "interview_start_time": "2021-06-07T13:19:28+0000",
+    "interview_end_time": "2021-06-07T13:19:28+0000"
 }
 
 fetch(url, {
@@ -1889,16 +1889,16 @@ Remove the specified recruitment news from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost:8000/api/v1/recruitment-news/eum" \
+    "http://localhost:8000/api/v1/recruitment-news/quibusdam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"minima"}'
+    -d '{"int":"est"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/recruitment-news/eum"
+    "http://localhost:8000/api/v1/recruitment-news/quibusdam"
 );
 
 let headers = {
@@ -1907,7 +1907,7 @@ let headers = {
 };
 
 let body = {
-    "int": "minima"
+    "int": "est"
 }
 
 fetch(url, {

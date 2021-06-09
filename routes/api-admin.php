@@ -13,14 +13,14 @@
 
 /*|---- API prefix: domain/api/admin -----| */
 Route::group(['prefix' => 'v1'], function(){
-    Route::post('login', 'APIAdmin\\AuthenticateController@login');
-    Route::post('register', 'APIAdmin\\AuthenticateController@register');
+    Route::group(['prefix' => 'auth'], function(){
+        Route::post('login', 'APIAdmin\\AuthenticateController@login');
+    });
 
-    Route::group([
-        'prefix' => 'auth',
-        'middleware' => ['auth:api-admins', 'scope:admin']
-    ], function(){
+    Route::group(['middleware' => ['auth:api-admins', 'scope:admin']], function(){
         Route::post('/token', 'APIAdmin\\AuthenticateController@token');
+        Route::get('/statistic', 'APIAdmin\\StatisticController@allStatistic');
+        Route::get('/organization', 'APIAdmin\\OrganizationController@showOrg');
     });
 });
 
