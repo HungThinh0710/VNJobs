@@ -69,13 +69,13 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/admin/v1/login" \
+    "http://localhost:8000/api/admin/v1/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"vitae","password":"quia"}'
+    -d '{"email":"ipsum","password":"dignissimos"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/admin/v1/login"
+    "http://localhost:8000/api/admin/v1/auth/login"
 );
 
 let headers = {
@@ -84,8 +84,8 @@ let headers = {
 };
 
 let body = {
-    "email": "vitae",
-    "password": "quia"
+    "email": "ipsum",
+    "password": "dignissimos"
 }
 
 fetch(url, {
@@ -93,48 +93,48 @@ fetch(url, {
     headers,
     body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-POSTapi-admin-v1-login" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-admin-v1-login"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-admin-v1-login"></code></pre>
+<div id="execution-results-POSTapi-admin-v1-auth-login" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-admin-v1-auth-login"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-admin-v1-auth-login"></code></pre>
 </div>
-<div id="execution-error-POSTapi-admin-v1-login" hidden>
+<div id="execution-error-POSTapi-admin-v1-auth-login" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-admin-v1-login"></code></pre>
+    <pre><code id="execution-error-message-POSTapi-admin-v1-auth-login"></code></pre>
 </div>
-<form id="form-POSTapi-admin-v1-login" data-method="POST" data-path="api/admin/v1/login" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-admin-v1-login', this);">
+<form id="form-POSTapi-admin-v1-auth-login" data-method="POST" data-path="api/admin/v1/auth/login" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-admin-v1-auth-login', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-admin-v1-login" onclick="tryItOut('POSTapi-admin-v1-login');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-admin-v1-login" onclick="cancelTryOut('POSTapi-admin-v1-login');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-admin-v1-login" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-admin-v1-auth-login" onclick="tryItOut('POSTapi-admin-v1-auth-login');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-admin-v1-auth-login" onclick="cancelTryOut('POSTapi-admin-v1-auth-login');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-admin-v1-auth-login" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-black">POST</small>
- <b><code>api/admin/v1/login</code></b>
+ <b><code>api/admin/v1/auth/login</code></b>
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
 <b><code>email</code></b>&nbsp;&nbsp;<small>String</small>  &nbsp;
-<input type="text" name="email" data-endpoint="POSTapi-admin-v1-login" data-component="body" required  hidden>
+<input type="text" name="email" data-endpoint="POSTapi-admin-v1-auth-login" data-component="body" required  hidden>
 <br>
 </p>
 <p>
 <b><code>password</code></b>&nbsp;&nbsp;<small>String</small>  &nbsp;
-<input type="text" name="password" data-endpoint="POSTapi-admin-v1-login" data-component="body" required  hidden>
+<input type="text" name="password" data-endpoint="POSTapi-admin-v1-auth-login" data-component="body" required  hidden>
 <br>
 </p>
 
 </form>
-<h2>api/admin/v1/auth/token</h2>
+<h2>api/admin/v1/token</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/admin/v1/auth/token" \
+    "http://localhost:8000/api/admin/v1/token" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/admin/v1/auth/token"
+    "http://localhost:8000/api/admin/v1/token"
 );
 
 let headers = {
@@ -146,24 +146,120 @@ fetch(url, {
     method: "POST",
     headers,
 }).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-POSTapi-admin-v1-auth-token" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-admin-v1-auth-token"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-admin-v1-auth-token"></code></pre>
+<div id="execution-results-POSTapi-admin-v1-token" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-admin-v1-token"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-admin-v1-token"></code></pre>
 </div>
-<div id="execution-error-POSTapi-admin-v1-auth-token" hidden>
+<div id="execution-error-POSTapi-admin-v1-token" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-admin-v1-auth-token"></code></pre>
+    <pre><code id="execution-error-message-POSTapi-admin-v1-token"></code></pre>
 </div>
-<form id="form-POSTapi-admin-v1-auth-token" data-method="POST" data-path="api/admin/v1/auth/token" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-admin-v1-auth-token', this);">
+<form id="form-POSTapi-admin-v1-token" data-method="POST" data-path="api/admin/v1/token" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-admin-v1-token', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-admin-v1-auth-token" onclick="tryItOut('POSTapi-admin-v1-auth-token');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-admin-v1-auth-token" onclick="cancelTryOut('POSTapi-admin-v1-auth-token');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-admin-v1-auth-token" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-admin-v1-token" onclick="tryItOut('POSTapi-admin-v1-token');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-admin-v1-token" onclick="cancelTryOut('POSTapi-admin-v1-token');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-admin-v1-token" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-black">POST</small>
- <b><code>api/admin/v1/auth/token</code></b>
+ <b><code>api/admin/v1/token</code></b>
+</p>
+</form><h1>Admin Endpoints</h1>
+<h2>Statistic.</h2>
+<p>APIs for analyst &amp; statistic jobs.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost:8000/api/admin/v1/statistic" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/admin/v1/statistic"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "error": "Unauthenticated."
+}</code></pre>
+<div id="execution-results-GETapi-admin-v1-statistic" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-admin-v1-statistic"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-v1-statistic"></code></pre>
+</div>
+<div id="execution-error-GETapi-admin-v1-statistic" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-v1-statistic"></code></pre>
+</div>
+<form id="form-GETapi-admin-v1-statistic" data-method="GET" data-path="api/admin/v1/statistic" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-v1-statistic', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-admin-v1-statistic" onclick="tryItOut('GETapi-admin-v1-statistic');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-admin-v1-statistic" onclick="cancelTryOut('GETapi-admin-v1-statistic');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-admin-v1-statistic" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/admin/v1/statistic</code></b>
+</p>
+</form>
+<h2>Show organizations.</h2>
+<p>Show all organizations list.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost:8000/api/admin/v1/organization" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/admin/v1/organization"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "error": "Unauthenticated."
+}</code></pre>
+<div id="execution-results-GETapi-admin-v1-organization" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-admin-v1-organization"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-v1-organization"></code></pre>
+</div>
+<div id="execution-error-GETapi-admin-v1-organization" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-v1-organization"></code></pre>
+</div>
+<form id="form-GETapi-admin-v1-organization" data-method="GET" data-path="api/admin/v1/organization" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-v1-organization', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-admin-v1-organization" onclick="tryItOut('GETapi-admin-v1-organization');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-admin-v1-organization" onclick="cancelTryOut('GETapi-admin-v1-organization');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-admin-v1-organization" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/admin/v1/organization</code></b>
 </p>
 </form><h1>Auth endpoints</h1>
 <h2>Login.</h2>
@@ -174,7 +270,7 @@ fetch(url, {
     "http://localhost:8000/api/v1/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"quasi","password":"reprehenderit"}'
+    -d '{"email":"ut","password":"voluptas"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/auth/login"
@@ -186,8 +282,8 @@ let headers = {
 };
 
 let body = {
-    "email": "quasi",
-    "password": "reprehenderit"
+    "email": "ut",
+    "password": "voluptas"
 }
 
 fetch(url, {
@@ -348,13 +444,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/v1/job-seekers/aliquam" \
+    -G "http://localhost:8000/api/v1/job-seekers/praesentium" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"qui"}'
+    -d '{"int":"maxime"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/job-seekers/aliquam"
+    "http://localhost:8000/api/v1/job-seekers/praesentium"
 );
 
 let headers = {
@@ -363,7 +459,7 @@ let headers = {
 };
 
 let body = {
-    "int": "qui"
+    "int": "maxime"
 }
 
 fetch(url, {
@@ -426,7 +522,7 @@ The id of the job seeker.</p>
     "http://localhost:8000/api/v1/job-seekers" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":3,"is_elect":false,"cv_path":{},"cover_letter_path":"aut","exp_years":2}'
+    -d '{"user_id":18,"is_elect":false,"cv_path":{},"cover_letter_path":"rerum","exp_years":8}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/job-seekers"
@@ -438,11 +534,11 @@ let headers = {
 };
 
 let body = {
-    "user_id": 3,
+    "user_id": 18,
     "is_elect": false,
     "cv_path": {},
-    "cover_letter_path": "aut",
-    "exp_years": 2
+    "cover_letter_path": "rerum",
+    "exp_years": 8
 }
 
 fetch(url, {
@@ -517,13 +613,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/v1/job-seekers/qui" \
+    "http://localhost:8000/api/v1/job-seekers/est" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"user_id":6,"is_elect":false,"cv_path":{},"cover_letter_path":"nemo","exp_years":13}'
+    -d '{"user_id":9,"is_elect":false,"cv_path":{},"cover_letter_path":"ipsa","exp_years":6}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/job-seekers/qui"
+    "http://localhost:8000/api/v1/job-seekers/est"
 );
 
 let headers = {
@@ -532,11 +628,11 @@ let headers = {
 };
 
 let body = {
-    "user_id": 6,
+    "user_id": 9,
     "is_elect": false,
     "cv_path": {},
-    "cover_letter_path": "nemo",
-    "exp_years": 13
+    "cover_letter_path": "ipsa",
+    "exp_years": 6
 }
 
 fetch(url, {
@@ -617,13 +713,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/v1/job-seekers/nulla" \
+    "http://localhost:8000/api/v1/job-seekers/beatae" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"maxime"}'
+    -d '{"int":"sed"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/job-seekers/nulla"
+    "http://localhost:8000/api/v1/job-seekers/beatae"
 );
 
 let headers = {
@@ -632,7 +728,7 @@ let headers = {
 };
 
 let body = {
-    "int": "maxime"
+    "int": "sed"
 }
 
 fetch(url, {
@@ -753,13 +849,13 @@ data: [{
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/v1/majors/reiciendis" \
+    -G "http://localhost:8000/api/v1/majors/eligendi" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"rerum"}'
+    -d '{"int":"qui"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/majors/reiciendis"
+    "http://localhost:8000/api/v1/majors/eligendi"
 );
 
 let headers = {
@@ -768,7 +864,7 @@ let headers = {
 };
 
 let body = {
-    "int": "rerum"
+    "int": "qui"
 }
 
 fetch(url, {
@@ -828,7 +924,7 @@ The id of the major.</p>
     "http://localhost:8000/api/v1/majors" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"major_name":"deserunt","image_path":"repellat"}'
+    -d '{"major_name":"assumenda","image_path":"officiis"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/majors"
@@ -840,8 +936,8 @@ let headers = {
 };
 
 let body = {
-    "major_name": "deserunt",
-    "image_path": "repellat"
+    "major_name": "assumenda",
+    "image_path": "officiis"
 }
 
 fetch(url, {
@@ -897,13 +993,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/v1/majors/velit" \
+    "http://localhost:8000/api/v1/majors/in" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"major_name":"ab","image_path":"dolorem"}'
+    -d '{"major_name":"laboriosam","image_path":"eius"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/majors/velit"
+    "http://localhost:8000/api/v1/majors/in"
 );
 
 let headers = {
@@ -912,8 +1008,8 @@ let headers = {
 };
 
 let body = {
-    "major_name": "ab",
-    "image_path": "dolorem"
+    "major_name": "laboriosam",
+    "image_path": "eius"
 }
 
 fetch(url, {
@@ -975,13 +1071,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/v1/majors/qui" \
+    "http://localhost:8000/api/v1/majors/voluptatibus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"et"}'
+    -d '{"int":"aut"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/majors/qui"
+    "http://localhost:8000/api/v1/majors/voluptatibus"
 );
 
 let headers = {
@@ -990,7 +1086,7 @@ let headers = {
 };
 
 let body = {
-    "int": "et"
+    "int": "aut"
 }
 
 fetch(url, {
@@ -1136,13 +1232,13 @@ data: [{
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/v1/organizations/sed" \
+    -G "http://localhost:8000/api/v1/organizations/et" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"maiores"}'
+    -d '{"int":"reprehenderit"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/organizations/sed"
+    "http://localhost:8000/api/v1/organizations/et"
 );
 
 let headers = {
@@ -1151,7 +1247,7 @@ let headers = {
 };
 
 let body = {
-    "int": "maiores"
+    "int": "reprehenderit"
 }
 
 fetch(url, {
@@ -1218,7 +1314,7 @@ The id of the organization.</p>
     "http://localhost:8000/api/v1/organizations" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"owner_id":19,"org_name":"libero","phones":"eos","description":"dignissimos","tax_id":3,"address":"aut","logo_path":"natus","cover_path":"ut"}'
+    -d '{"owner_id":15,"org_name":"nesciunt","phones":"facere","description":"similique","tax_id":9,"address":"ab","logo_path":"eligendi","cover_path":"qui"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/organizations"
@@ -1230,14 +1326,14 @@ let headers = {
 };
 
 let body = {
-    "owner_id": 19,
-    "org_name": "libero",
-    "phones": "eos",
-    "description": "dignissimos",
-    "tax_id": 3,
-    "address": "aut",
-    "logo_path": "natus",
-    "cover_path": "ut"
+    "owner_id": 15,
+    "org_name": "nesciunt",
+    "phones": "facere",
+    "description": "similique",
+    "tax_id": 9,
+    "address": "ab",
+    "logo_path": "eligendi",
+    "cover_path": "qui"
 }
 
 fetch(url, {
@@ -1330,13 +1426,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/v1/organizations/nisi" \
+    "http://localhost:8000/api/v1/organizations/quaerat" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"owner_id":13,"org_name":"amet","phones":"reiciendis","description":"omnis","tax_id":4,"address":"autem","logo_path":"molestiae","cover_path":"doloremque"}'
+    -d '{"owner_id":15,"org_name":"id","phones":"explicabo","description":"consequatur","tax_id":16,"address":"eos","logo_path":"deserunt","cover_path":"facilis"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/organizations/nisi"
+    "http://localhost:8000/api/v1/organizations/quaerat"
 );
 
 let headers = {
@@ -1345,14 +1441,14 @@ let headers = {
 };
 
 let body = {
-    "owner_id": 13,
-    "org_name": "amet",
-    "phones": "reiciendis",
-    "description": "omnis",
-    "tax_id": 4,
-    "address": "autem",
-    "logo_path": "molestiae",
-    "cover_path": "doloremque"
+    "owner_id": 15,
+    "org_name": "id",
+    "phones": "explicabo",
+    "description": "consequatur",
+    "tax_id": 16,
+    "address": "eos",
+    "logo_path": "deserunt",
+    "cover_path": "facilis"
 }
 
 fetch(url, {
@@ -1451,13 +1547,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/v1/organizations/cupiditate" \
+    "http://localhost:8000/api/v1/organizations/beatae" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"adipisci"}'
+    -d '{"int":"veritatis"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/organizations/cupiditate"
+    "http://localhost:8000/api/v1/organizations/beatae"
 );
 
 let headers = {
@@ -1466,7 +1562,7 @@ let headers = {
 };
 
 let body = {
-    "int": "adipisci"
+    "int": "veritatis"
 }
 
 fetch(url, {
@@ -2915,13 +3011,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/v1/recruitment-news/voluptate" \
+    -G "http://localhost:8000/api/v1/recruitment-news/incidunt" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"atque"}'
+    -d '{"int":"laboriosam"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/recruitment-news/voluptate"
+    "http://localhost:8000/api/v1/recruitment-news/incidunt"
 );
 
 let headers = {
@@ -2930,7 +3026,7 @@ let headers = {
 };
 
 let body = {
-    "int": "atque"
+    "int": "laboriosam"
 }
 
 fetch(url, {
@@ -3041,7 +3137,7 @@ fetch(url, {
     "http://localhost:8000/api/v1/recruitment-news" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"org_id":3,"author_id":14,"major_id":12,"title":"labore","content":"qui","address":"odio","city":"aperiam","work_type":"aperiam","start_time":"2021-06-07T05:41:59+0000","end_time":"2021-06-07T05:41:59+0000","interview_start_time":"2021-06-07T05:41:59+0000","interview_end_time":"2021-06-07T05:41:59+0000"}'
+    -d '{"org_id":10,"author_id":20,"major_id":17,"title":"voluptate","content":"consequatur","address":"sed","city":"sed","work_type":"culpa","start_time":"2021-06-07T13:19:28+0000","end_time":"2021-06-07T13:19:28+0000","interview_start_time":"2021-06-07T13:19:28+0000","interview_end_time":"2021-06-07T13:19:28+0000"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/recruitment-news"
@@ -3053,18 +3149,18 @@ let headers = {
 };
 
 let body = {
-    "org_id": 3,
-    "author_id": 14,
-    "major_id": 12,
-    "title": "labore",
-    "content": "qui",
-    "address": "odio",
-    "city": "aperiam",
-    "work_type": "aperiam",
-    "start_time": "2021-06-07T05:41:59+0000",
-    "end_time": "2021-06-07T05:41:59+0000",
-    "interview_start_time": "2021-06-07T05:41:59+0000",
-    "interview_end_time": "2021-06-07T05:41:59+0000"
+    "org_id": 10,
+    "author_id": 20,
+    "major_id": 17,
+    "title": "voluptate",
+    "content": "consequatur",
+    "address": "sed",
+    "city": "sed",
+    "work_type": "culpa",
+    "start_time": "2021-06-07T13:19:28+0000",
+    "end_time": "2021-06-07T13:19:28+0000",
+    "interview_start_time": "2021-06-07T13:19:28+0000",
+    "interview_end_time": "2021-06-07T13:19:28+0000"
 }
 
 fetch(url, {
@@ -3180,13 +3276,13 @@ The value must be a valid date.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/v1/recruitment-news/qui" \
+    "http://localhost:8000/api/v1/recruitment-news/aut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"org_id":15,"author_id":20,"major_id":17,"title":"fugiat","content":"natus","address":"et","city":"sapiente","work_type":"minus","start_time":"2021-06-07T05:41:59+0000","end_time":"2021-06-07T05:41:59+0000","interview_start_time":"2021-06-07T05:41:59+0000","interview_end_time":"2021-06-07T05:41:59+0000"}'
+    -d '{"org_id":11,"author_id":5,"major_id":17,"title":"repellendus","content":"debitis","address":"velit","city":"et","work_type":"distinctio","start_time":"2021-06-07T13:19:28+0000","end_time":"2021-06-07T13:19:28+0000","interview_start_time":"2021-06-07T13:19:28+0000","interview_end_time":"2021-06-07T13:19:28+0000"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/recruitment-news/qui"
+    "http://localhost:8000/api/v1/recruitment-news/aut"
 );
 
 let headers = {
@@ -3195,18 +3291,18 @@ let headers = {
 };
 
 let body = {
-    "org_id": 15,
-    "author_id": 20,
+    "org_id": 11,
+    "author_id": 5,
     "major_id": 17,
-    "title": "fugiat",
-    "content": "natus",
-    "address": "et",
-    "city": "sapiente",
-    "work_type": "minus",
-    "start_time": "2021-06-07T05:41:59+0000",
-    "end_time": "2021-06-07T05:41:59+0000",
-    "interview_start_time": "2021-06-07T05:41:59+0000",
-    "interview_end_time": "2021-06-07T05:41:59+0000"
+    "title": "repellendus",
+    "content": "debitis",
+    "address": "velit",
+    "city": "et",
+    "work_type": "distinctio",
+    "start_time": "2021-06-07T13:19:28+0000",
+    "end_time": "2021-06-07T13:19:28+0000",
+    "interview_start_time": "2021-06-07T13:19:28+0000",
+    "interview_end_time": "2021-06-07T13:19:28+0000"
 }
 
 fetch(url, {
@@ -3328,13 +3424,13 @@ The value must be a valid date.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/v1/recruitment-news/eum" \
+    "http://localhost:8000/api/v1/recruitment-news/quibusdam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"minima"}'
+    -d '{"int":"est"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/recruitment-news/eum"
+    "http://localhost:8000/api/v1/recruitment-news/quibusdam"
 );
 
 let headers = {
@@ -3343,7 +3439,7 @@ let headers = {
 };
 
 let body = {
-    "int": "minima"
+    "int": "est"
 }
 
 fetch(url, {
@@ -3483,13 +3579,13 @@ data: [{
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/v1/roles/quasi" \
+    -G "http://localhost:8000/api/v1/roles/quidem" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"possimus"}'
+    -d '{"int":"repellat"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/quasi"
+    "http://localhost:8000/api/v1/roles/quidem"
 );
 
 let headers = {
@@ -3498,7 +3594,7 @@ let headers = {
 };
 
 let body = {
-    "int": "possimus"
+    "int": "repellat"
 }
 
 fetch(url, {
@@ -3557,7 +3653,7 @@ The id of the role.</p>
     "http://localhost:8000/api/v1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"reiciendis"}'
+    -d '{"role_name":"amet"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/roles"
@@ -3569,7 +3665,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "reiciendis"
+    "role_name": "amet"
 }
 
 fetch(url, {
@@ -3619,13 +3715,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/v1/roles/eos" \
+    "http://localhost:8000/api/v1/roles/omnis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"non"}'
+    -d '{"role_name":"maiores"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/eos"
+    "http://localhost:8000/api/v1/roles/omnis"
 );
 
 let headers = {
@@ -3634,7 +3730,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "non"
+    "role_name": "maiores"
 }
 
 fetch(url, {
@@ -3693,7 +3789,7 @@ fetch(url, {
     "http://localhost:8000/api/v1/roles/quia" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"numquam"}'
+    -d '{"int":"qui"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/roles/quia"
@@ -3705,7 +3801,7 @@ let headers = {
 };
 
 let body = {
-    "int": "numquam"
+    "int": "qui"
 }
 
 fetch(url, {
@@ -3766,7 +3862,7 @@ The id of the role.</p>
     "http://localhost:8000/api/v1/auth/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"first_name":"nam","last_name":"natus","dob":"2021-06-07T05:41:59+0000","phone":"tenetur","email":"leuschke.granville@example.com","password":"nihil","address":"perspiciatis"}'
+    -d '{"first_name":"qui","last_name":"impedit","dob":"2021-06-07T13:19:28+0000","phone":"labore","email":"anais10@example.org","password":"ipsum","address":"eaque"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/auth/register"
@@ -3778,13 +3874,13 @@ let headers = {
 };
 
 let body = {
-    "first_name": "nam",
-    "last_name": "natus",
-    "dob": "2021-06-07T05:41:59+0000",
-    "phone": "tenetur",
-    "email": "leuschke.granville@example.com",
-    "password": "nihil",
-    "address": "perspiciatis"
+    "first_name": "qui",
+    "last_name": "impedit",
+    "dob": "2021-06-07T13:19:28+0000",
+    "phone": "labore",
+    "email": "anais10@example.org",
+    "password": "ipsum",
+    "address": "eaque"
 }
 
 fetch(url, {
@@ -3933,13 +4029,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/v1/user/find/ut" \
+    -G "http://localhost:8000/api/v1/user/find/dolores" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":5}'
+    -d '{"id":4}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/user/find/ut"
+    "http://localhost:8000/api/v1/user/find/dolores"
 );
 
 let headers = {
@@ -3948,7 +4044,7 @@ let headers = {
 };
 
 let body = {
-    "id": 5
+    "id": 4
 }
 
 fetch(url, {
@@ -4101,7 +4197,7 @@ fetch(url, {
     "http://localhost:8000/api/v1/user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"first_name":"rerum","last_name":"distinctio","dob":"2021-06-07T05:41:59+0000","phone":382.9039,"email":"camron.huels@example.org","address":"alias","id":14,"id2":5}'
+    -d '{"first_name":"sit","last_name":"animi","dob":"2021-06-07T13:19:28+0000","phone":0,"email":"dibbert.jeremy@example.com","address":"corrupti","id":2,"id2":16}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/user"
@@ -4113,14 +4209,14 @@ let headers = {
 };
 
 let body = {
-    "first_name": "rerum",
-    "last_name": "distinctio",
-    "dob": "2021-06-07T05:41:59+0000",
-    "phone": 382.9039,
-    "email": "camron.huels@example.org",
-    "address": "alias",
-    "id": 14,
-    "id2": 5
+    "first_name": "sit",
+    "last_name": "animi",
+    "dob": "2021-06-07T13:19:28+0000",
+    "phone": 0,
+    "email": "dibbert.jeremy@example.com",
+    "address": "corrupti",
+    "id": 2,
+    "id2": 16
 }
 
 fetch(url, {
@@ -4222,13 +4318,13 @@ The id of the user.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/v1/user/quae" \
+    "http://localhost:8000/api/v1/user/a" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"id":13}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/user/quae"
+    "http://localhost:8000/api/v1/user/a"
 );
 
 let headers = {

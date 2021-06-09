@@ -98,16 +98,16 @@ Display the specified role.
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/v1/roles/quasi" \
+    -G "http://localhost:8000/api/v1/roles/quidem" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"possimus"}'
+    -d '{"int":"repellat"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/roles/quasi"
+    "http://localhost:8000/api/v1/roles/quidem"
 );
 
 let headers = {
@@ -116,7 +116,7 @@ let headers = {
 };
 
 let body = {
-    "int": "possimus"
+    "int": "repellat"
 }
 
 fetch(url, {
@@ -185,7 +185,7 @@ curl -X POST \
     "http://localhost:8000/api/v1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"reiciendis"}'
+    -d '{"role_name":"amet"}'
 
 ```
 
@@ -200,7 +200,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "reiciendis"
+    "role_name": "amet"
 }
 
 fetch(url, {
@@ -260,16 +260,16 @@ Update the specified role in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost:8000/api/v1/roles/eos" \
+    "http://localhost:8000/api/v1/roles/omnis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"non"}'
+    -d '{"role_name":"maiores"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/roles/eos"
+    "http://localhost:8000/api/v1/roles/omnis"
 );
 
 let headers = {
@@ -278,7 +278,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "non"
+    "role_name": "maiores"
 }
 
 fetch(url, {
@@ -347,7 +347,7 @@ curl -X DELETE \
     "http://localhost:8000/api/v1/roles/quia" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"numquam"}'
+    -d '{"int":"qui"}'
 
 ```
 
@@ -362,7 +362,7 @@ let headers = {
 };
 
 let body = {
-    "int": "numquam"
+    "int": "qui"
 }
 
 fetch(url, {
