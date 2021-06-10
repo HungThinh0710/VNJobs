@@ -9,6 +9,8 @@ use Carbon\Carbon;
 use App\Http\Requests\AuthenticateRequest;
 use App\Http\Requests\RegisterUserFormRequest;
 use App\User;
+//use Cookie;
+use Illuminate\Support\Facades\Cookie;
 
 /**
  * @group Auth endpoints
@@ -34,13 +36,14 @@ class AuthenticateController extends Controller
             ], 401);
 
         config(['auth.guards.api.provider' => 'users']);
-        $token = Auth::user()->createToken('authToken',['user']);
+        $token = Auth::user()->createToken('User Access Token',['user']);
+        $cookie = $this->getCookieDetails($token->accessToken);
 
         return response()->json([
             'user' => Auth::user(),
             'access_token' => $token->accessToken,
             'expires_at' => Carbon::parse($token->token->expires_at)->toDateTimeString()
-        ]);
+        ])->cookie($cookie['name'], $cookie['value'], $cookie['minutes'], $cookie['path'], $cookie['domain'], $cookie['secure'], $cookie['httponly'], $cookie['samesite']);
     }
 
     /**
@@ -50,5 +53,29 @@ class AuthenticateController extends Controller
     public function checkValidToken(Request $request)
     {
         return response()->json(['status' => 'OK', 'message' => 'Token is valid'], 200);
+    }
+
+    private function getCookieDetails($token)
+    {
+        return [
+            'name' => '_token',
+            'value' => $token,
+            'minutes' => 525948,
+            'path' => null,
+            'domain' => null,
+             'secure' => true, // for production
+//            'secure' => null, // for localhost
+            'httponly' => true,
+            'samesite' => true,
+        ];
+    }
+
+    public function logout(Request $request)
+    {
+        $request->user()->token()->revoke();
+        $cookie = Cookie::forget('_token');
+        return response()->json([
+            'message' => 'Logout successfully'
+        ])->withCookie($cookie);
     }
 }
