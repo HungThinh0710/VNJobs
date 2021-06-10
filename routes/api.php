@@ -44,7 +44,7 @@ Route::group(['prefix' => 'v1'], function(){
     /**
      * AUTHENTICATE USER SCOPE
      */
-    Route::group(['middleware' => ['auth:api', 'scope:user']], function() {
+    Route::group(['middleware' => ['auth.api', 'scope:user']], function() {
         //Check is token still valid
         Route::post('/is-valid-token', 'API\AuthenticateController@checkValidToken');
 

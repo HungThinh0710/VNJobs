@@ -32,15 +32,24 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
-            // \Illuminate\Session\Middleware\AuthenticateSession::class,
+//             \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \App\Http\Middleware\VerifyCsrfToken::class,
+//            \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+//            \Laravel\Passport\Http\Middleware\CreateFreshApiToken::class,
         ],
 
         'api' => [
             'throttle:1920,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ],
+
+        'auth.api' => [
+            \App\Http\Middleware\AddAuthenticateHeader::class,
+            'throttle:60,1',
+            'bindings',
+            'auth:api',
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         ],
     ];
 
@@ -74,6 +83,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middlewarePriority = [
+        \App\Http\Middleware\AddAuthenticateHeader::class,
+        \Illuminate\Auth\Middleware\Authenticate::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \App\Http\Middleware\Authenticate::class,
