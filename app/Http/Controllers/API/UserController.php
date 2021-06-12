@@ -27,8 +27,8 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $user = User::with('orgs')->findOrFail($request->user()->id);
-        return response()->json($user);
+        $users = User::findOrFail($request->user()->id);
+        return response()->json($users);
     }
 
     /**
@@ -39,6 +39,7 @@ class UserController extends Controller
     *
     * @response 201{
     *   'id': 1,
+    *   'role_id': 1,
     *   'first_name': 'string',
     *   'last_name': 'string',
     *   'dob': '1990-12-12',
@@ -78,7 +79,7 @@ class UserController extends Controller
         ]);
 
         $user = new User($request->all());
-//        $user->role_id = 4; //default role for new user;
+        $user->role_id = 4; //default role for new user;
         $user->save();
         return response()->json($user, 201);
     }
@@ -93,6 +94,7 @@ class UserController extends Controller
      *
      * @response {
      *   'id': 1,
+     *   'role_id': 1,
      *   'first_name': 'string',
      *   'last_name': 'string',
      *   'dob': '1990-12-12',
@@ -125,6 +127,7 @@ class UserController extends Controller
      *
      * @response {
      *   'id': 1,
+     *   'role_id': 1,
      *   'first_name': 'string',
      *   'last_name': 'string',
      *   'dob': '1990-12-12',
@@ -160,6 +163,7 @@ class UserController extends Controller
      *
      * @response {
      *   'id': 1,
+     *   'role_id': 1,
      *   'first_name': 'string',
      *   'last_name': 'string',
      *   'dob': '1990-12-12',

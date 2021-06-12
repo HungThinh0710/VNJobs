@@ -13,7 +13,7 @@ class User extends Authenticatable
 
     protected $guard = 'user';
 
-//    protected $guarded = ['role_id'];
+    protected $guarded = ['role_id'];
 
     protected $fillable = [
 //        'role_id',
@@ -38,7 +38,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-//        'role_id',
+        'role_id',
         'remember_token',
     ];
 
@@ -51,10 +51,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-//    public function role()
-//    {
-//        return $this->hasOne('App\Role','id', 'role_id');
-//    }
+    public function role()
+    {
+        return $this->hasOne('App\Role','id', 'role_id');
+    }
 
     public function orgs()
     {
@@ -63,8 +63,7 @@ class User extends Authenticatable
             'user_organization', // Intermediary table name
             'user_id',            // FK of 'user_organization' table (Intermediary table)
             'id'                  // PK of 'organizations' table (primary table) with intermediary table
-        )
-            ->with(['roles','owner']);
+        );
     }
 
     public function own_orgs()
@@ -83,7 +82,7 @@ class User extends Authenticatable
             'App\RecruitmentNews',
             'job_seekers',
             'user_id',
-            'rn_id'
+            'rn_id',
         );
     }
 }

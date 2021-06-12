@@ -35,6 +35,7 @@ class AuthenticateController extends Controller
                 'message' => 'Email or password are wrong! Please try again.'
             ], 401);
 
+        config(['auth.guards.api.provider' => 'users']);
         $token = Auth::user()->createToken('User Access Token',['user']);
         $cookie = $this->getCookieDetails($token->accessToken);
 

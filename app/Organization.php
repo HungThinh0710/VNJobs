@@ -37,16 +37,6 @@ class Organization extends Model
         );
     }
 
-    public function roles()
-    {
-        return $this->belongsToMany(
-            'App\Role',
-            'user_organization',
-            'org_id',
-            'role_id'
-        );
-    }
-
     public function recruitment_news()
     {
         return $this->hasMany('App\RecruitmentNews','org_id', 'id');
