@@ -11,15 +11,15 @@ class  UsersOrganizationsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10)]);
-        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10)]);
-        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10)]);
-        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10)]);
-        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10)]);
-        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10)]);
-        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10)]);
-        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10)]);
-        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10)]);
-        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10)]);
+        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10), 'role_id' => rand(1,3)]);
+        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10), 'role_id' => rand(1,3)]);
+        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10), 'role_id' => rand(1,3)]);
+        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10), 'role_id' => rand(1,3)]);
+        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10), 'role_id' => rand(1,3)]);
+        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10), 'role_id' => rand(1,3)]);
+        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10), 'role_id' => rand(1,3)]);
+        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10), 'role_id' => rand(1,3)]);
+        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10), 'role_id' => rand(1,3)]);
+        DB::table('user_organization')->insert([ 'org_id' => rand(1,10), 'user_id' => rand(1,10), 'role_id' => rand(1,3)]);
     }
 }

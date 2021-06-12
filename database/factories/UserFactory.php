@@ -24,7 +24,7 @@ $factory->define(User::class, function (Faker $faker) {
     $faker = \Faker\Factory::create('vi_VN'); // create a VietNam faker
 
     return [
-        'role_id' => rand(1,4),
+//        'role_id' => rand(1,4),
         'first_name' => $faker->name,
         'last_name' => $faker->name,
         'dob' => $faker->dateTime($max = 'now', $timezone = null),
