@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     protected $table = 'roles';
-    
+
     protected $fillable = ['role_name'];
 
-    public function user()
+    public function org()
     {
-        return $this->belongsTo('App\User', 'id');
+        return $this->belongsTo('App\UserOrganization', 'id');
     }
+
+
 }
