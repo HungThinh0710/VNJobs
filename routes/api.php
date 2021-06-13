@@ -22,7 +22,7 @@ Route::group(['prefix' => 'v1'], function(){
 
     // Organizations Publics
     Route::get('organizations/', 'API\OrganizationController@index');
-    Route::get('organizations/{id}', 'API\OrganizationController@show');
+    Route::get('organizations/find-by-id/{id}', 'API\OrganizationController@show');
 
     // Majors Publics
     Route::get('majors/', 'API\MajorController@index');
@@ -53,6 +53,17 @@ Route::group(['prefix' => 'v1'], function(){
             Route::post('/', 'API\OrganizationController@store');
             Route::put('/{id}', 'API\OrganizationController@update');
             Route::delete('/{id}', 'API\OrganizationController@destroy');
+
+            Route::group(['prefix' => 'membership', 'middleware' => 'owner_org'], function (){
+                Route::get('/', 'API\OrganizationController@showMembership');
+                Route::post('/', 'API\OrganizationController@addMembership');
+                /* BE GOING TO */
+//                Route::patch('/', 'API\OrganizationController@modifyMembership');
+//                Route::patch('/roles', 'API\OrganizationController@modifyMembership'); //Change roles
+//                Route::delete('/', 'API\OrganizationController@deleteMembership');
+
+            });
+
         });
 
         // Majors Group Auth
@@ -91,6 +102,7 @@ Route::group(['prefix' => 'v1'], function(){
             Route::put('/{id}', 'API\RecruitmentNewsController@update');
             Route::delete('/{id}', 'API\RecruitmentNewsController@destroy');
         });
+        Route::get('recruitment-news-job-seekers/{id}', 'API\RecruitmentNewsController@showRNWithJobSeeker');
 
         Route::post('users/apply', 'API\UserController@apply');
 

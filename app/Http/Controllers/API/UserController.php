@@ -27,7 +27,16 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $user = User::with('orgs')->findOrFail($request->user()->id);
+//        $user = User::with('orgs')->findOrFail($request->user()->id); //Old Eloquent
+//       New Eloquent
+        $userId = $request->user()->id;
+        $user = User::with([
+            'orgs' => function ($q) use ($userId){
+                return $q->where('owner_id', '!=', $userId);
+            },
+            'ownedOrgs',
+            'recruitmentNews:id,org_id,author_id,major_id,title,address,city,work_type,start_time,end_time,interview_start_time,interview_end_time,created_at,updated_at'
+        ])->findOrFail($userId);
         return response()->json($user);
     }
 
@@ -182,10 +191,36 @@ class UserController extends Controller
         return response()->json($user);
     }
 
-
+    /**
+     * Apply a Job
+     * Apply a job with recruitment news
+     * @authenticated
+     * @group User endpoints
+     *
+     * @bodyParam rn_id int required Recruitment news id.
+     * @bodyParam cv_path file required Recruitment news id.
+     * @bodyParam cover_letter_path file required Recruitment news id.
+     * @bodyParam exp_years int required Experience of job.
+     *
+     * @response 201 {
+     *   "message": "Apply job successfully",
+     *   "data": {
+     *       "id": 1,
+     *       "first_name": "Uông Đăng Bắc",
+     *       "last_name": "Ông. Chiêm Lam Hoán",
+     *       "dob": "2015-02-26",
+     *       "phone": "0186-622-0077",
+     *       "email": "gia.tien@example.com",
+     *       "email_verified_at": "2021-06-12 05:55:18",
+     *       "address": "47 Phố Tạ Đào Ly, Phường Đổng Hà Thảo, Huyện Độ Trình\nĐà Nẵng",
+     *       "bio": "SpBxrIonxjW7kOFgkgBwvS2ZQ2YcXx",
+     *       "avatar_path": "public/docs/user.png",
+     *       "social_linkedin": null,
+     *       "social_facebook": null,
+     *       "created_at": "2021-06-12 05:55:18",
+     * }
+     */
     public function apply(Request $request) {
-        var_dump($request->all());
-//        return $request->rn_id;
         $rnId = $request->rn_id;
         $userId = $request->user()->id;
         $user = User::findOrFail($userId);
@@ -193,7 +228,7 @@ class UserController extends Controller
         $exists = $user->applied_jobs()->where('rn_id', $rnId)->exists();
 
         if ($exists) {
-            return response()->json(['data' => $user], 201);
+            return response()->json(['message' => 'You already applied this job', 'data' => $user], 200);
         }
 
         if($request->hasFile('cv_path')) {
@@ -230,10 +265,10 @@ class UserController extends Controller
             'is_elect' => 0,
             'cv_path' => $pathCV,
             'cover_letter_path' => $pathCVLetter,
-            'exp_years' => $request->exp_years
+            'exp_years' => $request->input('exp_years'),
         ]);
         $user->save();
-        return response()->json(['data' => $user], 200);
+        return response()->json(['message' => 'Apply job successfully', 'data' => $user], 201);
     }
 
     /**
