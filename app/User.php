@@ -61,21 +61,20 @@ class User extends Authenticatable
         return $this->belongsToMany(
             'App\Organization',  // Intermediary Model Related
             'user_organization', // Intermediary table name
-            'user_id',            // FK of 'user_organization' table (Intermediary table)
-            'id'                  // PK of 'organizations' table (primary table) with intermediary table
-        )
-            ->with(['roles','owner']);
+            'user_id',            // FK PivotKey of 'user_organization' table (Intermediary table)
+            'org_id'                  // Related PivotKey of 'user_organization' table (Intermediary table) with intermediary table
+        )->withPivot('role_id');
     }
 
-    public function own_orgs()
+    public function ownedOrgs()
     {
         return $this->hasMany('App\Organization', 'owner_id', 'id');
     }
 
-    // public function recruitment_news()
-    // {
-    //     return $this->hasMany('\App\RecruitmentNews', 'author_id', 'id');
-    // }
+     public function recruitmentNews()
+     {
+         return $this->hasMany('\App\RecruitmentNews', 'author_id', 'id');
+     }
 
     public function applied_jobs()
     {
@@ -86,4 +85,16 @@ class User extends Authenticatable
             'rn_id'
         );
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(
+            'App\Role',  // Intermediary Model Related
+            'user_organization', // Intermediary table name
+            'user_id',            // FK of 'user_organization' table (Intermediary table)
+            'role_id'                  // PK of 'organizations' table (primary table) with intermediary table
+        )->withPivot('org_id');
+    }
+
+
 }

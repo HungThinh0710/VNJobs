@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Major;
 use App\RecruitmentNews;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreRecruitmentNews;
@@ -119,7 +120,7 @@ class RecruitmentNewsController extends Controller
      * Display the specified recruitment news.
      * @group Recruitment News endpoints
      *
-     * @bodyParam int id required The id of the recruiment news.
+     * @bodyParam int id required The id of the recruitment news.
      * @response {
      *   'id': 1,
      *   'org_id': 1,
@@ -140,6 +141,73 @@ class RecruitmentNewsController extends Controller
     public function show($id)
     {
         $recruitmentNews = RecruitmentNews::findOrFail($id);
+        return response()->json($recruitmentNews);
+    }
+
+    /**
+     * Get Job seekers of recruitment news
+     * Display the list of job seekers, who applied to this recruitment news by id.
+     * @authenticated
+     * @group Recruitment News endpoints
+     *
+     * @bodyParam int id required The id of the recruitment news.
+     * @response {
+     *   'id': 1,
+     *   'org_id': 1,
+     *   'author_id': 1,
+     *   'major_id': 1,
+     *   'title': 'string',
+     *   'address': 'string',
+     *   'city': 'string',
+     *   'start_time': '1990-12-12 12:45:10',
+     *   'end_time': '1990-12-12 12:45:10',
+     *   'interview_start_time': '1990-12-12 12:45:10',
+     *   'interview_end_time': '1990-12-12 12:45:10',
+     *   "created_at": "1990-12-12 12:45:10",
+     *   "updated_at": "1990-12-12 12:45:10",
+     *   "job_seekers": [
+     *      {
+     *          "id": 1,
+     *          "first_name": "Uông Đăng Bắc",
+     *          "last_name": "Ông. Chiêm Lam Hoán",
+     *          "dob": "2015-02-26",
+     *          "phone": "0186-622-0077",
+     *          "email": "gia.tien@example.com",
+     *          "email_verified_at": "2021-06-12 05:55:18",
+     *          "address": "47 Phố Tạ Đào Ly, Phường Đổng Hà Thảo, Huyện Độ Trình\nĐà Nẵng",
+     *          "bio": "SpBxrIonxjW7kOFgkgBwvS2ZQ2YcXx",
+     *          "avatar_path": "public/docs/user.png",
+     *          "social_linkedin": null,
+     *          "social_facebook": null,
+     *          "created_at": "2021-06-12 05:55:18",
+     *          "updated_at": "2021-06-12 05:55:18",
+     *          "pivot": {
+     *          "rn_id": 1,
+     *          "user_id": 1,
+     *          "cv_path": "",
+     *          "is_elect": 0,
+     *          "cover_letter_path": "",
+     *          "exp_years": 2
+     *          }
+     *      }
+     *   ]
+     * }
+     */
+    public function showRNWithJobSeeker(Request $request,$id)
+    {
+        $recruitmentNews = RecruitmentNews::with('job_seekers')->findOrFail($id)->makeHidden('content');
+        $orgId = $recruitmentNews->org_id;
+        $user = User::with(['roles' => function($query) use ($orgId){
+            $query->wherePivot('org_id', 3);
+        }])->find($request->user()->id);
+
+        $userRoles = $user['roles'];
+        //Check org membership & roles
+        if(count($userRoles) === 0)
+            return response()->json(['message' => 'You do not a membership of this organization'], 403);
+        if($userRoles[0]->role_name != 'Founder' || $userRoles[0]->role_name != 'HR')
+            return response()->json(['message' => 'You do not have permission to access job seekers'], 403);
+
         return response()->json($recruitmentNews);
     }
 
@@ -212,10 +280,10 @@ class RecruitmentNewsController extends Controller
         $params = $request->all();
         //$recruitmentNews = RecruitmentNews::filter($params);
         //dd($recruitmentNews);
-        
+
         $recruitmentNews = RecruitmentNews::with('org', 'major')->filter($params);
             //->workType($request);
-        
+
         return response()->json($recruitmentNews);
     }
 }

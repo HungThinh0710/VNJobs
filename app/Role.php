@@ -15,5 +15,13 @@ class Role extends Model
         return $this->belongsTo('App\UserOrganization', 'id');
     }
 
-
+    public function users()
+    {
+        return $this->belongsTomany(
+            'App\User',
+            'user_organization',
+            'role_id',
+            'user_id'
+        );
+    }
 }

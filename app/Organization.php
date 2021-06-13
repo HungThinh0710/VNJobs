@@ -24,7 +24,10 @@ class Organization extends Model
             'user_organization',
             'org_id',
             'user_id'
-        );
+        )
+//            ->withPivot('role_id')
+//            ->with('roles')
+            ;
     }
 
     public function majors()
@@ -42,7 +45,7 @@ class Organization extends Model
         return $this->belongsToMany(
             'App\Role',
             'user_organization',
-            'org_id',
+            'user_id',
             'role_id'
         );
     }
@@ -51,4 +54,5 @@ class Organization extends Model
     {
         return $this->hasMany('App\RecruitmentNews','org_id', 'id');
     }
+
 }

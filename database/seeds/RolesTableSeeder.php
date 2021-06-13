@@ -11,6 +11,7 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
+        //MUST Change digit validate_between in App\Http\Requests\Organization\AddMember
         DB::table('roles')->insert([ 'role_name' => 'Founder' ]);
         DB::table('roles')->insert([ 'role_name' => 'HR' ]);
         DB::table('roles')->insert([ 'role_name' => 'ContentWriter' ]);

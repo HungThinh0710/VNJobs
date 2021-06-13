@@ -1,6 +1,5 @@
 # User endpoints
 
-APIs for user.
 
 ## Create a User
 Store a newly created user in database.
@@ -16,7 +15,7 @@ curl -X POST \
     "http://localhost:8000/api/v1/auth/register" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"first_name":"qui","last_name":"impedit","dob":"2021-06-07T13:19:28+0000","phone":"labore","email":"anais10@example.org","password":"ipsum","address":"eaque"}'
+    -d '{"first_name":"dolorem","last_name":"eius","dob":"2021-06-13T06:11:30+0000","phone":"voluptatibus","email":"celestino.hyatt@example.com","password":"nostrum","address":"earum"}'
 
 ```
 
@@ -31,13 +30,13 @@ let headers = {
 };
 
 let body = {
-    "first_name": "qui",
-    "last_name": "impedit",
-    "dob": "2021-06-07T13:19:28+0000",
-    "phone": "labore",
-    "email": "anais10@example.org",
-    "password": "ipsum",
-    "address": "eaque"
+    "first_name": "dolorem",
+    "last_name": "eius",
+    "dob": "2021-06-13T06:11:30+0000",
+    "phone": "voluptatibus",
+    "email": "celestino.hyatt@example.com",
+    "password": "nostrum",
+    "address": "earum"
 }
 
 fetch(url, {
@@ -54,7 +53,6 @@ fetch(url, {
 
 {
   'id': 1,
-  'role_id': 1,
   'first_name': 'string',
   'last_name': 'string',
   'dob': '1990-12-12',
@@ -210,16 +208,16 @@ Display the specified user.
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/v1/user/find/dolores" \
+    -G "http://localhost:8000/api/v1/user/find/voluptas" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":4}'
+    -d '{"id":14}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/user/find/dolores"
+    "http://localhost:8000/api/v1/user/find/voluptas"
 );
 
 let headers = {
@@ -228,7 +226,7 @@ let headers = {
 };
 
 let body = {
-    "id": 4
+    "id": 14
 }
 
 fetch(url, {
@@ -245,7 +243,6 @@ fetch(url, {
 
 {
   'id': 1,
-  'role_id': 1,
   'first_name': 'string',
   'last_name': 'string',
   'dob': '1990-12-12',
@@ -405,7 +402,7 @@ curl -X PUT \
     "http://localhost:8000/api/v1/user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"first_name":"sit","last_name":"animi","dob":"2021-06-07T13:19:28+0000","phone":0,"email":"dibbert.jeremy@example.com","address":"corrupti","id":2,"id2":16}'
+    -d '{"first_name":"sit","last_name":"voluptatum","dob":"2021-06-13T06:11:30+0000","phone":2134.91934401,"email":"alessia49@example.net","address":"sit","id":13,"id2":19}'
 
 ```
 
@@ -421,13 +418,13 @@ let headers = {
 
 let body = {
     "first_name": "sit",
-    "last_name": "animi",
-    "dob": "2021-06-07T13:19:28+0000",
-    "phone": 0,
-    "email": "dibbert.jeremy@example.com",
-    "address": "corrupti",
-    "id": 2,
-    "id2": 16
+    "last_name": "voluptatum",
+    "dob": "2021-06-13T06:11:30+0000",
+    "phone": 2134.91934401,
+    "email": "alessia49@example.net",
+    "address": "sit",
+    "id": 13,
+    "id2": 19
 }
 
 fetch(url, {
@@ -444,7 +441,6 @@ fetch(url, {
 
 {
   'id': 1,
-  'role_id': 1,
   'first_name': 'string',
   'last_name': 'string',
   'dob': '1990-12-12',
@@ -539,16 +535,16 @@ Remove the specified user from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost:8000/api/v1/user/a" \
+    "http://localhost:8000/api/v1/user/odio" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"id":13}'
+    -d '{"id":18}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/user/a"
+    "http://localhost:8000/api/v1/user/odio"
 );
 
 let headers = {
@@ -557,7 +553,7 @@ let headers = {
 };
 
 let body = {
-    "id": 13
+    "id": 18
 }
 
 fetch(url, {
@@ -574,7 +570,6 @@ fetch(url, {
 
 {
   'id': 1,
-  'role_id': 1,
   'first_name': 'string',
   'last_name': 'string',
   'dob': '1990-12-12',
@@ -629,8 +624,10 @@ The id of the user.</p>
 </form>
 
 
-## api/v1/users/apply
+## Apply a Job
+Apply a job with recruitment news
 
+<small class="badge badge-darkred">requires authentication</small>
 
 
 
@@ -639,8 +636,11 @@ The id of the user.</p>
 ```bash
 curl -X POST \
     "http://localhost:8000/api/v1/users/apply" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: application/json" \
+    -F "rn_id=7" \
+    -F "exp_years=8" \
+    -F "cv_path=@C:\Users\Phoenix\AppData\Local\Temp\php2431.tmp"     -F "cover_letter_path=@C:\Users\Phoenix\AppData\Local\Temp\php2441.tmp" 
 ```
 
 ```javascript
@@ -649,18 +649,46 @@ const url = new URL(
 );
 
 let headers = {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
+const body = new FormData();
+body.append('rn_id', '7');
+body.append('exp_years', '8');
+body.append('cv_path', document.querySelector('input[name="cv_path"]').files[0]);
+body.append('cover_letter_path', document.querySelector('input[name="cover_letter_path"]').files[0]);
 
 fetch(url, {
     method: "POST",
     headers,
+    body,
 }).then(response => response.json());
 ```
 
 
+> Example response (201):
+
+```json
+
+{
+  "message": "Apply job successfully",
+  "data": {
+      "id": 1,
+      "first_name": "Uông Đăng Bắc",
+      "last_name": "Ông. Chiêm Lam Hoán",
+      "dob": "2015-02-26",
+      "phone": "0186-622-0077",
+      "email": "gia.tien@example.com",
+      "email_verified_at": "2021-06-12 05:55:18",
+      "address": "47 Phố Tạ Đào Ly, Phường Đổng Hà Thảo, Huyện Độ Trình\nĐà Nẵng",
+      "bio": "SpBxrIonxjW7kOFgkgBwvS2ZQ2YcXx",
+      "avatar_path": "public/docs/user.png",
+      "social_linkedin": null,
+      "social_facebook": null,
+      "created_at": "2021-06-12 05:55:18",
+}
+```
 <div id="execution-results-POSTapi-v1-users-apply" hidden>
     <blockquote>Received response<span id="execution-response-status-POSTapi-v1-users-apply"></span>:</blockquote>
     <pre class="json"><code id="execution-response-content-POSTapi-v1-users-apply"></code></pre>
@@ -669,7 +697,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-POSTapi-v1-users-apply"></code></pre>
 </div>
-<form id="form-POSTapi-v1-users-apply" data-method="POST" data-path="api/v1/users/apply" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-users-apply', this);">
+<form id="form-POSTapi-v1-users-apply" data-method="POST" data-path="api/v1/users/apply" data-authed="1" data-hasfiles="2" data-headers='{"Content-Type":"multipart\/form-data","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-users-apply', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v1-users-apply" onclick="tryItOut('POSTapi-v1-users-apply');">Try it out ⚡</button>
@@ -680,6 +708,31 @@ fetch(url, {
 <small class="badge badge-black">POST</small>
  <b><code>api/v1/users/apply</code></b>
 </p>
+<p>
+<label id="auth-POSTapi-v1-users-apply" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="POSTapi-v1-users-apply" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>rn_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="rn_id" data-endpoint="POSTapi-v1-users-apply" data-component="body" required  hidden>
+<br>
+Recruitment news id.</p>
+<p>
+<b><code>cv_path</code></b>&nbsp;&nbsp;<small>file</small>  &nbsp;
+<input type="file" name="cv_path" data-endpoint="POSTapi-v1-users-apply" data-component="body" required  hidden>
+<br>
+Recruitment news id.</p>
+<p>
+<b><code>cover_letter_path</code></b>&nbsp;&nbsp;<small>file</small>  &nbsp;
+<input type="file" name="cover_letter_path" data-endpoint="POSTapi-v1-users-apply" data-component="body" required  hidden>
+<br>
+Recruitment news id.</p>
+<p>
+<b><code>exp_years</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="exp_years" data-endpoint="POSTapi-v1-users-apply" data-component="body" required  hidden>
+<br>
+Experience of job.</p>
+
 </form>
 
 
