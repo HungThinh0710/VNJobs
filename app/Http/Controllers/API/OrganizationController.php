@@ -73,6 +73,7 @@ class OrganizationController extends Controller
     /**
      * Create Organization
      * Store a newly created resource in Database.
+     * @authenticated
      * @group Organization endpoints
      * 
      * @response {
@@ -92,8 +93,20 @@ class OrganizationController extends Controller
      */
     public function store(StoreOrganization $request)
     {
-        $organization = Organization::create($request->all());
+        $organization = new Organization;
+        $organization->is_verify = 0;
+        $organization->phones = $request->phones;
+        $organization->description = $request->description;
+        $organization->tax_id = $request->tax_id;
+        $organization->address = $request->address;
+        $organization->org_name = $request->org_name;
+        $organization->logo_path = $request->logo_path;
+        $organization->cover_path = $request->cover_path;
+        $organization->owner_id = $request->user()->id;
+        $organization->save();
         return response()->json($organization);
+        // $organization = Organization::create($organization);
+        // return response()->json($organization);
     }
 
     /**
@@ -127,6 +140,7 @@ class OrganizationController extends Controller
     /**
      * Update an Organization
      * Update the specified resource in Database.
+     * @authenticated
      * @group Organization endpoints
      * 
      * @response {
@@ -154,6 +168,7 @@ class OrganizationController extends Controller
     /**
      * Remove an Organization
      * Remove the Organization from Database.
+     * @authenticated
      * @group Organization endpoints
      * 
      * @bodyParam int id required The id of the organization.

@@ -89,6 +89,7 @@ class RecruitmentNewsController extends Controller
     /**
     * Create a Recruitment News
     * Store a newly created recruitment news in database.
+    * @autheticated
     * @group Recruitment News endpoints
     *
     * @response {
