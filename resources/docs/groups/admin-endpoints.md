@@ -1,7 +1,7 @@
 # Admin Endpoints
 
 
-## Statistic.
+## Show Statistic.
 
 
 APIs for analyst & statistic jobs.

@@ -98,16 +98,16 @@ Display the specified role.
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/v1/roles/quidem" \
+    -G "http://localhost:8000/api/v1/roles/explicabo" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"repellat"}'
+    -d '{"int":"non"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/roles/quidem"
+    "http://localhost:8000/api/v1/roles/explicabo"
 );
 
 let headers = {
@@ -116,7 +116,7 @@ let headers = {
 };
 
 let body = {
-    "int": "repellat"
+    "int": "non"
 }
 
 fetch(url, {
@@ -185,7 +185,7 @@ curl -X POST \
     "http://localhost:8000/api/v1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"amet"}'
+    -d '{"role_name":"vero"}'
 
 ```
 
@@ -200,7 +200,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "amet"
+    "role_name": "vero"
 }
 
 fetch(url, {
@@ -260,16 +260,16 @@ Update the specified role in database.
 
 ```bash
 curl -X PUT \
-    "http://localhost:8000/api/v1/roles/omnis" \
+    "http://localhost:8000/api/v1/roles/qui" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"role_name":"maiores"}'
+    -d '{"role_name":"nisi"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/roles/omnis"
+    "http://localhost:8000/api/v1/roles/qui"
 );
 
 let headers = {
@@ -278,7 +278,7 @@ let headers = {
 };
 
 let body = {
-    "role_name": "maiores"
+    "role_name": "nisi"
 }
 
 fetch(url, {
@@ -344,16 +344,16 @@ Remove the specified role from database.
 
 ```bash
 curl -X DELETE \
-    "http://localhost:8000/api/v1/roles/quia" \
+    "http://localhost:8000/api/v1/roles/placeat" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"int":"qui"}'
+    -d '{"int":"ut"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/v1/roles/quia"
+    "http://localhost:8000/api/v1/roles/placeat"
 );
 
 let headers = {
@@ -362,7 +362,7 @@ let headers = {
 };
 
 let body = {
-    "int": "qui"
+    "int": "ut"
 }
 
 fetch(url, {

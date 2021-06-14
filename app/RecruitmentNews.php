@@ -47,6 +47,6 @@ class RecruitmentNews extends Model
             'is_elect',
             'cover_letter_path',
             'exp_years'
-        );;
+        );
     }
 }
