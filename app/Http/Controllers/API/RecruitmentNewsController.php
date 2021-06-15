@@ -112,8 +112,21 @@ class RecruitmentNewsController extends Controller
     */
     public function store(StoreRecruitmentNews $request)
     {
-        $recruitmentNews = RecruitmentNews::create($request->all());
-        return response()->json($recruitmentNews);
+        $recruitmentNews = new RecruitmentNews;
+        $recruitmentNews->author_id = $request->user()->id;
+        $recruitmentNews->org_id = $request->org_id;
+        $recruitmentNews->major_id = $request->major_id;
+        $recruitmentNews->title = $request->title;
+        $recruitmentNews->content = $request->content;
+        $recruitmentNews->address = $request->address;
+        $recruitmentNews->city = $request->city;
+        $recruitmentNews->work_type = $request->work_type;
+        $recruitmentNews->start_time = $request->start_time;
+        $recruitmentNews->end_time = $request->end_time;
+        $recruitmentNews->interview_start_time = $request->interview_start_time;
+        $recruitmentNews->interview_end_time = $request->interview_end_time;
+        $recruitmentNews->save();
+        return response()->json(['message' => 'Tạo bài tuyển dụng thành công', 'recruitment_news' => $recruitmentNews]);
     }
 
     /**
