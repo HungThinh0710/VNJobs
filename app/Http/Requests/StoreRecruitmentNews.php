@@ -25,7 +25,7 @@ class StoreRecruitmentNews extends FormRequest
     {
         return [
             'org_id' => 'required|integer', 
-            'author_id' => 'required|integer', 
+            // 'author_id' => 'required|integer', 
             'major_id' => 'required|integer', 
             'title' => 'required|string|max:255', 
             'content' => 'required|string', 
@@ -43,8 +43,8 @@ class StoreRecruitmentNews extends FormRequest
         return [
             'org_id.required' => 'Organization id is required', 
             'org_id.integer' => 'Organization id must be a integer', 
-            'author_id.required' => 'Author id is required', 
-            'author_id.integer' => 'Author id must be a integer', 
+            // 'author_id.required' => 'Author id is required', 
+            // 'author_id.integer' => 'Author id must be a integer', 
             'major_id.required' => 'Major id is required', 
             'major_id.integer' => 'Major id must be a integer', 
             'title.required' => 'Title is required', 

@@ -24,11 +24,10 @@ class StoreOrganization extends FormRequest
     public function rules()
     {
         return [
-            'owner_id' => 'required|integer',
             'org_name' => 'required|string|max:255',
-            'phones' => 'unique|required|string|max:12',
+            'phones' => 'required|string|max:12',
             'description' => 'required|string',
-            'tax_id' => 'unique|required|integer',
+            'tax_id' => 'required|integer',
             'address' => 'string|max:255',
             'logo_path' => 'string|max:255',
             'cover_path' => 'string|max:255'
@@ -37,20 +36,17 @@ class StoreOrganization extends FormRequest
 
     public function messages() {
         return [
-            'owner_id.required' => 'Owner id is required',
-            'owner_id.integer' => 'Owner id must be a integer',
             'org_name.required' => 'Organization name is required',
             'org_name.string' => 'Organization name must be a string',
             'org_name.max' => 'Organization name max length is 255',
             'phones.required' => 'Phone number is required',
             'phones.string' => 'Phone number must be a string',
             'phones.max' => 'Phone number max length is 12',
-            'phones.unique' => 'Phone number has been already',
             'description.required' => 'Description is required',
             'description.string' => 'Description must be a string',
             'tax_id.required' => 'Tax id is required',
             'tax_id.integer' => 'Tax id must be a integer',
-            'tax_id.unique' => 'Tax id has been already',
+            // 'tax_id.unique' => 'Tax id has been already',
             'address.string' => 'Address must be a string',
             'address.max' => 'Address max length is 255',
             'logo_path.string' => 'Logo path must be a string',
