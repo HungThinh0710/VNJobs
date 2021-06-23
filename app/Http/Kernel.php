@@ -46,11 +46,19 @@ class Kernel extends HttpKernel
 
         'auth.api' => [
             \App\Http\Middleware\AddAuthenticateHeader::class,
-            'throttle:60,1',
+            'throttle:1920,1',
             'bindings',
             'auth:api',
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         ],
+
+        'auth.api-admins' => [
+            \App\Http\Middleware\AddAdminAuthenticateHeader::class,
+            'throttle:1920,1',
+            'bindings',
+            'auth:api-admins',
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+        ]
     ];
 
     /**
@@ -85,6 +93,7 @@ class Kernel extends HttpKernel
      */
     protected $middlewarePriority = [
         \App\Http\Middleware\AddAuthenticateHeader::class,
+        \App\Http\Middleware\AddAdminAuthenticateHeader::class,
         \Illuminate\Auth\Middleware\Authenticate::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
