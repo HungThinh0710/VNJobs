@@ -48,6 +48,7 @@ class AuthenticateController extends Controller
     /**
      * Check valid token.
      * @group Auth endpoints
+     * @authenticated
      */
     public function checkValidToken(Request $request)
     {
@@ -69,12 +70,19 @@ class AuthenticateController extends Controller
         ];
     }
 
+    /**
+     * Logout
+     * Logout user
+     * @authenticated
+     * @group Auth endpoints
+     *
+     */
     public function logout(Request $request)
     {
         $request->user()->token()->revoke();
         $cookie = Cookie::forget('_token');
         return response()->json([
-            'message' => 'Logout successfully'
+            'message' => 'Logout user successfully'
         ])->withCookie($cookie);
     }
 }

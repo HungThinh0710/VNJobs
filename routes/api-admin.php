@@ -17,10 +17,22 @@ Route::group(['prefix' => 'v1'], function(){
         Route::post('login', 'APIAdmin\\AuthenticateController@login');
     });
 
-    Route::group(['middleware' => ['auth:api-admins', 'scope:admin']], function(){
+    Route::group(['middleware' => ['auth.api-admins', 'scope:admin']], function(){
         Route::post('/token', 'APIAdmin\\AuthenticateController@token');
         Route::get('/statistic', 'APIAdmin\\StatisticController@allStatistic');
+
+        //Org Group
         Route::get('/organization', 'APIAdmin\\OrganizationController@showOrg');
+
+        // JobSeekers Group Auth
+        Route::group(['prefix' => 'job-seekers'], function() {
+            Route::post('/', 'API\JobSeekerController@store');
+            Route::put('/{id}', 'API\JobSeekerController@update');
+            Route::delete('/{id}', 'API\JobSeekerController@destroy');
+        });
+
+        //Logout
+        Route::post('/logout', 'APIAdmin\\AuthenticateController@logout');
     });
 });
 

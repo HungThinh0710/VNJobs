@@ -94,6 +94,7 @@ Route::group(['prefix' => 'v1'], function(){
             Route::get('/applied', 'API\UserController@applied');
             Route::put('/', 'API\UserController@update');
             Route::delete('/{id}', 'API\UserController@destroy');
+            Route::post('/logout', 'API\AuthenticateController@logout');
         });
 
         // Recruitment News Group Auth

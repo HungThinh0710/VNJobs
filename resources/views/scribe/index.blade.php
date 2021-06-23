@@ -51,7 +51,7 @@
     <div class="dark-box"></div>
     <div class="content">
         <h1>Introduction</h1>
-<p>API for mobile, web client of VNJobs Project - By Phoenix (aka Hưng Thịnh) &amp; Khắc Tuấn (aka SinJunior)</p>
+<p>API for mobile, web client of VNJobs Project - By Phoenix (a.k.a Hưng Thịnh) &amp; SinJunior (a.k.a Khắc Tuấn)</p>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
