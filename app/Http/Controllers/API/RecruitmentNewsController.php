@@ -300,4 +300,9 @@ class RecruitmentNewsController extends Controller
 
         return response()->json($recruitmentNews);
     }
+
+    public function count() {
+        $count = RecruitmentNews::count();
+        return response()->json(['count' => $count]);
+    }
 }

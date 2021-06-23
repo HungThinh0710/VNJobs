@@ -140,4 +140,9 @@ class JobSeekerController extends Controller
         $jobSeeker = JobSeeker::findOrFail($id)->delete();
         return response()->json($jobSeeker);
     }
+
+    public function count() {
+        $count = JobSeeker::count();
+        return response()->json(['count' => $count]);
+    }
 }

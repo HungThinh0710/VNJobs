@@ -135,4 +135,9 @@ class MajorController extends Controller
     {
         return response()->json(Major::findOrFail($id)->delete());
     }
+
+    public function count() {
+        $count = Major::count();
+        return response()->json(['count' => $count]);
+    }
 }

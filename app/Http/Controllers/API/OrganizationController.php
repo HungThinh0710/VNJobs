@@ -353,4 +353,11 @@ class OrganizationController extends Controller
         }])->get();
         return response()->json(['message' => 'Add member to your organization successfully', 'org' => $org]);
     }
+
+    public function count() {
+        $count = Organization::count();
+        $listVerified = Organization::where('is_verify', 1)->get();
+        $countVerified = $listVerified->count();
+        return response()->json(['count' => $count, 'data' => $listVerified, 'count_verify' => $countVerified]);
+    }
 }

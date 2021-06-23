@@ -20,14 +20,17 @@ Route::group(['prefix' => 'v1'], function(){
     // Organizations Publics
     Route::get('organizations/', 'API\OrganizationController@index');
     Route::get('organizations/find-by-id/{id}', 'API\OrganizationController@show');
+    Route::get('organizations-count/', 'API\OrganizationController@count');
 
     // Majors Publics
     Route::get('majors/', 'API\MajorController@index');
     Route::get('majors/{id}', 'API\MajorController@show');
+    Route::get('majors-count/', 'API\MajorController@count');
 
     // JobSeekers Publics
     Route::get('job-seekers/', 'API\JobSeekerController@index');
     Route::get('job-seekers/{id}', 'API\JobSeekerController@show');
+    Route::get('job-seekers-count/', 'API\JobSeekerController@count');
 
     // Roles Publics
     Route::get('roles/', 'API\RoleController@index');
@@ -35,6 +38,7 @@ Route::group(['prefix' => 'v1'], function(){
     // Recruitment News Publics
     Route::get('recruitment-news/', 'API\RecruitmentNewsController@index');
     Route::get('recruitment-news/{id}', 'API\RecruitmentNewsController@show');
+    Route::get('recruitment-news-count/', 'API\RecruitmentNewsController@count');
     Route::post('search', 'API\RecruitmentNewsController@search');
 
     Route::group(['middleware' => ['auth.api-admins', 'scope:admin']], function(){
