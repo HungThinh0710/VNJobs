@@ -212,7 +212,7 @@ class RecruitmentNewsController extends Controller
         $recruitmentNews = RecruitmentNews::with('job_seekers')->findOrFail($id)->makeHidden('content');
         $orgId = $recruitmentNews->org_id;
         $user = User::with(['roles' => function($query) use ($orgId){
-            $query->wherePivot('org_id', 3);
+            $query->wherePivot('org_id', $orgId);
         }])->find($request->user()->id);
 
         $userRoles = $user['roles'];
