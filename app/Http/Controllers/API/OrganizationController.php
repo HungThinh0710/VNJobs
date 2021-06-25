@@ -106,6 +106,10 @@ class OrganizationController extends Controller
         $organization->cover_path = $request->cover_path;
         $organization->owner_id = $request->user()->id;
         $organization->save();
+        $organization->users()->attach($organization->id, [
+            'role_id' => 1,
+            'user_id' => $request->user()->id
+        ]);
         return response()->json($organization);
         // $organization = Organization::create($organization);
         // return response()->json($organization);

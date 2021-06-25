@@ -219,9 +219,8 @@ class RecruitmentNewsController extends Controller
         //Check org membership & roles
         if(count($userRoles) === 0)
             return response()->json(['message' => 'You do not a membership of this organization'], 403);
-        if($userRoles[0]->role_name != 'Founder' || $userRoles[0]->role_name != 'HR')
+        if($userRoles[0]->role_name != 'Founder' && $userRoles[0]->role_name != 'HR')
             return response()->json(['message' => 'You do not have permission to access job seekers'], 403);
-
         return response()->json($recruitmentNews);
     }
 

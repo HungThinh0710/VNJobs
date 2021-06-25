@@ -64,7 +64,7 @@ class AuthenticateController extends Controller
             'path' => null,
             'domain' => null,
              'secure' => true, // for production
-//            'secure' => null, // for localhost
+        //    'secure' => null, // for localhost
             'httponly' => true,
             'samesite' => true,
         ];
