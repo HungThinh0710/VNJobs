@@ -43,6 +43,7 @@ class RecruitmentNews extends Model
             'rn_id',
             'user_id'
         )->withPivot(
+            'id',
             'cv_path',
             'is_elect',
             'cover_letter_path',

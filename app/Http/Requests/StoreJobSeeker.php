@@ -27,7 +27,7 @@ class StoreJobSeeker extends FormRequest
         return [
             'user_id' => 'required|integer',
             'is_elect' => 'boolean',
-            'cv_path' => 'sreing|max:255',
+            'cv_path' => 'string|max:255',
             'cover_letter_path' => 'string|max:255',
             'exp_years' => 'required|integer'
         ];

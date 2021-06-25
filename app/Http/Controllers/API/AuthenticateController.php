@@ -63,8 +63,8 @@ class AuthenticateController extends Controller
             'minutes' => 525948,
             'path' => null,
             'domain' => null,
-             'secure' => true, // for production
-        //    'secure' => null, // for localhost
+            //  'secure' => true, // for production
+           'secure' => null, // for localhost
             'httponly' => true,
             'samesite' => true,
         ];
